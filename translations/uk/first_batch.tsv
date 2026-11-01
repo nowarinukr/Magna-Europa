@@ -1,0 +1,34 @@
+key	source	ukrainian	source_file
+UKR_fascism	Ukraine	Україна	localisation/english/countries_l_english.yml
+UKR_fascism_DEF	Ukraine	Україна	localisation/english/countries_l_english.yml
+UKR_democratic	Republic of Ukraine	Республіка Україна	localisation/english/countries_l_english.yml
+UKR_democratic_DEF	the Republic of Ukraine	Республіка Україна	localisation/english/countries_l_english.yml
+UKR_neutrality	Ukraine	Україна	localisation/english/countries_l_english.yml
+UKR_neutrality_DEF	Ukraine	Україна	localisation/english/countries_l_english.yml
+UKR_communism	Ukrainian Socialist Republic	Українська Соціалістична Республіка	localisation/english/countries_l_english.yml
+UKR_communism_DEF	the Ukrainian Socialist Republic	Українська Соціалістична Республіка	localisation/english/countries_l_english.yml
+UKR_fascism_ADJ	Ukrainian	український	localisation/english/countries_l_english.yml
+UKR_democratic_ADJ	Ukrainian	український	localisation/english/countries_l_english.yml
+UKR_neutrality_ADJ	Ukrainian	український	localisation/english/countries_l_english.yml
+UKR_communism_ADJ	Ukrainian	український	localisation/english/countries_l_english.yml
+UKR	Ukraine	Україна	localisation/english/countries_l_english.yml
+UKR_DEF	Ukraine	Україна	localisation/english/countries_l_english.yml
+UKR_ADJ	Ukrainian	український	localisation/english/countries_l_english.yml
+UKR_neutrality_party	Skoropadskyi Loyalists	Прихильники Скоропадського	localisation/english/replace/vanilla_parties_l_english.yml
+UKR_neutrality_party_long	Skoropadskyi Loyalists	Прихильники Скоропадського	localisation/english/replace/vanilla_parties_l_english.yml
+UKR_democratic_party	USDRP	УСДРП	localisation/english/replace/vanilla_parties_l_english.yml
+UKR_democratic_party_long	Ukrainian Social Democratic Labour Party	Українська соціал-демократична робітнича партія	localisation/english/replace/vanilla_parties_l_english.yml
+UKR_fascism_party	LUN	ЛУН	localisation/english/replace/vanilla_parties_l_english.yml
+UKR_fascism_party_long	League of Ukrainian Nationalists	Легія українських націоналістів	localisation/english/replace/vanilla_parties_l_english.yml
+UKR_communism_party	CP(b)U	КП(б)У	localisation/english/replace/vanilla_parties_l_english.yml
+UKR_communism_party_long	Communist Party (Bolsheviks) of Ukraine	Комуністична партія (більшовиків) України	localisation/english/replace/vanilla_parties_l_english.yml
+ww1_infantry	Dispersed Infantry Tactics	Розосереджена тактика піхоти	localisation/english/replace/gbruh_l_english.yml
+infantry_charge	Massed Infantry Charges	Масовані атаки піхоти	localisation/english/replace/gbruh_l_english.yml
+covering_fire	Covering Fire	Прикривальний вогонь	localisation/english/replace/gbruh_l_english.yml
+reserve_rotation	Reserve Rotations	Ротація резервів	localisation/english/replace/gbruh_l_english.yml
+elastic_defence	Elastic Defence	Еластична оборона	localisation/english/replace/gbruh_l_english.yml
+defence_in_depth	Defence in Depth	Глибокоешелонована оборона	localisation/english/replace/gbruh_l_english.yml
+infiltration_attacks	Infiltration Attacks	Інфільтраційні атаки	localisation/english/replace/gbruh_l_english.yml
+night_patrols	Night Raids	Нічні рейди	localisation/english/replace/gbruh_l_english.yml
+ww1_artillery	Indirect Fire Support	Вогнева підтримка із закритих позицій	localisation/english/replace/gbruh_l_english.yml
+artillery_concentration	Massed Barrages	Масований артилерійський вогонь	localisation/english/replace/gbruh_l_english.yml

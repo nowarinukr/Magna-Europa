@@ -6,7 +6,7 @@ NDefines.NFrontend.CAMERA_MAX_HEIGHT = 3800.0
 NDefines.NGraphics.PROVINCE_NAME_DRAW_DISTANCE = 1000.0 			-- Remove province names beyond this distance
 
 NDefines.NGame.MAP_SCALE_PIXEL_TO_KM = 1.74
-NDefines.NGame.SAVE_VERSION = 7
+-- Inherit the save format version from the installed game.
 
 NDefines.NMilitary.LAND_SPEED_MODIFIER = 0.1
 
@@ -31,12 +31,9 @@ NDefines.NNavy.NAVAL_RANGE_TO_INGAME_DISTANCE = 0.24							-- Scale the ship sta
 
 NDefines.NGraphics.MINIMUM_PROVINCE_SIZE_IN_PIXELS = 4
 
-NDefines.NGraphics.COUNTRY_FLAG_LARGE_STRIPE_MAX_HEIGHT = 24000        -- VANILLA: 8192
 NDefines.NGraphics.COUNTRY_FLAG_SMALL_TEX_MAX_SIZE = 512            -- VANILLA: 64
-NDefines.NGraphics.COUNTRY_FLAG_STRIPE_TEX_MAX_HEIGHT = 8196        -- VANILLA: 2048
 NDefines.NGraphics.COUNTRY_FLAG_TEX_MAX_SIZE = 2048                    -- VANILLA: 256
 NDefines.NGraphics.VICTORY_POINT_MAP_ICON_TEXT_CUTOFF = {225, 375, 750}  -- At what camera distance the VP name text disappears.
-NDefines.NGraphics.VICTORY_POINTS_DISTANCE_CUTOFF = {375,750,1500} -- At what distance VPs are hidden
 NDefines.NGraphics.CAPITAL_ICON_CUTOFF = 1650	-- At what camera distance capital icons disappears
 NDefines.NGraphics.UNITS_DISTANCE_CUTOFF = 180
 NDefines.NGraphics.SHIPS_DISTANCE_CUTOFF = 360

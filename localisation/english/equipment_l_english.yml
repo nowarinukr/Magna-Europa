@@ -1045,9 +1045,9 @@
  GER_gw_armored_car_equipment_short:0 "Sdkfz 222"
  GER_armored_car_equipment_1:0 "Sonderkraftfahrzeug 231 8-rad"
  GER_armored_car_equipment_1_short:0 "Sdkfz 231"
- GER_armored_car_equipment_2:0 "Sonderkraftfahrzeug 234 "Puma""
+ GER_armored_car_equipment_2:0 "Sonderkraftfahrzeug 234 \"Puma\""
  GER_armored_car_equipment_2_short:0 "Puma"
- GER_armored_car_at_equipment:0 "Sdkfz 234/4 "Pakwagen""
+ GER_armored_car_at_equipment:0 "Sdkfz 234/4 \"Pakwagen\""
  GER_armored_car_at_equipment_short:0 "Pakwagen"
 
  USA_gw_armored_car_equipment:0 "M1 Armored Car"
