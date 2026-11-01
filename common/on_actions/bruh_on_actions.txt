@@ -1,6 +1,7 @@
 on_actions = {
 	on_startup = {
 		effect = {
+			log = "MAGNA_DIAG_STARTUP_BEGIN"
 			AUS = {
 				every_owned_state = {
 					limit = {
@@ -10,6 +11,7 @@ on_actions = {
 					set_resistance = 10
 				}
 			}
+			log = "MAGNA_DIAG_STARTUP_END"
 		}
 	}
 	on_monthly_ENG = {
