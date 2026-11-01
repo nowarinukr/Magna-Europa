@@ -1,0 +1,878 @@
+﻿capital = 2475
+
+set_research_slots = 3
+set_stability = 1
+set_war_support = 1
+set_convoys = 800
+starting_train_buffer = 2
+
+if = {
+	limit = { has_dlc = "Together for Victory" }
+	set_autonomy = {
+		target = CAN
+		autonomous_state = autonomy_dominion
+	}
+	set_autonomy = {
+		target = EGY
+		autonomous_state = autonomy_protectorate
+	}
+	else = { puppet = EGY }
+}
+give_guarantee = BEL
+
+# Starting tech
+set_technology = {
+	infantry_weapon_1 = 1
+	infantry_weapon_2 = 1
+	machine_gun = 1
+	horse_equipment = 1
+	light_field_gun1 = 1
+	light_field_gun2 = 1
+	heavy_field_gun1 = 1
+	heavy_field_gun2 = 1
+	tech_mountaineers = 1
+
+	tech_support = 1
+	tech_engineers = 1
+
+	basic_industry = 1
+	advanced_industry = 1
+	mechanical_tech_1 = 1
+	tanktrack1 = 1
+
+	# Navy
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_submarine = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	improved_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+	improved_ship_hull_heavy = 1
+	advanced_ship_hull_heavy = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	improved_light_battery = 1
+	basic_medium_battery = 1
+	basic_heavy_battery = 1
+	improved_heavy_battery = 1
+	basic_secondary_battery = 1
+	improved_secondary_battery = 1
+	basic_torpedo = 1
+	improved_ship_torpedo_launcher = 1
+	armor_scheme_1 = 1
+	armor_scheme_2 = 1
+	armor_scheme_3 = 1
+	damage_control_1 = 1
+	damage_control_2 = 1
+	fire_control_methods_1 = 1
+	basic_engines = 1
+	engines_2 = 1
+	engines_3 = 1
+	engines_4 = 1
+	mtg_transport = 1
+}
+
+set_convoys = 10
+
+set_politics = {
+    ruling_party = democratic
+    last_election = "1910.1.15"
+    election_frequency = 60
+    elections_allowed = yes
+}
+set_popularities = {
+    democratic = 96
+    fascism = 2
+    communism = 1
+    neutrality = 1
+}
+
+add_ideas = {
+	volunteer_only
+	free_trade
+	low_economic_mobilisation
+	ENG_bef
+	ENG_empire_idea
+	ENG_royal_navy
+}
+
+set_naval_oob = "ENG_navy"
+oob = "ENG_1910"
+
+recruit_character = ENG_george_v
+recruit_character = ENG_john_french
+recruit_character = ENG_sir_douglas_haig
+recruit_character = ENG_hamilton_ism
+recruit_character = ENG_aylmer_hunterweston
+recruit_character = ENG_butler_sir_rhk
+recruit_character = ENG_byng_jhg
+recruit_character = ENG_cavan
+recruit_character = ENG_elles
+recruit_character = ENG_horne_sir_h
+recruit_character = ENG_maude
+recruit_character = ENG_beatty
+recruit_character = ENG_jellicoe
+recruit_character = ENG_pakenham
+recruit_character = ENG_henderson
+recruit_character = ENG_trenchard
+recruit_character = ENG_balfour
+recruit_character = ENG_asquith
+recruit_character = ENG_lloyd_george
+
+set_variable = { ENG_unique_cap = 4 }
+
+#### SUBS ####
+create_equipment_variant = {
+	name = "C Class"
+	type = ship_hull_submarine_1
+	name_group = ENG_SS_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_1
+	}
+}
+
+create_equipment_variant = {
+	name = "D Class"
+	type = ship_hull_submarine_1
+	name_group = ENG_SS_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_2
+	}
+}
+
+#### DESTROYERS ####
+create_equipment_variant = {
+	name = "Pre-1905 Destroyer"
+	type = ship_hull_light_1
+	name_group = ENG_DD_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = light_ship_engine_coal_1
+		fixed_ship_torpedo_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "1905 Destroyer"
+	type = ship_hull_light_2
+	name_group = ENG_DD_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = light_ship_engine_1
+		fixed_ship_torpedo_slot = ship_torpedo_1
+		mid_1_custom_slot = ship_light_secondaries_1
+	}
+}
+
+#### SCOUT CRUISERS ####
+create_equipment_variant = {
+	name = "Sentinel/Adventure/Forward/Pathfinder Class"
+	type = ship_hull_cruiser_scout
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_1
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "Boadicea Class"
+	type = ship_hull_cruiser_scout_2
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_2
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = empty
+	}
+}
+
+create_equipment_variant = {
+	name = "Blonde/Active Class"
+	type = ship_hull_cruiser_scout_2
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_2
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_light_secondaries_2
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = empty
+	}
+}
+
+#### PROTECTED CRUISERS ####
+create_equipment_variant = {
+	name = "Mersey/Surprise Class"
+	type = ship_hull_cruiser_protected
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Marathon/Barnham Class"
+	type = ship_hull_cruiser_protected
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_light_battery_1
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		fixed_ship_armor_slot = ship_armor_cruiser_1
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Pearl Class"
+	type = ship_hull_cruiser_protected
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_2
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_secondaries_slot = empty
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		fixed_ship_armor_slot = empty
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Apollo/Astraea Class"
+	type = ship_hull_cruiser_protected
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_light_battery_2
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		fixed_ship_armor_slot = ship_armor_cruiser_3
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Eclipse/Arrogant Class"
+	type = ship_hull_cruiser_protected
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_light_battery_2
+		fixed_ship_anti_air_slot = ship_light_secondaries_2
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Pelorus Class"
+	type = ship_hull_cruiser_protected
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_2
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_secondaries_slot = empty
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		fixed_ship_armor_slot = empty
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Highflyer/Challenger Class"
+	type = ship_hull_cruiser_protected
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_secondaries_2
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Topaze Class"
+	type = ship_hull_cruiser_protected
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_2
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_light_battery_2
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+#### LIGHT CRUISERS ####
+create_equipment_variant = {
+	name = "Town Class"
+	type = ship_hull_cruiser_light
+	name_group = ENG_CL_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_4
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_4
+		fixed_ship_secondaries_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+#### ARMOURED CRUISERS ####
+create_equipment_variant = {
+	name = "Blake/Edgar Class"
+	type = ship_hull_cruiser_armoured
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		front_1_custom_slot = empty
+		mid_1_custom_slot = ship_torpedo_1
+		rear_1_custom_slot = ship_light_secondaries_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Powerful/Cressy Class"
+	type = ship_hull_cruiser_armoured
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		fixed_ship_armor_slot = ship_armor_cruiser_4
+		front_1_custom_slot = ship_light_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+		rear_1_custom_slot = ship_light_secondaries_2
+	}
+}
+
+create_equipment_variant = {
+	name = "Diadem/Monmouth/Devonshire Class"
+	type = ship_hull_cruiser_armoured
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		fixed_ship_armor_slot = ship_armor_cruiser_3
+		front_1_custom_slot = ship_light_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+		rear_1_custom_slot = ship_light_secondaries_2
+	}
+}
+
+create_equipment_variant = {
+	name = "Drake Class"
+	type = ship_hull_cruiser_armoured
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		fixed_ship_armor_slot = ship_armor_cruiser_4
+		front_1_custom_slot = ship_light_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+		rear_1_custom_slot = ship_light_secondaries_2
+	}
+}
+
+create_equipment_variant = {
+	name = "Duke of Edinburgh Class"
+	type = ship_hull_cruiser_armoured
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		fixed_ship_armor_slot = ship_armor_cruiser_4
+		front_1_custom_slot = empty
+		mid_1_custom_slot = ship_torpedo_1
+		rear_1_custom_slot = ship_light_secondaries_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Minotaur Class"
+	type = ship_hull_cruiser_armoured
+	name_group = ENG_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		fixed_ship_armor_slot = ship_armor_cruiser_4
+		front_1_custom_slot = ship_light_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+		rear_1_custom_slot = ship_light_secondaries_2
+	}
+}
+
+#### BATTLESHIPS ####
+create_equipment_variant = {
+	name = "Royal Sovereign Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_ironclad
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_2
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_1
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Majestic Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_0
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_1
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Canopus Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_0
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_bb_1
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Formidable Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_0
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_bb_2
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "London Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_0
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_2
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Duncan Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_0
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_bb_2
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "King Edward VII Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_0
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Swiftsure Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_0
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_2
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Lord Nelson Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_0
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Dreadnought Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_1
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Bellerophon Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_1
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "St Vincent Class"
+	name_group = ENG_BB_HISTORICAL 
+	type = ship_hull_heavy_1
+	parent_version = 0 
+	obsolete = yes 
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Colossus Class"
+	name_group = ENG_BB_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_2
+	}
+}
+
+create_equipment_variant = {
+	name = "Orion Class"
+	name_group = ENG_BB_HISTORICAL
+	type = ship_hull_heavy_2
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_4
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_2
+	}
+}
+
+create_equipment_variant = {
+	name = "King George V Class"
+	name_group = ENG_BB_HISTORICAL
+	type = ship_hull_heavy_2
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_4
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_2
+	}
+}
+
+create_equipment_variant = {
+	name = "Iron Duke Class"
+	name_group = ENG_BB_HISTORICAL
+	type = ship_hull_heavy_2
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_3
+		fixed_ship_engine_slot = heavy_ship_engine_coal_4
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_2
+	}
+}
+#### BATTLECRUISERS ####
+create_equipment_variant = {
+	name = "Invincible Class"
+	name_group = ENG_BC_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_5
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bc_1
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Indefatigable Class"
+	name_group = ENG_BC_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_5
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bc_1
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Lion Class"
+	name_group = ENG_BC_HISTORICAL
+	type = ship_hull_heavy_2
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_6
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bc_2
+		mid_1_custom_slot = ship_torpedo_2
+	}
+}
+
+create_equipment_variant = {
+	name = "Queen Mary Class"
+	name_group = ENG_BC_HISTORICAL
+	type = ship_hull_heavy_2
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_6
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bc_2
+		mid_1_custom_slot = ship_torpedo_2
+	}
+}
+
+

@@ -1,0 +1,29 @@
+
+state={
+	id=2081
+	name="STATE_2081"
+	provinces={
+		2025 13272 
+	}
+	history = {
+		victory_points = { 2025 80 }
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 2
+			2025 = {
+				bunker = 1
+			}
+			13272 = {
+				bunker = 1
+			}
+		}
+	}
+	manpower=623431
+	state_category=metropolis
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

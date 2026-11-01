@@ -1,0 +1,228 @@
+characters={
+	TUR_talaat={
+		name="Talaat Pasha"
+		portraits={
+			civilian={
+				large="gfx/leaders/TUR/portrait_talaat_pasha.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={ dictator }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	TUR_hamid_ii={
+		name="Abdul Hamid II"
+		portraits={
+			civilian={
+				large="gfx/leaders/TUR/portrait_hamid_ii.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	TUR_mehmed_v={
+		name="Mehmed V"
+		portraits={
+			civilian={
+				large="gfx/leaders/TUR/portrait_mehmed_v.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	TUR_Ismail_enver_pasa={
+		name="İsmail Enver Paşa"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/portrait_enver_pasha.dds"
+			}
+		}
+		field_marshal={
+			traits={ politically_connected trait_reckless }
+			skill=2
+			attack_skill=3
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=0
+		}
+	}
+	TUR_mustafa_kemal={
+		name="Mustafa Kemal Paşa"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/portrait_kemal.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer brilliant_strategist trait_cautious }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+	TUR_mehmed_esad_pasa={
+		name="Mehmed Esad Paşa"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/portrait_esad_pasha.dds"
+			}
+		}
+		corps_commander={
+			traits={ career_officer brilliant_strategist war_hero }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+	TUR_faik_pasha={
+		name="Faik Paşa"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/portrait_faik_pasha.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer inflexible_strategist }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=0
+		}
+	}
+	TUR_fevsi_cakmak={
+		name="Fevzi Çakmak"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/portrait_cakmak.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=0
+		}
+	}
+	TUR_cevat_pasha={
+		name="Cevat Çobanlı"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/portrait_cevat_pasha.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery career_officer inflexible_strategist politically_connected }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=0
+		}
+	}
+	TUR_cemil_conk={
+		name="Cemil Conk"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/portrait_cemil_conk.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer inflexible_strategist trait_cautious }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=0
+		}
+	}
+	TUR_rauf_orbray={
+		name="Rauf Orbay"
+		portraits={
+			army={
+				large="gfx/leaders/TUR/portrait_orbay.dds"
+			}
+		}
+		navy_leader={
+			traits = { navy_career_officer navy_media_personality }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=1
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	TUR_souchon={
+		name="Wilhelm Souchon"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_souchon.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = TUR_souchon
+			allowed = {
+				original_tag = TUR
+			}
+			available = {
+				has_completed_focus = TUR_request_naval_advisors
+			}
+			cost = 100
+			traits = {
+				naval_advisor 
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+	TUR_ozer={
+		name="Yusuf Ziya Özer"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_ozer.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = TUR_ozer
+			allowed = {
+				original_tag = TUR
+			}
+			available = {
+				has_completed_focus = TUR_cult_of_science
+			}
+			cost = 100
+			traits = {
+				social_darwinist 
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+}

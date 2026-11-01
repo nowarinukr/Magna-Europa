@@ -1,0 +1,316 @@
+ideas={
+	country = {
+	
+		AUS_mob_1 = {
+			allowed = {original_tag = AUS }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.045
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		
+		AUS_mob_2 = {
+			name = AUS_mob_1
+			allowed = {original_tag = AUS }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.045
+			}
+		}
+
+		AUS_multi_ethnic_army = {
+			picture = tfv_can_conscription_crisis
+			modifier = {
+				non_core_manpower = 0.5
+				army_core_attack_factor = -0.05
+				army_core_defence_factor = -0.05
+				army_morale_factor = -0.1
+			}
+		}
+
+		AUS_multi_ethnic_army_2 = {
+			picture = tfv_can_conscription_crisis
+			modifier = {
+				non_core_manpower = 0.65
+				army_core_attack_factor = -0.075
+				army_core_defence_factor = -0.075
+				army_morale_factor = -0.1
+			}
+		}
+
+		AUS_multi_ethnic_army_0 = {
+			picture = tfv_can_conscription_crisis
+			modifier = {
+				non_core_manpower = 0.35
+				army_core_attack_factor = -0.025
+				army_core_defence_factor = -0.025
+				army_morale_factor = -0.05
+			}
+		}
+
+		AUS_multi_ethnic_state = {
+			picture = HUN_hungarian_monarchy_habsburg
+			modifier = {
+				compliance_growth = 0.5
+				stability_factor = -0.15
+				political_power_factor = -0.2
+			}
+		}
+
+		AUS_multi_ethnic_state_2 = {
+			picture = HUN_hungarian_monarchy_habsburg
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = -0.1
+			}
+		}
+
+		AUS_emergency_powers_idea = {
+			picture = EST_democratic_opposition
+			modifier = {
+				economy_cost_factor = -0.25
+				trade_laws_cost_factor = -0.25
+				political_advisor_cost_factor = -0.25
+				mobilization_laws_cost_factor = -0.25
+			}
+		}
+
+		AUS_polish_legions_idea = {
+			picture = generic_reserve_divisions
+			modifier = {
+				exile_manpower_factor = 10
+			}
+		}
+
+		AUS_poor_steel = {
+			picture = FRA_factory_strikes
+			modifier = {
+				local_resources_factor = -0.1
+			}
+			equipment_bonus = {
+				light_field_gun_equipment = {
+					reliability = -0.1
+					instant = yes
+				}
+				heavy_field_gun_equipment = {
+					reliability = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		AUS_general_staff = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = YUG_yugoslavian_general_staff
+
+			modifier = {
+				experience_gain_army_factor = -0.1
+				planning_speed = -0.2
+				max_planning = 0.05
+				max_training = -0.1
+			}
+		}
+
+		AUS_general_staff_fort = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = YUG_yugoslavian_general_staff
+
+			modifier = {
+				experience_gain_army_factor = -0.1
+				planning_speed = -0.3
+				max_planning = 0.05
+				max_training = -0.1
+				cat_superior_firepower_cost_factor = -0.1
+				dig_in_speed_factor = 0.5
+				army_speed_factor = -0.05
+				max_dig_in_factor = 0.1
+			}
+		}
+
+		AUS_general_staff_fort_2 = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = YUG_yugoslavian_general_staff
+
+			modifier = {
+				experience_gain_army_factor = -0.1
+				planning_speed = -0.3
+				max_planning = 0.05
+				max_training = -0.1
+				cat_superior_firepower_cost_factor = -0.1
+				dig_in_speed_factor = 0.5
+				army_speed_factor = -0.05
+				max_dig_in_factor = 0.1
+				pocket_penalty = -0.2
+				out_of_supply_factor = -0.1
+			}
+		}
+
+		AUS_general_staff_mob = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = YUG_yugoslavian_general_staff
+
+			modifier = {
+				experience_gain_army_factor = -0.1
+				max_training = -0.1
+				dig_in_speed_factor = -0.25
+				planning_speed = 0.1
+				cat_mobile_warfare_cost_factor = -0.1
+			}
+		}
+
+		AUS_general_staff_mob_2 = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = YUG_yugoslavian_general_staff
+
+			modifier = {
+				dig_in_speed_factor = -0.25
+				planning_speed = 0.1
+				cat_mobile_warfare_cost_factor = -0.1
+			}
+		}
+
+		AUS_artillery_conversion = {
+			picture = generic_artillery_regiments
+			modifier = {
+				equipment_conversion_speed = 1.0
+				equipment_upgrade_xp_cost = -0.5
+			}
+			equipment_bonus = {
+				light_field_gun_equipment_1 = {
+					build_cost_ic = -0.1
+					instant = yes
+				}
+			}
+		}
+
+		AUS_bureacratic_restructuring = {
+			picture = generic_purge
+			modifier = {
+				stability_factor = -0.1
+				political_power_factor = -0.25
+			}
+		}
+
+		AUS_golden_age = {
+			picture = FRA_market_dynamism
+
+			cancel = { 
+				has_war = yes
+			}
+
+			modifier = {
+			    consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.05
+				custom_modifier_tooltip = AUS_golden_age_tt
+			}
+		}
+
+		AUS_golden_age_2 = {
+			picture = FRA_market_dynamism
+
+			cancel = { 
+				has_war = yes
+			}
+
+			modifier = {
+			    consumer_goods_factor = -0.05
+				production_speed_buildings_factor = 0.05
+				production_speed_rail_way_factor = 0.35
+				custom_modifier_tooltip = AUS_golden_age_tt
+			}
+		}
+
+		AUS_factory_takeover = {
+			picture = tur_etatism
+
+			cancel = { 
+				has_war = yes
+			}
+
+			modifier = {
+				conversion_cost_civ_to_mil_factor = -0.25
+				conversion_cost_mil_to_civ_factor = -0.25
+				industry_repair_factor = 0.5
+			}
+		}
+
+		AUS_continue_tegethoff = {
+			picture = generic_navy_bonus
+
+			cancel = { 
+				has_war = yes
+			}
+
+			equipment_bonus = {
+				ship_hull_heavy_1 = {
+					build_cost_ic = -0.2 instant = yes
+				}
+			}
+		}
+
+		AUS_refit_plan = {
+			picture = generic_coastal_defense_ships
+
+			cancel = { 
+				has_war = yes
+			}
+
+			modifier = {
+				refit_speed = 0.5
+				refit_ic_cost = -0.05
+			}
+		}
+
+		AUS_coastal_defence_idea = {
+			picture = generic_coastal_navy
+
+			cancel = { 
+				has_war = yes
+			}
+
+			modifier = {
+				navy_max_range_factor = -0.25
+				naval_enemy_fleet_size_ratio_penalty_factor = 0.1
+				naval_retreat_speed = 0.1
+				strike_force_movement_org_loss = -0.25
+			}
+			equipment_bonus = {
+				ship_hull_cruiser_coastal_defense_ship = {
+					build_cost_ic = -0.2 instant = yes
+				}
+			}
+		}
+
+	}
+}

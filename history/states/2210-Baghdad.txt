@@ -1,0 +1,27 @@
+
+state={
+	id=2210
+	name="STATE_2210"
+			
+	history = {
+		owner = TUR
+		add_core_of = PAL
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 2
+		}
+		set_state_flag = TUR_arab_state
+	    victory_points = {
+		    18589 80 #Baghdad
+		}
+	}
+	
+	provinces={
+		18589 18844 
+	}
+	manpower=1462816
+	state_category=metropolis
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

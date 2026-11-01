@@ -1,0 +1,539 @@
+focus_tree = {
+	id = bulgaria_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BUL
+		}
+	}
+
+	continuous_focus_position = { x = 0 y = 1300 }
+	
+	default = no
+
+	focus = {
+		id = BUL_dreams_of_byzantium
+		icon = GFX_focus_BUL_restore_the_bulgarian_patriarchate
+		x = 3
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+
+	focus = {
+		id = BUL_contact_imro
+		icon = GFX_focus_BUL_support_macedonian_organizations
+		prerequisite = { focus = BUL_dreams_of_byzantium }
+		x = -2
+		y = 1
+		relative_position_id = BUL_dreams_of_byzantium
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = BUL_imro
+		}
+	}
+
+	focus = {
+		id = BUL_integrate_revolutionaries
+		icon = GFX_focus_BUL_condemn_macedonian_organizations
+		prerequisite = { focus = BUL_contact_imro }
+		x = 0
+		y = 1
+		relative_position_id = BUL_contact_imro
+		cost = 10
+		available = {
+			OR = {
+				has_completed_focus = BUL_national_catastrophe
+				has_completed_focus = BUL_glorius_triumph
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_claimed_by = BUL
+					NOT = {
+						is_core_of = BUL
+					}
+				}
+				add_core_of = BUL
+				add_dynamic_modifier = { modifier = semi_autonomous_state }
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_nationalist_minister
+		icon = GFX_focus_BUL_form_a_regency_council
+		prerequisite = { focus = BUL_dreams_of_byzantium }
+		x = 2
+		y = 1
+		relative_position_id = BUL_dreams_of_byzantium
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = BUL_ivan_geshov
+		}
+	}
+
+	focus = {
+		id = BUL_invite_industrialists
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = BUL_nationalist_minister }
+		x = -1
+		y = 1
+		relative_position_id = BUL_nationalist_minister
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = BUL_foreign_investments
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_public_investments
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = BUL_invite_industrialists }
+		x = 0
+		y = 1
+		relative_position_id = BUL_invite_industrialists
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = BUL_public_investments_idea
+		}
+	}
+
+	focus = {
+		id = BUL_proportional_representation
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = BUL_nationalist_minister }
+		x = 1
+		y = 1
+		relative_position_id = BUL_nationalist_minister
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = BUL_state_visits
+		icon = GFX_focus_BUL_the_return_of_ferdinand
+		prerequisite = { focus = BUL_proportional_representation }
+		x = 0
+		y = 1
+		relative_position_id = BUL_proportional_representation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_trait = {
+				character = BUL_ferdinand_i
+				ideology = despotism
+				trait = connected_citizen
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_glorius_triumph
+		icon = GFX_focus_BUL_guardians_of_the_balkans
+		prerequisite = { focus = BUL_state_visits }
+		prerequisite = { focus = BUL_public_investments }
+		mutually_exclusive = { focus = BUL_national_catastrophe }
+		x = 0
+		y = 1
+		relative_position_id = BUL_public_investments
+		cost = 10
+		available = {
+			has_global_flag = balkan_2_bulgarian_victory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_unit_leader = {
+				gain_xp = 100
+			}
+			add_trait = {
+				character = BUL_ferdinand_i
+				ideology = conservatism
+				trait = patriot_king
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_national_catastrophe
+		icon = GFX_focus_CZE_german_puppet
+		prerequisite = { focus = BUL_state_visits }
+		prerequisite = { focus = BUL_public_investments }
+		mutually_exclusive = { focus = BUL_glorius_triumph }
+		x = 0
+		y = 1
+		relative_position_id = BUL_state_visits
+		cost = 10
+		available = {
+			OR = {
+				has_global_flag = balkan_2_bul_deafeat
+				has_global_flag = balkan_2_bul_stalemate
+				has_global_flag = balkan_stalemate_flag
+				has_global_flag = balkan_ottoman_victory
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BUL_national_catastrophe_idea_2
+				remove_idea = BUL_national_catastrophe_idea
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_cut_russian_ties
+		icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+		prerequisite = { focus = BUL_glorius_triumph focus = BUL_national_catastrophe }
+		x = 1
+		y = 1
+		relative_position_id = BUL_glorius_triumph
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = BUL_vasil_radoslav
+			remove_ideas = BUL_ivan_geshov
+		}
+	}
+
+	focus = {
+		id = BUL_friendship_treaty
+		icon = GFX_focus_chi_mission_to_germany
+		prerequisite = { focus = BUL_cut_russian_ties }
+		x = -1
+		y = 1
+		relative_position_id = BUL_cut_russian_ties
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_to_tech_sharing_group = axis_research
+		}
+	}
+
+	focus = {
+		id = BUL_reassure_people
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = BUL_cut_russian_ties }
+		x = 1
+		y = 1
+		relative_position_id = BUL_cut_russian_ties
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = BUL_military_buildup
+		icon = GFX_focus_SOV_merge_plants
+		prerequisite = { focus = BUL_cut_russian_ties }
+		x = 0
+		y = 2
+		relative_position_id = BUL_cut_russian_ties
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = BUL_military_buildup_idea
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_reconcile_ottomans
+		icon = GFX_focus_generic_befriend_turkey
+		prerequisite = { focus = BUL_military_buildup }
+		x = 0
+		y = 1
+		relative_position_id = BUL_military_buildup
+		cost = 10
+		available = {
+			has_global_flag = great_war_started_flag
+			OR = {
+				date > 1915.6.1
+				GER = {
+					surrender_progress > 0.5
+				}
+				AUS = {
+					surrender_progress > 0.5
+				}
+				TUR = {
+					surrender_progress > 0.5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_global_flag = balkan_2_bul_deafeat
+				}
+				transfer_state = 1969
+				transfer_state = 2006
+			}
+			remove_ideas = TUR_diplo_isolation
+			GER = {
+				add_to_faction = BUL
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_prussia_of_the_balkans
+		icon = GFX_focus_BUL_prussia_of_the_balkans
+		x = 12
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = BUL_purchase_howitzers
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = BUL_prussia_of_the_balkans }
+		x = -2
+		y = 1
+		relative_position_id = BUL_prussia_of_the_balkans
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = BUL_schneider_purchases
+		}
+	}
+
+	focus = {
+		id = BUL_modernise_mountain_guns
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = BUL_prussia_of_the_balkans }
+		x = 2
+		y = 1
+		relative_position_id = BUL_prussia_of_the_balkans
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = mountain_gun
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = tech_mountaineers
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_expand_high_command
+		icon = GFX_focus_chi_army_reform
+		prerequisite = { focus = BUL_prussia_of_the_balkans }
+		x = 0
+		y = 1
+		relative_position_id = BUL_prussia_of_the_balkans
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 50
+			add_command_power = 100
+		}
+	}
+
+	focus = {
+		id = BUL_promote_militarism
+		icon = GFX_focus_BUL_bulgarian_administration_of_the_balkans
+		prerequisite = { focus = BUL_expand_high_command }
+		x = 0
+		y = 1
+		relative_position_id = BUL_expand_high_command
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BUL_balkan_prussia_2
+				remove_idea = BUL_balkan_prussia
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_lessons_of_war
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = BUL_promote_militarism }
+		x = 0
+		y = 1
+		relative_position_id = BUL_promote_militarism
+		cost = 5
+		available = {
+			OR = {
+				has_global_flag = balkan_league_victory_flag
+				has_global_flag = balkan_ottoman_victory
+				has_global_flag = balkan_stalemate_flag
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 50
+		}
+	}
+
+	focus = {
+		id = BUL_siege_warfare
+		icon = GFX_focus_generic_railway_gun
+		prerequisite = { focus = BUL_lessons_of_war }
+		x = -2
+		y = 1
+		relative_position_id = BUL_lessons_of_war
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				technology = tech_engineers2
+				technology = tech_engineers3
+				technology = tech_engineers4
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_siege_artillery
+				category = cat_heavy_artillery
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_mg_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_tactical_improvements
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = BUL_lessons_of_war }
+		x = 2
+		y = 1
+		relative_position_id = BUL_lessons_of_war
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = BUL_embrace_revanchism
+		icon = GFX_focus_BUL_consolidate_the_third_bulgarian_state
+		prerequisite = { focus = BUL_lessons_of_war }
+		x = 0
+		y = 1
+		relative_position_id = BUL_lessons_of_war
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BUL_balkan_prussia_3
+				remove_idea = BUL_balkan_prussia_2
+			}
+		}
+	}
+
+}

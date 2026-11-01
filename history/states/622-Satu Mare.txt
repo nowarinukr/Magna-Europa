@@ -1,0 +1,28 @@
+
+state={
+	id=622
+	name="STATE_622"
+
+	history={
+		owner = AUS
+		add_core_of = AUS
+		add_core_of = HUN
+		add_core_of = ROM
+		buildings = {
+			infrastructure = 2
+
+		}
+		victory_points = {
+			20397 10 
+		}
+
+	}
+
+	provinces={
+		3219 8609 13549 17003 20397 
+	}
+	manpower=167321
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

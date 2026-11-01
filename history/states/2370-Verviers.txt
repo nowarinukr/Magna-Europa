@@ -1,0 +1,34 @@
+
+state={
+	id=2370
+	name="STATE_2370"
+	history={
+		owner = BEL
+		add_core_of = BEL
+		buildings = {
+			infrastructure = 2
+			arms_factory = 2
+			industrial_complex = 4
+			12503 = {
+				bunker = 1
+			}
+			12549 = {
+				bunker = 1
+			}
+		}
+		 
+		victory_points = {
+            12503 5 #Verviers
+        }
+		victory_points = {
+            12549 5 #Seraing
+        }
+    }
+	provinces={
+		12503 12542 12549 
+	}
+	manpower=148730
+	state_category=city
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

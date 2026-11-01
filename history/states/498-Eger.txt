@@ -1,0 +1,26 @@
+
+state={
+	id=498
+	name="STATE_498"
+	history={
+		owner = AUS
+		add_core_of = AUS
+		add_claim_by = CZE
+		
+		victory_points = {
+			4097 2 #Eger
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+	provinces={
+		2731 3308 4097 12630 12688 12755 
+	}
+	manpower=324595
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

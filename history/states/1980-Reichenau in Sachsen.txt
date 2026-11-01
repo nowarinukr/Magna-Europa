@@ -1,0 +1,20 @@
+state={
+	id=1980
+	name="STATE_1980"
+	provinces={
+		 20058
+	}
+	history={
+		owner = AUS
+		add_core_of = AUS
+		add_claim_by = CZE
+		buildings = {
+			infrastructure = 4
+		}
+		
+    }
+	manpower=7250
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

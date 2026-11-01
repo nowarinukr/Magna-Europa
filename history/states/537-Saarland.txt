@@ -1,0 +1,34 @@
+
+state={
+	id=537
+	name="STATE_537"
+	provinces={
+		6453 8803 9312 9478 12977 12993 13047 
+	}
+	resources={
+		steel=100
+		aluminium = 150
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 3
+		}
+		
+		
+        victory_points = {
+            13047 20 #Saarbrücken
+        }
+        victory_points = {
+            12993 2 #Neunkirchen
+        }
+
+    }
+	manpower=388080
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

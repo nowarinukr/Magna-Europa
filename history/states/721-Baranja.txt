@@ -1,0 +1,27 @@
+
+state={
+	id=721
+	name="STATE_721"
+
+	history={
+		owner = AUS
+		add_core_of = SER
+		add_claim_by = HUN
+		buildings = {
+			infrastructure = 3
+
+		}
+		victory_points = {
+			14272 5 
+		}
+		set_compliance = 25
+	}
+
+	provinces={
+		6375 14262 14272 14316 20227 
+	}
+	manpower=201140
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

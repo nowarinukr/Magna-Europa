@@ -1,0 +1,112 @@
+ideas={
+	country = {
+	
+		ITA_mob_1 = {
+			allowed = { original_tag = ITA }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.025
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+
+		ITA_mob_2 = {
+			name = ITA_mob_1
+			allowed = { original_tag = ITA }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.025
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+	
+		ITA_mob_3 = {
+			name = ITA_mob_1
+			allowed = { original_tag = ITA }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.025
+			}
+		}
+		
+		ITA_disapora = {
+			allowed = { original_tag = ITA }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = prc_low_popular_support3
+			modifier = {
+				stability_factor = -0.2
+				monthly_population = -1.15
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		ITA_disapora_2 = {
+			allowed = { original_tag = ITA }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = prc_low_popular_support2
+			modifier = {
+				stability_factor = -0.1
+				monthly_population = -1.15
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		ITA_disapora_3 = {
+			allowed = { original_tag = ITA }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = prc_low_popular_support
+			modifier = {
+				stability_factor = -0.1
+				monthly_population = -0.5
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		ITA_disapora_4 = {
+			allowed = { original_tag = ITA }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = ITA_italian_irredentism
+			modifier = {
+				consumer_goods_factor = -0.05
+			}
+		}
+
+		ITA_risorgimento = {
+			allowed = { original_tag = ITA }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = ITA_italia_irredenta_achieved
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				special_forces_cap = 0.05
+			}
+		}
+	}
+	materiel_manufacturer = {
+		designer = yes 
+		beretta = {
+			cost = 50
+			allowed = { original_tag = ITA }
+			available = {
+				has_completed_focus = ITA_beretta_investments
+			}
+			research_bonus = { infantry_weapons = 0.15 }
+			traits = {
+				beretta_trait
+			}
+		}
+	}
+}

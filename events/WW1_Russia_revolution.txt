@@ -1,0 +1,480 @@
+﻿add_namespace = ww1_russia_revolution
+
+country_event = {
+	id = ww1_russia_revolution.1
+	title = ww1_russia_revolution.1.t
+	desc = ww1_russia_revolution.1.d
+	picture = GFX_report_event_generic_battle
+
+	fire_only_once = yes
+
+	trigger = {
+ 		TAG = SOV
+		has_war = yes
+		casualties > 500000
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = {
+		name = ww1_russia_revolution.1.a
+		RUS_revolutionary_anger_increase_effect = yes
+	}
+}
+
+country_event = {
+	id = ww1_russia_revolution.2
+	title = ww1_russia_revolution.2.t
+	desc = ww1_russia_revolution.2.d
+	picture = GFX_report_event_generic_battle
+
+	fire_only_once = yes
+
+	trigger = {
+ 		TAG = SOV
+		has_war = yes
+		casualties > 1000000
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = {
+		name = ww1_russia_revolution.1.a
+		RUS_revolutionary_anger_increase_effect = yes
+	}
+}
+
+country_event = {
+	id = ww1_russia_revolution.3
+	title = ww1_russia_revolution.3.t
+	desc = ww1_russia_revolution.3.d
+	picture = GFX_report_event_generic_battle
+
+	fire_only_once = yes
+
+	trigger = {
+ 		TAG = SOV
+		has_war = yes
+		casualties > 2000000
+		NOT = {
+			has_global_flag = RUS_revolution_occurred_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = {
+		name = ww1_russia_revolution.1.a
+		RUS_revolutionary_anger_increase_effect = yes
+	}
+}
+
+country_event = {
+	id = ww1_russia_revolution.4
+	title = ww1_russia_revolution.4.t
+	desc = ww1_russia_revolution.4.d
+	picture = GFX_report_event_generic_battle
+
+	fire_only_once = yes
+
+	trigger = {
+ 		TAG = SOV
+		has_war = yes
+		casualties > 3000000
+		NOT = {
+			has_global_flag = RUS_revolution_occurred_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = {
+		name = ww1_russia_revolution.1.a
+		RUS_revolutionary_anger_increase_effect = yes
+	}
+}
+
+country_event = {
+	id = ww1_russia_revolution.5
+	title = ww1_russia_revolution.5.t
+	desc = ww1_russia_revolution.5.d
+	picture = GFX_report_event_generic_battle
+
+	fire_only_once = yes
+
+	trigger = {
+ 		TAG = SOV
+		has_war = yes
+		casualties > 4500000
+		NOT = {
+			has_global_flag = RUS_revolution_occurred_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = {
+		name = ww1_russia_revolution.1.a
+		RUS_revolutionary_anger_big_increase_effect = yes
+	}
+}
+
+country_event = {
+	id = ww1_russia_revolution.7
+	title = ww1_russia_revolution.7.t
+	desc = ww1_russia_revolution.7.d
+	picture = GFX_report_event_generic_battle
+
+	fire_only_once = yes
+
+	trigger = {
+ 		TAG = SOV
+		has_war = yes
+		casualties > 6000000
+		NOT = {
+			has_global_flag = RUS_revolution_occurred_flag
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = {
+		name = ww1_russia_revolution.1.a
+		RUS_revolutionary_anger_big_increase_effect = yes
+	}
+}
+
+country_event = {
+	id = ww1_russia_revolution.11
+	title = ww1_russia_revolution.11.t
+	desc = ww1_russia_revolution.11.d
+	picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+
+	trigger = {
+ 		TAG = SOV
+		has_war = yes
+		check_variable = {
+			var = RUS_revolution_anger
+			value = 10
+			compare = equals
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = {
+		name = ww1_russia_revolution.1.a
+		add_stability = -0.2
+		retire_country_leader = yes
+		remove_unit_leader = 70484
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+			last_election = "1914.1.1"
+			election_frequency = 48
+		}
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.5
+		}
+		add_popularity = {
+			ideology = communism
+			popularity = 0.3
+		}
+		set_global_flag = RUS_revolution_occurred_flag
+		add_timed_idea = {
+			idea = RUS_dual_power
+			days = 180
+		}
+		set_variable = {
+			var = RUS_surrender_marker
+			value = surrender_progress
+		}
+		subtract_from_variable = {
+			var = RUS_surrender_marker
+			value = 0.025
+		}
+	}
+}
+
+country_event = {
+	id = ww1_russia_revolution.12
+	title = ww1_russia_revolution.12.t
+	desc = ww1_russia_revolution.12.d
+	picture = GFX_report_event_worker_protests
+
+	fire_only_once = yes
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = {
+			every_owned_state = {
+				limit = {
+					OR = {
+						is_core_of = POL
+						is_core_of = UKR
+					}
+				}
+				transfer_state_to = GER
+			}
+			GER = {
+				transfer_state = 2082
+				transfer_state = 511
+				transfer_state = 2733
+				transfer_state = 2083
+				transfer_state = 2725
+				transfer_state = 2741
+				transfer_state = 2140
+				transfer_state = 2142
+				transfer_state = 2144
+				transfer_state = 2154
+				transfer_state = 2162
+				transfer_state = 266
+				transfer_state = 2167
+				transfer_state = 2165
+				transfer_state = 134
+				transfer_state = 152
+				transfer_state = 173
+				transfer_state = 165
+				transfer_state = 2138
+				transfer_state = 2143
+				transfer_state = 1351
+				transfer_state = 1349
+				transfer_state = 2170
+				transfer_state = 450
+				transfer_state = 2426
+				transfer_state = 2428
+				transfer_state = 2137
+				transfer_state = 2743
+				transfer_state = 2542
+				transfer_state = 2163
+				transfer_state = 2160
+				transfer_state = 2155
+				transfer_state = 2150
+				transfer_state = 340
+				transfer_state = 2036
+				transfer_state = 2731
+				transfer_state = 2037
+				transfer_state = 2148
+				transfer_state = 278
+				transfer_state = 2151
+				transfer_state = 2149
+				transfer_state = 2157
+				transfer_state = 2156
+				transfer_state = 2164
+				transfer_state = 133
+				transfer_state = 143
+				transfer_state = 145
+				transfer_state = 157
+				transfer_state = 146
+				transfer_state = 155
+				transfer_state = 156
+				transfer_state = 166
+				transfer_state = 95
+				transfer_state = 1347
+				transfer_state = 1350
+				transfer_state = 170
+				transfer_state = 112
+				transfer_state = 172
+				transfer_state = 2772
+				transfer_state = 185
+				transfer_state = 2720
+				transfer_state = 2541
+				transfer_state = 2523
+				transfer_state = 94
+				transfer_state = 87
+				transfer_state = 1346
+				transfer_state = 1352
+				transfer_state = 188
+				transfer_state = 1345
+				transfer_state = 91
+				transfer_state = 67
+				transfer_state = 1344
+				transfer_state = 174
+				transfer_state = 208
+				transfer_state = 107
+				transfer_state = 101
+				transfer_state = 1348
+				transfer_state = 2791
+				transfer_state = 196
+				transfer_state = 2371
+				transfer_state = 206
+				transfer_state = 205
+				transfer_state = 1246
+				transfer_state = 1339
+				transfer_state = 238
+				transfer_state = 242
+				transfer_state = 1104
+				transfer_state = 1178
+				transfer_state = 259
+				transfer_state = 274
+				transfer_state = 275
+				transfer_state = 244
+				transfer_state = 225
+				transfer_state = 1309
+				transfer_state = 1296
+				transfer_state = 2774
+				transfer_state = 2773
+				transfer_state = 2775
+				transfer_state = 1280
+				transfer_state = 207
+				transfer_state = 2697
+				transfer_state = 2136
+				transfer_state = 2159
+				transfer_state = 2158
+				transfer_state = 2135
+				transfer_state = 2161
+				transfer_state = 2134
+				transfer_state = 2152
+				transfer_state = 2153
+				transfer_state = 2686
+				transfer_state = 384
+				transfer_state = 2145
+				transfer_state = 2139
+				transfer_state = 2577
+				transfer_state = 2141
+				transfer_state = 2576
+			}
+			ROM = {
+				transfer_state = 600
+				transfer_state = 1606
+				transfer_state = 1605
+				transfer_state = 1604
+				transfer_state = 1603
+				transfer_state = 1602
+				transfer_state = 2745
+				transfer_state = 1601
+				transfer_state = 794
+				transfer_state = 2744
+			}
+			TUR = {
+				transfer_state = 953
+				transfer_state = 925
+				transfer_state = 933
+			}
+			release = FIN
+			FIN = {
+				start_civil_war = {
+					ideology = communism
+					size = 0.2
+					capital = 114
+				}
+			}
+			white_peace = GER
+			white_peace = AUS
+			white_peace = TUR
+			white_peace = BUL
+			set_global_flag = RUS_civil_war_flag
+		}
+	}
+
+	option = {
+		name = ww1_russia_revolution.12.a
+		start_civil_war = {
+			ruling_party = communism
+			ideology = neutrality
+			size = 0.8
+			army_ratio = 0.6
+			navy_ratio = 0
+			capital = 201
+			set_cosmetic_tag = SOV_provisional
+			set_country_flag = RUS_white_army
+			add_timed_idea = {
+				idea = RUS_siberian_support
+				days = 365
+			}
+			white_peace = GER
+			white_peace = AUS
+			white_peace = TUR
+			white_peace = BUL
+		}
+		white_peace = GER
+		white_peace = AUS
+		white_peace = TUR
+		white_peace = BUL
+		set_stability = 1
+		set_war_support = 1
+		add_popularity = {
+			ideology = communism
+			popularity = 0.80
+		}
+		division_template = {
+			name = "Red Guards"
+			regiments = {
+				reserves = { x = 0 y = 0 }
+				reserves = { x = 0 y = 1 }
+				reserves = { x = 0 y = 2 }
+			}
+		}
+		
+		every_owned_state = {
+			limit = {
+				OR = {
+					has_state_category = large_city
+					has_state_category = metropolis
+					has_state_category = megalopolis
+				}
+			}
+			create_unit = {
+				division = "name = \"Red Guards\" division_template = \"Red Guards\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }"
+				owner = SOV
+			}
+			create_unit = {
+				division = "name = \"Red Guards\" division_template = \"Red Guards\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }"
+				owner = SOV
+			}
+			create_unit = {
+				division = "name = \"Red Guards\" division_template = \"Red Guards\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"SOV\" } }"
+				owner = SOV
+			}
+		}
+		set_cosmetic_tag = SOV_communism
+	}
+
+	option = {
+		name = ww1_russia_revolution.12.b
+		start_civil_war = {
+			ruling_party = neutrality
+			ideology = communism
+			size = 0.5
+			army_ratio = 0.4
+			navy_ratio = 0.5
+			capital = 119
+			white_peace = GER
+			white_peace = AUS
+			white_peace = TUR
+			white_peace = BUL
+		}
+		white_peace = GER
+		white_peace = AUS
+		white_peace = TUR
+		white_peace = BUL
+		set_cosmetic_tag = SOV_provisional
+		set_country_flag = RUS_white_army
+			add_timed_idea = {
+				idea = RUS_siberian_support
+				days = 180
+			}
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.80
+		}
+	}
+}

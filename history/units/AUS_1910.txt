@@ -1,0 +1,339 @@
+﻿
+###################################################################
+
+division_template = {
+	name = "Infanteriedivision"	# Infantry
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Gebirgstruppe"		# Mountain Division
+	regiments = {
+		mountaineers = { x = 0 y = 0 }
+		mountaineers = { x = 0 y = 1 }
+		mountaineers = { x = 0 y = 2 }
+	}
+}
+
+division_template = {
+	name = "Hussars"		# Cavalry
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Honvéd Infantry Division"
+	template_counter = 5
+	is_locked = yes
+	force_allow_recruiting = yes
+	division_cap = 6
+
+	regiments = { 
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = { 
+		honved_bat = { x = 0 y = 0 }
+		artillery_big = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Reservists"
+	is_locked = yes
+	priority = 0
+	is_locked = yes
+	
+	regiments = {
+		reserves = { x = 0 y = 0 }
+		reserves = { x = 0 y = 1 }
+		reserves = { x = 0 y = 2 }
+	}
+	support = { 
+		artillery = { x = 0 y = 0 }
+	} 
+}
+###################################################################
+
+
+
+units = {
+
+	division= { 
+	name = "7. Kavalleriedivision"
+	location = 20066 #Olmütz
+	division_template="Hussars"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "9. Infanteriedivision"
+	location = 13040 #Brünn
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "21. Landwehrinfanteriedivision"
+	location = 20056 #Prag
+	division_template="Infanteriedivision"
+	start_experience_factor=0.05
+	# start_equipment_factor = 0.3 
+	# start_manpower_factor = 0.3
+	}
+
+	division= { 
+	name = "36. Infanteriedivision"
+	location = 20056 #Prag
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "42. Honvedinfanteriedivision"
+	location = 13644 #Sopron
+	division_template="Honvéd Infantry Division"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "13. Infanteriebrigaden"
+	location = 13154 #Budweis
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "22. Landwehrinfanteriedivision"
+	location = 13396 #Linz
+	division_template="Infanteriedivision"
+	start_experience_factor=0.05
+	# start_equipment_factor = 0.3 
+	# start_manpower_factor = 0.3
+	}
+
+	division= { 
+	name = "28. Infanteriedivision"
+	location = 13396 #Linz
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "20. Honvedinfanteriedivision"
+	location = 20070 #Pozsony
+	division_template="Honvéd Infantry Division"
+	start_experience_factor=0.1
+	}
+
+
+	division= { 
+	name = "30. Infanteriedivision"
+	location = 14007 #Marburg
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "23. Honvedinfanteriedivision"
+	location = 2360 #Muraszombat
+	division_template="Honvéd Infantry Division"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "41. Honvedinfanteriedivision"
+	location = 14213 #Temesvar
+	division_template="Honvéd Infantry Division"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "2. Kavalleriedivision"
+	location = 7575 #Triest
+	division_template="Hussars"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "4. Kavalleriedivision"
+	location = 14138 #Laibach
+	division_template="Hussars"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "11.Honved Kavallerie-Division"
+	location = 14328 #Neusatz
+	division_template="Hussars"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "3. Infanteriedivision"
+	location = 14010 #Bozen
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "44. Landwehrinfanteriedivision"
+	location = 14010 #Bozen
+	division_template="Infanteriedivision"
+	start_experience_factor=0.05
+	# start_equipment_factor = 0.3 
+	# start_manpower_factor = 0.3
+	}
+
+	division= { 
+	name = "4. Infanteriedivision"
+	location = 13779 #Innsbruck
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "13. Landwehrinfanteriedivision"
+	location = 13779 #Innsbruck
+	division_template="Infanteriedivision"
+	start_experience_factor=0.05
+	# start_equipment_factor = 0.3 
+	# start_manpower_factor = 0.3
+	}
+
+	division= { 
+	name = "25. Infanteriedivision"
+	location = 20843 #Villach
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "15. Infanteriedivision"
+	location = 13613 #Wiener Neustadt
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "27. Infanteriedivision"
+	location = 20848 #actual Wien
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "39. Honvedinfanteriedivision"
+	location = 13942 #Clausenburg
+	division_template="Honvéd Infantry Division"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "10. Infanteriedivision"
+	location = 2195 #Znaim
+	division_template="Infanteriedivision"
+	start_experience_factor=0.1
+	}
+
+	division= { 
+	name = "26. Landwehrinfanteriedivision"
+	location = 249 #Lemberg
+	division_template="Infanteriedivision"
+	start_experience_factor=0.05
+	# start_equipment_factor = 0.3 
+	# start_manpower_factor = 0.3
+	}
+
+	division= { 
+		name = "19. Infanteriedivision"
+		location = 12810 #Wien
+		division_template="Infanteriedivision"
+		start_experience_factor=0.1
+	}
+
+	division= { 
+		name = "20. Infanteriedivision"
+		location = 6862 #Krakau
+		division_template="Infanteriedivision"
+		start_experience_factor=0.1
+	}
+	division= { 
+		name = "21. Infanteriedivision"
+		location = 6830 #Premissl
+		division_template="Infanteriedivision"
+		start_experience_factor=0.1
+	}
+	division= { 
+		name = "22. Infanteriedivision"
+		location = 12912 #Tarnopol
+		division_template="Infanteriedivision"
+		start_experience_factor=0.1
+	}
+	division= { 
+		name = "23. Infanteriedivision"
+		location = 13410 #Czernowitz
+		division_template="Infanteriedivision"
+		start_experience_factor=0.1
+	}
+	division= { 
+		name = "k.k. Landesschützenregiment 'Trient'"
+		location = 14112 #Trient
+		division_template="Gebirgstruppe"
+		start_experience_factor=0.15
+	}
+	division= { 
+		name = "Landwehr Infanterie Regiment 'Klagenfurt'"
+		location = 13987 #Klagenfurt
+		division_template="Gebirgstruppe"
+		start_experience_factor=0.15
+	}
+}
+############################################################################################
+
+instant_effect = {
+    add_equipment_production = { equipment = { type = infantry_equipment_2 creator = "AUS" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = support_equipment_1 creator = "AUS"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = horse_equipment_0 creator = "AUS"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = machine_gun_equipment_0 creator = "AUS"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = light_field_gun_equipment_1 creator = "AUS" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = heavy_field_gun_equipment_1 creator = "AUS" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+	add_equipment_to_stockpile = {
+		type = heavy_field_gun_equipment_1
+		amount = 100
+		producer = AUS
+	}
+	add_equipment_to_stockpile = {
+		type = armoured_car_equipment_1
+		amount = 1
+		producer = AUS
+	}
+	add_equipment_production = {
+		equipment = {
+			type = railway_gun_equipment_1
+			creator = "AUS" 
+		}
+		requested_factories = 1
+		progress = 0.8
+		amount = 1
+	}
+	add_equipment_production = {
+		equipment = {
+			type = railway_gun_equipment_1
+			creator = "AUS" 
+		}
+		requested_factories = 1
+		progress = 0.5
+		amount = 1
+	}
+}

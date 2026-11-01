@@ -1,0 +1,30 @@
+
+state={
+	id=1515
+	name="STATE_1515"
+
+	history={
+		owner = AUS
+		add_core_of = SER
+		add_core_of = AUS
+		add_core_of = HUN
+		buildings = {
+			infrastructure = 2
+
+		}
+		 
+		
+		victory_points = {
+			14201 2 
+		}
+
+	}
+
+	provinces={
+		2506 14201 14259 
+	}
+	manpower=219510
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

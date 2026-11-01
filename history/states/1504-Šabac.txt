@@ -1,0 +1,29 @@
+
+state={
+	id=1504
+	name="STATE_1504"
+
+	history={
+		owner = SER
+		 
+		add_core_of = SER
+		buildings = {
+			infrastructure = 3
+			20122 = {
+				bunker = 1
+			}
+		}
+		victory_points = {
+			20122 5 
+		}
+
+	}
+
+	provinces={
+		1626 5056 14425 16606 20122 
+	}
+	manpower=241951
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

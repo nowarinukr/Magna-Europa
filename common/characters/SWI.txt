@@ -1,0 +1,15 @@
+characters={
+	SWI_federal_council={
+		name="Federal Council"
+		portraits={
+			civilian={
+				large="gfx/leaders/SWI/Portrait_Switzerland_Federal_assembly.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+}

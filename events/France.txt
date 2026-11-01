@@ -1,0 +1,25 @@
+﻿add_namespace = france
+
+country_event = {
+	id = france.1
+	title = france.1.t
+	desc = france.1.d
+	picture = GFX_report_event_hungary_parliament
+
+	fire_only_once = yes
+
+	trigger = {
+ 		TAG = FRA
+		date > 1911.6.1
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	option = {
+		name = france.1.a
+		set_country_flag = FRA_agadir_crisis
+		add_stability = -0.25
+	}
+}

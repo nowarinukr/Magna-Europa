@@ -1,0 +1,321 @@
+characters={
+	GER_wilhelm_ii={
+		name="Wilhelm II"
+		portraits={
+			civilian={
+				large="gfx/leaders/GER/portrait_willhelm_ii.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={ autocratic_imperialist }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	GER_von_falkenhayn_erich={
+		name="Erich von Falkenhayn"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_falkenhayen.dds"
+			}
+		}
+		field_marshal={
+			traits={ infantry_officer career_officer trait_cautious }
+			skill=4
+			attack_skill=5
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=34040
+		}
+	}
+	GER_duke_albrecht_of_wurttemberg={
+		name="Duke Albrecht of Wurttemberg"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_von_wurttemberg.dds"
+			}
+		}
+		field_marshal={
+			traits={ politically_connected }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=34337
+		}
+	}
+	GER_crown_prince_rupprecht_of_bavaria={
+		name="Crown Prince Rupprecht of Bavaria"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_von_bayern.dds"
+			}
+		}
+		field_marshal={
+			traits={ politically_connected career_officer trait_reckless }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=34547
+		}
+	}
+	GER_crown_prince_wilhelm_of_prussia={
+		name="Crown Prince Wilhelm of Prussia"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_willhelm_iii.dds"
+			}
+		}
+		corps_commander={
+			traits={ politically_connected media_personality }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=34548
+		}
+	}
+	GER_von_kluck={
+		name="Alexander von Kluck"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_von_cluck.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer war_hero old_guard }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=34029
+		}
+	}
+	GER_von_hutier={
+		name="Oskar von Hutier"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_von_hutier.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=34045
+		}
+	}
+	GER_ludendorff={
+		name="Erich Ludendorff"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_ludendorff.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer brilliant_strategist harsh_leader }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+	GER_von_lettowvorbeck={
+		name="Paul von Lettow-Vorbeck"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_lettow_vorbeck.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer war_hero inflexible_strategist }
+			skill=4
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=5
+			legacy_id=0
+		}
+	}
+	GER_von_hindenburg={
+		name="Paul von Hindenburg"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_hindenburg.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer old_guard trait_reckless }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=2
+			legacy_id=0
+		}
+	}
+	GER_von_mackensen={
+		name="August von Mackensen"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_mackensen.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer war_hero career_officer old_guard }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=4
+			legacy_id=0
+		}
+	}
+	GER_hoffmann={
+		name="Max Hoffmann"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_hoffmann.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer brilliant_strategist }
+			skill=4
+			attack_skill=2
+			defense_skill=2
+			planning_skill=5
+			logistics_skill=4
+			legacy_id=0
+		}
+	}
+	GER_bruchmuller={
+		name="Georg Bruchmüller"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_bruchmuller.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery inflexible_strategist }
+			skill=3
+			attack_skill=4
+			defense_skill=4
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=0
+		}
+	}
+	GER_reinhard_scheer={
+		name="Reinhard Scheer"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_scheer.dds"
+			}
+		}
+		navy_leader={
+			traits={ battleship_adherent gunnery_expert bold }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			maneuvering_skill=3
+			coordination_skill=3
+			legacy_id=0
+		}
+	}
+	GER_alfred_von_tirpitz={
+		name="Alfred von Tirpitz"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_tirpitz.dds"
+			}
+		}
+		navy_leader={
+			traits={ old_guard_navy gentlemanly }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			maneuvering_skill=2
+			coordination_skill=3
+			legacy_id=0
+		}
+	}
+	GER_franz_von_hipper={
+		name="Franz von Hipper"
+		portraits={
+			army={
+				large="gfx/leaders/GER/portrait_von_hipper.dds"
+			}
+		}
+		navy_leader={
+			traits={ gunnery_expert chief_engineer }
+			skill=4
+			attack_skill=4
+			defense_skill=2
+			maneuvering_skill=6
+			coordination_skill=1
+			legacy_id=0
+		}
+	}
+	GER_hermann_thomsen={
+		name="Hermann von der Lieth-Thomsen"
+		portraits={
+			army={
+				small="GFX_GER_generic_land_9"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = GER_hermann_thomsen
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				has_completed_focus = GER_establish_fliegertruppen
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	GER_ernst_hoeppner={
+		name="Ernst von Hoeppner"
+		portraits={
+			army={
+				small="GFX_GER_generic_land_6"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = GER_ernst_hoeppner
+			allowed = {
+				original_tag = GER
+			}
+			available = {
+				has_completed_focus = GER_establish_fliegertruppen
+			}
+			traits = {
+				air_air_combat_training_2
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

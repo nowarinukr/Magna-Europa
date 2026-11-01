@@ -1,0 +1,28 @@
+
+state={
+	id=659
+	name="STATE_659"
+	provinces={
+		2576 4296 5873 9600 13823 13873 20089 
+	}
+	history = {
+		owner = AUS
+		add_core_of = AUS
+		add_core_of = HUN
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 2
+		}
+        victory_points = {
+            20089 5
+        }
+		victory_points = {
+            4296 2
+        }
+    }
+	manpower=266867
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

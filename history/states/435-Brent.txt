@@ -1,0 +1,22 @@
+
+state={
+	id=435
+	name="STATE_435"
+	
+	history={
+		owner = ENG
+		add_core_of = ENG
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 10
+		}
+	}
+	provinces={
+		12008 12031 
+	}
+	manpower=2058300
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

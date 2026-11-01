@@ -1,0 +1,126 @@
+add_namespace = germany
+
+country_event = { #Rename Rixdorf
+	id = germany.1
+	title = germany.1.t
+	desc = germany.1.d
+	fire_only_once = yes
+	picture = GFX_report_event_german_reichstag_gathering
+
+	trigger = {
+ 		TAG = GER
+		date > 1912.1.27
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = { 
+		name = germany.1.a
+			set_global_flag = neucolln_renamed
+			1651 = {
+				set_province_name = { id = 13630 name = Neucölln }
+			}
+	}
+}
+
+country_event = { #Berlin Integration
+	id = germany.2
+	title = germany.2.t
+	desc = germany.2.d
+	fire_only_once = yes
+	picture = GFX_report_event_german_reichstag_gathering
+
+	trigger = {
+ 		TAG = GER
+		date > 1912.4.1
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = { 
+		name = germany.2.a
+			set_global_flag = berlin_renamed
+			1651 = {
+				set_state_name = Berlin-Schöneberg
+				set_province_name = { id = 20590 name = Berlin-Schöneberg }
+				set_province_name = { id = 20591 name = Berlin-Wilmersdorf }
+			}
+			1652 = {
+				set_state_name = Berlin-Pankow
+			}
+			1650 = {
+				set_province_name = { id = 805 name = Berlin-Cöpenick }
+			}
+
+	}
+}
+
+country_event = { #Honor Hindenburg
+	id = germany.3
+	title = germany.3.t
+	desc = germany.3.d
+	fire_only_once = yes
+	picture = GFX_report_event_german_reichstag_gathering
+
+	trigger = {
+ 		TAG = GER
+		owns_state = 481
+		controls_state = 481
+		GER_von_hindenburg={
+			is_unit_leader = yes
+			skill > 4
+		}	
+	}
+
+	option = { 
+		name = germany.3.a
+			set_global_flag = zabrze_renamed
+			481 = {
+				set_province_name = { id = 12625 name = Hindenburg }
+			}
+			set_victory_points = {
+			province = 12625
+			value = 20
+			}
+			set_victory_points = {
+			province = 8816
+			value = 15
+			}
+	}
+}
+
+country_event = { #Cöln expansion
+	id = germany.4
+	title = germany.4.t
+	desc = germany.4.d
+	fire_only_once = yes
+	picture = GFX_report_event_generic_rally_3
+
+	trigger = {
+ 		TAG = GER
+		date > 1914.6.10
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	option = { 
+		name = germany.4.a
+			set_global_flag = greater_coln
+			set_victory_points = {
+			province = 20736
+			value = 50
+			}
+			set_victory_points = {
+			province = 12369
+			value = 0
+			}
+	}
+}
+
+

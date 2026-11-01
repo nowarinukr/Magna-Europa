@@ -1,0 +1,209 @@
+ideas={
+	country={
+		ENG_bef = {
+			ledger = army
+			picture = chi_army_corruption3
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				army_org_factor = 0.1
+				experience_gain_army_unit_factor = 0.25
+				minimum_training_level = 0.1
+				training_time_factor = 0.3
+			}
+		}
+
+		ENG_bef_2 = {
+			ledger = army
+			picture = chi_army_corruption3
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				army_attack_factor = 0.1
+				army_org_factor = 0.15
+				breakthrough_factor = 0.1
+				experience_gain_army_unit_factor = 0.25
+				minimum_training_level = 0.2
+				training_time_factor = 0.4
+			}
+		}
+		
+		ENG_mob_1 = {
+			allowed = {original_tag = ENG }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.02
+			}
+		}
+		
+		ENG_empire_idea = {
+			picture = eng_guided_by_britain
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				country_resource_rubber = 100
+				country_resource_steel = 200
+				country_resource_oil = 200
+				country_resource_chromium = 200
+				country_resource_tungsten = 50
+			}
+		}
+		
+		ENG_empire_idea_cap = {
+			picture = eng_guided_by_britain
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				country_resource_rubber = 50
+				country_resource_steel = 10
+				country_resource_oil = 100
+				country_resource_chromium = 100
+				country_resource_tungsten = 25
+			}
+		}
+
+		ENG_empire_idea_2 = {
+			picture = eng_guided_by_britain
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				country_resource_rubber = 100
+				country_resource_steel = 200
+				country_resource_oil = 500
+				country_resource_chromium = 200
+				country_resource_tungsten = 50
+			}
+		}
+		
+		ENG_empire_idea_2_cap = {
+			picture = eng_guided_by_britain
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				country_resource_rubber = 50
+				country_resource_steel = 10
+				country_resource_oil = 250
+				country_resource_chromium = 100
+				country_resource_tungsten = 25
+			}
+		}
+		
+		ENG_royal_navy = {
+			picture = eng_chiefs_of_staff_committee
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				naval_morale_factor = 0.25
+				critical_receive_chance = 0.25
+				naval_retreat_chance = -0.25
+				experience_gain_navy_unit_factor = 0.25
+				navy_max_range_factor = 0.25
+				army_core_attack_factor = 0.25
+				army_core_defence_factor = 0.25
+			}
+		}
+
+		ENG_naval_air_service_idea = {
+			picture = generic_air_payment
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				navy_carrier_air_targetting_factor = 0.1
+				navy_carrier_air_attack_factor = 0.1
+				navy_carrier_air_agility_factor = 0.1
+				naval_strike_targetting_factor = 0.1
+			}
+		}
+		
+		ENG_fuel_commission = {
+			picture = generic_fuel_reserves
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				refit_speed = 0.25
+				base_fuel_gain_factor = 0.25
+				production_speed_fuel_silo_factor = 0.5
+			}
+		}
+		
+		ENG_officer_training = {
+			picture = eng_imperial_conscription
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				experience_gain_factor = 0.25
+				promote_cost_factor = -0.5
+				field_officer_promotion_penalty = -0.25
+			}
+		}
+
+		ENG_education_act_idea = {
+			picture = generic_research_bonus
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				research_speed_factor = 0.15
+			}
+		}
+
+		ENG_imperial_tariffs = {
+			picture = stiff_upper_lip
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				min_export = -0.1
+			}
+			targeted_modifier = {
+				tag = CAN
+				trade_cost_for_target_factor = -0.25
+			}
+		}
+
+		ENG_trade_union_act = {
+			picture = generic_production_bonus
+			allowed = {
+				TAG = ENG
+			}
+			modifier = {
+				industrial_capacity_factory = 0.05
+				stability_factor = -0.05
+			}
+		}
+		
+		ENG_shell_crisis_idea = {
+			picture = FRA_factory_strikes
+			allowed = {
+				TAG = ENG
+			}
+			equipment_bonus = {
+				light_field_gun_equipment = {
+					soft_attack = -0.1
+					breakthrough = -0.1
+					defense = -0.1
+					instant = yes
+				}
+				heavy_field_gun_equipment = {
+					soft_attack = -0.1
+					breakthrough = -0.1
+					defense = -0.1
+					instant = yes
+				}
+			}
+		}
+
+	}
+}

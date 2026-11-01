@@ -1,0 +1,25 @@
+
+state={
+	id=2805
+	name="STATE_2805"
+
+	history={
+		owner = TUR
+		add_core_of = ALB
+		add_core_of = SER
+		add_core_of = BUL
+		buildings = {
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={
+		14856
+	}
+	manpower=6043
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

@@ -1,0 +1,23 @@
+state={
+	id=1385
+	name="STATE_1385"
+	resources={
+		aluminium = 20
+	}
+	history = {
+		owner = ITA
+		add_core_of = ITA
+		
+		buildings = {
+			infrastructure = 4
+		}
+		victory_points = { 14690 5 }
+	}
+	provinces={
+		1767 5677 14690 14723 14785 
+	}
+	manpower=268500
+	state_category=city
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

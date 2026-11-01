@@ -1,0 +1,2928 @@
+unit_upgrades = {
+	AUS_uu_heavy_arty = {
+		icon = generic_military
+
+		allowed = {
+			tag = AUS
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = AUS_uu_upgraded
+			}
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			add_units_to_division_template = {
+				template_name = "Honvéd Infantry Division"
+				support = {
+					heavy_artillery = 0
+				}
+			}
+			set_temp_variable = { temp = 36 }
+			set_temp_variable = { total_unit = num_battalions_with_type@honved_bat }
+			multiply_temp_variable = { total_unit = temp }
+			custom_effect_tooltip = heavy_art_upgrade_tt
+			set_country_flag = AUS_uu_upgraded
+		}
+	}
+
+	AUS_uu_engineer = {
+		icon = generic_military
+
+		allowed = {
+			tag = AUS
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = AUS_uu_upgraded
+			}
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			add_units_to_division_template = {
+				template_name = "Honvéd Infantry Division"
+				support = {
+					engineer = 0
+				}
+			}
+			set_temp_variable = { temp = 100 }
+			set_temp_variable = { total_unit = num_battalions_with_type@honved_bat }
+			multiply_temp_variable = { total_unit = temp }
+			custom_effect_tooltip = engineer_upgrade_tt
+			set_country_flag = AUS_uu_upgraded
+		}
+	}
+	
+	AUS_uu_bigger = {
+		icon = generic_military
+
+		allowed = {
+			tag = AUS
+		}
+
+		visible = {
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			division_template = {
+				name = "Honvéd Infantry Corps"
+				template_counter = 5
+				is_locked = yes
+				force_allow_recruiting = yes
+				division_cap = 4
+
+				regiments = { 
+					infantry = { x = 0 y = 0 }
+					infantry = { x = 0 y = 1 }
+					infantry = { x = 0 y = 2 }
+
+					infantry = { x = 1 y = 0 }
+					infantry = { x = 1 y = 1 }
+					infantry = { x = 1 y = 2 }
+
+					infantry = { x = 2 y = 0 }
+					infantry = { x = 2 y = 1 }
+					infantry = { x = 2 y = 2 }
+				}
+				support = { 
+					honved_bat = { x = 0 y = 0 }
+					artillery_big = { x = 0 y = 1 }
+					heavy_artillery_big = { x = 0 y = 2 }
+				}
+			}
+			custom_effect_tooltip = AUS_uu_bigger_tt
+			set_country_flag = AUS_uu_upgraded_2
+		}
+	}
+
+	AUS_uu_expand = {
+		icon = generic_military
+
+		allowed = {
+			tag = AUS
+		}
+
+		visible = {
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			add_to_variable = { AUS_unique_cap = 2 }
+			set_division_template_cap = { 
+				division_template = "Honvéd Infantry Division"
+				division_cap = 8
+			}
+			set_country_flag = AUS_uu_upgraded_2
+		}
+	}
+}
+operations = {
+	AUS_remove_redl = {
+
+		icon = generic_assassination
+		allowed = {
+			tag = AUS
+		}
+		available = {
+			has_war_with = SOV
+		}
+	
+		visible = {
+			has_idea = AUS_redl
+		}
+		
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+	
+		fire_only_once = yes
+	
+		days_remove = 180
+		
+		modifier = {
+			intelligence_agency_defense = -1
+		}
+		
+		remove_effect = {
+			remove_ideas = AUS_redl
+			set_country_flag = AUS_redl_removed
+		}
+	}
+
+	AUS_update_training = {
+
+		icon = generic_reorganize_irregulars
+		allowed = {
+			tag = AUS
+		}
+		available = {
+			NOT = {
+				has_country_flag = mobilised_flag
+			}
+			has_completed_focus = AUS_update_training_practices
+		}
+	
+		visible = {
+			has_completed_focus = AUS_embrace_maneuver
+		}
+		
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			training_time_factor = 1.0
+			command_power_gain_mult = -0.5
+			industrial_capacity_factory = -0.15
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_mob_updating
+		}
+		
+		remove_effect = {
+			set_country_flag = AUS_mob_updated
+			clr_country_flag = AUS_mob_updating
+			custom_effect_tooltip = AUS_update_training_tt
+		}
+	}
+
+	AUS_krakow_modernisation = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = AUS
+		}
+		available = {
+			has_completed_focus = AUS_modernise_forts
+			num_of_civilian_factories_available_for_projects > 14
+			NOT = {
+				has_country_flag = AUS_fort_flag
+			}
+		}
+	
+		visible = {
+			has_completed_focus = AUS_commit_to_fortresses
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			civilian_factory_use = 15
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = AUS_fort_flag
+			1157 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 6862
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 12739
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 12743
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 5046
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 3082
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+
+	AUS_premzyl_modernisation = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = AUS
+		}
+		available = {
+			has_completed_focus = AUS_modernise_forts
+			num_of_civilian_factories_available_for_projects > 14
+			NOT = {
+				has_country_flag = AUS_fort_flag
+			}
+		}
+	
+		visible = {
+			has_completed_focus = AUS_commit_to_fortresses
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 180
+		
+		modifier = {
+			civilian_factory_use = 10
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = AUS_fort_flag
+			1258 = {
+				set_building_level = {
+					type = bunker
+					level = 3
+					province = 6830
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+
+	AUS_stanislawow_forts = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = AUS
+		}
+		available = {
+			has_completed_focus = AUS_modernise_forts
+			num_of_civilian_factories_available_for_projects > 14
+			NOT = {
+				has_country_flag = AUS_fort_flag
+			}
+		}
+	
+		visible = {
+			has_completed_focus = AUS_commit_to_fortresses
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			civilian_factory_use = 15
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = AUS_fort_flag
+			1164 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 11918
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 4089
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 13096
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 4070
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 1682
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+
+	AUS_lwow_forts = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = AUS
+		}
+		available = {
+			has_completed_focus = AUS_modernise_forts
+			num_of_civilian_factories_available_for_projects > 19
+			NOT = {
+				has_country_flag = AUS_fort_flag
+			}
+		}
+	
+		visible = {
+			has_completed_focus = AUS_commit_to_fortresses
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			civilian_factory_use = 20
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = AUS_fort_flag
+			1233 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 2429
+					instant_build = yes
+				}
+			}
+			1292 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 249
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 9005
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 7679
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+
+	AUS_cernauti_forts = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = AUS
+		}
+		available = {
+			has_completed_focus = AUS_modernise_forts
+			num_of_civilian_factories_available_for_projects > 19
+			NOT = {
+				has_country_flag = AUS_fort_flag
+			}
+		}
+	
+		visible = {
+			has_completed_focus = AUS_commit_to_fortresses
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			civilian_factory_use = 20
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = AUS_fort_flag
+			1599 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 13410
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 13360
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 2704
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 13449
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+
+	AUS_trieste_forts = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = AUS
+		}
+		available = {
+			has_completed_focus = AUS_modernise_forts
+			num_of_civilian_factories_available_for_projects > 9
+			NOT = {
+				has_country_flag = AUS_fort_flag
+			}
+		}
+	
+		visible = {
+			has_completed_focus = AUS_commit_to_fortresses
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 180
+		
+		modifier = {
+			civilian_factory_use = 10
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = AUS_fort_flag
+			744 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 7575
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+
+	AUS_brasov_forts = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = AUS
+		}
+		available = {
+			has_completed_focus = AUS_modernise_forts
+			num_of_civilian_factories_available_for_projects > 9
+			NOT = {
+				has_country_flag = AUS_fort_flag
+			}
+		}
+	
+		visible = {
+			has_completed_focus = AUS_commit_to_fortresses
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 180
+		
+		modifier = {
+			civilian_factory_use = 10
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = AUS_fort_flag
+			737 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 14237
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+}
+AUS_trialism = {
+	AUS_promote_trialism_dec = {
+		icon = generic_political_rally
+
+		allowed = {
+			tag = AUS
+		}
+
+		fire_only_once = no
+		
+		days_remove = 180
+		days_re_enable = 1
+
+		cost = 50
+		
+		modifier = {
+			political_power_cost = 0.05
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = AUS_trialism_number
+				value = 10
+				tooltip = AUS_tri_increase_10_tt
+			}
+		}
+	}
+
+	AUS_tri_hungary_concessions = {
+		icon = hun_claim_yugo_4
+
+		allowed = {
+			tag = AUS
+		}
+
+		available = {
+			has_completed_focus = AUS_hungarian_negotiation
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = AUS_tri_hungary_done
+			}
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 180
+
+		cost = 50
+		
+		modifier = {
+			consumer_goods_factor = 0.05
+		}
+
+		complete_effect = {
+			set_country_flag = AUS_tri_hungary_done
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = AUS_trialism_number
+				value = 50
+				tooltip = AUS_tri_increase_50_tt
+			}
+		}
+	}
+
+	AUS_tri_hungary_lobbying = {
+		icon = generic_speech
+
+		allowed = {
+			tag = AUS
+		}
+
+		available = {
+			has_completed_focus = AUS_hungarian_negotiation
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = AUS_tri_hungary_done
+			}
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 365
+
+		cost = 50
+		
+		modifier = {
+			political_power_cost = 0.15
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_tri_hungary_done
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = AUS_trialism_number
+				value = 50
+				tooltip = AUS_tri_increase_50_tt
+			}
+		}
+	}
+}
+AUS_federalism = {
+	AUS_promote_federalism_dec = {
+		icon = generic_political_rally
+
+		allowed = {
+			tag = AUS
+		}
+
+		fire_only_once = no
+		
+		days_remove = 180
+		days_re_enable = 1
+
+		cost = 50
+		
+		modifier = {
+			stability_factor = -0.1
+			political_power_cost = 0.1
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = AUS_federal_number
+				value = 5
+				tooltip = AUS_fed_increase_5_tt
+			}
+		}
+	}
+
+	AUS_fed_hungary_concessions = {
+		icon = hun_claim_yugo_4
+
+		allowed = {
+			tag = AUS
+		}
+
+		available = {
+			has_completed_focus = AUS_persuade_hungary
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = AUS_fed_hungary_done
+			}
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 365
+
+		cost = 100
+		
+		modifier = {
+			consumer_goods_factor = 0.1
+		}
+
+		complete_effect = {
+			set_country_flag = AUS_fed_hungary_done
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = AUS_federal_number
+				value = 25
+				tooltip = AUS_fed_increase_25_tt
+			}
+			set_country_flag = AUS_fed_hungary_done
+		}
+	}
+
+	AUS_fed_hungary_force = {
+		icon = hun_claim_yugo_1
+
+		allowed = {
+			tag = AUS
+		}
+
+		available = {
+			has_completed_focus = AUS_persuade_hungary
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = AUS_fed_hungary_done
+			}
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 730
+
+		cost = 200
+		
+		complete_effect = {
+			add_to_variable = {
+				var = AUS_federal_number
+				value = 25
+				tooltip = AUS_fed_increase_25_tt
+			}
+			every_owned_state = {
+				limit = { is_core_of = HUN }
+				force_enable_resistance = {
+					occupier = AUS
+					occupied = HUN
+				}
+				start_resistance = HUN
+			}
+			set_country_flag = AUS_fed_hungary_done
+		}
+
+		remove_effect = {
+			every_owned_state = {
+				limit = { is_core_of = HUN }
+				force_enable_resistance = {
+					clear = yes
+					occupier = AUS
+					occupied = HUN
+				}
+			}
+		}
+	}
+
+	AUS_fed_hungary_lobbying = {
+		icon = generic_speech
+
+		allowed = {
+			tag = AUS
+		}
+
+		available = {
+			has_completed_focus = AUS_persuade_hungary
+		}
+		
+		visible = {
+			NOT = {
+				has_country_flag = AUS_fed_hungary_done
+			}
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 730
+
+		cost = 50
+		
+		modifier = {
+			political_power_cost = 0.2
+		}
+		
+		complete_effect = {
+			set_country_flag = AUS_fed_hungary_done
+		}
+
+		remove_effect = {
+			add_to_variable = {
+				var = AUS_federal_number
+				value = 25
+				tooltip = AUS_fed_increase_25_tt
+			}
+		}
+	}
+
+	AUS_fed_german_language = {
+		icon = generic_monarchy
+
+		allowed = {
+			tag = AUS
+		}
+
+		available = {
+			has_completed_focus = AUS_the_language_question
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = AUS_fed_language_done
+			}
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 365
+
+		cost = 100
+		
+		complete_effect = {
+			set_country_flag = AUS_fed_language_done
+			remove_ideas = AUS_multi_ethnic_state
+		}
+	}
+
+	AUS_fed_all_language = {
+		icon = generic_nationalism
+
+		allowed = {
+			tag = AUS
+		}
+
+		available = {
+			has_completed_focus = AUS_the_language_question
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = AUS_fed_language_done
+			}
+		}
+
+		fire_only_once = yes
+		
+		days_remove = 365
+
+		cost = 100
+		
+		complete_effect = {
+			set_country_flag = AUS_fed_language_done
+			swap_ideas = {
+				add_idea = AUS_multi_ethnic_state_2
+				remove_idea = AUS_multi_ethnic_state
+			}
+			add_to_variable = {
+				var = AUS_federal_number
+				value = 10
+				tooltip = AUS_fed_increase_10_tt
+			}
+		}
+	}
+}
+mobilization = {
+	AUS_mobilisation = {
+		icon = generic_operation
+
+		allowed = {
+			tag = AUS
+		}
+
+		available = {
+			OR  = {
+				has_country_flag = mob_allowed_flag
+				has_global_flag = great_war_started_flag
+			}
+			NOT = {
+				has_country_flag = AUS_mob_updating
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+		
+		ai_will_do = {
+			base = 100
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = AUS_mob_updated
+				}
+				activate_mission = AUS_mobilise_west_2
+				activate_mission = AUS_mobilise_north_2
+				activate_mission = AUS_mobilise_east_2
+				activate_mission = AUS_mobilise_south_2
+			}
+			else = {
+				activate_mission = AUS_mobilise_west
+				activate_mission = AUS_mobilise_north
+				activate_mission = AUS_mobilise_east
+				activate_mission = AUS_mobilise_south
+			}
+			activate_mission = AUS_mobilise_unlock
+			set_country_flag = mobilised_flag
+			swap_ideas = {
+				add_idea = AUS_mob_2
+				remove_idea = AUS_mob_1
+			}
+		}
+	}
+	
+	AUS_mobilise_unlock = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 90
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			set_division_template_lock = {
+				division_template = "Reservists"
+				is_locked = no
+			}
+			hidden_effect = {
+				set_technology = {
+					reservist_tech = 1 
+				}
+			}
+		}
+	}
+	
+	AUS_mobilise_north = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			513 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1429 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1157 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1292 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1164 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1294 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			536 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			514 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1442 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			2680 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+		}
+	}
+	
+	AUS_mobilise_east = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			633 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			631 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			664 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			665 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1587 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			700 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			736 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			690 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			639 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+		}
+	}
+	
+	AUS_mobilise_west = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			1817 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			582 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1810 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			644 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			744 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+		}
+	}
+		
+	AUS_mobilise_south = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 5
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			1499 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1494 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1514 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1464 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+		}
+	}
+
+	AUS_mobilise_north_2 = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			513 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1429 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1157 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1292 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1164 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1294 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			536 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			514 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1442 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			2680 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+		}
+	}
+	
+	AUS_mobilise_east_2 = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			633 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			631 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			664 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			665 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1587 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			700 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			736 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			690 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			639 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+		}
+	}
+	
+	AUS_mobilise_west_2 = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			1817 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			582 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1810 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			644 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			744 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+		}
+	}
+		
+	AUS_mobilise_south_2 = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 5
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			1499 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1494 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1514 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+			1464 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"AUS\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"AUS\" } }"
+					owner = AUS
+				}
+			}
+		}
+	}
+}

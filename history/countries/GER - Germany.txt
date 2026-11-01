@@ -1,0 +1,698 @@
+﻿capital = 1650
+
+set_research_slots = 4
+set_stability = 1
+set_war_support = 1
+set_convoys = 200
+starting_train_buffer = 2
+
+create_faction = central_powers
+add_to_faction = GER
+add_to_faction = AUS
+
+add_to_tech_sharing_group = axis_research
+
+# Starting tech
+set_technology = {
+	infantry_weapon_1 = 1
+	infantry_weapon_2 = 1
+	machine_gun = 1
+	horse_equipment = 1
+	light_field_gun1 = 1
+	light_field_gun2 = 1
+	heavy_field_gun1 = 1
+	heavy_field_gun2 = 1
+	siege_artillery_1 = 1
+	siege_artillery_2 = 1
+	tech_mountaineers = 1
+
+	tech_support = 1
+	tech_engineers = 1
+
+	basic_industry = 1
+	advanced_industry = 1
+	mechanical_tech_1 = 1
+	
+	early_fighter = 1
+	strategic_bomber1 = 1
+
+	# Navy
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_submarine = 1
+	basic_ship_hull_submarine = 1
+	early_ship_hull_cruiser = 1
+	basic_ship_hull_cruiser = 1
+	improved_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+	improved_ship_hull_heavy = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	improved_light_battery = 1
+	basic_medium_battery = 1
+	basic_heavy_battery = 1
+	improved_heavy_battery = 1
+	basic_secondary_battery = 1
+	improved_secondary_battery = 1
+	basic_torpedo = 1
+	improved_ship_torpedo_launcher = 1
+	armor_scheme_1 = 1
+	armor_scheme_2 = 1
+	armor_scheme_3 = 1
+	armor_scheme_4 = 1
+	damage_control_1 = 1
+	damage_control_2 = 1
+	fire_control_methods_1 = 1
+	basic_engines = 1
+	engines_2 = 1
+	engines_3 = 1
+	engines_4 = 1
+	mtg_transport = 1
+}
+
+set_politics = {
+    ruling_party = neutrality
+    last_election = "1907.1.25"
+    election_frequency = 60
+    elections_allowed = yes
+}
+set_popularities = {
+    democratic = 10
+    fascism = 8
+    communism = 2
+    neutrality = 80
+}
+
+add_ideas = {
+	limited_conscription
+	partial_economic_mobilisation
+	GER_mob_1
+	GER_general_staff
+	GER_swedish_trade_idea
+	GER_naval_arms_race
+}
+
+set_naval_oob = "GER_navy"
+oob = "GER_1910"
+
+recruit_character = GER_wilhelm_ii
+recruit_character = GER_reinhard_scheer
+recruit_character = GER_alfred_von_tirpitz
+recruit_character = GER_franz_von_hipper
+recruit_character = GER_duke_albrecht_of_wurttemberg
+recruit_character = GER_crown_prince_rupprecht_of_bavaria
+recruit_character = GER_crown_prince_wilhelm_of_prussia
+recruit_character = GER_von_kluck
+recruit_character = GER_von_falkenhayn_erich
+recruit_character = GER_von_hutier
+recruit_character = GER_ludendorff
+recruit_character = GER_von_lettowvorbeck
+recruit_character = GER_von_hindenburg
+recruit_character = GER_von_mackensen
+recruit_character = GER_bruchmuller
+recruit_character = GER_hoffmann
+recruit_character = GER_hermann_thomsen
+recruit_character = GER_ernst_hoeppner
+
+add_manpower = 350000
+
+set_variable = { GER_unique_cap = 4 }
+
+#### SUBS ####
+create_equipment_variant = {
+	name = "U-1 Class"
+	type = ship_hull_submarine_1
+	name_group = GER_SS_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_1
+	}
+}
+
+create_equipment_variant = {
+	name = "U-19 Class"
+	type = ship_hull_submarine_2
+	name_group = GER_SS_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_2
+	}
+}
+
+#### DESTROYERS ####
+create_equipment_variant = {
+	name = "Pre-1905 Destroyer"
+	type = ship_hull_light_1
+	name_group = GER_DD_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = light_ship_engine_coal_1
+		fixed_ship_torpedo_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "1905 Destroyer"
+	type = ship_hull_light_2
+	name_group = GER_DD_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = light_ship_engine_coal_1
+		fixed_ship_torpedo_slot = ship_torpedo_1
+		mid_1_custom_slot = ship_light_secondaries_1
+	}
+}
+
+#### SCOUT CRUISERS ####
+create_equipment_variant = {
+	name = "Hela/Gazelle Class"
+	type = ship_hull_cruiser_scout
+	name_group = GER_CL_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_1
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_torpedo_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Bremen/Königsberg Class"
+	type = ship_hull_cruiser_scout
+	name_group = GER_CL_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_2
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_torpedo_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Dresden Class"
+	type = ship_hull_cruiser_scout_2
+	name_group = GER_CL_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_2
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_light_secondaries_2
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_torpedo_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Kolberg Class"
+	type = ship_hull_cruiser_scout_2
+	name_group = GER_CL_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_2
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_light_secondaries_2
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		fixed_ship_torpedo_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Magdeburg Class"
+	type = ship_hull_cruiser_light
+	name_group = GER_CL_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_2
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_5
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		fixed_ship_secondaries_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		fixed_ship_torpedo_slot = ship_torpedo_1
+	}
+}
+
+#### PROTECTED CRUISERS ####
+create_equipment_variant = {
+	name = "Bussard Class"
+	type = ship_hull_cruiser_protected
+	name_group = GER_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_2
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_armor_slot = empty
+		fixed_ship_secondaries_slot = empty
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Irene Class"
+	type = ship_hull_cruiser_protected
+	name_group = GER_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		fixed_ship_secondaries_slot = empty
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Kaiserin Augusta Class"
+	type = ship_hull_cruiser_protected
+	name_group = GER_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		fixed_ship_secondaries_slot = empty
+		fixed_ship_anti_air_slot = ship_light_secondaries_2
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Victoria Louise Class"
+	type = ship_hull_cruiser_protected
+	name_group = GER_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_armor_slot = ship_armor_cruiser_3
+		fixed_ship_secondaries_slot = empty
+		fixed_ship_anti_air_slot = ship_light_secondaries_2
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+#### ARMOURED CRUISERS ####
+create_equipment_variant = {
+	name = "Fürst Bismarck Class"
+	type = ship_hull_cruiser_armoured
+	name_group = GER_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_armor_slot = ship_armor_cruiser_4
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		mid_1_custom_slot = ship_light_secondaries_1
+		rear_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Prinz Heinrich Class"
+	type = ship_hull_cruiser_armoured
+	name_group = GER_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_armor_slot = ship_armor_cruiser_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		mid_1_custom_slot = ship_light_secondaries_1
+		rear_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Prinz Adalbert/Roon Class"
+	type = ship_hull_cruiser_armoured
+	name_group = GER_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_armor_slot = ship_armor_cruiser_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		mid_1_custom_slot = ship_light_secondaries_1
+		rear_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Scharnhorst Class"
+	type = ship_hull_cruiser_armoured
+	name_group = GER_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_armor_slot = ship_armor_cruiser_4
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = empty
+		mid_1_custom_slot = ship_light_secondaries_2
+		rear_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Blücher Class"
+	type = ship_hull_cruiser_armoured
+	name_group = GER_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_4
+		fixed_ship_armor_slot = ship_armor_cruiser_4
+		fixed_ship_secondaries_slot = ship_light_battery_4
+		fixed_ship_anti_air_slot = empty
+		mid_1_custom_slot = ship_light_secondaries_2
+		rear_1_custom_slot = ship_torpedo_1
+	}
+}
+
+#### COASTAL DEFENCE ####
+create_equipment_variant = {
+	name = "Siegfried Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_cruiser_coastal_defense_ship
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_bb_1
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Odin Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_cruiser_coastal_defense_ship
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_4
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_bb_1
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+#### BATTLESHIPS ####
+create_equipment_variant = {
+	name = "Sachsen Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_ironclad
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_armor_slot = ship_armor_bb_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Brandenburg Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_heavy_0
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_1
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Kaiser Friedrich III Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_heavy_0
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_2
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Wittelsbach Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_heavy_0
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = empty
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Braunschweig Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_heavy_0
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_3
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Deutschland Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_heavy_0
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_3
+		front_1_custom_slot = ship_secondaries_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Nassau Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Helgoland Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_3
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_2
+	}
+}
+
+create_equipment_variant = {
+	name = "Kaiser Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_4
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_4
+		mid_1_custom_slot = ship_torpedo_2
+	}
+}
+
+create_equipment_variant = {
+	name = "König Class"
+	name_group = GER_BB_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_2
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_4
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_4
+		mid_1_custom_slot = ship_torpedo_2
+	}
+}
+#### BATTLECRUISERS ####
+create_equipment_variant = {
+	name = "Von der Tann Class"
+	name_group = GER_BC_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_5
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bc_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Moltke Class"
+	name_group = GER_BC_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_5
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bc_3
+	}
+}
+
+create_equipment_variant = {
+	name = "Seydlitz Class"
+	name_group = GER_BC_HISTORICAL
+	type = ship_hull_heavy_1
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = heavy_ship_applique_2
+		fixed_ship_engine_slot = heavy_ship_engine_coal_6
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bc_3
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+

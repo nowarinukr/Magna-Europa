@@ -1,0 +1,22 @@
+state={
+	id=1985
+	name="STATE_1985"
+	history = {
+		owner = FRA
+		add_core_of = FRA
+
+		victory_points = {
+			6087 2 #Maubeuge
+		}		
+			buildings = {
+			infrastructure = 1
+		}
+	}
+	provinces={
+		6087
+	}
+	manpower=29650
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

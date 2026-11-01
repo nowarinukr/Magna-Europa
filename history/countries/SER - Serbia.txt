@@ -1,0 +1,58 @@
+﻿capital = 790
+
+set_research_slots = 3
+set_stability = 1
+set_war_support = 1
+set_convoys = 10
+starting_train_buffer = 2
+
+set_technology = {
+	infantry_weapon_1 = 1
+	infantry_weapon_2 = 1
+	machine_gun = 1
+	horse_equipment = 1
+	light_field_gun1 = 1
+	light_field_gun2 = 1
+	heavy_field_gun1 = 1
+
+	tech_support = 1
+	tech_engineers = 1
+	
+	basic_industry = 1
+}
+
+set_convoys = 0
+
+set_politics = {
+    ruling_party = democratic
+    last_election = "1908.5.31"
+    election_frequency = 36
+    elections_allowed = yes
+}
+set_popularities = {
+    democratic = 78
+    fascism = 2
+    communism = 8
+    neutrality = 12
+}
+
+add_ideas = {
+	service_by_requirement
+	partial_economic_mobilisation
+	SER_mob_1
+	SER_nationalist_fervour
+}
+
+oob = "SER_1910"
+
+recruit_character = SER_peter_i
+recruit_character = SER_radomir_putnik
+recruit_character = SER_stepa_stepanovic
+recruit_character = SER_zivojin_misic
+recruit_character = SER_pavle_jurisic_sturm
+recruit_character = SER_petar_bojovic
+recruit_character = SER_pasic
+
+set_variable = { SER_unique_cap = 4 }
+
+

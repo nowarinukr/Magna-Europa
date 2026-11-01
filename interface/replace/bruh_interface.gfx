@@ -1,0 +1,76 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_MIL_cav_strip"
+		texturefile = "gfx/interface/command/MIL_cav_strip.dds"
+		legacy_lazy_load = no
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_MIL_inf_strip"
+		texturefile = "gfx/interface/command/MIL_inf_strip.dds"
+		legacy_lazy_load = no
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_MIL_sup_strip"
+		texturefile = "gfx/interface/command/MIL_sup_strip.dds"
+		legacy_lazy_load = no
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_MIL_air_strip"
+		texturefile = "gfx/interface/command/MIL_air_strip.dds"
+		legacy_lazy_load = no
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_MIL_cap_strip"
+		texturefile = "gfx/interface/command/MIL_cap_strip.dds"
+		legacy_lazy_load = no
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_MIL_scr_strip"
+		texturefile = "gfx/interface/command/MIL_scr_strip.dds"
+		legacy_lazy_load = no
+		noOfFrames = 5
+	}
+	spriteType = {
+		name = "GFX_MIL_command_bg"
+		texturefile = "gfx/interface/command/MIL_command_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_blockade_bg"
+		texturefile = "gfx/interface/blockade/blockade_bg.dds"
+	}
+	spriteType = {
+		name = "GFX_region1_strip"
+		texturefile = "gfx/interface/blockade/zone1.dds"
+		legacy_lazy_load = no
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_region2_strip"
+		texturefile = "gfx/interface/blockade/zone2.dds"
+		legacy_lazy_load = no
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_region3_strip"
+		texturefile = "gfx/interface/blockade/zone3.dds"
+		legacy_lazy_load = no
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_region4_strip"
+		texturefile = "gfx/interface/blockade/zone4.dds"
+		legacy_lazy_load = no
+		noOfFrames = 3
+	}
+	spriteType = {
+		name = "GFX_region5_strip"
+		texturefile = "gfx/interface/blockade/zone5.dds"
+		legacy_lazy_load = no
+		noOfFrames = 3
+	}
+}

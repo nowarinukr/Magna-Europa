@@ -1,0 +1,291 @@
+characters={
+	USA_william_h_taft={
+		name="William H. Taft"
+		portraits={
+			civilian={
+				large="gfx/leaders/USA/portrait_william_taft.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	USA_wilson={
+		name="Woodrow Wilson"
+		portraits={
+			civilian={
+				large="gfx/leaders/USA/portrait_wilson.dds"
+			}
+		}
+		country_leader={
+			traits = { moderate_reformist }
+			ideology=conservatism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	USA_john_pershing={
+		name="John Pershing"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_pershing.dds"
+			}
+		}
+		field_marshal={
+			traits={ cavalry_officer career_officer war_hero }
+			skill=4
+			attack_skill=2
+			defense_skill=2
+			planning_skill=5
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+	USA_hunter_liggett={
+		name="Hunter Liggett"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_liggett.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer old_guard }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	USA_peyton_march={
+		name="Peyton March"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_march.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	USA_omar_bundy={
+		name="Omar Bundy"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_bundy.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=4
+			legacy_id=-1
+		}
+	}
+	USA_francis_kernan={
+		name="Francis Joseph Kernan"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_kernan.dds"
+			}
+		}
+		corps_commander={
+			traits={ career_officer }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	USA_mason_patrick={
+		name="Mason Patrick"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_patrick.dds"
+			}
+		}
+		corps_commander={
+			traits={ engineer_officer }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	USA_charles_sumerall={
+		name="Charles Pelot Summerall"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_summerall.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery harsh_leader }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	USA_charles_doyen={
+		name="Charles A. Doyen"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_doyen.dds"
+			}
+		}
+		corps_commander={
+			traits={ marine_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=-1
+		}
+	}
+	USA_william_sims={
+		name="William Sims"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_sims.dds"
+			}
+		}
+		navy_leader={
+			traits={ politically_connected battleship_adherent gunnery_expert navy_career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	USA_william_benson={
+		name="William Benson"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_benson.dds"
+			}
+		}
+		navy_leader={
+			traits={ old_guard_navy naval_lineage }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=2
+			coordination_skill=4
+			legacy_id=0
+		}
+	}
+	USA_henry_mayo={
+		name="Henry Mayo"
+		portraits={
+			army={
+				large="gfx/leaders/USA/portrait_mayo.dds"
+			}
+		}
+		navy_leader={
+			traits={ old_guard_navy }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=3
+			coordination_skill=3
+			legacy_id=0
+		}
+	}
+	USA_george_scriven={
+		name="George P. Scriven"
+		portraits={
+			army={
+				small="GFX_USA_generic_land_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = USA_george_scriven
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_completed_focus = USA_signal_air_corps
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	USA_paul_beck={
+		name="Paul W. Beck"
+		portraits={
+			army={
+				small="GFX_USA_generic_land_5"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = USA_paul_beck
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_completed_focus = USA_signal_air_corps
+			}
+			traits = {
+				air_air_combat_training_2
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	USA_dick_morgan={
+		name="Dick Thompson Morgan"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_morgan.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = USA_dick_morgan
+			allowed = {
+				original_tag = USA
+			}
+			available = {
+				has_completed_focus = USA_federal_trade
+			}
+			traits = {
+				economy_reformer
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

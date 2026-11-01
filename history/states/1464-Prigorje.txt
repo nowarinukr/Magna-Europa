@@ -1,0 +1,23 @@
+state={
+	id=1464
+	name="STATE_1464"
+	provinces={
+		6599 7206 9457 20120 20156 20183 
+	}
+	history = {
+		owner = AUS
+		add_core_of = SER
+		add_claim_by = HUN
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 2
+		}
+		set_compliance = 25
+		victory_points = { 20120 40 }
+	}
+	manpower=335900
+	state_category=city
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,21 @@
+
+state={
+	id=2214
+	name="STATE_2214"
+	history = {
+		owner = TUR
+		add_core_of = PAL
+		buildings = {
+			infrastructure = 2
+		}
+		
+		
+	}
+	provinces={
+		7 2081 4581 6043 19241 
+	}
+	manpower=137173
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

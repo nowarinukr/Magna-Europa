@@ -1,0 +1,40 @@
+﻿ALG = {
+	male = {
+		names = {
+			Aali "Abd Al-Latif"  Abdul Abdul-Rahman Abu Adnan Ahmed Ali Amir Ammar Ashfaq Ayuub Baqi Bassem Danyal Esmail Fadil Fareed Fawzi Gabir Ghufran Haider Hakeem Hamid Hanif Hatim Houssam Husain Ibrahim Idris Imen Iskandar Ismai'il Jafar Jamal Jibril Karim Latif Mahometus Maqsud Mikha'il Mohammed Mostafa Murtada Nadeem Najm Navid Nur Omar Osama Qasim Rais Rashid Rayan Ruh Saif Salih Shad Shakir Shukri Sulaiman Taj Tayyib Wafai Yakub Yuhanna Zahi Zawar Zulfaqar Abdelaziz Abdelkader Abdelmalek Albert Boualem Chadli Frantz Ferhat Giorgio Houari Jacques Kamel Kateb Madjid Mehdi Moufdi Nabil Rabah Rafik Sofiane Yacine Yasmina
+		}
+	}
+	female = {
+		names = {
+			Aaliyah Aisha Amaal Anisa Ayda Basma Djamila Farah Fatin Gamila Hadia Haifa Haniyah Hosni Ihab Israa Jathibiyya Khalida Latifa Maha Mona Nadia Nashwa Nimat Rabab Rana Rayhana Ruqayyah Sahar Samia Sarah Shahrizad Shayma Suraya Uzma Yasmin Zahia Zakiya Zulekha Ahlam Assia Hélène
+		}
+	}
+	surnames = {
+		Abdullah Abdulrashid Ahmad Ahmed Ajam Al-Amin Alfarsi Al-Ghazzawi Al-Hashim Ali Al-Mufti Amjad Boulos Bousaid Hakim Hussain Kader Karim Karimi Mohammed Muhammad Naaji Nagi Najm Nejem Qadir Saab Samara Saqqaf Sultan Tawfeek Tawfiq Zaman
+		#Algeria Specific
+		Abbas Abeid Arkoun "Ben Bella" Bendjedid Bentaleb Bitat Bougherra Boumediene Bouteflika Brahimi Camus Chiellini Cixous Daoud Derrida Djebar Djebbour "El Djezairi" Fanon Feghouli Ghilas Khadra Mosteghanemi Sansal Sellal Yacine Zakaria
+	}
+	callsigns = {
+		Ibadi Corsair
+	}
+}
+
+TUN = {
+	male = {
+		names = {
+			Aali "Abd Al-Latif"  Abdul Abdul-Rahman Abu Adnan Ahmed Ali Amir Ammar Ashfaq Ayuub Baqi Bassem Danyal Esmail Fadil Fareed Fawzi Gabir George Ghufran Haider Hakeem Hamid Hanif Hatim Houssam Husain Ibrahim Idris Imen Iskandar Ismai'il Jafar Jamal Jibril Karim Latif Mahometus Maqsud Mikha'il Mohammed Mostafa Murtada Nadeem Najm Navid Nur Omar Osama Qasim Rais Rashid Rayan Ruh Saif Salih Shad Shakir Shukri Sulaiman Taj Tayyib Wafai Yakub Yuhanna Zahi Zawar Zulfaqar Abdelaziz Abdelhamid Abdellatif Abdelmajid Adnan Ahmad Ahmed Ali Amine Anis Aymen Aziz Azzedine Bassem Chedli Farhat Féthi Fouad Habib Hamza Hassine Haykel Hédi Hichem Hubert Imed Issam Jaleleddine Jameleddine Jean Khalil Khelil Mahmoud Michel Moez Mohamed Mohsen Moncef Muhammad Mustapha Nejib Norbert Omrane Oussama Rachid Radhi Roberto Serge Sorj Tahar Tarak Victor Wajdi Walid Wissem Ziad Zied
+		}
+	}
+	female = {
+		names = {
+			Aaliyah Aisha Amaal Anisa Ayda Basma Djamila Farah Fatin Gamila Hadia Haifa Haniyah Hosni Ihab Israa Jathibiyya Khalida Latifa Maha Mona Nadia Nashwa Nimat Rabab Rana Rayhana Ruqayyah Sahar Samia Sarah Shahrizad Shayma Suraya Uzma Yasmin Zahia Zakiya Zulekha Amina Amira Azza Choubeila Claudia Hana Inès Jacqueline Kalthoum Leïla Maroi Maroua Mouna Raja Syrine Tewhida
+		}
+	}
+	surnames = {
+		Abdullah Abdulrashid Ahmad Ahmed Ajam Al-Amin Alfarsi Al-Ghazzawi Al-Hashim Ali Al-Mufti Amjad Boulos Bousaid Hakim Hussain Kader Karim Karimi Mohammed Muhammad Naaji Nagi Najm Nejem Qadir Saab Samara Saqqaf Sultan Tawfeek Tawfiq Zaman Achouri Al-Amin Alaia "Ben Ali" "Ben Ammar" Anani Aslan Ayari "Ben Azzabi" Baccouche Balti-Ebondo Belhedi Belkadhi Belkhodja Besbes Bhairi Blanco Bouallègue Boubakri Boughanmi Bouhageb Boujenah Bourguiba Brami Bramly Cardinale "Ben Chaabane" Chalandon "Ben Cherifia" Chebbi Chemmam Chenik Chermiti Dinguizli "ibn Abi Diyaf" Djellouli Ennachi Fadhel Haddad Haddaoui Hakimi Hamdouni Hergal Hmam Ikram Jaïdi "Ben Jafar" Jaziri Kechiche Khaldun Khayachi Khayat Klibi Korbi Lakhal Lakhoua Limam Lounifi Luc Mareghni Mathlouthi Marzouki Mebazaa Meddeb Melliti Mellouli Mezien Mhedhebi "Ben Mrad" Nagga "Ben Nasser" Noureddine Ounaies Perez Rached Rajhi Rhimi Sadok Said Sarrai Sellami Sghaïer "Ben Sheikh" Soliman Sriti Taïeb Tej Thâalbi Touati Toumi Zitouni
+	}
+	callsigns = {
+		Cartaghe Hafsa Ifriqya Tataounine Maghreb
+	}
+}
+

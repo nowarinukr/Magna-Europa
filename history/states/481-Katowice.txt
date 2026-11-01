@@ -1,0 +1,31 @@
+
+state={
+	id=481
+	name="STATE_481"
+	provinces={
+		5322 8816 12625
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 4
+			industrial_complex = 3
+		}
+		add_core_of = POL
+        victory_points = {
+            5322 5
+        }	#Kattowitz
+        victory_points = {
+            8816 20
+        }	#Königshütte
+        victory_points = {
+            12625 15
+        }	#Zabrze
+  	}
+	manpower=352577
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

@@ -1,0 +1,25 @@
+
+state={
+	id=2690
+	name="STATE_2690"
+
+	history={
+		owner = GER
+		add_core_of = GER
+		add_claim_by = POL
+		buildings = {
+			infrastructure = 3
+		}
+		
+		victory_points = { 11161 2 } #Osterode
+		victory_points = { 8528 1 } #Tannenberg
+	}
+
+	provinces={
+		281 899 2684 8528 11113 11161 11168 11190 11226 11248 
+	}
+	manpower=101293
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

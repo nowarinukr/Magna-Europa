@@ -1,0 +1,19 @@
+state={
+	id=2345
+	name="STATE_2345"
+	provinces={
+		4289 
+	}
+	history={
+		owner = AUS
+		add_core_of = POL
+		add_core_of = UKR
+		buildings = {
+			infrastructure = 2
+		}
+  	}
+	manpower=12651
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

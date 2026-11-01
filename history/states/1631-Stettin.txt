@@ -1,0 +1,28 @@
+
+state={
+	id=1631
+	name="STATE_1631"
+	provinces={
+		11208 11257 20547 
+	}
+	history={
+	    owner = GER
+        victory_points = {
+            11257 40 #Stettin
+        }
+		add_core_of = GER
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 6
+			11208 = { naval_base = 4 }
+		}
+		
+		
+    }
+	manpower=280560
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_city
+}

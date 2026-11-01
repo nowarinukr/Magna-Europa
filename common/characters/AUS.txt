@@ -1,0 +1,251 @@
+characters={
+	AUS_franz_joseph_i={
+		name="Franz Joseph"
+		portraits={
+			civilian={
+				large="gfx/leaders/AUS/portrait_franz_josef.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={ popular_figurehead2 }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	AUS_karl_i={
+		name="Karl"
+		portraits={
+			civilian={
+				large="gfx/leaders/AUS/portrait_karl.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={ }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	AUS_conrad_von_hotzendorf={
+		name="Conrad von Hötzendorf"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_hotzendorf.dds"
+			}
+		}
+		field_marshal={
+			traits={ infantry_officer politically_connected old_guard career_officer }
+			skill=2
+			attack_skill=1
+			defense_skill=1
+			planning_skill=4
+			logistics_skill=1
+			legacy_id=6137
+		}
+	}
+	AUS_arthur_von_bolfras={
+		name="Arthur von Bolfras"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_bolfras.dds"
+			}
+		}
+		field_marshal={
+			traits={ infantry_officer politically_connected old_guard  }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=6386
+		}
+	}
+	AUS_stogersteiner_von_steinstatten={
+		name="Rudolf Stöger-Steiner von Steinstätten"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_steinstatten.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer politically_connected career_officer  }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=6401
+		}
+	}
+	AUS_svetozar_borojevic_von_bojna={
+		name="Svetozar Borojević von Bojna"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_von_bojna.dds"
+			}
+		}
+		corps_commander={
+			traits={ war_hero trait_cautious }
+			skill=5
+			attack_skill=3
+			defense_skill=6
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=6010
+		}
+	}
+	AUS_karl_von_pflanzerbaltin={
+		name="Karl von Pflanzer-Baltin"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_pflanzerbaltin.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=6111
+		}
+	}
+	AUS_viktor_dankl_von_krasnik={
+		name="Viktor Dankl"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_von_krasnik.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer trait_cautious }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=6139
+		}
+	}
+	AUS_hermann_kovess_von_kovesshaza={
+		name="Hermann Kövess von Kövessháza"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_kovess.dds"
+			}
+		}
+		corps_commander={
+			traits={ career_officer old_guard }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=6396
+		}
+	}
+	AUS_jozef_pilsudski={
+		name="Józef Piłsudski"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_pilsudski.dds"
+			}
+		}
+		corps_commander = {
+			traits={ infantry_officer war_hero trait_reckless }
+			skill=4
+			attack_skill=4
+			defense_skill=5
+			planning_skill=2
+			logistics_skill=2
+		}
+	}
+	AUS_anton_haus={
+		name="Anton Haus"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_anton_haus.dds"
+			}
+		}
+		navy_leader={
+			traits={ old_guard_navy chief_engineer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	AUS_miklos_horthy={
+		name="Miklós Horthy"
+		portraits={
+			army={
+				large="gfx/leaders/AUS/portrait_horthy.dds"
+			}
+		}
+		navy_leader={
+			traits={ bold cuts_corners }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			maneuvering_skill=3
+			coordination_skill=1
+			legacy_id=0
+		}
+	}
+	AUS_moritz={
+		name="Moritz von Auffenberg"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_moritz.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_moritz
+			allowed = {
+				original_tag = AUS
+			}
+			available = {
+				has_completed_focus = AUS_appoint_moritz
+			}
+			cost = 100
+			traits = {
+				minister_of_war
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+	AUS_redl={
+		name="Alfred Redl"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_redl.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = AUS_redl
+			can_be_fired = no
+			allowed = {
+				original_tag = AUS
+			}
+			visible = {
+				NOT = {
+					has_country_flag = AUS_redl_removed
+				}
+			}
+			traits = {
+				counterintel_expert 
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+}

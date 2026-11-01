@@ -1,0 +1,28 @@
+
+state={
+	id=873
+	name="STATE_873"
+
+	history={
+		owner = TUR
+		add_core_of = ALB
+		add_core_of = SER
+		add_claim_by = BUL
+		buildings = {
+			infrastructure = 2
+
+		}
+		victory_points = {
+			20223 10 
+		}
+
+	}
+
+	provinces={
+		3622 4463 20223 
+	}
+	manpower=72434
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

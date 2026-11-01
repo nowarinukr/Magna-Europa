@@ -1,0 +1,28 @@
+
+state={
+	id=1763
+	name="STATE_1763"
+
+	history={
+		owner = GER
+		victory_points = {
+			13519 15 #Freiburg im Breisgau
+		}
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 1
+		}
+		
+
+	}
+
+	provinces={
+		3091 7417 9111 9224 13519 13567 13625 20749 
+	}
+	manpower=335624
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

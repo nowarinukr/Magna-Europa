@@ -1,0 +1,24 @@
+
+state={
+	id=989
+	name="STATE_989"
+
+	history={
+		owner = SER
+		add_core_of = SER
+		add_core_of = ALB
+		buildings = {
+			infrastructure = 2
+
+		}
+
+	}
+
+	provinces={
+		16990 20174 21655 
+	}
+	manpower=980
+	buildings_max_level_factor=1.000
+	state_category=enclave
+	local_supplies=0.000
+}

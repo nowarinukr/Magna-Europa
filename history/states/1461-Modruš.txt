@@ -1,0 +1,24 @@
+
+state={
+	id=1461
+	name="STATE_1461"
+
+	history={
+		owner = AUS
+		add_core_of = SER
+		add_claim_by = HUN
+		buildings = {
+			infrastructure = 2
+
+		}
+		set_compliance = 25
+	}
+
+	provinces={
+		5038 14322 20129 20149 20184 
+	}
+	manpower=130548
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

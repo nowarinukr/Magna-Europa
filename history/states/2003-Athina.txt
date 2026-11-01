@@ -1,0 +1,28 @@
+
+state={
+	id=2003
+	name="STATE_2003"
+	provinces={
+		20252 20308 20309 
+	}
+	history={
+		owner = GRE
+		add_core_of = GRE
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 3
+			dockyard = 2
+			20252 = { naval_base = 9 }
+			20308 = { naval_base = 1 }
+			20309 = { naval_base = 1 }
+		}
+        victory_points = {
+            20252 40
+        }
+    }
+	manpower=715024
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

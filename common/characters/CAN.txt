@@ -1,0 +1,164 @@
+characters={
+	CAN_wilfrid_laurier={
+		name="Wilfrid Laurier"
+		portraits={
+			civilian={
+				large="gfx/leaders/CAN/portrait_robert_borden.dds"
+			}
+		}
+		country_leader={
+			desc="CAN_wilfrid_laurier_DESC"
+			ideology=liberalism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	CAN_robert_borden={
+		name="Robert Borden"
+		portraits={
+			civilian={
+				large="gfx/leaders/CAN/portrait_robert_borden.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	CAN_authur_currie={
+		name="Authur Currie"
+		portraits={
+			army={
+				large="gfx/leaders/CAN/portrait_currie.dds"
+			}
+		}
+		field_marshal={
+			traits={ trait_cautious brilliant_strategist }
+			skill=5
+			attack_skill=3
+			defense_skill=4
+			planning_skill=6
+			logistics_skill=3
+			legacy_id=13015
+		}
+	}
+	CAN_turner={
+		name="Sir Richard Turner"
+		portraits={
+			army={
+				large="gfx/leaders/CAN/portrait_turner.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer war_hero harsh_leader }
+			skill=2
+			attack_skill=3
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=13003
+		}
+	}
+	CAN_lipsett_lj={
+		name="Louis Lipsett"
+		portraits={
+			army={
+				large="gfx/leaders/CAN/portrait_lipsett.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer staff_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=13004
+		}
+	}
+	CAN_loomis_cb={
+		name="Frederick Loomis"
+		portraits={
+			army={
+				large="gfx/leaders/CAN/portrait_loomis.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=13006
+		}
+	}
+	CAN_steele={
+		name="Sam Steele"
+		portraits={
+			army={
+				large="gfx/leaders/CAN/portrait_steele.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer old_guard }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=13019
+		}
+	}
+	CAN_john_milne={
+		name="John Milne"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_milne.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CAN_john_milne
+			allowed = {
+				original_tag = CAN
+			}
+			available = {
+				has_completed_focus = CAN_bolster_industry
+			}
+			traits = {
+				minister_of_finance_milne
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	CAN_sam_hughes={
+		name="Sam Hughes"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_hughes.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = CAN_sam_hughes
+			allowed = {
+				original_tag = CAN
+			}
+			available = {
+				has_completed_focus = CAN_militia_reform
+			}
+			traits = {
+				minister_of_war
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

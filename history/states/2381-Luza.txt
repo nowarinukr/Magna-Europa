@@ -1,0 +1,24 @@
+
+state={
+	id=2381
+	name="STATE_2381"
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+		buildings = {
+			infrastructure = 1
+
+		}
+
+	}
+	impassable=yes
+
+	provinces={
+		1168 2471 2740 3150 3586 5303 5327 5494 5604 6419 6547 7158 8194 9480 9945 9992 9997 10003 10038 18796 
+	}
+	manpower=77882
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

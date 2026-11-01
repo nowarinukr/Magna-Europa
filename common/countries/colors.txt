@@ -1,0 +1,173 @@
+#reload countrycolors
+CAN = {
+	color = rgb { 160 0 0 }
+	color_ui = rgb { 235 0 0 }
+}
+USA = {
+	color = rgb { 43 89 202 }
+	color_ui = rgb { 43 89 202 }
+}
+
+###Western Europe
+FRA = {
+	color = rgb { 31 71 159 }
+	color_ui = rgb { 31 71 159 }
+}
+LUX = {
+	color = rgb { 0 161 222 }
+	color_ui = rgb { 0 161 222 }
+}
+BEL = { 
+	color 	 = rgb { 253 218 37 }
+	color_ui = rgb { 253 218 37 }
+}
+HOL = {	
+	color = rgb { 255 153 0 }
+	color_ui = rgb { 255 153 0 }
+}
+ENG = {
+	color = rgb { 140 0 0 }
+	color_ui = rgb { 140 0 0 }
+}
+KUW = {
+	color = rgb { 170 0 0 }
+	color_ui = rgb { 170 0 0 }
+}
+
+###Central Europe
+GER = { 
+	color = rgb { 110 100 100 }
+	color_ui = rgb { 110 100 100 }
+}
+POL = {
+	color = rgb { 214 102 139 }
+	color_ui = rgb { 255 120 138 }
+}
+AUS = {
+	color = rgb { 194 198 215 }
+	color_ui = rgb { 194 198 215 }
+}
+SWI = {
+	color = rgb { 224 5 5 }
+	color_ui = rgb { 224 5 5 }
+}
+CZE = {
+	color = rgb { 54 167 156 }
+	color_ui = rgb { 54 167 156 }
+}
+HUN = {
+	color = rgb { 138 163 117 }
+	color_ui = rgb { 138 163 117 }
+}
+
+###Southern Europe
+ITA = {
+	color = rgb { 67 127 63 }
+	color_ui = rgb { 67 127 63 }
+}
+SPR = {
+	color = rgb { 242 205 94 }
+	color_ui = rgb { 242 205 94 }
+}
+POR = {
+	color = rgb { 39 116 70 }
+	color_ui = rgb { 39 116 70 }
+}
+ALB = {
+	color = rgb { 143 43 53 }
+	color_ui = rgb { 143 43 53 }
+}
+GRE = {
+	color = rgb { 38 121 191 }
+	color_ui = rgb { 38 121 191 }
+}
+BUL = {
+	color = rgb { 16 176 91 }
+	color_ui = rgb { 16 176 91 }
+}
+ROM = {
+	color = rgb { 252 209 22 }
+	color_ui = rgb { 252 209 22 }
+}
+
+###Northern Europe
+
+FIN = {
+	color = rgb { 205 212 228 }
+	color_ui = rgb { 205 212 228 }
+}
+
+###Eastern Europe
+SOV = {
+	color = rgb { 49 108 47 }
+	color_ui = rgb { 49 108 47 }
+}
+
+###North Africa
+LBA = {
+	color = rgb { 200 180 90 }
+	color_ui = rgb { 200 180 90 }
+}
+EGY = {
+	color = rgb { 150 28 28 }
+	color_ui = rgb { 150 28 28 }
+}
+ALG = {
+	color = rgb { 153 102 51 }
+	color_ui = rgb { 153 102 51 }
+}
+TUN = {
+	color = rgb { 153 153 102 }
+	color_ui = rgb { 153 153 102 }
+}
+MOR = {
+	color = rgb { 102 51 0 }
+	color_ui = rgb { 102 51 0 }
+}
+
+###Levant
+PAL = {
+	color = rgb { 170  125  80 }
+	color_ui = rgb { 170  125  80 }
+}
+
+### Turkey and Its Releaseables
+TUR = {
+	color = rgb { 198 186 153 }
+	color_ui = rgb { 198 186 153 }
+}
+
+###Middle East
+
+###British Releasables
+
+###Italian Releasables
+
+###Spanish Releasables
+
+###French Releasables
+
+###Yugoslavian Releasables
+SER = {
+	color = rgb { 70 70 150 }
+	color_ui = rgb { 70 70 150 }
+}
+
+###German Releasables
+
+###Thuringian states
+
+
+###Polish Releasables
+UKR = {
+	color = rgb { 65 116 190 }
+	color_ui = rgb { 65 116 190 }	
+}
+
+###Ukrainian Releasables
+
+###Czechoslovak Releasables
+
+###Soviet Releasables
+
+###Soviet Releasables - Caucasus

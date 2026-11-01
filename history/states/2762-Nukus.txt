@@ -1,0 +1,20 @@
+
+state={
+	id=2762
+	name="STATE_2762"
+	provinces={
+		6273 7165 9375 14683 16832 
+	}
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	impassable=yes
+	manpower=240381
+	state_category=wasteland
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

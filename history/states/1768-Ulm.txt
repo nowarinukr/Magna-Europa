@@ -1,0 +1,25 @@
+state={
+	id=1768
+	name="STATE_1768"
+	provinces={
+		3588 3603 13231 13261 13321 20759 
+	}
+	history={
+	    owner = GER
+        victory_points = {
+            3588 10 #Ulm
+        }
+        victory_points = {
+            13231 2 #Göppingen
+        }
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+		}
+		 
+    }
+	manpower=240691
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = town
+}

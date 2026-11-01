@@ -1,0 +1,24 @@
+
+state={
+	id=1432
+	name="STATE_1432"
+	history={
+		owner = AUS
+		add_core_of = AUS
+		add_claim_by = CZE
+		
+        victory_points = {
+            20563 1 #Neubistritz
+        }
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	provinces={
+		7372 20563 20059 
+	}
+	manpower=46226
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = pastoral
+}

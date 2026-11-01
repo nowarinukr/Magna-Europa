@@ -1,0 +1,21 @@
+
+state={
+	id=2078
+	name="STATE_2078"
+	provinces={
+		8481 13575 
+	}
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+		 
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	manpower=192100
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,23 @@
+
+state={
+	id=2209
+	name="STATE_2209"
+	history = {
+		owner = TUR
+		add_core_of = PAL
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+		victory_points = {
+		    18868 10 #Karbala
+		}	
+	}
+	provinces={
+		231 519 18666 18868 19206 
+	}
+	manpower=219372
+	state_category=large_town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

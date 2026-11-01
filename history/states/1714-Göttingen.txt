@@ -1,0 +1,28 @@
+
+state={
+	id=1714
+	name="STATE_1714"
+	provinces={
+		3282 3903 5373 12033 20669 20672 
+	}
+	resources={
+		steel=100
+		aluminium = 100
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+		}
+		
+		
+        victory_points = {
+            12033 5
+        }
+    }
+	manpower=202288
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = town
+}

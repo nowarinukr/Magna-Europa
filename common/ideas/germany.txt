@@ -1,0 +1,517 @@
+ideas = {
+
+	country = {
+		GER_mob_1 = {
+			allowed = {original_tag = GER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.035
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+		
+		GER_mob_2 = {
+			name = GER_mob_1
+			allowed = {original_tag = GER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.035
+			}
+		}
+
+		GER_mob_3 = {
+			allowed = {original_tag = GER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.035
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		
+		GER_naval_arms_race = {
+			picture = generic_the_london_naval_treaty
+			modifier = {
+				production_speed_dockyard_factor = 0.1
+				industrial_capacity_dockyard = 0.05
+				political_power_cost = 0.1
+				consumer_goods_factor = 0.025
+			}
+		}
+
+		GER_naval_arms_race_2 = {
+			picture = generic_the_london_naval_treaty
+			modifier = {
+				production_speed_dockyard_factor = 0.2
+				industrial_capacity_dockyard = 0.1
+				political_power_cost = 0.15
+				consumer_goods_factor = 0.05
+			}
+		}
+	
+		GER_naval_arms_race_3 = {
+			picture = generic_the_london_naval_treaty
+			modifier = {
+				production_speed_dockyard_factor = 0.3
+				industrial_capacity_dockyard = 0.15
+				political_power_cost = 0.25
+				consumer_goods_factor = 0.05
+			}
+		}
+
+		GER_high_seas_fleet = {
+			picture = generic_coastal_defense_ships2
+			modifier = {
+				naval_has_potf_in_combat_attack = 0.05
+				naval_hit_chance = 0.05
+				experience_gain_navy_factor = 0.25
+				naval_morale_factor = 0.1
+				navy_org_factor = 0.1
+			}
+		}
+
+		GER_raiding_fleet = {
+			picture = generic_sea_focused_navy
+			modifier = {
+				naval_speed_factor = 0.1
+				navy_max_range_factor = 0.2
+				naval_torpedo_hit_chance_factor = 0.25
+				navy_visibility = -0.1
+			}
+		}
+
+		GER_army_investments = {
+			ledger = army
+			picture = man_five_year_plan_industry
+			modifier = {
+			    production_speed_arms_factory_factor = 0.2
+		        production_speed_industrial_complex_factor = -0.1
+				industrial_capacity_factory = 0.15
+				political_power_cost = 0.1
+			}
+		}
+
+		GER_army_investments_2 = {
+			ledger = army
+			picture = man_five_year_plan_industry
+			modifier = {
+			    production_speed_arms_factory_factor = 0.25
+		        production_speed_industrial_complex_factor = -0.2
+				industrial_capacity_factory = 0.15
+				political_power_cost = 0.2
+			}
+		}
+	
+		GER_air_industry = {
+			ledger = army
+			picture = man_five_year_plan_air
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				scout_plane_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+			}
+			research_bonus = {
+				air_equipment = 0.1
+			}
+		}
+
+		GER_air_industry_2 = {
+			ledger = army
+			picture = man_five_year_plan_air
+			equipment_bonus = {
+				fighter_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				scout_plane_equipment = {
+					build_cost_ic = -0.05 instant = yes
+				}
+				large_plane_airframe = {
+					build_cost_ic = -0.1 instant = yes
+				}
+			}
+			research_bonus = {
+				air_equipment = 0.1
+			}
+		}
+
+		GER_integrated_industries = {
+			picture = ger_rebuild_the_nation
+			allowed = {
+				TAG = GER
+			}
+			targeted_modifier = {
+				tag = AUS
+				trade_cost_for_target_factor = -0.25
+			}
+			modifier = {
+			}
+		}
+		
+		GER_AUS_integrated_industries = {
+			picture = ger_rebuild_the_nation
+			allowed = {
+				TAG = AUS
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			modifier = {
+				local_resources_factor = 0.1
+				global_building_slots_factor = 0.1
+			}
+		}
+
+		GER_rathenau_programme = {
+			picture = SOV_third_five_year_plan_civilian
+			allowed = {
+				TAG=GER
+			}
+			modifier = {
+				economy_cost_factor = 1.0
+			    consumer_goods_factor = -0.05
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+
+		GER_hindenburg_programme = {
+			picture = SOV_third_five_year_plan_military
+			allowed = {
+				TAG=GER
+			}
+			modifier = {
+			    industrial_capacity_factory = 0.25
+				consumer_goods_factor = -0.05
+				war_support_weekly = -0.005
+				stability_weekly = -0.001
+			}
+		}
+		
+		GER_swedish_trade_idea = {
+			picture = generic_exploit_mines
+			allowed = {
+				TAG = GER
+			}
+			modifier = {
+				country_resource_steel = 200
+				country_resource_chromium = 15
+				country_resource_tungsten = 200
+				civilian_factory_use = 5
+			}
+		}
+		
+		GER_general_staff = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = general_staff
+
+			modifier = {
+				experience_gain_army_factor = 0.1
+				command_power_gain_mult = 0.25
+				army_speed_factor = 0.05
+				army_org_factor = 0.05
+				mobilization_speed = 0.5
+				planning_speed = 0.1
+			}
+		}
+
+		GER_general_staff_2 = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = general_staff
+
+			modifier = {
+				experience_gain_army_factor = 0.2
+				command_power_gain_mult = 0.5
+				army_speed_factor = 0.05
+				army_org_factor = 0.05
+				mobilization_speed = 0.75
+				planning_speed = 0.2
+			}
+		}
+
+		GER_general_staff_2_claus = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = general_staff
+
+			modifier = {
+				experience_gain_army_factor = 0.2
+				command_power_gain_mult = 0.5
+				army_speed_factor = 0.05
+				army_org_factor = 0.05
+				mobilization_speed = 0.75
+				planning_speed = 0.2
+				stability_factor = 0.1
+			}
+		}
+
+		GER_general_staff_2_claus_2 = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = general_staff
+
+			modifier = {
+				experience_gain_army_factor = 0.2
+				command_power_gain_mult = 0.5
+				army_speed_factor = 0.05
+				army_org_factor = 0.1
+				army_morale_factor = 0.05
+				experience_loss_factor = -0.2
+				mobilization_speed = 0.75
+				planning_speed = 0.2
+				stability_factor = 0.1
+			}
+		}
+
+		GER_general_staff_2_jom = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = general_staff
+
+			modifier = {
+				experience_gain_army_factor = 0.2
+				command_power_gain_mult = 0.5
+				army_speed_factor = 0.05
+				army_org_factor = 0.05
+				mobilization_speed = 0.75
+				planning_speed = 0.2
+				war_support_factor = 0.1
+			}
+		}
+
+		GER_mil_mission = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = german_advisors
+
+			modifier = {
+				experience_gain_army = 0.1
+				mobilization_speed = 0.25
+				training_time_army_factor = -0.25
+				command_power_gain_mult = -0.25
+			}
+		}
+
+		GER_bul_support = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = generic_foreign_capital
+
+			modifier = {
+				industrial_factory_donations = 10
+				consumer_goods_factor = -0.05
+				production_speed_arms_factory_factor = 0.2
+				industrial_capacity_factory = 0.1
+			}
+		}
+
+		GER_blockade_1 = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.002
+			}
+		}
+
+		GER_blockade_2 = {
+			name = GER_blockade_1
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.003
+			}
+		}
+
+		GER_blockade_3 = {
+			name = GER_blockade_1
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.004
+			}
+		}
+
+		GER_blockade_4 = {
+			name = GER_blockade_1
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.005
+			}
+		}
+
+		GER_blockade_5 = {
+			name = GER_blockade_1
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.006
+			}
+		}
+
+		GER_blockade_6 = {
+			name = GER_blockade_1
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.007
+			}
+		}
+
+		GER_blockade_7 = {
+			name = GER_blockade_1
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.008
+			}
+		}
+
+		GER_blockade_8 = {
+			name = GER_blockade_1
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.009
+			}
+		}
+
+		GER_blockade_9 = {
+			name = GER_blockade_1
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.01
+			}
+		}
+
+		GER_blockade_10 = {
+			name = GER_blockade_1
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+
+			picture = hol_caved_to_the_british
+
+			modifier = {
+				weekly_convoys_war_support = -0.012
+			}
+		}
+
+	}
+
+	materiel_manufacturer={
+		designer = yes
+		mauser = {
+			allowed = { original_tag = GER }
+			cost = 50
+			research_bonus = {
+				infantry_weapons = 0.1
+				infantry_mg_weapons = 0.1
+			}
+			available = {
+				has_completed_focus = GER_expand_mauser
+			}
+			traits = {
+				mauser_trait
+			}
+		}
+	}
+}
+

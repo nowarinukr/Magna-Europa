@@ -1,0 +1,31 @@
+
+state={
+	id=1695
+	name="STATE_1695"
+
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			industrial_complex = 3
+		}
+		
+		
+        victory_points = {
+            7025 5 #Halberstadt
+        }
+        victory_points = {
+            7757 2 #Aschersleben
+        }
+	}
+
+	provinces={
+		801 7025 7757 11920 
+	}
+	manpower=269379
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

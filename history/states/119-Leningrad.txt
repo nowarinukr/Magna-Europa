@@ -1,0 +1,31 @@
+
+state={
+	id=119
+	name="STATE_119"
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+
+		buildings = {
+			infrastructure = 3
+			arms_factory = 5
+			industrial_complex = 5
+			dockyard = 3
+			9985 = { naval_base = 10 }
+		}
+		
+		victory_points = {
+			9973 80
+		}
+
+	}
+
+	provinces={
+		6617 9973 9985 17228 18223 
+	}
+	manpower=2350284
+	buildings_max_level_factor=1.000
+	state_category=megalopolis
+	local_supplies=0.000
+}

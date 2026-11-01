@@ -1,0 +1,22 @@
+state={
+	id=1522
+	name="STATE_1522"
+	provinces={
+		6260 6699 20218 
+	}
+	history={
+		owner = TUR
+		add_core_of = ALB
+		buildings = {
+			infrastructure = 2
+			20218 = { naval_base = 1 }
+		}
+        victory_points = {
+            20218 15
+        }
+    }
+	manpower=84609
+	state_category=large_town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

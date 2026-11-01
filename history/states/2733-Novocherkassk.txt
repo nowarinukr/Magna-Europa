@@ -1,0 +1,22 @@
+state={
+	id=2733
+	name="STATE_2733"
+	provinces={
+		6313 9054 13657 13680 13760 13807 
+	}
+	history={
+		victory_points = { 13760 10 }
+		owner = SOV
+
+		buildings = {
+			industrial_complex = 1
+			infrastructure = 3
+		}
+		add_core_of = SOV
+		add_claim_by = UKR
+	}
+	manpower=128531
+	state_category=town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

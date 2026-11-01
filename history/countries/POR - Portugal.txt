@@ -1,0 +1,35 @@
+﻿capital = 1042
+
+set_research_slots = 3
+
+set_technology = {
+
+}
+
+set_stability = 0.8
+set_convoys = 100
+
+set_politics = {
+    ruling_party = democratic
+    last_election = "1908.4.5"
+    election_frequency = 48
+    elections_allowed = yes
+}
+set_popularities = {
+    democratic = 50
+    fascism = 10
+    communism = 4
+    neutrality = 36
+}
+
+add_ideas = {
+	neutrality_idea
+}
+
+recruit_character = POR_teofilo_braga
+recruit_character = POR_gomes_da_costa
+recruit_character = POR_tomas_rosado
+recruit_character = POR_de_simas
+recruit_character = POR_fernando_e_silva
+recruit_character = POR_leote_do_rego
+

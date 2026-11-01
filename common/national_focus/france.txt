@@ -1,0 +1,976 @@
+focus_tree = {
+	id = france_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = FRA
+		}
+	}
+
+	continuous_focus_position = { x = 0 y = 1300 }
+	
+	default = no
+
+	focus = {
+		id = FRA_command_reform
+		icon = GFX_focus_chi_army_reform
+		x = 6
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			army_experience = 50
+		}
+	}
+	
+	focus = {
+		id = FRA_appoint_joffre
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = FRA_command_reform }
+		mutually_exclusive = { focus = FRA_appoint_michel }
+		x = -6
+		y = 1
+		relative_position_id = FRA_command_reform
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			FRA_joseph_joffre = {
+				promote_leader = yes
+			}
+			add_command_power = 100
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = FRA_adolphe_messimy
+		}
+	}
+
+	focus = {
+		id = FRA_cult_of_offensive
+		icon = GFX_focus_generic_strike_at_democracy1
+		prerequisite = { focus = FRA_appoint_joffre }
+		x = -1
+		y = 1
+		relative_position_id = FRA_appoint_joffre
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_soixante_quinze
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = FRA_appoint_joffre }
+		x = 1
+		y = 1
+		relative_position_id = FRA_appoint_joffre
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = FRA_elan_2
+				remove_idea = FRA_elan
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_continue_elan
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = FRA_cult_of_offensive }
+		prerequisite = { focus = FRA_soixante_quinze }
+		x = 1
+		y = 1
+		relative_position_id = FRA_cult_of_offensive
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = FRA_elan_3
+				remove_idea = FRA_elan_2
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_appoint_michel
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = FRA_command_reform }
+		mutually_exclusive = { focus = FRA_appoint_joffre }
+		x = 6
+		y = 1
+		relative_position_id = FRA_command_reform
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			FRA_michel_maunoury = {
+				promote_leader = yes
+			}
+			add_command_power = 100
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = FRA_alex_millerand
+		}
+	}
+
+	focus = {
+		id = FRA_bolster_reserves
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = FRA_appoint_michel }
+		x = -1
+		y = 1
+		relative_position_id = FRA_appoint_michel
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_to_variable = { FRA_mob_exp = 0.1 }
+			subtract_from_variable = { FRA_mob_days = 5 }
+			custom_effect_tooltip = FRA_bolster_reserves_tt
+		}
+	}
+
+	focus = {
+		id = FRA_dubails_guns
+		icon = GFX_focus_generic_railway_gun
+		prerequisite = { focus = FRA_appoint_michel }
+		x = 1
+		y = 1
+		relative_position_id = FRA_appoint_michel
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = FRA_dubails_guns_idea
+				days = 180
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_heavy_artillery
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_defensive_focus
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = FRA_bolster_reserves }
+		prerequisite = { focus = FRA_dubails_guns }
+		x = 1
+		y = 1
+		relative_position_id = FRA_bolster_reserves
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = FRA_no_elan
+				remove_idea = FRA_elan
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_aeronautique_militare
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = FRA_appoint_joffre focus = FRA_appoint_michel }
+		x = 4
+		y = 1
+		relative_position_id = FRA_appoint_joffre
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			air_experience = 50
+			custom_effect_tooltip = available_chief_of_airforce
+			show_ideas_tooltip = FRA_pierre_roques
+			custom_effect_tooltip = available_military_high_command
+			show_ideas_tooltip = FRA_charles_rose
+		}
+	}
+
+	focus = {
+		id = FRA_fighter_experiments
+		icon = GFX_goal_generic_air_fighter
+		prerequisite = { focus = FRA_aeronautique_militare }
+		x = -1
+		y = 1
+		relative_position_id = FRA_aeronautique_militare
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				ahead_reduction = 0.5
+				technology = fighter1
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = light_fighter
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_pilot_training
+		icon = GFX_goal_generic_CAS
+		prerequisite = { focus = FRA_aeronautique_militare }
+		x = 1
+		y = 1
+		relative_position_id = FRA_aeronautique_militare
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = FRA_pilot_training_idea
+				days = 720
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_continue_juene_ecole
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = FRA_appoint_joffre focus = FRA_appoint_michel }
+		x = 8
+		y = 1
+		relative_position_id = FRA_appoint_joffre
+		cost = 5
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = improved_ship_hull_light
+			}
+			navy_experience = 50
+		}
+	}
+
+	focus = {
+		id = FRA_normandie_class
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = FRA_continue_juene_ecole }
+		x = -1
+		y = 1
+		relative_position_id = FRA_continue_juene_ecole
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = advanced_ship_hull_heavy
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = naval_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_seaplane_experiments
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = FRA_continue_juene_ecole }
+		x = 1
+		y = 1
+		relative_position_id = FRA_continue_juene_ecole
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cv_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = cv_naval_bomber1
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_plan_xvii
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = FRA_continue_elan focus = FRA_defensive_focus }
+		x = 6
+		y = 1
+		relative_position_id = FRA_continue_elan
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = FRA_no_elan
+				}
+				swap_ideas = {
+					add_idea = FRA_no_elan_2
+					remove_idea = FRA_no_elan
+				}
+			}
+			else = {
+				swap_ideas = {
+					add_idea = FRA_elan_4
+					remove_idea = FRA_elan_3
+				}
+			}
+			add_command_power = 50
+		}
+	}
+
+	focus = {
+		id = FRA_purge_incompetents
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = { focus = FRA_plan_xvii }
+		x = 0
+		y = 1
+		relative_position_id = FRA_plan_xvii
+		cost = 10
+		available = {
+			has_war = yes
+			command_power > 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_command_power = -200
+		}
+	}
+
+	focus = {
+		id = FRA_tactical_innovations
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = FRA_purge_incompetents }
+		x = -4
+		y = 1
+		relative_position_id = FRA_purge_incompetents
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.75
+				uses = 1
+				category = cat_mass_assault
+			}
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.75
+				uses = 1
+				category = cat_superior_firepower
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_horizon_blue
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = FRA_purge_incompetents }
+		x = -2
+		y = 1
+		relative_position_id = FRA_purge_incompetents
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = FRA_no_elan_2
+				}
+				remove_ideas = FRA_no_elan_2
+			}
+			else = {
+				swap_ideas = {
+					add_idea = FRA_elan_5
+					remove_idea = FRA_elan_4
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_walking_fire
+		icon = GFX_focus_generic_conspiracy
+		prerequisite = { focus = FRA_purge_incompetents }
+		x = -0
+		y = 1
+		relative_position_id = FRA_purge_incompetents
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				ahead_reduction = 1
+				uses = 1
+				technology = infantry_weapon_lmg
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_estiennes_landships
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = FRA_purge_incompetents }
+		x = 2
+		y = 1
+		relative_position_id = FRA_purge_incompetents
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = tank_unlocker2
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_sponsor_renault
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = FRA_estiennes_landships }
+		x = 0
+		y = 1
+		relative_position_id = FRA_estiennes_landships
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_light_armor
+			}
+			custom_effect_tooltip = available_designer
+			show_ideas_tooltip = renault_fra
+		}
+	}
+
+	focus = {
+		id = FRA_colonial_recruitment
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = FRA_purge_incompetents }
+		x = 4
+		y = 1
+		relative_position_id = FRA_purge_incompetents
+		cost = 10
+		available = {
+			has_manpower < 250000
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_manpower = 400000
+			add_stability = -0.1
+		}
+	}
+
+	focus = {
+		id = FRA_legacy_of_dreyfus
+		icon = GFX_focus_focus_fra_liberte_egalite_solidarite
+		x = 18
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = FRA_pension_reform
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = FRA_legacy_of_dreyfus }
+		x = -2
+		y = 1
+		relative_position_id = FRA_legacy_of_dreyfus
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = FRA_political_tensions
+				}
+				swap_ideas = {
+					add_idea = FRA_political_tensions_2
+					remove_idea = FRA_political_tensions
+				}
+			}
+			else = {
+				remove_ideas = FRA_political_tensions_2
+			}
+			add_timed_idea = {
+				idea = FRA_pensions
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_expand_welfare
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = FRA_legacy_of_dreyfus }
+		x = 2
+		y = 1
+		relative_position_id = FRA_legacy_of_dreyfus
+		cost = 10
+		available = {
+			has_political_power > 100
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = FRA_political_tensions
+				}
+				swap_ideas = {
+					add_idea = FRA_political_tensions_2
+					remove_idea = FRA_political_tensions
+				}
+			}
+			else = {
+				remove_ideas = FRA_political_tensions_2
+			}
+			add_political_power = -100
+		}
+	}
+	
+	focus = {
+		id = FRA_poincare_presidency
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = FRA_legacy_of_dreyfus }
+		mutually_exclusive = { focus = FRA_clem_presidency }
+		x = -1
+		y = 2
+		relative_position_id = FRA_legacy_of_dreyfus
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			promote_character = FRA_raymond_poincare
+		}
+	}
+
+	focus = {
+		id = FRA_presidential_powers
+		icon = GFX_focus_generic_improve_the_administration
+		prerequisite = { focus = FRA_poincare_presidency }
+		x = -1
+		y = 1
+		relative_position_id = FRA_poincare_presidency
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			FRA_raymond_poincare = {
+				add_country_leader_trait = figurehead_president
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_clem_presidency
+		icon = GFX_focus_por_workers_of_iberia
+		prerequisite = { focus = FRA_legacy_of_dreyfus }
+		mutually_exclusive = { focus = FRA_poincare_presidency }
+		x = 1
+		y = 2
+		relative_position_id = FRA_legacy_of_dreyfus
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			promote_character = FRA_georges_clemenceau
+		}
+	}
+
+	focus = {
+		id = FRA_embrace_revanchism
+		icon = GFX_goal_generic_territory_or_war
+		prerequisite = { focus = FRA_clem_presidency }
+		x = 1
+		y = 1
+		relative_position_id = FRA_clem_presidency
+		cost = 10
+		available = {
+			has_completed_focus = FRA_belle_epoque
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = FRA_revanchism
+				remove_idea = FRA_belle_epoque
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_three_year_law
+		icon = GFX_focus_SOV_mobilization_plan
+		prerequisite = { focus = FRA_poincare_presidency focus = FRA_clem_presidency }
+		x = 1
+		y = 1
+		relative_position_id = FRA_poincare_presidency
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+			add_command_power = 100
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = FRA_expand_tulle
+		icon = GFX_focus_focus_fra_maquis
+		prerequisite = { focus = FRA_three_year_law }
+		x = -2
+		y = 1
+		relative_position_id = FRA_three_year_law
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			751 = {
+				add_dynamic_modifier = { modifier = FRA_state_arsenal }
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_expand_st_etienne
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = FRA_three_year_law }
+		x = 0
+		y = 1
+		relative_position_id = FRA_three_year_law
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_mg_weapons
+			}
+			729 = {
+				add_dynamic_modifier = { modifier = FRA_state_arsenal }
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_expand_bourges
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = FRA_three_year_law }
+		x = 2
+		y = 1
+		relative_position_id = FRA_three_year_law
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_light_artillery
+			}
+			650 = {
+				add_dynamic_modifier = { modifier = FRA_state_arsenal }
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_union_sacree
+		icon = GFX_focus_fra_french_union
+		prerequisite = { focus = FRA_expand_tulle focus = FRA_expand_st_etienne focus = FRA_expand_bourges }
+		x = 0
+		y = 1
+		relative_position_id = FRA_expand_st_etienne
+		cost = 10
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = FRA_union_sacree
+		}
+	}
+
+	focus = {
+		id = FRA_belle_epoque
+		icon = GFX_focus_fra_devalue_the_franc
+		x = 25
+		y = 0
+		cost = 10
+		
+		completion_reward = {
+			add_ideas = FRA_belle_epoque
+		}
+	}
+
+	focus = {
+		id = FRA_address_the_agadir_crisis
+		icon = GFX_focus_generic_africa_production
+		prerequisite = { focus = FRA_belle_epoque }
+		x = -2
+		y = 1
+		relative_position_id = FRA_belle_epoque
+		cost = 10
+		available = {
+			has_country_flag = FRA_agadir_crisis
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_stability = 0.1
+		}
+	}
+
+	focus = {
+		id = FRA_colonial_guarantees
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = FRA_address_the_agadir_crisis }
+		x = 0
+		y = 2
+		relative_position_id = FRA_address_the_agadir_crisis
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_stability = 0.15
+		}
+	}
+
+	focus = {
+		id = FRA_departement_of_nation
+		icon = GFX_focus_generic_africa_liberation
+		prerequisite = { focus = FRA_address_the_agadir_crisis }
+		x = -1
+		y = 1
+		relative_position_id = FRA_address_the_agadir_crisis
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_state_core = 1161
+			add_state_core = 1183
+			add_state_core = 1186
+			add_state_core = 1120
+			add_state_core = 1111
+			add_state_core = 1112
+			add_state_core = 1865
+		}
+	}
+
+	focus = {
+		id = FRA_colonial_profits
+		icon = GFX_focus_generic_africa_factory
+		prerequisite = { focus = FRA_address_the_agadir_crisis }
+		x = 1
+		y = 1
+		relative_position_id = FRA_address_the_agadir_crisis
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = FRA_colonial_empire_2
+				remove_idea = FRA_colonial_empire
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_entente_cordiale
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = FRA_belle_epoque }
+		x = 1
+		y = 1
+		relative_position_id = FRA_belle_epoque
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_to_tech_sharing_group = entente_research
+			ENG = {
+				add_to_tech_sharing_group = entente_research
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_city_of_light
+		icon = GFX_focus_spa_the_spanish_miracle
+		prerequisite = { focus = FRA_belle_epoque }
+		x = 3
+		y = 1
+		relative_position_id = FRA_belle_epoque
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			58 = {
+				add_dynamic_modifier = { modifier = FRA_city_of_light_mod }
+			}
+			571 = {
+				add_dynamic_modifier = { modifier = FRA_city_of_light_mod }
+			}
+			385 = {
+				add_dynamic_modifier = { modifier = FRA_city_of_light_mod }
+			}
+			452 = {
+				add_dynamic_modifier = { modifier = FRA_city_of_light_mod }
+			}
+		}
+	}
+
+	focus = {
+		id = FRA_commune_legacy
+		icon = GFX_focus_focus_fra_revolution_utmost
+		prerequisite = { focus = FRA_city_of_light }
+		x = 0
+		y = 1
+		relative_position_id = FRA_city_of_light
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			58 = {
+				add_dynamic_modifier = { modifier = FRA_local_defences }
+			}
+			571 = {
+				add_dynamic_modifier = { modifier = FRA_local_defences }
+			}
+			385 = {
+				add_dynamic_modifier = { modifier = FRA_local_defences }
+			}
+			452 = {
+				add_dynamic_modifier = { modifier = FRA_local_defences }
+			}
+		}
+	}
+	
+}

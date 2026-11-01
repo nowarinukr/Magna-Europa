@@ -1,0 +1,15 @@
+characters={
+	HOL_wilhelmina={
+		name="Wilhelmina"
+		portraits={
+			civilian={
+				large="gfx/leaders/HOL/portrait_wilhelmina.dds"
+			}
+		}
+		country_leader={
+			ideology=socialism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+}

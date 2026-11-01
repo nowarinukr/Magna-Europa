@@ -1,0 +1,21 @@
+
+state={
+	id=778
+	name="STATE_778"
+	provinces={
+		7896 8311 9524 16813 16978 
+	}
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		add_claim_by = UKR
+		buildings = {
+			infrastructure = 2
+		}
+		
+	}
+	manpower=99258
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

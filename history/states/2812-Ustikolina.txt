@@ -1,0 +1,20 @@
+state={
+	id=2812
+	name="STATE_2812"
+	provinces={
+		20177 
+	}
+	history={
+		owner = AUS
+		add_core_of = SER
+		buildings = {
+			infrastructure = 2
+
+		}
+		set_compliance = 25
+	}
+	manpower=736
+	state_category=enclave
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

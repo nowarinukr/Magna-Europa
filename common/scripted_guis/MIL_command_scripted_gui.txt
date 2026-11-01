@@ -1,0 +1,31 @@
+scripted_gui = {
+
+	MIL_command_ui = {
+		context_type = decision_category
+		window_name = "MIL_command_ui_window"
+
+		properties = {
+
+			mil_inf_slot = {
+				frame = MIL_inf_frame
+			}
+			mil_cav_slot = {
+				frame = MIL_cav_frame
+			}
+			mil_sup_slot = {
+				frame = MIL_sup_frame
+			}
+			mil_air_slot = {
+				frame = MIL_air_frame
+			}
+			mil_cap_slot = {
+				frame = MIL_cap_frame
+			}
+			mil_scr_slot = {
+				frame = MIL_scr_frame
+			}
+		}
+	}
+	
+}
+

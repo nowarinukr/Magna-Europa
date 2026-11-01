@@ -1,0 +1,33 @@
+state={
+	id=1651
+	name="STATE_1651"
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 7
+			industrial_complex = 6
+		}
+		
+		victory_points = {
+			20590 20 #Schöneberg
+		}
+		victory_points = {
+			20591 20 #Deutsch-Wilmersdorf
+		}
+		victory_points = {
+			13630 25 #Rixdorf
+		}
+		
+		
+		
+    }
+	provinces={
+		13630 20590 20591 
+	}
+	manpower=1216812
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = metropolis
+}

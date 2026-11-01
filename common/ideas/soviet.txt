@@ -1,0 +1,311 @@
+ideas={
+	country = {
+		RUS_mob_1 = {
+			allowed = {original_tag = SOV }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.025
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+
+		RUS_mob_2 = {
+			allowed = {original_tag = SOV }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.025
+			}
+		}
+
+		RUS_ghost_of_tsushima = {
+			picture = warrior_traditions_idea
+			modifier = {
+				naval_accidents_chance = 0.25
+				naval_critical_effect_factor = 0.25
+				navy_org_factor = -0.1
+				experience_gain_navy_unit_factor = -0.25
+			}
+		}
+
+		RUS_ghost_of_tsushima_2 = {
+			picture = warrior_traditions_idea
+			modifier = {
+				naval_accidents_chance = 0.1
+				naval_critical_effect_factor = 0.1
+				navy_org_factor = -0.1
+				experience_gain_navy_unit_factor = -0.1
+			}
+		}
+
+		RUS_forts_maintenance = {
+			picture = generic_fortify_the_borders
+			modifier = {
+				civilian_factory_use = 5
+				production_speed_bunker_factor = -0.2
+				political_power_cost = 0.1
+			}
+		}
+
+		RUS_forts_maintenance_2 = {
+			picture = generic_fortify_the_borders
+			modifier = {
+				civilian_factory_use = 10
+				production_speed_bunker_factor = 0.1
+				political_power_cost = 0.15
+			}
+		}
+
+		RUS_oversized_reserves = {
+			picture = prc_low_popular_support3
+			modifier = {
+				max_training = -0.2
+				training_time_factor = 0.2
+				experience_gain_army_factor = -0.1
+				mobilization_speed = -0.5
+				minimum_training_level = -0.2
+			}
+		}
+
+		RUS_oversized_reserves_2 = {
+			picture = prc_low_popular_support2
+			modifier = {
+				max_training = -0.1
+				training_time_factor = 0.1
+				experience_gain_army_factor = -0.1
+				mobilization_speed = -0.5
+				minimum_training_level = -0.1
+			}
+		}
+
+		RUS_oversized_reserves_3 = {
+			picture = prc_low_popular_support
+			modifier = {
+				experience_gain_army_factor = -0.1
+				mobilization_speed = -0.5
+			}
+		}
+		
+		RUS_army_factionalism = {
+			picture = SPR_disbanded_army
+			modifier = {
+				assign_army_leader_cp_cost = 10
+				command_power_gain_mult = -0.25
+			}
+		}
+		
+		RUS_army_factionalism_2 = {
+			picture = SPR_disbanded_army
+			modifier = {
+				assign_army_leader_cp_cost = 5
+				command_power_gain_mult = -0.1
+			}
+		}
+		
+		RUS_stavka_suk = {
+			picture = SOV_fascist_womens_movement
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			modifier = {
+				supply_combat_penalties_on_core_factor = -0.1
+				army_core_defence_factor = 0.05
+			}
+		}
+
+		RUS_stavka_suk_2 = {
+			picture = SOV_fascist_womens_movement
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			modifier = {
+				supply_combat_penalties_on_core_factor = -0.1
+				army_core_defence_factor = 0.05
+				production_speed_rail_way_factor = 0.25
+			}
+		}
+
+		RUS_stavka_alex = {
+			picture = SOV_fascist_womens_movement
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			modifier = {
+				experience_gain_factor = 0.15
+				experience_loss_factor = -0.1
+			}
+		}
+
+		RUS_stavka_alex_2 = {
+			picture = SOV_fascist_womens_movement
+			
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			modifier = {
+				experience_gain_factor = 0.25
+				experience_loss_factor = -0.15
+				grant_medal_cost_factor = -0.25
+			}
+		}
+
+		RUS_stavka_alex_3 = {
+			picture = SOV_fascist_womens_movement
+
+			allowed_civil_war = {
+				has_government = neutrality
+			}
+			
+			modifier = {
+				experience_gain_factor = 0.25
+				experience_loss_factor = -0.15
+				grant_medal_cost_factor = -0.25
+				planning_speed = 0.15
+			}
+		}
+
+		RUS_military_government = {
+			picture = generic_secret_police
+			modifier = {
+				command_power_gain_mult = 0.1
+				political_power_factor = -0.1
+				economy_cost_factor = 0.5
+				trade_laws_cost_factor = 0.5
+				political_advisor_cost_factor = 0.5
+				mobilization_laws_cost_factor = -0.5
+				high_command_cost_factor = -0.5
+				air_chief_cost_factor = -0.5
+				army_chief_cost_factor = -0.5
+				navy_chief_cost_factor = -0.5
+			}
+		}
+
+		RUS_military_government_2 = {
+			picture = generic_secret_police
+			modifier = {
+				command_power_gain_mult = 0.1
+				political_power_factor = -0.1
+				economy_cost_factor = 0.5
+				trade_laws_cost_factor = 0.5
+				political_advisor_cost_factor = 0.5
+				mobilization_laws_cost_factor = -0.5
+				high_command_cost_factor = -0.5
+				air_chief_cost_factor = -0.5
+				army_chief_cost_factor = -0.5
+				navy_chief_cost_factor = -0.5
+				army_strength_factor = -0.2
+				army_morale_factor = 0.2
+				org_loss_at_low_org_factor = -0.25
+			}
+		}
+
+		RUS_total_war = {
+			picture = EST_democratic_opposition
+			allowed = {
+				TAG=SOV
+			}
+			modifier = {
+			    	industrial_capacity_factory = 0.1
+				production_speed_buildings_factor = 0.1
+				war_support_weekly = -0.0025
+				stability_weekly = -0.001
+			}
+		}
+
+		RUS_economic_boom = {
+			picture = generic_economic_increase
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.2
+			}
+		}
+
+		RUS_economic_boom_2 = {
+			picture = generic_economic_increase
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.2
+				global_building_slots_factor = 0.2
+			}
+		}
+
+		RUS_economic_boom_3 = {
+			picture = generic_economic_increase
+			modifier = {
+				consumer_goods_factor = -0.05
+				production_speed_industrial_complex_factor = 0.2
+				global_building_slots_factor = 0.2
+				economy_cost_factor = -0.25
+			}
+		}
+
+		RUS_industrialist_support = {
+			picture = SOV_second_five_year_plan
+			modifier = {
+				conversion_cost_civ_to_mil_factor = -0.25
+				production_speed_arms_factory_factor = 0.1
+				production_factory_start_efficiency_factor = 0.2
+			}
+		}
+
+		RUS_political_instability = {
+			picture = SOV_a_church_of_the_catacombs
+			modifier = {
+				stability_factor = -0.1
+				war_support_factor = -0.05
+			}
+		}
+		
+		RUS_economic_reforms = {
+			picture = SPR_appropriate_church_riches
+			modifier = {
+				consumer_goods_factor = 0.05
+				political_power_cost = 0.2
+			}
+		}
+
+		RUS_dual_power = {
+            picture = generic_disjointed_gov
+			allowed = {
+                always = no
+            }
+            removal_cost = -1
+			modifier = {
+                industrial_capacity_factory = -0.25
+				political_power_cost = 0.5
+				stability_factor = -0.25
+				communism_drift = 0.2
+				army_core_defence_factor = 0.2
+				army_core_attack_factor = 0.1
+				army_morale_factor = 0.2
+            }
+        }
+
+		RUS_siberian_support = {
+            picture = generic_supply_lines
+			allowed = {
+                always = no
+            }
+            removal_cost = -1
+			modifier = {
+                supply_factor = 0.25
+				supply_combat_penalties_on_core_factor = -0.5
+				supply_consumption_factor = -0.25
+				out_of_supply_factor = -0.25
+				weekly_manpower = 2500
+            }
+        }
+		
+	}
+}

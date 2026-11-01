@@ -1,0 +1,27 @@
+state={
+	id=2861
+	name="STATE_2861"
+	provinces={
+		1014 13354 20074
+	}
+	history={
+		owner = AUS
+		add_core_of = CZE
+		add_claim_by = HUN
+		
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+
+		}
+		
+		victory_points = {
+			13354 5 
+		}
+
+	}
+	manpower=186100
+	state_category=city
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

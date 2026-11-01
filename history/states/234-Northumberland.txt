@@ -1,0 +1,29 @@
+state={
+	id=234
+	name="STATE_234"
+	provinces={
+		4187 4697 4804 6749 7273 7576 9161 10630 10749 
+	}
+	resources={
+		aluminium = 100
+	}
+	history={
+		owner = ENG
+		add_core_of = ENG
+		
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 2
+			6749 = { naval_base = 7 }
+		}
+	
+        victory_points = {
+            6749 10
+        }
+    }
+	manpower=763700
+	buildings_max_level_factor=1.000
+	state_category = large_city
+}

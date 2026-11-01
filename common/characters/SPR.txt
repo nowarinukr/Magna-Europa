@@ -1,0 +1,16 @@
+characters={
+	SPR_alfonso_xiii={
+		name="Alfonso XIII"
+		portraits={
+			civilian={
+				large="gfx/leaders/SPR/portrait_alfonso_xiii.dds"
+			}
+		}
+		country_leader={
+			desc="SPR_alfonso_xiii_DESC"
+			ideology=conservatism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+}

@@ -1,0 +1,195 @@
+# List of intelligence agency upgrades, and their effects
+# For documentation, there is a file _documentation.info in the same folder.
+
+branch_intelligence = {
+
+	upgrade_economy_civilian = {
+	
+		picture = GFX_agency_economy_department
+		frame = GFX_upgrade_frame_economy
+		sound = Spy_Agency_Intel_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				civilian_intel_factor = 0.25
+			}
+		}
+	}
+	
+	upgrade_army_department = {
+	
+		picture = GFX_agency_army_department
+		frame = GFX_upgrade_frame_army
+		sound = Spy_Agency_Intel_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 2
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				army_intel_factor = 0.25
+			}
+		}
+		
+	}
+	
+	upgrade_naval_department = {
+	
+		picture = GFX_agency_naval_department
+		frame = GFX_upgrade_frame_naval
+		sound = Spy_Agency_Intel_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				navy_intel_factor = 0.25
+			}
+		}
+		
+	}
+	
+	upgrade_airforce_department = {
+	
+		picture = GFX_agency_airforce_department
+		frame = GFX_upgrade_frame_airforce
+		sound = Spy_Agency_Intel_Upgrades_Confirm
+
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				airforce_intel_factor = 0.25
+			}
+		}
+		
+	}
+}
+
+branch_defense = {
+	
+	upgrade_passive_defense = {
+	
+		picture = GFX_agency_defense_department
+		frame = GFX_upgrade_frame_defense
+		sound = Spy_Agency_Defense_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 2
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				intelligence_agency_defense = 1.5
+			}
+		}
+		
+		level = {
+			modifier = {
+				intelligence_agency_defense = 1.25
+			}
+		}
+		
+		level = {
+			modifier = {
+				intelligence_agency_defense = 1
+			}
+		}
+		
+		level = {
+			modifier = {
+				intelligence_agency_defense = 1
+			}
+		}
+		
+	}
+
+	upgrade_anti_partisan = {
+	
+		picture = GFX_agency_anti_partisan
+		sound = Spy_Agency_Defense_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 5
+		}
+		
+		level = {
+			modifier = {
+				root_out_resistance_effectiveness_factor = 0.25
+			}
+		}
+		
+		level = {
+			modifier = {
+				root_out_resistance_effectiveness_factor = 0.25
+			}
+		}
+	}
+	
+}
+
+branch_operation = {
+	
+	upgrade_training_centers = {
+	
+		picture = GFX_agency_localized_training_center
+		Sound = Spy_Agency_Training_Facilities_Upgrades_Confirm
+		
+		ai_will_do = {
+			factor = 2
+		}
+		
+		modifiers_during_progress = {
+			civilian_factory_use = 10
+		}
+		
+		level = {
+			modifier = {
+				new_operative_slot_bonus = 1
+				operative_slot = 1
+			}
+		}
+		
+		level = {
+			modifier = {
+				new_operative_slot_bonus = 1
+				operative_slot = 1
+			}
+		}
+		
+	}
+	
+}

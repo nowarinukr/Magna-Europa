@@ -1,0 +1,24 @@
+
+state={
+	id=2723
+	name="STATE_2723"
+
+	history={
+		owner = SOV
+
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = SOV
+		add_claim_by = UKR
+
+	}
+
+	provinces={
+		13839 
+	}
+	manpower=127028
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

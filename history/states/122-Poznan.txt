@@ -1,0 +1,25 @@
+
+state={
+	id=122
+	name="STATE_122"
+	provinces={
+		833 4226 4870 6219 11571 11687 11746 
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		add_core_of = POL
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+		}
+        victory_points = {
+            4870 20
+        }
+  	}
+	manpower=388100
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

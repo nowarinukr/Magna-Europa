@@ -1,0 +1,33 @@
+
+state={
+	id=508
+	name="STATE_508"
+	provinces={
+		7307 11774 11800 
+	}
+	history={
+		owner = SOV
+		add_core_of = POL
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			industrial_complex = 3
+			11800 = {
+				bunker = 1
+			}
+			11774 = {
+				bunker = 1
+			}
+			7307= {
+				bunker = 1
+			}
+		}
+        victory_points = {
+            11800 80
+        }
+  	}
+	manpower=1171898
+	buildings_max_level_factor=1.000
+	state_category=metropolis
+	local_supplies=0.000
+}

@@ -1,0 +1,20 @@
+
+state={
+	id=427
+	name="STATE_427"
+	history={
+		owner = BEL
+		add_core_of = BEL
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+		}
+    }
+	provinces={
+		12481
+	}
+	manpower=25100
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = rural
+}

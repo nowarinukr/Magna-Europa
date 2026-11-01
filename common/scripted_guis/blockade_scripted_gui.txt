@@ -1,0 +1,52 @@
+scripted_gui = {
+
+	ENG_blockade_ui = {
+		context_type = decision_category
+		window_name = "ENG_blockade_ui_window"
+
+		properties = {
+
+			ENG_region_1_slot = {
+				frame = ENG.block_frame_1
+			}
+			ENG_region_2_slot = {
+				frame = ENG.block_frame_2
+			}
+			ENG_region_3_slot = {
+				frame = ENG.block_frame_3
+			}
+			ENG_region_4_slot = {
+				frame = ENG.block_frame_4
+			}
+			ENG_region_5_slot = {
+				frame = ENG.block_frame_5
+			}
+		}
+	}
+
+	GER_blockade_ui = {
+		context_type = decision_category
+		window_name = "GER_blockade_ui_window"
+
+		properties = {
+
+			GER_region_1_slot = {
+				frame = GER.block_frame_1
+			}
+			GER_region_2_slot = {
+				frame = GER.block_frame_2
+			}
+			GER_region_3_slot = {
+				frame = GER.block_frame_3
+			}
+			GER_region_4_slot = {
+				frame = GER.block_frame_4
+			}
+			GER_region_5_slot = {
+				frame = GER.block_frame_5
+			}
+		}
+	}
+	
+}
+

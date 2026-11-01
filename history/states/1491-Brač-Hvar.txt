@@ -1,0 +1,19 @@
+state={
+	id=1491
+	name="STATE_1491"
+	provinces={
+		20139 20140 
+	}
+	history = {
+		owner = AUS
+		add_core_of = SER
+		buildings = {
+			infrastructure = 2
+		}
+		set_compliance = 25
+	}
+	manpower=40505
+	state_category=small_island
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

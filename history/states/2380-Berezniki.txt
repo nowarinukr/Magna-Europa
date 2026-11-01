@@ -1,0 +1,27 @@
+
+state={
+	id=2380
+	name="STATE_2380"
+	resources={
+		steel=25
+		tungsten = 75
+		chromium = 50
+	}
+	history={
+		owner = SOV
+		add_core_of = SOV
+
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	impassable=yes
+
+	provinces={
+		63 1673 2005 2404 2718 3115 4467 4848 6513 8007 8846 9953 9969 9975 10014 10034 10099 16120 16287 
+	}
+	manpower=86865
+	buildings_max_level_factor=1.000
+	state_category=wasteland
+	local_supplies=0.000
+}

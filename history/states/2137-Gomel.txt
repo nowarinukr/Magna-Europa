@@ -1,0 +1,25 @@
+
+state={
+	id=2137
+	name="STATE_2137"
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_claim_by = UKR
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		victory_points = { 9085 25 }
+	}
+
+	provinces={
+		6211 9085 
+	}
+	manpower=326764
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

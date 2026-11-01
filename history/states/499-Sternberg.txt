@@ -1,0 +1,27 @@
+
+state={
+	id=499
+	name="STATE_499"
+	resources={
+		aluminium = 10
+	}
+	history={
+		owner = AUS
+		add_core_of = AUS
+		add_claim_by = CZE
+		
+        victory_points = {
+            4683 2 #Mährisch Schönberg
+        }
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	provinces={
+		596 4683 12807 12838 20067 
+	}
+	manpower=195997
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = town
+}

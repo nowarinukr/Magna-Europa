@@ -1,0 +1,31 @@
+
+state={
+	id=1494
+	name="STATE_1494"
+	resources={
+		aluminium=25
+	}
+	history={
+		owner = AUS
+		add_core_of = SER
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 1
+		}
+		victory_points = {
+			20119 20 
+		}
+		victory_points = {
+			20195 2 
+		}
+		set_compliance = 25
+	}
+
+	provinces={
+		14377 14443 17285 20119 20161 20195 
+	}
+	manpower=233959
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

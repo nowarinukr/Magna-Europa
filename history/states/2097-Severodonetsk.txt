@@ -1,0 +1,22 @@
+
+state={
+	id=2097
+	name="STATE_2097"
+	provinces={
+		2532 7149 7423 8437 13043 13189 13280 13391 
+	}
+	history = {
+		victory_points = { 13043 2 }
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+		
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	manpower=69421
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

@@ -1,0 +1,40 @@
+state={
+	id=1750
+	name="STATE_1750"
+	resources={
+		steel=50
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 4
+			industrial_complex = 3
+		}
+		
+		
+        victory_points = {
+            8897 2 #Neuß
+        }
+        victory_points = {
+            8475 15 #München-Gladbach
+        }
+        victory_points = {
+            20734 20 #Crefeld
+        }
+        victory_points = {
+            11012 2 #Viersen
+        }
+
+
+    }
+	provinces={
+		8475 8897 11012 20734 
+	}
+	manpower=524942
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}
+

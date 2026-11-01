@@ -1,0 +1,33 @@
+
+state={
+	id=736
+	name="STATE_736"
+	resources={
+		aluminium=5
+	}
+	history={
+		owner = AUS
+		add_core_of = AUS
+		add_core_of = ROM
+		add_claim_by = HUN
+		add_claim_by = SER
+		
+		victory_points = {
+			14213 20 
+		}
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 2
+		}
+
+	}
+
+	provinces={
+		8118 9573 14189 14213 14231 14280 20406 
+	}
+	manpower=257455
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

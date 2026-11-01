@@ -1,0 +1,32 @@
+
+state={
+	id=1746
+	name="STATE_1746"
+
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+		}
+		
+		
+		
+		victory_points = {
+			12673 40 #Frankfurt
+		}
+		victory_points = {
+			20728 15 #Offenbach
+		}
+	}
+
+	provinces={
+		8507 12623 12673 20728 
+	}
+	manpower=391499
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

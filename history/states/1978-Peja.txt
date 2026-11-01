@@ -1,0 +1,28 @@
+
+state={
+	id=1978
+	name="STATE_1978"
+
+	history={
+		owner = TUR
+		add_core_of = ALB
+		add_core_of = SER
+		buildings = {
+			infrastructure = 2
+
+		}
+		
+		victory_points = {
+			20222 10 
+		}
+
+	}
+
+	provinces={
+		3540 14821 14848 16988 20222 
+	}
+	manpower=39251
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

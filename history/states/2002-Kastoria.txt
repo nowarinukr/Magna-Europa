@@ -1,0 +1,20 @@
+
+state={
+	id=2002
+	name="STATE_2002"
+	history={
+		owner = TUR
+		add_core_of = GRE
+		add_core_of = BUL
+		buildings = {
+			infrastructure = 1
+		}
+	}
+	provinces={
+		3220 15057 
+	}
+	manpower=28630
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

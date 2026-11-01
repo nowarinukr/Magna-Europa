@@ -1,0 +1,32 @@
+﻿capital = 1822
+
+set_research_slots = 3
+
+# Starting tech
+set_technology = {
+
+}
+
+oob = "POL_1910"
+
+set_convoys = 10
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1910.9.8"
+	election_frequency = 36
+	elections_allowed = no
+}
+set_popularities = {
+	democratic = 32
+	fascism = 11
+	communism = 19
+	neutrality = 38
+}
+
+recruit_character = POL_jozef_pilsudski
+recruit_character = AUS_jozef_pilsudski
+
+
+
+

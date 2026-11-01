@@ -1,0 +1,157 @@
+﻿add_namespace = july_crisis
+
+news_event = {
+	id = july_crisis.1
+	title = july_crisis.1.t
+	desc = july_crisis.1.d
+	picture = generic_funeral
+	fire_only_once = yes
+	major = yes
+	
+	trigger = {
+		date > 1914.6.16
+	}
+	
+	mean_time_to_happen = {
+		days = 0
+	}
+
+	immediate = {
+		hidden_effect = {
+			AUS = {
+				add_named_threat={
+					threat = 10
+					name = july_crisis.1.t
+				}
+			}
+			SER = {
+				country_event = {
+					id = july_crisis.2
+					days = 10
+				}
+			}
+		}
+	}
+		
+	option = {
+		name = july_crisis.1.a
+		trigger = {
+			NOT = {
+				original_tag = AUS
+			}
+		}
+	}
+	
+	option = {
+		name = july_crisis.1.b
+		trigger = {
+			original_tag = AUS
+		}
+	}
+}
+
+country_event = {
+	id=july_crisis.2
+	title=july_crisis.2.t
+	desc=july_crisis.2.d
+	picture=generic_read_write
+	
+	fire_only_once=yes
+	is_triggered_only = yes
+
+	option = {
+		name = july_crisis.2.a
+		add_war_support = 0.2
+		set_country_flag = mob_allowed_flag
+		AUS = {
+			country_event = { 
+				id = july_crisis.3
+				days = 7
+			}
+			set_country_flag = mob_allowed_flag
+		}
+		set_global_flag = kis_serbia_refuse
+	}
+}
+
+country_event = {
+	title=july_crisis.3.t
+	desc=july_crisis.3.d
+	id=july_crisis.3
+	picture=generic_read_write
+	
+	fire_only_once=yes
+	is_triggered_only=yes
+
+	option = {
+		name = july_crisis.3.a
+		declare_war_on = {
+			target = SER
+			type = annex_everything
+		}
+		add_named_threat={
+			threat = 10
+			name = july_crisis.1.t
+		}
+		SOV = {
+			country_event = {
+				id = july_crisis.4
+				days = 3
+			}
+		}
+	}
+}
+
+country_event = {
+	title=july_crisis.4.t
+	desc=july_crisis.4.d
+	id=july_crisis.4
+	picture=bul_partisans_plovdiv
+	fire_only_once=yes
+	is_triggered_only=yes
+	option={
+		name=july_crisis.4.a
+		ai_chance={
+			factor=100
+		}
+		add_named_threat = {
+			threat = 10
+			name = july_crisis.4.t
+		}
+		GER = {
+			country_event = {
+				id = july_crisis.5
+				days = 2
+			}
+		}
+		set_country_flag = mob_allowed_flag
+		set_global_flag = kis_russia_partial_mobilization
+	}
+}
+
+country_event = {
+	id = july_crisis.5
+	title = july_crisis.5.t
+	desc = july_crisis.5.d
+	picture = soviet_invasion_map
+
+	#fire_only_once = yes
+	is_triggered_only = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = july_crisis.5.a
+		ai_chance =  { factor = 100 }
+		activate_decision = GER_mobilisation
+		set_country_flag = mob_allowed_flag
+		FRA = {
+			set_country_flag = mob_allowed_flag
+		}
+		add_named_threat = {
+			threat = 100
+			name = july_crisis.4.t
+		}
+	}
+}

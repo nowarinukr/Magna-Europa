@@ -1,0 +1,27 @@
+state={
+	id=193
+	name="STATE_193"
+	provinces={
+		4732 9082 10384 10430 10443 
+	}
+	history={
+		owner = ENG
+		add_core_of = ENG
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+			10443 = { naval_base = 1 }
+		}
+			
+        victory_points = {
+            10443 10
+        }
+		victory_points = {
+            9082 2
+        }
+    }
+	manpower=272900
+	buildings_max_level_factor=1.000
+	state_category = city
+}

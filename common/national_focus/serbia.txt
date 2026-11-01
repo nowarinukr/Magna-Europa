@@ -1,0 +1,497 @@
+focus_tree = {
+	id = serbia_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = SER
+		}
+	}
+
+	continuous_focus_position = { x = 0 y = 1300 }
+	
+	default = no
+
+	focus = {
+		id = SER_periclean_age
+		icon = GFX_goal_support_democracy
+		x = 3
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+
+	focus = {
+		id = SER_appoint_pasic
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = SER_periclean_age }
+		x = 0
+		y = 1
+		relative_position_id = SER_periclean_age
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = SER_pasic
+		}
+	}
+
+	focus = {
+		id = SER_encourage_investors
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = SER_appoint_pasic }
+		x = -2
+		y = 1
+		relative_position_id = SER_appoint_pasic
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = develop_smederovo_steel
+			unlock_decision_tooltip = develop_bor_copper
+		}
+	}
+
+	focus = {
+		id = SER_promote_local_industries
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = SER_appoint_pasic }
+		x = 2
+		y = 1
+		relative_position_id = SER_appoint_pasic
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = SER_industry_promotion
+		}
+	}
+
+	focus = {
+		id = SER_royal_visits
+		icon = GFX_focus_generic_royal_wedding
+		prerequisite = { focus = SER_appoint_pasic }
+		x = 0
+		y = 1
+		relative_position_id = SER_appoint_pasic
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = SER_secure_new_territory
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		prerequisite = { focus = SER_encourage_investors }
+		prerequisite = { focus = SER_promote_local_industries }
+		prerequisite = { focus = SER_royal_visits }
+		x = 0
+		y = 1
+		relative_position_id = SER_royal_visits
+		cost = 5
+		available = {
+			has_global_flag = balkan_league_victory_flag
+		}
+		bypass = {
+			has_global_flag = balkan_ottoman_victory
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = SER_organise_conscription
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = SER_secure_new_territory }
+		x = -1
+		y = 1
+		relative_position_id = SER_secure_new_territory
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			set_country_flag = SER_south_conscription
+			custom_effect_tooltip = SER_organise_conscription_tt
+		}
+	}
+
+	focus = {
+		id = SER_southern_wealth
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = SER_secure_new_territory }
+		x = 1
+		y = 1
+		relative_position_id = SER_secure_new_territory
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = SER_industry_promotion_2
+				remove_idea = SER_industry_promotion
+			}
+		}
+	}
+
+	focus = {
+		id = SER_increase_war_readyness
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		prerequisite = { focus = SER_organise_conscription }
+		prerequisite = { focus = SER_southern_wealth }
+		x = 1
+		y = 1
+		relative_position_id = SER_organise_conscription
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = SER_war_preparation
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = SER_continue_the_fight
+		icon = GFX_focus_generic_national_security
+		prerequisite = { focus = SER_increase_war_readyness }
+		x = 0
+		y = 1
+		relative_position_id = SER_increase_war_readyness
+		cost = 5
+		available = {
+			has_global_flag = great_war_started_flag
+			has_capitulated = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 10 }
+			add_offsite_building = { type = industrial_complex level = 5 }
+			add_timed_idea = {
+				idea = AUS_polish_legions_idea
+				days = 50
+			}
+		}
+	}
+
+	focus = {
+		id = SER_balkan_expansion
+		icon = GFX_focus_BUL_free_balkan_states
+		x = 11
+		y = 0
+		cost = 5
+		
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+
+
+	focus = {
+		id = SER_military_drills
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = SER_balkan_expansion }
+		x = -2
+		y = 1
+		relative_position_id = SER_balkan_expansion
+		cost = 5
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			army_experience = 25
+			add_command_power = 100
+		}
+	}
+
+	focus = {
+		id = SER_study_modern_doctrine
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = SER_military_drills }
+		x = 0
+		y = 1
+		relative_position_id = SER_military_drills
+		cost = 5
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+		}
+	}
+
+
+	focus = {
+		id = SER_modernise_artillery
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = SER_balkan_expansion }
+		x = 2
+		y = 1
+		relative_position_id = SER_balkan_expansion
+		cost = 5
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_heavy_artillery
+			}
+		}
+	}
+
+	focus = {
+		id = SER_french_arms_purchases
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = { focus = SER_modernise_artillery }
+		x = 0
+		y = 1
+		relative_position_id = SER_modernise_artillery
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = SER_schneider_purchases
+		}
+	}
+
+	focus = {
+		id = SER_promote_serbian_nationalism
+		icon = GFX_focus_YUG_dissolve_serbia
+		prerequisite = { focus = SER_balkan_expansion }
+		x = 0
+		y = 1
+		relative_position_id = SER_balkan_expansion
+		cost = 5
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = SER_nationalist_fervour_2
+				remove_idea = SER_nationalist_fervour
+			}
+		}
+	}
+
+	focus = {
+		id = SER_form_balkan_league
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = SER_promote_serbian_nationalism }
+		x = 0
+		y = 1
+		relative_position_id = SER_promote_serbian_nationalism
+		cost = 5
+		available = {
+			OR = {
+				has_global_flag = libya_war_over
+				date > 1912.6.1
+			}
+			date < 1913.1.1
+		}
+		will_lead_to_war_with = TUR
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			create_faction = balkan_league
+			add_to_faction = BUL
+			add_to_faction = GRE
+			activate_mission = SER_ottoman_ultimatum
+		}
+	}
+
+	focus = {
+		id = SER_lessons_of_war
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = SER_form_balkan_league }
+		x = 0
+		y = 1
+		relative_position_id = SER_form_balkan_league
+		cost = 5
+		available = {
+			OR = {
+				has_global_flag = balkan_league_victory_flag
+				has_global_flag = balkan_ottoman_victory
+				has_global_flag = balkan_stalemate_flag
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 50
+		}
+	}
+
+	focus = {
+		id = SER_trench_warfare_experience
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = SER_lessons_of_war }
+		x = -2
+		y = 1
+		relative_position_id = SER_lessons_of_war
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_mg_weapons
+			}
+		}
+	}
+	
+	focus = {
+		id = SER_implement_new_tactics
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = SER_lessons_of_war }
+		x = 2
+		y = 1
+		relative_position_id = SER_lessons_of_war
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_mass_assault
+				category = cat_superior_firepower
+			}
+		}
+	}
+
+	focus = {
+		id = SER_victory_parade
+		icon = GFX_focus_generic_monarchy_2
+		prerequisite = { focus = SER_lessons_of_war }
+		x = 0
+		y = 1
+		relative_position_id = SER_lessons_of_war
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_unit_leader = {
+				gain_xp = 100
+			}
+			add_trait = {
+				character = SER_peter_i
+				ideology = conservatism
+				trait = patriot_king
+			}
+		}
+	}
+
+	focus = {
+		id = SER_fortify_belgrade
+		icon = GFX_goal_generic_fortify_city
+		prerequisite = { focus = SER_victory_parade }
+		x = 0
+		y = 1
+		relative_position_id = SER_victory_parade
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			790 = {
+				add_dynamic_modifier = { modifier = fortified_region }
+			}
+			1504 = {
+				add_dynamic_modifier = { modifier = fortified_region }
+			}
+		}
+	}
+
+	focus = {
+		id = SER_guerilla_strategy
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = SER_fortify_belgrade }
+		x = 0
+		y = 1
+		relative_position_id = SER_fortify_belgrade
+		cost = 5
+		available = {
+			has_global_flag = great_war_started_flag
+			surrender_progress > 0.5
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = SER_nationalist_fervour_3
+				remove_idea = SER_nationalist_fervour_2
+			}
+		}
+	}
+
+}

@@ -1,0 +1,159 @@
+characters={
+	BEL_albert_i={
+		name="Albert I"
+		portraits={
+			civilian={
+				large="gfx/leaders/BEL/portrait_albert_i.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits={ popular_figurehead2 }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	BEL_antonin_de_moranville={
+		name="Antonin de Selliers de Moranville"
+		portraits={
+			army={
+				large="gfx/leaders/BEL/portrait_de_moranville.dds"
+			}
+		}
+		field_marshal={
+			traits={ staff_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=0
+		}
+	}
+	BEL_leman={
+		name="Gérard Leman"
+		portraits={
+			army={
+				large="gfx/leaders/BEL/portrait_leman.dds"
+			}
+		}
+		corps_commander={
+			traits={ engineer_officer brilliant_strategist politically_connected }
+			skill=4
+			attack_skill=3
+			defense_skill=5
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+	BEL_de_witte_de_haelen={
+		name="Léon de Witte de Haelen"
+		portraits={
+			army={
+				large="gfx/leaders/BEL/portrait_de_haelen.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=0
+		}
+	}
+	BEL_louis_bernheim={
+		name="Louis Bernheim"
+		portraits={
+			army={
+				large="gfx/leaders/BEL/portrait_de_moranville.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+	BEL_georges_nelis={
+		name="Georges Nélis"
+		portraits={
+			army={
+				small="GFX_FRA_generic_land_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = BEL_georges_nelis
+			allowed = {
+				original_tag = BEL
+			}
+			available = {
+				has_completed_focus = BEL_establish_air_component
+			}
+			traits = {
+				air_chief_reform_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	BEL_edouard_empain={
+		name="Édouard Empain"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_empain.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BEL_edouard_empain
+			allowed = {
+				original_tag = BEL
+			}
+			available = {
+				has_completed_focus = BEL_employ_empain
+			}
+			traits = {
+				linchpin_of_infrastructure
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	BEL_de_broqueville={
+		name="Charles de Broqueville"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_broqueville.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BEL_de_broqueville
+			allowed = {
+				original_tag = BEL
+			}
+			available = {
+				has_completed_focus = BEL_de_broqueville_gov
+			}
+			traits = {
+				prime_minister_menderes
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

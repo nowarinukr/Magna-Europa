@@ -1,0 +1,27 @@
+
+state={
+	id=43
+	name="STATE_43"
+	resources={
+		oil=2000
+	}
+	history = {
+		owner = USA
+		add_core_of = USA
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 5
+			19350 = {
+				naval_base = 8
+			}
+		}
+	}
+	provinces={
+		19350 
+	}
+	manpower=252442
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

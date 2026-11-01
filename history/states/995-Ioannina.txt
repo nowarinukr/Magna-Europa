@@ -1,0 +1,29 @@
+
+state={
+	id=995
+	name="STATE_995"
+	provinces={
+		597 15153 15187 15193 20255 20329 20335 
+	}
+	resources={
+		aluminium = 5
+	}
+	history={
+		owner = TUR
+		add_core_of = GRE
+		add_claim_by = ALB
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	
+        victory_points = {
+            20255 5
+        }
+    }
+	manpower=157701
+	state_category=town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

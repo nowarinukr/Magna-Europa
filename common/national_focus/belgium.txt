@@ -1,0 +1,639 @@
+focus_tree = {
+	id = belgium_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = BEL
+		}
+	}
+
+	continuous_focus_position = { x = 0 y = 1300 }
+	
+	default = no
+
+	focus = {
+		id = BEL_modernise_the_army
+		icon = GFX_focus_chi_army_reform
+		x = 3
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+
+
+	focus = {
+		id = BEL_modernise_the_redoubt
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = BEL_force_rapid_expansion focus = BEL_slow_and_steady }
+		x = -1
+		y = 2
+		relative_position_id = BEL_modernise_the_army
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = BEL_liege_modernisation
+			unlock_decision_tooltip = BEL_antwerp_modernisation
+		}
+	}
+
+	focus = {
+		id = BEL_establish_air_component
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = BEL_force_rapid_expansion focus = BEL_slow_and_steady }
+		x = 1
+		y = 2
+		relative_position_id = BEL_modernise_the_army
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			air_experience = 50
+			custom_effect_tooltip = available_chief_of_airforce
+			show_ideas_tooltip = BEL_georges_nelis
+		}
+	}
+
+	focus = {
+		id = BEL_adopt_new_weapons
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = BEL_force_rapid_expansion focus = BEL_slow_and_steady }
+		x = 0
+		y = 3
+		relative_position_id = BEL_modernise_the_army
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_artillery
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_mg_weapons
+			}
+		}
+	}
+	
+	focus = {
+		id = BEL_force_rapid_expansion
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = { focus = BEL_modernise_the_army }
+		mutually_exclusive = { focus = BEL_slow_and_steady }
+		x = -3
+		y = 1
+		relative_position_id = BEL_modernise_the_army
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_war_support = -0.05
+		}
+	}
+
+	focus = {
+		id = BEL_mass_retraining
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = BEL_force_rapid_expansion }
+		x = -1
+		y = 1
+		relative_position_id = BEL_force_rapid_expansion
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BEL_antiquated_army_1
+				remove_idea = BEL_antiquated_army
+			}
+			add_war_support = -0.05
+		}
+	}
+
+	focus = {
+		id = BEL_curb_civilian_influence
+		icon = GFX_goal_generic_small_arms
+		prerequisite = { focus = BEL_mass_retraining }
+		x = 0
+		y = 1
+		relative_position_id = BEL_mass_retraining
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					has_idea = civilian_economy
+				}
+				add_ideas = low_economic_mobilisation
+			}
+			else_if = {
+				limit = {
+					has_idea = low_economic_mobilisation
+				}
+				add_ideas = partial_economic_mobilisation
+			}
+			else = {
+				add_political_power = 100
+			}
+			add_war_support = -0.05
+		}
+	}
+
+	focus = {
+		id = BEL_slow_and_steady
+		icon = GFX_focus_generic_national_security
+		prerequisite = { focus = BEL_modernise_the_army }
+		mutually_exclusive = { focus = BEL_force_rapid_expansion }
+		x = 3
+		y = 1
+		relative_position_id = BEL_modernise_the_army
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = BEL_military_reforms
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_officer_retraining
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = BEL_slow_and_steady }
+		x = 1
+		y = 1
+		relative_position_id = BEL_slow_and_steady
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = BEL_military_reforms
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = BEL_military_reforms
+				days = 180
+			}
+			swap_ideas = {
+				add_idea = BEL_antiquated_army_1
+				remove_idea = BEL_antiquated_army
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_administritive_reforms
+		icon = GFX_focus_ITA_grande_rivolta_rurale
+		prerequisite = { focus = BEL_officer_retraining }
+		x = 0
+		y = 1
+		relative_position_id = BEL_officer_retraining
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = BEL_military_reforms
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = BEL_military_reforms
+				days = 180
+			}
+			add_ideas = BEL_military_admin
+		}
+	}
+
+	focus = {
+		id = BEL_introduce_conscription
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = BEL_adopt_new_weapons }
+		prerequisite = { focus = BEL_administritive_reforms focus = BEL_curb_civilian_influence }
+		x = 0
+		y = 1
+		relative_position_id = BEL_adopt_new_weapons
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = BEL_military_reforms
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = limited_conscription
+			add_ideas = BEL_mob_1
+			unlock_decision_tooltip = BEL_mobilisation
+		}
+	}
+	
+	focus = {
+		id = BEL_adopt_modern_practices
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = BEL_introduce_conscription }
+		x = 0
+		y = 1
+		relative_position_id = BEL_introduce_conscription
+		cost = 5
+		available = {
+			has_army_experience > 200
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = -200
+			remove_ideas = BEL_antiquated_army_1
+		}
+	}
+
+	focus = {
+		id = BEL_modernise_doctrine
+		icon = GFX_goal_generic_position_armies
+		prerequisite = { focus = BEL_introduce_conscription }
+		x = -2
+		y = 1
+		relative_position_id = BEL_introduce_conscription
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_grand_battle_plan
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_wartime_learning
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = BEL_modernise_doctrine }
+		x = 0
+		y = 1
+		relative_position_id = BEL_modernise_doctrine
+		cost = 5
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_armoured_cars
+		icon = GFX_goal_generic_cavalry
+		prerequisite = { focus = BEL_introduce_conscription }
+		x = 2
+		y = 1
+		relative_position_id = BEL_introduce_conscription
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_mobile_warfare
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_armored_cars
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_expeditionary_force
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = BEL_armoured_cars }
+		x = 0
+		y = 1
+		relative_position_id = BEL_armoured_cars
+		cost = 5
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 1.0
+				uses = 1
+				technology = armored_car_recon
+			}
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = cat_mobile_warfare
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_state_of_the_nation
+		icon = GFX_focus_hol_united_netherlands
+		x = 13
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+
+	focus = {
+		id = BEL_continental_metropole
+		icon = GFX_focus_spa_the_spanish_miracle
+		prerequisite = { focus = BEL_state_of_the_nation }
+		x = -3
+		y = 1
+		relative_position_id = BEL_state_of_the_nation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = civilian_engineering
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = industry
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_employ_empain
+		icon = GFX_goal_generic_construct_infrastructure
+		prerequisite = { focus = BEL_continental_metropole }
+		x = -1
+		y = 1
+		relative_position_id = BEL_continental_metropole
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = BEL_edouard_empain
+		}
+	}
+
+	focus = {
+		id = BEL_encourage_domestic
+		icon = GFX_focus_SOV_merge_plants
+		prerequisite = { focus = BEL_continental_metropole }
+		x = 1
+		y = 1
+		relative_position_id = BEL_continental_metropole
+		cost = 5
+		available = {
+			NOT = {
+				has_idea = free_trade
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BEL_export_industry_2
+				remove_idea = BEL_export_industry
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_contract_fn
+		icon = GFX_focus_focus_fra_maquis
+		prerequisite = { focus = BEL_continental_metropole }
+		x = 0
+		y = 2
+		relative_position_id = BEL_continental_metropole
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = infantry_weapons
+			}
+			480 = {
+				add_dynamic_modifier = { modifier = BEL_fn_herstal_mod }
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_de_broqueville_gov
+		icon = GFX_focus_por_concordat
+		prerequisite = { focus = BEL_state_of_the_nation }
+		x = 3
+		y = 1
+		relative_position_id = BEL_state_of_the_nation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = BEL_de_broqueville
+		}
+	}
+
+	focus = {
+		id = BEL_curb_walloons
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		prerequisite = { focus = BEL_de_broqueville_gov }
+		x = -1
+		y = 1
+		relative_position_id = BEL_de_broqueville_gov
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = BEL_ethnic_tension_2
+				remove_idea = BEL_ethnic_tension
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_education_law
+		icon = GFX_focus_generic_pope
+		prerequisite = { focus = BEL_de_broqueville_gov }
+		x = 1
+		y = 1
+		relative_position_id = BEL_de_broqueville_gov
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = BEL_schools_act
+		}
+	}
+
+	focus = {
+		id = BEL_deal_with_strikes
+		icon = GFX_goal_generic_dangerous_deal
+		prerequisite = { focus = BEL_curb_walloons }
+		prerequisite = { focus = BEL_education_law }
+		x = 1
+		y = 1
+		relative_position_id = BEL_curb_walloons
+		cost = 10
+		available = {
+			has_political_power > 100
+			has_country_flag = BEL_general_strike
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = -100
+			add_stability = 0.25
+		}
+	}
+
+	focus = {
+		id = BEL_soldier_king
+		icon = GFX_focus_generic_monarchy_2
+		prerequisite = { focus = BEL_state_of_the_nation }
+		x = 0
+		y = 3
+		relative_position_id = BEL_state_of_the_nation
+		cost = 1
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_trait = {
+				character = BEL_albert_i
+				ideology = liberalism
+				trait = the_soldier_king
+			}
+		}
+	}
+
+	focus = {
+		id = BEL_preemptive_exile
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = BEL_soldier_king }
+		x = 0
+		y = 1
+		relative_position_id = BEL_soldier_king
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			become_exiled_in = {
+				target = FRA
+				legitimacy = 25
+			}
+			transfer_state = 607
+			add_state_core = 607
+		}
+	}
+
+	focus = {
+		id = BEL_organise_exile_production
+		icon = GFX_focus_ETH_freedom_at_gunpoint
+		prerequisite = { focus = BEL_preemptive_exile }
+		x = 0
+		y = 1
+		relative_position_id = BEL_preemptive_exile
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 10 }
+			add_offsite_building = { type = industrial_complex level = 5 }
+		}
+	}
+
+}

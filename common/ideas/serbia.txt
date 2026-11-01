@@ -1,0 +1,107 @@
+ideas={
+	country = {
+		SER_mob_1 = {
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.065
+				industrial_capacity_factory = 0.2
+				industrial_capacity_dockyard = 0.2
+			}
+		}
+		
+		SER_mob_2 = {
+			name = SER_mob_1
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.065
+			}
+		}
+
+		SER_nationalist_fervour = {
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = YUG_local_militias
+			modifier = {
+				surrender_limit = 0.1
+				conscription_factor = 0.2
+			}
+		}
+		
+		SER_nationalist_fervour_2 = {
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = YUG_local_militias
+			modifier = {
+				surrender_limit = 0.1
+				conscription_factor = 0.2
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				supply_combat_penalties_on_core_factor = -0.2
+			}
+		}
+
+		SER_nationalist_fervour_3 = {
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = YUG_local_militias
+			modifier = {
+				surrender_limit = 0.1
+				conscription_factor = 0.2
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				supply_combat_penalties_on_core_factor = -0.35
+				compliance_growth_on_our_occupied_states = -0.5
+				resistance_target_on_our_occupied_states = 0.05
+			}
+		}
+		
+		SER_industry_promotion = {
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = tur_etatism
+			modifier = {
+				economy_cost_factor = -0.5
+				trade_laws_cost_factor = -0.5
+				global_building_slots_factor = 0.25
+			}
+		}
+
+		SER_industry_promotion_2 = {
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = tur_etatism
+			modifier = {
+				economy_cost_factor = -0.5
+				trade_laws_cost_factor = -0.5
+				local_resources_factor = 0.1
+				production_speed_arms_factory_factor = 0.05
+				production_speed_industrial_complex_factor = -0.2
+				global_building_slots_factor = 0.25
+			}
+		}
+		
+		SER_war_preparation = {
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = SOV_third_five_year_plan_military
+			modifier = {
+				industrial_capacity_factory = 0.2
+				consumer_goods_factor = 0.1
+			}
+		}
+	
+	}
+}
+

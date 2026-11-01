@@ -1,0 +1,26 @@
+
+state={
+	id=468
+	name="STATE_468"
+	resources={
+		oil=10
+	}
+	history={
+		owner = ENG
+		add_core_of = ENG
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 3
+			19410 = { naval_base = 1 }
+		}
+	}
+	provinces={
+		779 2284 6435 7136 9216 12388 12420 12446 19410 
+	}
+	manpower=252200
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

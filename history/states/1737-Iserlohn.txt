@@ -1,0 +1,28 @@
+state={
+	id=1737
+	name="STATE_1737"
+	provinces={
+		7938 9214 20706 
+	}
+	history={
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 2
+		}
+		
+		 
+		owner = GER
+        victory_points = {
+            20706 5 #Hamm
+        }
+        victory_points = {
+            7938 2 #Iserlohn
+        }
+    }
+	manpower=352763
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_town
+}

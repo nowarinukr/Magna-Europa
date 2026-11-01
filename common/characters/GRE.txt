@@ -1,0 +1,189 @@
+characters={
+	GRE_alexandros_i={
+		name="Alexandros I"
+		portraits={
+			civilian={
+				large="gfx/leaders/GRE/portrait_alexander.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	GRE_constantine_i={
+		name="Constantine I"
+		portraits={
+			civilian={
+				large="gfx/leaders/GRE/portrait_constantine_i.dds"
+			}
+			army={
+				large="gfx/leaders/GRE/portrait_constantine_i.dds"
+			}
+		}
+		country_leader={
+			traits = { POL_soldier_king }
+			ideology=liberalism
+			expire="1935.1.1.1"
+			id=-1
+		}
+		field_marshal={
+			traits={ career_officer politically_connected }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=35002
+		}
+	}
+	GRE_george_i={
+		name="George I"
+		portraits={
+			civilian={
+				large="gfx/leaders/GRE/portrait_george_i.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1913.3.17.1"
+			id=-1
+		}
+	}
+	GRE_panagiotis_danglis={
+		name="Panagiótis Danglís"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/portrait_danglis.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery old_guard career_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=35004
+		}
+	}
+	GRE_zymvrakakis_e={
+		name="Emmanouil Zymvrakakis"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/portrait_zymvrakakais.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=35014
+		}
+	}
+	GRE_nider={
+		name="Konstantinos Nider"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/portrait_nider.dds"
+			}
+		}
+		corps_commander={
+			traits={ engineer_officer career_officer }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=35016
+		}
+	}
+	GRE_plastiras={
+		name="Nikolaos Plastiras"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/portrait_palstiras.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer harsh_leader }
+			skill=3
+			attack_skill=4
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=35019
+		}
+	}
+	GRE_kountouriotis={
+		name="Pavlos Kountouriotis"
+		portraits={
+			army={
+				large="gfx/leaders/GRE/portrait_kountouriotis.dds"
+			}
+		}
+		navy_leader={
+			traits={ naval_lineage navy_career_officer bold }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	GRE_venizelos={
+		name="Eleftherios Venizelos"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_venizelos.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = GRE_venizelos
+			allowed = {
+				original_tag = GRE
+			}
+			available = {
+				has_completed_focus = GRE_venizelos_reforms
+			}
+			cost = 100
+			traits = {
+				prime_minister_menderes
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+	GRE_benakis={
+		name="Emmanouil Benakis"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_benakis.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = GRE_benakis
+			allowed = {
+				original_tag = GRE
+			}
+			available = {
+				has_completed_focus = GRE_national_economy
+			}
+			cost = 100
+			traits = {
+				minister_of_finance_deressa
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+}

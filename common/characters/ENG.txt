@@ -1,0 +1,361 @@
+characters={
+	ENG_george_v={
+		name="George V"
+		portraits={
+			civilian={
+				large="gfx/leaders/ENG/portrait_george_v.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	ENG_john_french={
+		name="Sir John French"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_french.dds"
+			}
+		}
+		field_marshal={
+			traits={ cavalry_officer war_hero old_guard media_personality trait_cautious }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ENG_sir_douglas_haig={
+		name="Douglas Haig"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_doug_haig.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer career_officer harsh_leader brilliant_strategist }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	ENG_hamilton_ism={
+		name="Ian Hamilton"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_ian_hamilton.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer war_hero old_guard career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ENG_aylmer_hunterweston={
+		name="Aylmer Hunter-Weston"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_aylmer_hunter.dds"
+			}
+		}
+		corps_commander={
+			traits={ engineer_officer politically_connected }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ENG_butler_sir_rhk={
+		name="Richard Butler"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_butler_rhk.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer war_hero }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ENG_byng_jhg={
+		name="Julian Byng"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_julian_byng.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer war_hero media_personality }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ENG_cavan={
+		name="Rudolph Lambart"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_lord_cavan.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer  }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	ENG_elles={
+		name="Hugh Elles"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_hugh_elles.dds"
+			}
+		}
+		corps_commander={
+			traits={ engineer_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=-1
+		}
+	}
+	ENG_horne_sir_h={
+		name="Henry Horne"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_h_horne.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery inflexible_strategist }
+			skill=3
+			attack_skill=4
+			defense_skill=1
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ENG_maude={
+		name="Stanley Maude"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_stanley_maude.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=-1
+		}
+	}
+	ENG_beatty={
+		name="Beatty"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_beatty.dds"
+			}
+		}
+		navy_leader={
+			traits={ war_hero bold gunnery_expert }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			maneuvering_skill=4
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	ENG_jellicoe={
+		name="Jellicoe"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_jellicoe.dds"
+			}
+		}
+		navy_leader={
+			traits={ war_hero battleship_adherent chief_engineer }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			maneuvering_skill=2
+			coordination_skill=3
+			legacy_id=0
+		}
+	}
+	ENG_pakenham={
+		name="Pakenham"
+		portraits={
+			army={
+				large="gfx/leaders/ENG/portrait_pakenham.dds"
+			}
+		}
+		navy_leader={
+			traits={ gentlemanly naval_lineage }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	ENG_henderson={
+		name="Sir David Henderson"
+		portraits={
+			army={
+				small="GFX_ENG_generic_land_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ENG_henderson
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				has_completed_focus = ENG_royal_flying_corps
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	ENG_trenchard={
+		name="Hugh Trenchard"
+		portraits={
+			army={
+				small="GFX_ENG_generic_land_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ENG_trenchard
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				has_completed_focus = ENG_royal_flying_corps
+			}
+			traits = {
+				air_air_combat_training_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	ENG_asquith={
+		name="H. H. Asquith"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_asquith.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ENG_asquith
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				has_completed_focus = ENG_liberal_victory
+			}
+			traits = {
+				prime_minister_menderes
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	ENG_balfour={
+		name="Arthur Balfour"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_balfour.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ENG_balfour
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				has_completed_focus = ENG_tory_victory
+			}
+			traits = {
+				prime_minister_cakmak
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	ENG_lloyd_george={
+		name="David Lloyd George"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_lloyd_george.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ENG_lloyd_george
+			allowed = {
+				original_tag = ENG
+			}
+			available = {
+				has_completed_focus = ENG_ministry_of_munitions
+			}
+			traits = {
+				minister_of_munitions
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

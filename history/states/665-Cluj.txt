@@ -1,0 +1,26 @@
+
+state={
+	id=665
+	name="STATE_665"
+	resources={
+		steel=25
+	}
+	history = {
+		owner = AUS
+		add_core_of = ROM
+		add_claim_by = HUN
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		victory_points = { 13942 20 }
+	}
+	provinces={
+		5349 13848 13904 13918 13942 20422 
+	}
+	manpower=250175
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

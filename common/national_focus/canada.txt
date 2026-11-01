@@ -1,0 +1,511 @@
+focus_tree = {
+	id = canada_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = CAN
+		}
+	}
+
+	continuous_focus_position = { x = 0 y = 1300 }
+	
+	default = no
+
+	focus = {
+		id = CAN_confederation_legacy
+		icon = GFX_goal_generic_national_unity
+		x = 3
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+
+	focus = {
+		id = CAN_borden_government
+		icon = GFX_goal_support_democracy
+		prerequisite = { focus = CAN_confederation_legacy }
+		x = -5
+		y = 1
+		relative_position_id = CAN_confederation_legacy
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_trait = {
+				character = CAN_robert_borden
+				ideology = conservatism
+				trait = prime_minister_menderes
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_national_policy
+		icon = GFX_goal_generic_construct_civilian
+		prerequisite = { focus = CAN_borden_government }
+		x = -1
+		y = 1
+		relative_position_id = CAN_borden_government
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = CAN_national_policy_idea
+		}
+	}
+
+	focus = {
+		id = CAN_grain_act
+		icon = GFX_focus_ITA_grande_rivolta_rurale
+		prerequisite = { focus = CAN_national_policy }
+		x = 0
+		y = 1
+		relative_position_id = CAN_national_policy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = CAN_national_policy_idea_2
+				remove_idea = CAN_national_policy_idea
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_increase_tariffs
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = CAN_grain_act }
+		x = 0
+		y = 1
+		relative_position_id = CAN_grain_act
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = CAN_us_trade
+		}
+	}
+
+	focus = {
+		id = CAN_reaffirm_loyalty
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		prerequisite = { focus = CAN_borden_government }
+		x = 1
+		y = 1
+		relative_position_id = CAN_borden_government
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = CAN_british_loans
+		icon = GFX_goal_generic_intelligence_exchange
+		prerequisite = { focus = CAN_reaffirm_loyalty }
+		x = 0
+		y = 1
+		relative_position_id = CAN_reaffirm_loyalty
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = CAN_british_loans_idea
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_bolster_industry
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = CAN_british_loans }
+		x = 0
+		y = 1
+		relative_position_id = CAN_british_loans
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = CAN_john_milne
+		}
+	}
+
+
+	focus = {
+		id = CAN_war_measures
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = { focus = CAN_increase_tariffs }
+		prerequisite = { focus = CAN_bolster_industry }
+		x = 1
+		y = 1
+		relative_position_id = CAN_increase_tariffs
+		cost = 5
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_trait = {
+				character = CAN_robert_borden
+				ideology = conservatism
+				trait = war_cabinet
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_national_research
+		icon = GFX_focus_research
+		prerequisite = { focus = CAN_war_measures }
+		x = -2
+		y = 1
+		relative_position_id = CAN_war_measures
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = CAN_national_research_idea
+		}
+	}
+
+	focus = {
+		id = CAN_military_service
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = CAN_war_measures }
+		x = 0
+		y = 1
+		relative_position_id = CAN_war_measures
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = limited_conscription
+			add_stability = -0.1
+			add_war_support = -0.1
+		}
+	}
+
+	focus = {
+		id = CAN_victory_bonds
+		icon = GFX_goal_generic_consumer_goods
+		prerequisite = { focus = CAN_war_measures }
+		x = 2
+		y = 1
+		relative_position_id = CAN_war_measures
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = CAN_national_policy_idea_3
+				remove_idea = CAN_national_policy_idea_2
+			}
+		}
+	}
+	
+	focus = {
+		id = CAN_frontier_expansion
+		icon = GFX_focus_generic_population_growth
+		prerequisite = { focus = CAN_confederation_legacy }
+		x = 0
+		y = 1
+		relative_position_id = CAN_confederation_legacy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_manpower = 50000
+		}
+	}
+
+	focus = {
+		id = CAN_continue_settlements
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = CAN_frontier_expansion }
+		x = -1
+		y = 1
+		relative_position_id = CAN_frontier_expansion
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = CAN_colonisation
+		}
+	}
+
+	focus = {
+		id = CAN_develop_resources
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = CAN_frontier_expansion }
+		x = 1
+		y = 1
+		relative_position_id = CAN_frontier_expansion
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = CAN_frontier
+		}
+	}
+
+	focus = {
+		id = CAN_militia_reform
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = CAN_confederation_legacy }
+		x = 5
+		y = 1
+		relative_position_id = CAN_confederation_legacy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = CAN_sam_hughes
+		}
+	}
+
+	focus = {
+		id = CAN_disband_old_militias
+		icon = GFX_focus_generic_infiltration
+		prerequisite = { focus = CAN_militia_reform }
+		x = -1
+		y = 1
+		relative_position_id = CAN_militia_reform
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = CAN_militia
+			set_division_template_lock = {
+				division_template = "Militia Force"
+				is_locked = no
+			}
+			hidden_effect = {
+				set_technology = {
+					reservist_tech = 1 
+				}
+			}
+			set_country_flag = mobilised_flag
+		}
+	}
+
+	focus = {
+		id = CAN_invite_british_officers
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = CAN_disband_old_militias }
+		x = 0
+		y = 1
+		relative_position_id = CAN_disband_old_militias
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = CAN_officer_training
+		}
+	}
+
+	focus = {
+		id = CAN_modernise_weaponry
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = CAN_militia_reform }
+		x = 1
+		y = 1
+		relative_position_id = CAN_militia_reform
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = cat_artillery
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_sponsor_domestic_designs
+		icon = GFX_goal_generic_military_sphere
+		prerequisite = { focus = CAN_modernise_weaponry }
+		x = 0
+		y = 1
+		relative_position_id = CAN_modernise_weaponry
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_mg_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_form_expeditionary_force
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		prerequisite = { focus = CAN_invite_british_officers focus = CAN_sponsor_domestic_designs }
+		x = 1
+		y = 1
+		relative_position_id = CAN_invite_british_officers
+		cost = 10
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = CAN_expeditionary_force
+		}
+	}
+
+	focus = {
+		id = CAN_all_level_learning
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = CAN_form_expeditionary_force }
+		x = 0
+		y = 1
+		relative_position_id = CAN_form_expeditionary_force
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = CAN_expeditionary_force_2
+				remove_idea = CAN_expeditionary_force
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_shock_tactics
+		icon = GFX_focus_prc_infiltration
+		prerequisite = { focus = CAN_all_level_learning }
+		x = -2
+		y = 1
+		relative_position_id = CAN_all_level_learning
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = cat_mass_assault
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_armour_experiments
+		icon = GFX_goal_generic_army_motorized
+		prerequisite = { focus = CAN_all_level_learning }
+		x = 0
+		y = 1
+		relative_position_id = CAN_all_level_learning
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_mobile_warfare
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_armored_cars
+			}
+		}
+	}
+
+	focus = {
+		id = CAN_request_licenses
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = CAN_all_level_learning }
+		x = 2
+		y = 1
+		relative_position_id = CAN_all_level_learning
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = CAN_expeditionary_force_3
+				remove_idea = CAN_expeditionary_force_2
+			}
+		}
+	}
+
+}

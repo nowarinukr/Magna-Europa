@@ -1,0 +1,1265 @@
+focus_tree = {
+	id = austria_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = AUS
+		}
+	}
+
+	continuous_focus_position = { x = 0 y = 1300 }
+	
+	default = no
+
+	focus = {
+		id = AUS_state_of_the_empire
+		icon = GFX_focus_hun_elect_a_king
+		x = 6
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	
+	focus = {
+		id = AUS_promote_federalism
+		icon = GFX_focus_generic_improve_the_administration
+		prerequisite = { focus = AUS_state_of_the_empire }
+		mutually_exclusive = { focus = AUS_maintain_monarchy focus = AUS_support_trialism }
+		x = -4
+		y = 1
+		relative_position_id = AUS_state_of_the_empire
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_category_tooltip = AUS_federalism
+		}
+	}
+
+	focus = {
+		id = AUS_persuade_hungary
+		icon = GFX_focus_generic_befriend_kurdistan
+		prerequisite = { focus = AUS_promote_federalism }
+		x = -1
+		y = 1
+		relative_position_id = AUS_promote_federalism
+		cost = 10
+		available = {
+			custom_trigger_tooltip =  {
+				tooltip = AUS_fed_25_greater_tt
+				check_variable = {
+					var = AUS_federal_number
+					value = 25
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = AUS_fed_hungary_concessions
+			unlock_decision_tooltip = AUS_fed_hungary_force
+			unlock_decision_tooltip = AUS_fed_hungary_lobbying
+		}
+	}
+
+	focus = {
+		id = AUS_convince_nobility
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = AUS_persuade_hungary }
+		x = 0
+		y = 1
+		relative_position_id = AUS_persuade_hungary
+		cost = 10
+		available = {
+			custom_trigger_tooltip =  {
+				tooltip = AUS_fed_75_greater_tt
+				check_variable = {
+					var = AUS_federal_number
+					value = 75
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_to_variable = {
+				var = AUS_federal_number
+				value = 10
+				tooltip = AUS_fed_increase_10_tt
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_new_administration
+		icon = GFX_focus_generic_court
+		prerequisite = { focus = AUS_promote_federalism }
+		x = 1
+		y = 1
+		relative_position_id = AUS_promote_federalism
+		cost = 10
+		available = {
+			custom_trigger_tooltip =  {
+				tooltip = AUS_fed_10_greater_tt
+				check_variable = {
+					var = AUS_federal_number
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_to_variable = {
+				var = AUS_federal_number
+				value = 10
+				tooltip = AUS_fed_increase_10_tt
+			}
+			add_timed_idea = {
+				idea = AUS_bureacratic_restructuring
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_restructuring
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = AUS_new_administration }
+		x = 0
+		y = 1
+		relative_position_id = AUS_new_administration
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = AUS_bureacratic_restructuring
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_to_variable = {
+				var = AUS_federal_number
+				value = 10
+				tooltip = AUS_fed_increase_10_tt
+			}
+			add_timed_idea = {
+				idea = AUS_bureacratic_restructuring
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_the_language_question
+		icon = GFX_focus_generic_population_growth
+		prerequisite = { focus = AUS_restructuring }
+		prerequisite = { focus = AUS_convince_nobility }
+		x = 1
+		y = 1
+		relative_position_id = AUS_convince_nobility
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = AUS_bureacratic_restructuring
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = AUS_fed_german_language
+			unlock_decision_tooltip = AUS_fed_all_language
+		}
+	}
+
+	focus = {
+		id = AUS_a_federal_empire
+		icon = GFX_focus_POL_habsburg
+		prerequisite = { focus = AUS_the_language_question }
+		x = 0
+		y = 1
+		relative_position_id = AUS_the_language_question
+		cost = 10
+		available = {
+			custom_trigger_tooltip =  {
+				tooltip = AUS_fed_100_greater_tt
+				check_variable = {
+					var = AUS_federal_number
+					value = 100
+					compare = greater_than_or_equals
+				}
+			}
+			has_country_flag = AUS_fed_language_done
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			set_cosmetic_tag = AUS_federal
+			every_owned_state = {
+				limit = {
+					NOT = {
+						is_core_of = AUS
+					}
+					OR = {
+						is_core_of = CZE
+						is_core_of = POL
+						is_core_of = SER
+						is_core_of = HUN
+						is_core_of = ROM
+					}
+				}
+				add_core_of = AUS
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_a_federal_army
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = AUS_a_federal_empire }
+		x = 0
+		y = 1
+		relative_position_id = AUS_a_federal_empire
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = AUS_multi_ethnic_army
+		}
+	}
+
+	focus = {
+		id = AUS_maintain_monarchy
+		icon = GFX_focus_proclaim_the_restauration_of_Austria_Hungary
+		prerequisite = { focus = AUS_state_of_the_empire }
+		mutually_exclusive = { focus = AUS_support_trialism focus = AUS_promote_federalism }
+		x = 0
+		y = 1
+		relative_position_id = AUS_state_of_the_empire
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_stability = 0.05
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = AUS_supress_bosnia
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		prerequisite = { focus = AUS_maintain_monarchy }
+		mutually_exclusive = { focus = AUS_bosnian_autonomy }
+		x = -1
+		y = 1
+		relative_position_id = AUS_maintain_monarchy
+		cost = 10
+		available = {
+			all_owned_state = {
+				OR = {
+					NOT = {
+						is_core_of = SER
+					}
+					resistance < 1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = SER
+				}
+				add_compliance = 50
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_bosnian_autonomy
+		icon = GFX_focus_YUG_safeguard_bosnia
+		prerequisite = { focus = AUS_maintain_monarchy }
+		mutually_exclusive = { focus = AUS_supress_bosnia }
+		x = 1
+		y = 1
+		relative_position_id = AUS_maintain_monarchy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = SER
+				}
+				add_dynamic_modifier = { modifier = semi_autonomous_state scope = AUS }
+				add_compliance = 100
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_emergency_powers
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = AUS_supress_bosnia focus = AUS_bosnian_autonomy }
+		x = 1
+		y = 1
+		relative_position_id = AUS_supress_bosnia
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = AUS_emergency_powers_idea
+		}
+	}
+
+	focus = {
+		id = AUS_crush_nationalism
+		icon = GFX_focus_POL_ban_nazi_party
+		prerequisite = { focus = AUS_emergency_powers }
+		x = 0
+		y = 1
+		relative_position_id = AUS_emergency_powers
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AUS_multi_ethnic_army_2
+				remove_idea = AUS_multi_ethnic_army
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_polish_legions
+		icon = GFX_focus_POL_consolidate_sanation_government
+		prerequisite = { focus = AUS_crush_nationalism }
+		x = 0
+		y = 1
+		relative_position_id = AUS_crush_nationalism
+		cost = 5
+		available = {
+			has_war_with = SOV
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			POL = {
+				declare_war_on = {
+					target = SOV
+					type = annex_everything
+				}
+				become_exiled_in = {
+					target = AUS
+					legitimacy = 25
+				}
+				AUS_jozef_pilsudski = {
+					set_nationality = AUS
+				}
+				add_timed_idea = {
+					idea = AUS_polish_legions_idea
+					days = 100
+				}
+			}
+			SOV = {
+				set_province_controller = 20925
+				set_province_controller = 20926
+				set_province_controller = 20927
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_support_trialism
+		icon = GFX_goal_generic_national_unity
+		prerequisite = { focus = AUS_state_of_the_empire }
+		mutually_exclusive = { focus = AUS_promote_federalism focus = AUS_maintain_monarchy  }
+		x = 4
+		y = 1
+		relative_position_id = AUS_state_of_the_empire
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_category_tooltip = AUS_trialism
+		}
+	}
+
+	focus = {
+		id = AUS_hungarian_negotiation
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = AUS_support_trialism }
+		x = -1
+		y = 1
+		relative_position_id = AUS_support_trialism
+		cost = 10
+		available = {
+			custom_trigger_tooltip =  {
+				tooltip = AUS_tri_10_greater_tt
+				check_variable = {
+					var = AUS_trialism_number
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = AUS_tri_hungary_lobbying
+			unlock_decision_tooltip = AUS_tri_hungary_concessions
+		}
+	}
+
+	focus = {
+		id = AUS_establish_croatia
+		icon = GFX_focus_YUG_banovina_of_croatia
+		prerequisite = { focus = AUS_support_trialism }
+		x = 1
+		y = 1
+		relative_position_id = AUS_support_trialism
+		cost = 10
+		available = {
+			custom_trigger_tooltip =  {
+				tooltip = AUS_tri_10_greater_tt
+				check_variable = {
+					var = AUS_trialism_number
+					value = 10
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = SER
+				}
+				add_compliance = 100
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_organise_croatian_ministries
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = AUS_hungarian_negotiation }
+		prerequisite = { focus = AUS_establish_croatia }
+		x = 1
+		y = 1
+		relative_position_id = AUS_hungarian_negotiation
+		cost = 10
+		available = {
+			custom_trigger_tooltip =  {
+				tooltip = AUS_tri_70_greater_tt
+				check_variable = {
+					var = AUS_trialism_number
+					value = 70
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = AUS_bureacratic_restructuring
+				days = 180
+			}
+			add_to_variable = {
+				var = AUS_trialism_number
+				value = 10
+				tooltip = AUS_tri_increase_10_tt
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_a_croatian_army
+		icon = GFX_focus_generic_monarchy_2
+		prerequisite = { focus = AUS_organise_croatian_ministries }
+		x = 0
+		y = 1
+		relative_position_id = AUS_organise_croatian_ministries
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AUS_multi_ethnic_army_0
+				remove_idea = AUS_multi_ethnic_army
+			}
+			add_to_variable = {
+				var = AUS_trialism_number
+				value = 10
+				tooltip = AUS_tri_increase_10_tt
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_austro_hungaro_croatia
+		icon = GFX_focus_rom_royal_dictatorship
+		prerequisite = { focus = AUS_a_croatian_army }
+		x = 0
+		y = 1
+		relative_position_id = AUS_a_croatian_army
+		cost = 10
+		available = {
+			custom_trigger_tooltip =  {
+				tooltip = AUS_tri_100_greater_tt
+				check_variable = {
+					var = AUS_trialism_number
+					value = 100
+					compare = greater_than_or_equals
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = SER
+				}
+				add_core_of = AUS
+			}
+			set_cosmetic_tag = AUS_trialist
+		}
+	}
+
+	focus = {
+		id = AUS_austrian_golden_age
+		icon = GFX_focus_spa_the_spanish_miracle
+		x = 14
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = AUS_golden_age
+		}
+	}
+
+	focus = {
+		id = AUS_railway_expansion
+		icon = GFX_focus_POL_warsaw_main_station
+		prerequisite = { focus = AUS_austrian_golden_age }
+		x = 0
+		y = 1
+		relative_position_id = AUS_austrian_golden_age
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AUS_golden_age_2
+				remove_idea = AUS_golden_age
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_develop_hungary
+		icon = GFX_goal_generic_construct_civ_factory
+		prerequisite = { focus = AUS_railway_expansion }
+		x = -1
+		y = 1
+		relative_position_id = AUS_railway_expansion
+		cost = 10
+		available = {
+			has_tech = advanced_industry
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = HUN
+					OR = {
+						has_state_category = city
+						has_state_category = large_city
+						has_state_category = metropolis
+						has_state_category = megalopolis
+					}
+					industrial_complex < 1
+				}
+				add_dynamic_modifier = { modifier = AUS_hun_industrialisation }
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_end_hungary_industry
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = AUS_develop_hungary }
+		x = 0
+		y = 1
+		relative_position_id = AUS_develop_hungary
+		cost = 10
+		available = {
+			any_owned_state = {
+				industrial_complex > 1
+				has_dynamic_modifier = {
+					modifier = AUS_hun_industrialisation
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = AUS_hun_industrialisation
+					}
+					industrial_complex > 1
+				}
+				remove_dynamic_modifier = { modifier = AUS_hun_industrialisation }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = AUS_end_hungary_industry_tt
+		}
+	}
+
+	focus = {
+		id = AUS_develop_carpathia
+		icon = GFX_goal_generic_construct_mil_factory
+		prerequisite = { focus = AUS_railway_expansion }
+		x = 1
+		y = 1
+		relative_position_id = AUS_railway_expansion
+		cost = 10
+		available = {
+			has_tech = advanced_industry
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					is_core_of = CZE
+					OR = {
+						has_state_category = city
+						has_state_category = large_city
+						has_state_category = metropolis
+						has_state_category = megalopolis
+					}
+					arms_factory < 1
+				}
+				add_dynamic_modifier = { modifier = AUS_cze_industrialisation }
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_end_carpathia_industry
+		icon = GFX_focus_SOV_merge_plants
+		prerequisite = { focus = AUS_develop_carpathia }
+		x = 0
+		y = 1
+		relative_position_id = AUS_develop_carpathia
+		cost = 10
+		available = {
+			any_owned_state = {
+				arms_factory > 2
+				has_dynamic_modifier = {
+					modifier = AUS_cze_industrialisation
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_owned_state = {
+				limit = {
+					has_dynamic_modifier = {
+						modifier = AUS_cze_industrialisation
+					}
+					arms_factory > 2
+				}
+				remove_dynamic_modifier = { modifier = AUS_cze_industrialisation }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			custom_effect_tooltip = AUS_end_carpathia_industry_tt
+		}
+	}
+
+	focus = {
+		id = AUS_improve_steel_quality
+		icon = GFX_focus_generic_steel
+		prerequisite = { focus = AUS_end_carpathia_industry }
+		prerequisite = { focus = AUS_end_hungary_industry }
+		x = 1
+		y = 1
+		relative_position_id = AUS_end_hungary_industry
+		cost = 10
+		available = {
+			489 = {
+				has_state_flag = coal_developed_1
+			}
+			489 = {
+				has_state_flag = steel_developed_1
+			}
+			OR = {
+				648 = {
+					has_state_flag = coal_developed_1
+				}
+				2670 = {
+					has_state_flag = coal_developed_1
+				}
+				1581 = {
+					has_state_flag = coal_developed_1
+				}
+			}
+			OR = {
+				727 = {
+					has_state_flag = steel_developed_1
+				}
+				756 = {
+					has_state_flag = steel_developed_1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = AUS_poor_steel
+		}
+	}
+
+	focus = {
+		id = AUS_factory_takeover
+		icon = GFX_focus_SOV_organize_wreckers
+		prerequisite = { focus = AUS_improve_steel_quality }
+		x = 0
+		y = 1
+		relative_position_id = AUS_improve_steel_quality
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = AUS_factory_takeover
+		}
+	}
+
+	focus = {
+		id = AUS_appoint_moritz
+		icon = GFX_focus_generic_military_dictatorship
+		x = 22
+		y = 0
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = AUS_moritz
+		}
+	}
+
+	focus = {
+		id = AUS_navy_modernisation
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = AUS_appoint_moritz }
+		x = -4
+		y = 1
+		relative_position_id = AUS_appoint_moritz
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			navy_experience = 50
+		}
+	}
+
+	focus = {
+		id = AUS_continue_tegetthoff
+		icon = GFX_focus_generic_navy_battleship2
+		prerequisite = { focus = AUS_navy_modernisation }
+		mutually_exclusive = { focus = AUS_refit_old_ships }
+		x = -1
+		y = 1
+		relative_position_id = AUS_navy_modernisation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = AUS_continue_tegethoff
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_modern_battlefleet
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = AUS_continue_tegetthoff }
+		x = 0
+		y = 1
+		relative_position_id = AUS_continue_tegetthoff
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = advanced_ship_hull_heavy
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = dd_tech
+				category = cl_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = naval_equipment
+			}			
+		}
+	}
+
+	focus = {
+		id = AUS_refit_old_ships
+		icon = GFX_focus_generic_refit_civilian_ships
+		prerequisite = { focus = AUS_navy_modernisation }
+		mutually_exclusive = { focus = AUS_continue_tegetthoff }
+		x = 1
+		y = 1
+		relative_position_id = AUS_navy_modernisation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = AUS_refit_plan
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_coastal_defence
+		icon = GFX_focus_generic_coastal_fort
+		prerequisite = { focus = AUS_refit_old_ships }
+		x = 0
+		y = 1
+		relative_position_id = AUS_refit_old_ships
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = AUS_coastal_defence_idea
+		}
+	}
+
+	focus = {
+		id = AUS_the_archdukes_support
+		icon = GFX_focus_generic_support_the_left_right
+		prerequisite = { focus = AUS_coastal_defence focus = AUS_modern_battlefleet }
+		x = 1
+		y = 1
+		relative_position_id = AUS_modern_battlefleet
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = AUS_army_modernisation
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = AUS_appoint_moritz }
+		x = 3
+		y = 1
+		relative_position_id = AUS_appoint_moritz
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 50
+		}
+	}
+
+	focus = {
+		id = AUS_commit_to_fortresses
+		icon = GFX_goal_generic_defence
+		prerequisite = { focus = AUS_army_modernisation }
+		mutually_exclusive = { focus = AUS_embrace_maneuver }
+		x = -3
+		y = 1
+		relative_position_id = AUS_army_modernisation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AUS_general_staff_fort
+				remove_idea = AUS_general_staff
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = construction_tech
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_expand_skoda_works
+		icon = GFX_focus_generic_tank_production
+		prerequisite = { focus = AUS_commit_to_fortresses }
+		x = -1
+		y = 1
+		relative_position_id = AUS_commit_to_fortresses
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 2
+				category = cat_artillery
+			}
+			523 = {
+				add_dynamic_modifier = { modifier = skoda_works }
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_siege_guns
+		icon = GFX_focus_generic_railway_gun
+		prerequisite = { focus = AUS_expand_skoda_works }
+		x = 0
+		y = 1
+		relative_position_id = AUS_expand_skoda_works
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = cat_heavy_artillery
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				ahead_reduction = 0.5
+				category = cat_siege_artillery
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_modernise_forts
+		icon = GFX_goal_generic_construction2
+		prerequisite = { focus = AUS_commit_to_fortresses }
+		x = 1
+		y = 1
+		relative_position_id = AUS_commit_to_fortresses
+		cost = 10
+		available = {
+			has_tech = construction1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = AUS_krakow_modernisation
+			unlock_decision_tooltip = AUS_premzyl_modernisation
+			unlock_decision_tooltip = AUS_stanislawow_forts
+			unlock_decision_tooltip = AUS_lwow_forts
+			unlock_decision_tooltip = AUS_cernauti_forts
+			unlock_decision_tooltip = AUS_trieste_forts
+			unlock_decision_tooltip = AUS_brasov_forts
+		}
+	}
+
+	focus = {
+		id = AUS_stronghold_strategy
+		icon = GFX_goal_generic_construct_military
+		prerequisite = { focus = AUS_modernise_forts }
+		x = 0
+		y = 1
+		relative_position_id = AUS_modernise_forts
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AUS_general_staff_fort_2
+				remove_idea = AUS_general_staff_fort
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_artillery_tactics
+		icon = GFX_goal_generic_army_artillery2
+		prerequisite = { focus = AUS_siege_guns focus = AUS_stronghold_strategy }
+		x = 1
+		y = 1
+		relative_position_id = AUS_siege_guns
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.25
+				uses = 3
+				category = cat_superior_firepower
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_embrace_maneuver
+		icon = GFX_focus_generic_horse_studs
+		prerequisite = { focus = AUS_army_modernisation }
+		mutually_exclusive = { focus = AUS_commit_to_fortresses }
+		x = 3
+		y = 1
+		relative_position_id = AUS_army_modernisation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AUS_general_staff_mob
+				remove_idea = AUS_general_staff
+			}
+		}
+	}
+
+
+	focus = {
+		id = AUS_artillery_modernisation
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = AUS_embrace_maneuver }
+		x = -1
+		y = 1
+		relative_position_id = AUS_embrace_maneuver
+		cost = 10
+		available = {
+			has_tech = light_field_gun2
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = AUS_artillery_conversion
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_update_training_practices
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = AUS_artillery_modernisation }
+		x = 0
+		y = 1
+		relative_position_id = AUS_artillery_modernisation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = AUS_update_training
+		}
+	}
+
+	focus = {
+		id = AUS_redl_affair
+		icon = GFX_focus_generic_national_security
+		prerequisite = { focus = AUS_embrace_maneuver }
+		x = 1
+		y = 1
+		relative_position_id = AUS_embrace_maneuver
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = AUS_redl
+			set_country_flag = AUS_redl_removed
+		}
+	}
+
+	focus = {
+		id = AUS_tackle_incompetence
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = AUS_redl_affair }
+		x = 0
+		y = 1
+		relative_position_id = AUS_redl_affair
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = AUS_general_staff_mob_2
+				remove_idea = AUS_general_staff_mob
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_infantry_tactics
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = AUS_update_training_practices focus = AUS_tackle_incompetence }
+		x = 1
+		y = 1
+		relative_position_id = AUS_update_training_practices
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.25
+				uses = 3
+				category = cat_mass_assault
+			}
+		}
+	}
+
+	focus = {
+		id = AUS_allied_learning
+		icon = GFX_focus_ger_oppose_hitler
+		prerequisite = { focus = AUS_artillery_tactics focus = AUS_infantry_tactics }
+		x = 3
+		y = 1
+		relative_position_id = AUS_artillery_tactics
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_to_tech_sharing_group = axis_research
+		}
+	}
+	
+}

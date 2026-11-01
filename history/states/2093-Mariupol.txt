@@ -1,0 +1,24 @@
+
+state={
+	id=2093
+	name="STATE_2093"
+	provinces={
+		305 307 8833 13742 13845 13874 
+	}
+	history = {
+		victory_points = { 13845 15 }
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+		
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			13845 = { naval_base = 3 }
+		}
+	}
+	manpower=510425
+	buildings_max_level_factor=1.000
+	state_category=large_town
+	local_supplies=0.000
+}

@@ -1,0 +1,29 @@
+
+state={
+	id=174
+	name="STATE_174"
+
+	history={
+		owner = SOV
+
+		add_core_of = SOV
+		buildings = {
+			infrastructure = 3
+			19959 = { naval_base = 3 }
+			industrial_complex = 2
+		}
+		
+		victory_points = {
+			19959 40 
+		}
+
+	}
+
+	provinces={
+		760 3683 10431 16874 16933 17441 18122 19959 19999 
+	}
+	manpower=111687
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

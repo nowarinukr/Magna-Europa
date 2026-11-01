@@ -1,0 +1,22 @@
+
+state={
+	id=1088
+	name="STATE_1088"
+	provinces={
+		7316 11908 11947 12046 
+	}
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_claim_by = UKR
+		add_claim_by = POL
+		
+		buildings = {
+			infrastructure = 1
+		}
+  	}
+	manpower=94137
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

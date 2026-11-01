@@ -1,0 +1,24 @@
+
+state={
+	id=885
+	name="STATE_885"
+	provinces={
+		15042 15056 15071 15094 
+	}
+	history={
+		owner = TUR
+		add_core_of = ALB
+		
+		add_claim_by = GRE
+		buildings = {
+			infrastructure = 1
+		}
+        victory_points = {
+            15094 5
+        }
+    }
+	manpower=109336
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

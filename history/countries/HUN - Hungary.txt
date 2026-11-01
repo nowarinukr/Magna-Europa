@@ -1,0 +1,25 @@
+﻿capital = 633
+
+#oob = "HUN_1936"
+
+set_research_slots = 3
+set_stability = 0.7
+set_war_support = 0.6
+
+
+# Starting tech
+set_technology = {
+
+}
+
+set_politics = {
+	ruling_party = neutrality
+	last_election = "1910.3.31"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 25
+	fascism = 31
+	neutrality = 44
+}

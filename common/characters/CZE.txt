@@ -1,0 +1,16 @@
+characters={
+	CZE_tomas_masaryk={
+		name="Tomáš Garrigue Masaryk"
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/portrait_masaryk.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			traits={ }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+}

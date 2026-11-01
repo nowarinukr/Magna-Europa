@@ -1,0 +1,694 @@
+focus_tree = {
+	id = usa_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = USA
+		}
+	}
+
+	continuous_focus_position = { x = 0 y = 1300 }
+	
+	default = no
+
+	focus = {
+		id = USA_land_of_the_free
+		icon = GFX_goal_support_democracy
+		x = 3
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+
+	focus = {
+		id = USA_square_deal
+		icon = GFX_focus_POL_complete_april_constitution
+		prerequisite = { focus = USA_land_of_the_free }
+		x = -6
+		y = 1
+		relative_position_id = USA_land_of_the_free
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_trait = {
+				character = USA_william_h_taft
+				ideology = liberalism
+				trait = figurehead_president
+			}
+		}
+	}
+
+	focus = {
+		id = USA_anti_trust_effort
+		icon = GFX_focus_generic_court
+		prerequisite = { focus = USA_square_deal }
+		x = -1
+		y = 1
+		relative_position_id = USA_square_deal
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = USA_progressive_reforms
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_progressive_reforms
+				days = 180
+			}
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = USA_break_up_businesses
+		icon = GFX_focus_eng_move_to_secure_the_dominions
+		prerequisite = { focus = USA_anti_trust_effort }
+		x = 0
+		y = 1
+		relative_position_id = USA_anti_trust_effort
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = USA_progressive_reforms
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = USA_big_business_2
+				remove_idea = USA_big_business
+			}
+		}
+	}
+
+	focus = {
+		id = USA_reduce_tariffs
+		icon = GFX_goal_generic_trade
+		prerequisite = { focus = USA_square_deal }
+		x = 1
+		y = 1
+		relative_position_id = USA_square_deal
+		cost = 10
+		available = {
+			NOT = {
+				has_idea = USA_progressive_reforms
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_progressive_reforms
+				days = 180
+			}
+			swap_ideas = {
+				add_idea = USA_high_tariffs_2
+				remove_idea = USA_high_tariffs
+			}
+		}
+	}
+
+	focus = {
+		id = USA_admit_new_states
+		icon = GFX_goal_generic_forceful_treaty
+		prerequisite = { focus = USA_reduce_tariffs }
+		x = 0
+		y = 1
+		relative_position_id = USA_reduce_tariffs
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = USA_wilson_presidency
+		icon = GFX_focus_SWI_dissolve_the_federal_council
+		prerequisite = { focus = USA_break_up_businesses }
+		prerequisite = { focus = USA_admit_new_states }
+		x = 1
+		y = 1
+		relative_position_id = USA_break_up_businesses
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			retire_character = USA_william_h_taft
+			promote_character = {
+				character = USA_wilson
+				ideology = conservatism
+			}
+		}
+	}
+
+	focus = {
+		id = USA_federal_reserve
+		icon = GFX_focus_mex_privatisation
+		prerequisite = { focus = USA_wilson_presidency }
+		x = -2
+		y = 1
+		relative_position_id = USA_wilson_presidency
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_farm_loans
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = USA_income_tax
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = USA_federal_reserve }
+		x = 0
+		y = 1
+		relative_position_id = USA_federal_reserve
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = USA_high_tariffs_2
+		}
+	}
+
+	focus = {
+		id = USA_federal_trade
+		icon = GFX_focus_generic_improve_the_administration
+		prerequisite = { focus = USA_wilson_presidency }
+		x = 2
+		y = 1
+		relative_position_id = USA_wilson_presidency
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = USA_dick_morgan
+		}
+	}
+
+	focus = {
+		id = USA_clayton_act
+		icon = GFX_focus_eng_concessions_to_the_trade_unions
+		prerequisite = { focus = USA_federal_trade }
+		x = 0
+		y = 1
+		relative_position_id = USA_federal_trade
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = USA_big_business_2
+		}
+	}
+
+	focus = {
+		id = USA_internationalism
+		icon = GFX_focus_usa_focus_on_europe
+		prerequisite = { focus = USA_wilson_presidency }
+		x = 0
+		y = 1
+		relative_position_id = USA_wilson_presidency
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = USA_declare_neutrality
+		icon = GFX_goal_anschluss
+		prerequisite = { focus = USA_internationalism }
+		x = 0
+		y = 1
+		relative_position_id = USA_internationalism
+		cost = 10
+		available = {
+			has_global_flag = great_war_started_flag
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = USA_preparedness
+		icon = GFX_focus_SOV_merge_plants
+		prerequisite = { focus = USA_declare_neutrality }
+		x = 0
+		y = 1
+		relative_position_id = USA_declare_neutrality
+		cost = 10
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_preparedness_idea
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = USA_join_the_war
+		icon = GFX_focus_attack_germany
+		prerequisite = { focus = USA_preparedness }
+		x = 0
+		y = 1
+		relative_position_id = USA_preparedness
+		cost = 10
+		available = {
+			OR = {
+				date > 1917.1.1
+				FRA = {
+					surrender_progress > 0.5
+				}
+				ENG = {
+					surrender_progress > 0.5
+				}
+				has_global_flag = RUS_civil_war_flag
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			remove_ideas = USA_neutral_policy
+			FRA = {
+				add_to_faction = USA
+			}
+		}
+	}
+
+	focus = {
+		id = USA_big_stick_policy
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = USA_land_of_the_free }
+		x = 0
+		y = 1
+		relative_position_id = USA_land_of_the_free
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+		}
+	}
+
+	focus = {
+		id = USA_nevada_class
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = USA_big_stick_policy }
+		x = -2
+		y = 1
+		relative_position_id = USA_big_stick_policy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = naval_equipment
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				ahead_reduction = 1
+				technology = armor_scheme_4
+			}
+		}
+	}
+
+	focus = {
+		id = USA_naval_expansion
+		icon = GFX_goal_generic_construct_naval_dockyard
+		prerequisite = { focus = USA_big_stick_policy }
+		x = 0
+		y = 1
+		relative_position_id = USA_big_stick_policy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_offsite_building = { type = dockyard level = 5 }
+			add_timed_idea = {
+				idea = USA_naval_idea
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = USA_white_fleet_lessons
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = USA_big_stick_policy }
+		x = 2
+		y = 1
+		relative_position_id = USA_big_stick_policy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			navy_experience = 25
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = naval_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = USA_naval_act
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = USA_naval_expansion focus = USA_white_fleet_lessons focus = USA_nevada_class }
+		x = 0
+		y = 1
+		relative_position_id = USA_naval_expansion
+		available = {
+			NOT = {
+				has_idea = USA_naval_idea
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_offsite_building = { type = dockyard level = 5 }
+			add_timed_idea = {
+				idea = USA_naval_idea
+				days = 180
+			}
+		}
+	}
+
+	focus = {
+		id = USA_root_reforms
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = USA_land_of_the_free }
+		x = 6
+		y = 1
+		relative_position_id = USA_land_of_the_free
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 25
+		}
+	}
+
+	focus = {
+		id = USA_reserve_officer_training
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = USA_root_reforms }
+		x = -2
+		y = 1
+		relative_position_id = USA_root_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = USA_bad_army_2
+				remove_idea = USA_bad_army
+			}
+		}
+	}
+
+	focus = {
+		id = USA_signal_air_corps
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = USA_root_reforms }
+		x = 0
+		y = 1
+		relative_position_id = USA_root_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			air_experience = 50
+			custom_effect_tooltip = available_chief_of_airforce
+			show_ideas_tooltip = USA_george_scriven
+			custom_effect_tooltip = available_military_high_command
+			show_ideas_tooltip = USA_paul_beck
+			add_command_power = 50
+		}
+	}
+
+	focus = {
+		id = USA_manuever_division
+		icon = GFX_focus_generic_national_security
+		prerequisite = { focus = USA_root_reforms }
+		x = 2
+		y = 1
+		relative_position_id = USA_root_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 50
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 1
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = USA_stimson_plan
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = { focus = USA_manuever_division }
+		prerequisite = { focus = USA_reserve_officer_training }
+		x = 2
+		y = 1
+		relative_position_id = USA_reserve_officer_training
+		cost = 10
+		available = {
+			has_completed_focus = USA_preparedness
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = USA_bad_army_2
+		}
+	}
+
+	focus = {
+		id = USA_national_defence_act
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = USA_stimson_plan }
+		x = -2
+		y = 1
+		relative_position_id = USA_stimson_plan
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_national_defence_act_idea
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = USA_modern_theory
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = USA_stimson_plan }
+		x = 0
+		y = 1
+		relative_position_id = USA_stimson_plan
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	focus = {
+		id = USA_springfield
+		icon = GFX_focus_focus_fra_maquis
+		prerequisite = { focus = USA_stimson_plan }
+		x = 2
+		y = 1
+		relative_position_id = USA_stimson_plan
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			2 = {
+				add_dynamic_modifier = { modifier = USA_springfield_mod }
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = USA_fosdick_commission
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		prerequisite = { focus = USA_national_defence_act }
+		prerequisite = { focus = USA_modern_theory }
+		prerequisite = { focus = USA_springfield }
+		x = 0
+		y = 1
+		relative_position_id = USA_modern_theory
+		cost = 10
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = USA_fosdick_commission_idea
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = USA_selective_service_act
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = USA_fosdick_commission }
+		x = 0
+		y = 1
+		relative_position_id = USA_fosdick_commission
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = limited_conscription
+			add_war_support = -0.1
+		}
+	}
+
+	focus = {
+		id = USA_liberty_tanks
+		icon = GFX_goal_generic_army_tanks
+		prerequisite = { focus = USA_fosdick_commission }
+		x = -2
+		y = 1
+		relative_position_id = USA_fosdick_commission
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 3
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = USA_entente_command
+		icon = GFX_goal_generic_scientific_exchange
+		prerequisite = { focus = USA_fosdick_commission }
+		x = 2
+		y = 1
+		relative_position_id = USA_fosdick_commission
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_to_tech_sharing_group = entente_research
+		}
+	}
+
+}

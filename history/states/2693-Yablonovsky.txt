@@ -1,0 +1,23 @@
+
+state={
+	id=2693
+	name="STATE_2693"
+	provinces={
+		7743 9367 14404 14429 16725 17106 19331 
+	}
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_claim_by = UKR
+		buildings = {
+			infrastructure = 2
+		}
+		
+		
+
+	}
+	manpower=45037
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

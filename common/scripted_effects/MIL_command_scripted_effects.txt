@@ -1,0 +1,47 @@
+MIL_inf_count_effect = {
+	set_temp_variable = { temp = num_battalions }
+	set_temp_variable = { cmm = num_battalions_with_type@infantry }
+	add_to_temp_variable = { cmm = num_battalions_with_type@marine }
+	add_to_temp_variable = { cmm = num_battalions_with_type@mountaineers }
+	divide_temp_variable = { cmm = temp }
+	if = {
+		limit = {
+			check_variable = { cmm < 0.5 }
+		}
+		set_variable = { MIL_inf_frame = 1 }
+	}
+	else_if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = cmm
+					value = 0.5
+					compare = greater_than_or_equals
+				}
+				check_variable = { cmm < 0.75 }
+			}
+		}
+		set_variable = { MIL_inf_frame = 2 }
+	}
+	else_if = {
+		limit = {
+			AND = {
+				check_variable = {
+					var = cmm
+					value = 0.75
+					compare = greater_than_or_equals
+				}
+				check_variable = { cmm < 0.95 }
+			}
+		}
+		set_variable = { MIL_inf_frame = 3 }
+	}
+	else = {
+		set_variable = { MIL_inf_frame = 4 }
+	}
+	add_to_variable = {
+		var = MIL_inf_frame
+		value = modifier@MIL_inf_frame_modifier
+	}
+}
+

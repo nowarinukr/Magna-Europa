@@ -1,0 +1,24 @@
+
+state={
+	id=422
+	name="STATE_422"
+	resources={
+		aluminium = 50
+	}
+	history={
+		owner = BEL
+		add_core_of = BEL
+		buildings = {
+			infrastructure = 3
+			industrial_complex = 4
+		}
+		 
+    }
+	provinces={
+		1969 5818 9510 
+	}
+	manpower=268350
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = town
+}

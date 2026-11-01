@@ -1,0 +1,35 @@
+
+state={
+	id=790
+	name="STATE_790"
+	resources={
+		steel=10
+	}
+	history={
+		owner = SER
+		add_core_of = SER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 4
+			industrial_complex = 3
+			14459 = {
+				bunker = 1
+			}
+		}
+		victory_points = {
+			14459 80 
+		}
+		victory_points = {
+			20200 5 
+		}
+
+	}
+
+	provinces={
+		6031 14459 14487 14502 14509 14541 14561 14564 17669 20200 
+	}
+	manpower=497142
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

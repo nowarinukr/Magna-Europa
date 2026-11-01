@@ -1,0 +1,27 @@
+
+state={
+	id=703
+	name="STATE_703"
+
+	history={
+		owner = AUS
+		add_core_of = SER
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			14007 5 
+		}
+		set_compliance = 25
+	}
+
+	provinces={
+		5350 6091 13976 13995 14007 14015 16434 
+	}
+	manpower=259646
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

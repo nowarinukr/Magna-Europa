@@ -1,0 +1,102 @@
+﻿
+###################################################################
+
+division_template = {
+	name = "Infantry Division"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = { 
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Evzone Regiment"
+	template_counter = 5
+	is_locked = yes
+	force_allow_recruiting = yes
+	division_cap = 4
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+		evzones_bat = { x = 0 y = 0 }
+		pack_artillery_big = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Reservists"
+	is_locked = yes
+	priority = 0
+	is_locked = yes
+	
+	regiments = {
+		reserves = { x = 0 y = 0 }
+		reserves = { x = 0 y = 1 }
+		reserves = { x = 0 y = 2 }
+	}
+	support = { 
+		artillery = { x = 0 y = 0 }
+	} 
+}
+
+###################################################################
+
+units = {
+	division= { 
+		name = "I Merarchia"
+		location = 20252 # Athens
+		division_template="Infantry Division"
+		start_experience_factor=0.15
+	}
+	
+	
+	division= { 
+		name = "II Merarchia"
+		location = 20252 # Athens
+		division_template="Infantry Division"
+		start_experience_factor=0.15
+	}
+	
+	
+	division= { 
+		name = "XIII Merarchia"
+		location = 20252 # Athens
+		division_template="Infantry Division"
+		start_experience_factor=0.15
+	}
+	
+	
+	division= { 
+		name = "III Merarchia"
+		location = 20252 # Athens
+		division_template="Infantry Division"
+		start_experience_factor=0.15
+	}
+}
+air_wings = { 
+	}
+instant_effect = {
+    add_equipment_production = { equipment = { type = infantry_equipment_2 creator = "GRE" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = support_equipment_1 creator = "GRE"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = horse_equipment_0 creator = "GRE"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = light_field_gun_equipment_2 creator = "GRE" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = pack_gun_equipment_1 creator = "GRE" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+	add_equipment_to_stockpile = {
+		type = pack_gun_equipment_1
+		amount = 40
+		producer = GRE
+	}
+	add_equipment_to_stockpile = {
+		type = heavy_field_gun_equipment_1
+		amount = 20
+		producer = GRE
+	}
+}

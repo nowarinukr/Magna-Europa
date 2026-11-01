@@ -1,0 +1,23 @@
+state={
+	id=1814
+	name="STATE_1814"
+	resources={
+		steel=25
+	}
+	history={
+		owner = AUS
+		add_core_of =AUS
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			industrial_complex = 4
+		}
+	}
+	provinces={
+		20845 20851 
+	}
+	manpower=244269
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

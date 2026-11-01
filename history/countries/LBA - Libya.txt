@@ -1,0 +1,21 @@
+﻿capital = 1241
+
+set_technology = {
+
+}
+set_politics = {
+	ruling_party = fascism
+	last_election = "1910.3.26"
+	election_frequency = 60
+	elections_allowed = no
+}
+
+set_popularities = {
+	neutrality = 20
+	fascism = 75
+	democratic = 3
+	communism = 2
+}
+
+set_convoys = 20
+

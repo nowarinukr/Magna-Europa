@@ -1,0 +1,34 @@
+
+state={
+	id=482
+	name="STATE_482"
+	provinces={
+		5375 5887 7971 9341 12447 12471 12522 12533 12557 19898
+	}
+	history={
+		owner = BEL
+		add_core_of = BEL
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 5
+		}
+		 
+        victory_points = {
+            5375 20 #Charleroi
+        }
+		victory_points = {
+            12533 2 #Mons
+        }
+		victory_points = {
+            9341 5 #Tournai
+        }
+		victory_points = {
+            12557 2 #La Louvière
+        }
+    }
+	manpower=1050000
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = metropolis
+}

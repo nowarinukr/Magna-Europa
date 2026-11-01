@@ -1,0 +1,29 @@
+﻿capital = 358
+
+set_research_slots = 3
+set_stability = 0.4
+set_war_support = 0
+set_convoys = 50
+
+set_technology = {
+
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1909.6.11"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 93
+	fascism = 4
+	communism = 3
+}
+
+add_ideas = {
+	neutrality_idea
+}
+
+recruit_character = HOL_wilhelmina
+##

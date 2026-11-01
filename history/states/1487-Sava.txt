@@ -1,0 +1,23 @@
+
+state={
+	id=1487
+	name="STATE_1487"
+
+	history={
+		owner = AUS
+		add_core_of = SER
+		buildings = {
+			infrastructure = 3
+
+		}
+		set_compliance = 25
+	}
+
+	provinces={
+		20153 20154 20182 20193 
+	}
+	manpower=123211
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

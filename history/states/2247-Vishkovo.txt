@@ -1,0 +1,26 @@
+state={
+	id=2247
+	name="STATE_2247"
+	history={
+		owner = AUS
+		add_core_of = AUS
+		add_core_of = HUN
+		add_core_of = UKR
+		add_claim_by = CZE
+		
+		
+		buildings = {
+			infrastructure = 2
+		}
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	provinces={
+		13466 
+	}
+	manpower=19930
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

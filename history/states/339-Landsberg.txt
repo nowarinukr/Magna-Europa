@@ -1,0 +1,24 @@
+
+state={
+	id=339
+	name="STATE_339"
+	provinces={
+		3839 7438 11448 11513 11580 11581 20550 20551 20587 20597 
+	}
+	history={
+	    owner = GER
+        victory_points = {
+            20551 5 #Landsberg
+        }
+		add_core_of = GER
+		buildings = {
+			infrastructure = 3
+		}
+		
+		
+    }
+	manpower=243619
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

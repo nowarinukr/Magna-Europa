@@ -1,0 +1,294 @@
+ideas = {
+
+	mobilization_laws = { 
+		law = yes
+
+		disarmed_nation = {
+
+			cost = 150
+			removal_cost = -1
+			level = 7
+			
+			available = {
+				#has_manpower_for_recruit_change_to = { value = 0.005 group = mobilization_laws }
+			}
+
+			modifier = {
+				conscription = 0.01
+			}
+			
+			cancel_if_invalid = no
+
+		}
+		
+		volunteer_only = {
+
+			cost = 100
+			removal_cost = -1
+			level = 6
+			
+			available = {
+			}
+
+			modifier = {
+				conscription = 0.02
+			}
+			
+			default = yes
+			
+			cancel_if_invalid = no
+		}
+		
+		limited_conscription = {
+
+			cost = 100
+			removal_cost = -1
+			level = 5
+
+			available = {
+				if = {
+					limit = {
+						original_tag = BEL
+					}
+					has_completed_focus = BEL_introduce_conscription
+				}
+				if = {
+					limit = {
+						original_tag = ENG
+					}
+					NOT = { has_idea = ENG_bef }
+					NOT = { has_idea = ENG_bef_2 }
+				}
+				if = {
+					limit = {
+						original_tag = CAN
+					}
+					has_completed_focus = CAN_military_service
+				}
+				if = {
+					limit = {
+						original_tag = USA
+					}
+					has_completed_focus = USA_selective_service_act
+				}
+			}
+
+			modifier = {
+				conscription = 0.05
+				industrial_capacity_factory = -0.05
+				industrial_capacity_dockyard = -0.05
+			}
+			
+			cancel_if_invalid = no
+		}
+		
+		extensive_conscription = {
+			
+			available = {
+				has_war = yes
+				has_global_flag = great_war_started_flag
+				if = {
+					limit = {
+						original_tag = BEL
+					}
+					has_completed_focus = BEL_introduce_conscription
+				}
+				if = {
+					limit = {
+						original_tag = ENG
+					}
+					NOT = { has_idea = ENG_bef }
+					NOT = { has_idea = ENG_bef_2 }
+				}
+				if = {
+					limit = {
+						original_tag = CAN
+					}
+					has_completed_focus = CAN_military_service
+				}
+				if = {
+					limit = {
+						original_tag = USA
+					}
+					has_completed_focus = USA_selective_service_act
+				}
+			}
+			
+			cost = 100
+			removal_cost = -1
+			level = 4
+			
+			modifier = {
+				conscription = 0.075
+				industrial_capacity_factory = -0.1
+				industrial_capacity_dockyard = -0.1
+				training_time_factor = 0.1
+			}
+			ai_will_do = {
+   				factor = 100
+				
+			modifier = {
+				factor = 0
+				has_manpower > 500000
+			}
+				
+			}	
+			
+			cancel_if_invalid = no
+		}
+		
+		service_by_requirement = {
+
+			available = {
+				has_war = yes
+				has_global_flag = great_war_started_flag
+				if = {
+					limit = {
+						original_tag = BEL
+					}
+					has_completed_focus = BEL_introduce_conscription
+				}
+				if = {
+					limit = {
+						original_tag = ENG
+					}
+					NOT = { has_idea = ENG_bef }
+					NOT = { has_idea = ENG_bef_2 }
+				}
+				if = {
+					limit = {
+						original_tag = CAN
+					}
+					has_completed_focus = CAN_military_service
+				}
+				if = {
+					limit = {
+						original_tag = USA
+					}
+					has_completed_focus = USA_selective_service_act
+				}
+			}
+			
+			cost = 100
+			removal_cost = -1
+			level = 3
+
+			modifier = {
+				conscription = 0.10
+				industrial_capacity_factory = -0.2
+				industrial_capacity_dockyard = -0.2
+				training_time_factor = 0.2
+			}
+			ai_will_do = {
+   				factor = 100
+				
+			modifier = {
+				factor = 0
+				has_manpower > 500000
+			}
+				
+			}		
+			cancel_if_invalid = no
+		}
+		
+		all_adults_serve = {
+
+			available = {
+				has_war = yes
+				has_global_flag = great_war_started_flag
+				if = {
+					limit = {
+						original_tag = BEL
+					}
+					has_completed_focus = BEL_introduce_conscription
+				}
+				if = {
+					limit = {
+						original_tag = ENG
+					}
+					NOT = { has_idea = ENG_bef }
+					NOT = { has_idea = ENG_bef_2 }
+				}
+				if = {
+					limit = {
+						original_tag = CAN
+					}
+					has_completed_focus = CAN_military_service
+				}
+				if = {
+					limit = {
+						original_tag = USA
+					}
+					has_completed_focus = USA_selective_service_act
+				}
+			}
+
+			cost = 100
+			removal_cost = -1
+			level = 2
+			
+			modifier = {
+				conscription = 0.15
+				industrial_capacity_factory = -0.35
+				industrial_capacity_dockyard = -0.35
+				training_time_factor = 0.25
+			}
+			ai_will_do = {
+   				factor = 100
+				
+			}	
+			
+			cancel_if_invalid = no
+		}
+		
+		scraping_the_barrel = {
+
+			available = {
+				has_war = yes
+				has_global_flag = great_war_started_flag
+				if = {
+					limit = {
+						original_tag = BEL
+					}
+					has_completed_focus = BEL_introduce_conscription
+				}
+				if = {
+					limit = {
+						original_tag = ENG
+					}
+					NOT = { has_idea = ENG_bef }
+					NOT = { has_idea = ENG_bef_2 }
+				}
+				if = {
+					limit = {
+						original_tag = CAN
+					}
+					has_completed_focus = CAN_military_service
+				}
+				if = {
+					limit = {
+						original_tag = USA
+					}
+					has_completed_focus = USA_selective_service_act
+				}
+			}
+
+			cost = 100
+			removal_cost = -1
+			level = 1
+
+			modifier = {
+				conscription = 0.20
+				industrial_capacity_factory = -0.75
+				industrial_capacity_dockyard = -0.75
+				training_time_factor = 0.5
+			}
+			ai_will_do = {
+   				factor = 100
+				
+			}	
+			
+			cancel_if_invalid = no
+		}
+	}
+}

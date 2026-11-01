@@ -1,0 +1,168 @@
+﻿###################################################################
+
+division_template = {
+	name = "Pehotna Divizija"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+	}
+	support = { 
+		artillery_big = { x = 0 y = 0 }
+	} 
+}
+
+division_template = {
+	name = "Granichar"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+	}
+	priority = 0
+}
+
+division_template = {
+	name = "Kavaleriya Divizija"
+	regiments = {
+		cavalry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+		cavalry = { x = 0 y = 2 }
+	}
+	support = { 
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "Opalchentsi"
+	template_counter = 26
+	is_locked = yes
+	force_allow_recruiting = yes
+	division_cap = 4
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+	}
+	support = {
+		opchel_bat = { x = 0 y = 0 }
+		artillery_big = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Reservists"
+	is_locked = yes
+	priority = 0
+	is_locked = yes
+	
+	regiments = {
+		reserves = { x = 0 y = 0 }
+		reserves = { x = 0 y = 1 }
+		reserves = { x = 0 y = 2 }
+	}
+	support = { 
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+###################################################################
+
+units = {
+	division= { 
+			name = "4-a Konna brigada"
+			location = 20366 # Sofia
+			division_template="Kavaleriya Divizija"
+			start_experience_factor=0.1
+			}
+	
+	
+	division= { 
+			name = "Border Guards"
+			location = 20366 # Sofia
+			division_template="Granichar"
+			start_experience_factor=0.05
+			}
+	
+	
+	division= { 
+			name = "Northern Border Guards"
+			location = 20366 # Sofia
+			division_template="Granichar"
+			start_experience_factor=0.05
+			}
+
+	division= { 
+			name = "Border Guards"
+			location = 20366 # Sofia
+			division_template="Granichar"
+			start_experience_factor=0.05
+			}
+	
+	
+	division= { 
+			name = "Northern Border Guards"
+			location = 20366 # Sofia
+			division_template="Granichar"
+			start_experience_factor=0.05
+			}
+	
+	
+	division= { 
+		name = "1-ta 'Sofiyska' Pehotna Divizija"
+		location = 20366 # Sofia
+		division_template="Pehotna Divizija"
+		start_experience_factor=0.3
+	}
+	
+	division= { 
+		name = "2-ta Pehotna Divizija"
+		location = 20366 # Sofia
+		division_template="Pehotna Divizija"
+		start_experience_factor=0.3
+	}
+	
+	division= { 
+		name = "3-ta Pehotna Divizija"
+		location = 20366 # Sofia
+		division_template="Pehotna Divizija"
+		start_experience_factor=0.3
+	}
+	
+	
+	division= { 
+			name = "6-ta 'Bdinska' Pehotna Divizija"
+			location = 20366 # Sofia
+			division_template="Pehotna Divizija"
+			start_experience_factor=0.3
+			}
+	
+	
+	division= { 
+			name = "7-ma 'Rilska' Pekhotna Divizija"
+			location = 20366 # Sofia
+			division_template="Pehotna Divizija"
+			start_experience_factor=0.3
+			}
+	}
+
+instant_effect = {
+    add_equipment_production = { equipment = { type = infantry_equipment_2 creator = "BUL" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = support_equipment_1 creator = "BUL"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = horse_equipment_0 creator = "BUL"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = machine_gun_equipment_0 creator = "BUL"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = light_field_gun_equipment_2 creator = "BUL" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = heavy_field_gun_equipment_2 creator = "BUL" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+	add_equipment_to_stockpile = {
+		type = heavy_field_gun_equipment_1
+		amount = 30
+		producer = BUL
+	}
+}

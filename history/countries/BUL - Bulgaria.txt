@@ -1,0 +1,56 @@
+﻿capital = 1566
+set_research_slots = 3
+set_stability = 1
+set_war_support = 1
+set_convoys = 10
+starting_train_buffer = 2.0
+
+set_technology = {
+	infantry_weapon_1 = 1
+	infantry_weapon_2 = 1
+	machine_gun = 1
+	horse_equipment = 1
+	light_field_gun1 = 1
+	light_field_gun2 = 1
+	heavy_field_gun1 = 1
+	heavy_field_gun2 = 1
+
+	tech_support = 1
+	tech_engineers = 1
+	
+	basic_industry = 1
+}
+
+set_politics = {
+    ruling_party = neutrality
+    last_election = "1907.12.22"
+    election_frequency = 48
+    elections_allowed = yes
+}
+set_popularities = {
+    democratic = 5
+    fascism = 14
+    communism = 1
+    neutrality = 80
+}
+
+add_ideas = {
+	service_by_requirement
+	partial_economic_mobilisation
+	BUL_mob_1
+	BUL_balkan_prussia
+}
+
+oob = "BUL_1910"
+
+recruit_character = BUL_ferdinand_i
+recruit_character = BUL_vladimir_vazov
+recruit_character = BUL_zhekov
+recruit_character = BUL_kolev
+recruit_character = BUL_fichev
+recruit_character = BUL_boyadzhiev
+recruit_character = BUL_ivan_geshov
+recruit_character = BUL_vasil_radoslav
+
+set_variable = { BUL_unique_cap = 4 }
+

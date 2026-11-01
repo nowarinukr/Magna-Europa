@@ -1,0 +1,30 @@
+
+state={
+	id=2570
+	name="STATE_2570"
+	provinces={
+		11192 18643 
+	}
+	history={
+	    owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 3
+			arms_factory = 2
+			industrial_complex = 1
+		}
+		victory_points = {
+			11192 5 #Wandsbek
+		}
+		victory_points = {
+			18643 20 #Altona
+		}		
+		
+		
+		
+    }
+	manpower=254758
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

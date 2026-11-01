@@ -1,0 +1,85 @@
+every_possible_country = {
+	limit = {
+		is_dynamic_country = no
+	}
+	generate_character = {
+		token_base = generic_propaganada_expert
+		advisor = {
+			slot = political_advisor
+			traits = { propaganda_expert }
+			available = {
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_generic_political_advisor_europe_4 }
+		}
+	}
+	generate_character = {
+		token_base = generic_free_trade_enthusiast
+		advisor = {
+			slot = political_advisor
+			traits = { free_trade_enthusiast }
+			available = {
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_GER_generic_3 }
+		}
+	}
+	generate_character = {
+		token_base = generic_industrialist
+		advisor = {
+			slot = political_advisor
+			traits = { industrialist }
+			available = {
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_generic_political_advisor_europe_6 }
+		}
+	}
+	generate_character = {
+		token_base = generic_reorganiser
+		advisor = {
+			slot = political_advisor
+			traits = { reorganiser }
+			available = {
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_europe_generic_4 }
+		}
+	}
+	generate_character = {
+		token_base = generic_brutal_administrator
+		advisor = {
+			slot = political_advisor
+			traits = { brutal_administrator }
+			available = {
+				
+			}
+			ai_will_do = {
+				factor = 0
+			}
+		}
+		portraits = { 
+			army = { small = GFX_idea_europe_generic_5 }
+		}
+	}
+}

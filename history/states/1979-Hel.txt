@@ -1,0 +1,21 @@
+state={
+	id=1979
+	name="STATE_1979"
+	provinces={
+		21641 
+	}
+	history={
+		owner = GER
+		add_core_of = POL
+		add_core_of = GER
+		buildings = {
+			infrastructure = 2
+		}
+		
+		
+  	}
+	manpower=16207
+	state_category=enclave
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

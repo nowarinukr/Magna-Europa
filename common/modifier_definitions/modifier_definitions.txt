@@ -1,0 +1,29 @@
+# Extra modifiers can be defined here. Although the game itself won't use those, 
+# you can access those modifiers using modifier@modifier_token in state & country scope 
+# or leader_modifier@modifier_token/unit_modifier@modifier_token in unit leader scope
+# modifier_token will be used for tooltip localization
+
+MIL_inf_frame_modifier = {
+	color_type = good
+
+	value_type = number
+
+	precision = 1
+
+	postfix = none
+
+	category = country
+}
+
+max_strength = {
+	color_type = good
+
+	value_type = number
+
+	precision = 1
+
+	postfix = none
+
+	category = all
+}
+

@@ -1,0 +1,29 @@
+﻿add_namespace = belgium
+
+country_event = {
+	id = belgium.1
+	title = belgium.1.t
+	desc = belgium.1.d
+	picture = GFX_report_event_hungary_parliament
+
+	fire_only_once = yes
+
+	trigger = {
+ 		TAG = BEL
+		date > 1913.3.1
+	}
+
+	mean_time_to_happen = {
+		days = 60
+	}
+
+	option = {
+		name = belgium.1.a
+		set_country_flag = BEL_general_strike
+		add_timed_idea = {
+			idea = BEL_widespread_strikes
+			days = 14
+		}
+		add_stability = -0.25
+	}
+}

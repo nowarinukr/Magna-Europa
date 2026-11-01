@@ -1,0 +1,37 @@
+
+state={
+	id=470
+	name="STATE_470"
+	provinces={
+		2052 5139 12312 12362 12389 12399 12448 
+	}
+	resources={
+		steel=50
+	}
+	history={
+		owner = BEL
+		add_core_of = BEL
+		buildings = {
+			infrastructure = 4
+			arms_factory = 5
+			industrial_complex = 8
+		}
+		
+        victory_points = {
+            12389 80 #Bruxelles
+        }
+		victory_points = {
+            12362 2 #Leuven
+        }
+		victory_points = {
+            12312 10 #Mechelen
+        }
+		victory_points = {
+            5139 10 #Anderlecht
+        }
+    }
+	manpower=1362900
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = metropolis
+}

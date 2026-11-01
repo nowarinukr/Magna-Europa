@@ -1,0 +1,27 @@
+state={
+	id=290
+	name="STATE_290"
+	provinces={
+		105 5068 5616 5672 7848 10979 11054 11088 
+	}
+	history={
+		owner = ENG
+		add_core_of = ENG
+		 
+		
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+			dockyard = 2
+			7848 = { naval_base = 8 }
+		}
+	
+        victory_points = {
+            7848 20
+        }
+    }
+	manpower=303300
+	buildings_max_level_factor=1.000
+	state_category = large_city
+}

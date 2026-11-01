@@ -1,0 +1,26 @@
+
+state={
+	id=79
+	name="STATE_79"
+	provinces={
+		302 3190 4234 4711 8583 9063 9493 11560 11650 11715 11772 20553 
+	}
+	resources = {
+		aluminium = 50
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		victory_points = {
+			3190 2 #Czarnikau
+		}
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = POL
+  	}
+	manpower=277200
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

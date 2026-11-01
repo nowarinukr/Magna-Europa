@@ -1,0 +1,321 @@
+unit_upgrades = {
+	BEL_uu_engineer = {
+		icon = generic_military
+
+		allowed = {
+			tag = BEL
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = BEL_uu_upgraded
+			}
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			add_units_to_division_template = {
+				template_name = "Garde Civique"
+				support = {
+					engineer = 0
+				}
+			}
+			set_temp_variable = { temp = 100 }
+			set_temp_variable = { total_unit = num_battalions_with_type@garde_bat }
+			multiply_temp_variable = { total_unit = temp }
+			custom_effect_tooltip = engineer_upgrade_tt
+			set_country_flag = BEL_uu_upgraded
+		}
+	}
+
+	BEL_uu_expand = {
+		icon = generic_military
+
+		allowed = {
+			tag = BEL
+		}
+
+		visible = {
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			add_to_variable = { BEL_unique_cap = 2 }
+			set_division_template_cap = { 
+				division_template = "Garde Civique"
+				division_cap = 6
+			}
+		}
+	}
+}
+operations = {
+	BEL_liege_modernisation = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = BEL
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 25
+			NOT = {
+				has_country_flag = BEL_fort_flag
+			}
+		}
+	
+		visible = {
+			has_completed_focus = BEL_modernise_the_redoubt
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			civilian_factory_use = 25
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = BEL_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = BEL_fort_flag
+			480 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 19891
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 3006
+					instant_build = yes
+				}
+			}
+			456 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 12412
+					instant_build = yes
+				}
+			}
+			456 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 19890
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	BEL_antwerp_modernisation = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = BEL
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 10
+			NOT = {
+				has_country_flag = BEL_fort_flag
+			}
+		}
+	
+		visible = {
+			has_completed_focus = BEL_modernise_the_redoubt
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 180
+		
+		modifier = {
+			civilian_factory_use = 10
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = BEL_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = BEL_fort_flag
+			455 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 12249
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 12244
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 9081
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+mobilization = {
+	BEL_mobilisation = {
+		icon = generic_operation
+
+		allowed = {
+			tag = BEL
+		}
+
+		available = {
+			OR  = {
+				has_country_flag = mob_allowed_flag
+				has_global_flag = great_war_started_flag
+			}
+			has_completed_focus = BEL_introduce_conscription
+		}
+			
+		fire_only_once = yes
+
+		cost = 0
+		
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			activate_mission = BEL_mobilise_north
+			activate_mission = BEL_mobilise_unlock
+			set_country_flag = mobilised_flag
+			swap_ideas = {
+				add_idea = BEL_mob_2
+				remove_idea = BEL_mob_1
+			}
+		}
+	}
+	
+	BEL_mobilise_unlock = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 90
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			set_division_template_lock = {
+				division_template = "Reservists"
+				is_locked = no
+			}
+			hidden_effect = {
+				set_technology = {
+					reservist_tech = 1 
+				}
+			}
+		}
+	}
+	
+	BEL_mobilise_north = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			444 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+			}
+			470 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_2 = { owner = \"BEL\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"BEL\" } }"
+					owner = BEL
+				}
+			}
+		}
+	}
+}

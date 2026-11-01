@@ -1,0 +1,21 @@
+
+state={
+	id=2859
+	name="STATE_2859"
+	provinces={
+		2562 5152 13698 
+	}
+	history={
+		owner = AUS
+		add_core_of = ROM
+		add_claim_by = HUN
+		buildings = {
+			infrastructure = 2
+
+		}
+	}
+	manpower=12966
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

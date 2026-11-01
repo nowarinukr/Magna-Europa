@@ -1,0 +1,29 @@
+﻿capital = 661
+
+set_research_slots = 3
+
+set_technology = {
+
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.10.27"
+	election_frequency = 48
+	elections_allowed = yes
+}
+set_popularities = {
+	democratic = 96
+	fascism = 2
+	communism = 2
+}
+
+add_ideas = {
+	neutrality_idea
+	limited_conscription
+}
+
+set_stability = 0.85
+
+recruit_character = SWI_federal_council
+

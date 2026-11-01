@@ -1,0 +1,16 @@
+characters={
+	POL_jozef_pilsudski={
+		name="Józef Piłsudski"
+		portraits={
+			civilian={
+				large="gfx/leaders/AUS/portrait_pilsudski.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={ }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+}

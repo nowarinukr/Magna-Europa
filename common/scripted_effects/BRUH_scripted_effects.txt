@@ -1,0 +1,213 @@
+RUS_revolutionary_anger_increase_effect = {
+	custom_effect_tooltip = RUS_rev_increase_tt
+	add_to_variable = { var = RUS_revolution_anger value = 1 }
+	clamp_variable = {
+		var = RUS_revolution_anger
+		min = 0
+		max = 10
+	}
+}
+RUS_revolutionary_anger_big_increase_effect = {
+	custom_effect_tooltip = RUS_rev_big_increase_tt
+	add_to_variable = { var = RUS_revolution_anger value = 2 }
+	clamp_variable = {
+		var = RUS_revolution_anger
+		min = 0
+		max = 10
+	}
+}
+RUS_revolutionary_anger_decrease_effect = {
+	custom_effect_tooltip = RUS_rev_decrease_tt
+	subtract_from_variable = { var = RUS_revolution_anger value = 1 }
+	clamp_variable = {
+		var = RUS_revolution_anger
+		min = 0
+		max = 10
+	}
+}
+
+blockade_increase_effect = {
+	if = {
+		limit = { has_idea = GER_blockade_9 }
+		swap_ideas = {
+			remove_idea = GER_blockade_9
+			add_idea = GER_blockade_10
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_8 }
+		swap_ideas = {
+			remove_idea = GER_blockade_8
+			add_idea = GER_blockade_9
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_7 }
+		swap_ideas = {
+			remove_idea = GER_blockade_7
+			add_idea = GER_blockade_8
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_6 }
+		swap_ideas = {
+			remove_idea = GER_blockade_6
+			add_idea = GER_blockade_7
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_5 }
+		swap_ideas = {
+			remove_idea = GER_blockade_5
+			add_idea = GER_blockade_6
+		}		
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_4 }
+		swap_ideas = {
+			remove_idea = GER_blockade_4
+			add_idea = GER_blockade_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_3 }
+		swap_ideas = {
+			remove_idea = GER_blockade_3
+			add_idea = GER_blockade_4
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_2 }
+		swap_ideas = {
+			remove_idea = GER_blockade_2
+			add_idea = GER_blockade_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_1 }
+		swap_ideas = {
+			remove_idea = GER_blockade_1
+			add_idea = GER_blockade_2
+		}		
+	}
+	else = {
+		add_ideas = GER_blockade_1
+	}
+}
+
+blockade_decrease_effect = {
+	if = {
+		limit = { has_idea = GER_blockade_1 }
+		remove_ideas = GER_blockade_1
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_2 }
+		swap_ideas = {
+			remove_idea = GER_blockade_2
+			add_idea = GER_blockade_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_3 }
+		swap_ideas = {
+			remove_idea = GER_blockade_3
+			add_idea = GER_blockade_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_4 }
+		swap_ideas = {
+			remove_idea = GER_blockade_4
+			add_idea = GER_blockade_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_5 }
+		swap_ideas = {
+			remove_idea = GER_blockade_5
+			add_idea = GER_blockade_4
+		}		
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_6 }
+		swap_ideas = {
+			remove_idea = GER_blockade_6
+			add_idea = GER_blockade_5
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_7 }
+		swap_ideas = {
+			remove_idea = GER_blockade_7
+			add_idea = GER_blockade_6
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_8 }
+		swap_ideas = {
+			remove_idea = GER_blockade_8
+			add_idea = GER_blockade_7
+		}
+	}
+	else_if = {
+		limit = { has_idea = GER_blockade_9 }
+		swap_ideas = {
+			remove_idea = GER_blockade_9
+			add_idea = GER_blockade_8
+		}		
+	}
+	else = {
+		swap_ideas = {
+			remove_idea = GER_blockade_10
+			add_idea = GER_blockade_9
+		}
+	}
+}
+
+TUR_arab_nat_increase = {
+	if = {
+		limit = { has_idea = TUR_arab_revolt_2 }
+		swap_ideas = {
+			remove_idea = TUR_arab_revolt_2
+			add_idea = TUR_arab_revolt_3
+		}
+	}
+	else_if = {
+		limit = { has_idea = TUR_arab_revolt_1 }
+		swap_ideas = {
+			remove_idea = TUR_arab_revolt_1
+			add_idea = TUR_arab_revolt_2
+		}
+	}
+	else_if = {
+		limit = { has_idea = TUR_arab_revolt }
+		swap_ideas = {
+			remove_idea = TUR_arab_revolt
+			add_idea = TUR_arab_revolt_1
+		}
+	}
+}
+
+TUR_arab_nat_decrease = {
+	if = {
+		limit = { has_idea = TUR_arab_revolt_1 }
+		swap_ideas = {
+			remove_idea = TUR_arab_revolt_1
+			add_idea = TUR_arab_revolt
+		}
+	}
+	else_if = {
+		limit = { has_idea = TUR_arab_revolt_2 }
+		swap_ideas = {
+			remove_idea = TUR_arab_revolt_2
+			add_idea = TUR_arab_revolt_1
+		}
+	}
+	else_if = {
+		limit = { has_idea = TUR_arab_revolt_3 }
+		swap_ideas = {
+			remove_idea = TUR_arab_revolt_3
+			add_idea = TUR_arab_revolt_2
+		}
+	}
+}

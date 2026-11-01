@@ -1,0 +1,256 @@
+#	Example:
+#
+#	example_dynamic_modifier = {
+#		icon = "GFX_idea_unknown" # optional, will show up in guis if icon is specified
+#		enable = { always = yes } #optional, the modifier won't apply if not enabled
+#		remove_trigger = { always = no } #optional, will remove the modifier if true
+#       attacker_modifier = no  # if yes this modifier will also be read in combat for
+#                               # people engaging in the combat even if not in the state
+#
+#		# list of modifiers
+#		fuel_cost = 321
+#		max_fuel = var_max_fuel # will be taken from a variable
+#	}
+#
+#
+#	In a script file:
+#
+#	effect = {
+#		add_dynamic_modifier = {
+#			modifier = example_dynamic_modifier
+#			scope = GER # optional, if you specify this your dynamic modifier scoped to this scope (root is the effect scope)
+#			days = 14 # optional, will be removed after this many days passes
+#		}
+#	}
+#
+#	can be added to countries, states or unit leaders
+#	will only updated daily, unless forced by force_update_dynamic_modifier effect
+
+###################################
+
+### ### #  # ###  ##  ###  ###  ##
+#    #  #  #  #  #  # #  #  #  #  #
+##   #  ####  #  #  # ###   #  ####
+#    #  #  #  #  #  # #     #  #  #
+###  #  #  # ###  ##  #    ### #  #
+
+###################################
+
+###### COUNTRY MODIFIERS
+
+# Army Modifiers
+MIL_command_dynamic_modifier = { #NATIONAL SPIRIT
+	enable = { always = yes }
+
+	icon = GFX_idea_ETH_army
+
+}
+
+TUR_debt_council_modifier = { #NATIONAL SPIRIT
+	enable = { always = yes }
+
+	icon = GFX_idea_tur_odpa
+	
+	consumer_goods_factor = TUR_dc_goods_var
+	civilian_factory_use = TUR_dc_civ_var
+	local_resources_factor = TUR_dc_res_var
+	political_power_cost = TUR_dc_pol_var
+	production_speed_rail_way_factor = TUR_dc_rail_var
+
+}
+
+krupp_works = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_military_industry
+
+	local_building_slots_factor = 0.5
+	state_production_speed_arms_factory_factor = 0.25
+	local_resources_factor = 0.1
+}
+
+skoda_works = {
+	enable = { always = yes }
+
+	icon = GFX_idea_CZE_skoda_works
+
+	state_production_speed_arms_factory_factor = 0.1
+	local_factories = 0.25
+	local_building_slots_factor = 1.0
+}
+
+tula_arms = {
+	enable = { always = yes }
+
+	icon = GFX_idea_CZE_skoda_works
+
+	state_production_speed_arms_factory_factor = 0.25
+	local_factories = 0.1
+	local_building_slots_factor = 0.5
+}
+
+TUR_imperial_arsenal = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_increased_metal_production
+
+	local_building_slots_factor = 0.5
+	state_production_speed_dockyard_factor = 0.25
+}
+
+TUR_state_arsenal = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_military_industry
+
+	local_building_slots_factor = 0.25
+	state_production_speed_arms_factory_factor = 0.15
+}
+
+FRA_state_arsenal = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_military_industry
+
+	local_building_slots_factor = 0.25
+	state_production_speed_arms_factory_factor = 0.2
+}
+
+FRA_city_of_light_mod = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SOV_defend_moscow
+
+	local_factories = 0.25
+}
+
+FRA_local_defences = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_defense
+
+	pocket_penalty = -0.15
+	dig_in_speed_factor = 3.0
+	max_dig_in_factor = 1.0
+	local_supplies = 2
+	local_org_regain = 0.35
+	army_core_attack_factor = 0.1
+	army_core_defence_factor = 0.1
+}
+
+AUS_hun_industrialisation = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SOV_factory_worker_militias
+
+	state_production_speed_industrial_complex_factor = 0.25
+	local_factories = -0.25
+}
+
+AUS_cze_industrialisation = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_SOV_factory_worker_militias
+
+	state_production_speed_arms_factory_factor = 0.15
+	local_factories = -0.25
+}
+
+ITA_mafia_control = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_ITA_mafia_on_the_rise
+
+	local_factories = -1.0
+	local_resources_factor = -1.0
+	state_production_speed_buildings_factor = 0.25
+}
+
+ITA_urban_reconstruction = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_ETH_state_development
+
+	state_production_speed_buildings_factor = 0.1
+}
+
+ITA_industry_grants = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_increased_metal_production
+
+	state_production_speed_arms_factory_factor = 0.15
+	state_production_speed_industrial_complex_factor = 0.3
+}
+
+ITA_ansaldo = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_military_industry
+
+	state_production_speed_arms_factory_factor = 0.1
+	state_production_speed_dockyard_factor = 0.2
+	local_resources_factor = 0.5
+}
+
+ENG_royal_arsenal_mod = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_increased_metal_production
+
+	state_production_speed_arms_factory_factor = 0.2
+	local_factories = 0.5
+}
+
+BEL_fn_herstal_mod = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_increased_metal_production
+
+	state_production_speed_arms_factory_factor = 0.25
+	local_factories = 0.25
+}
+
+ROM_cfr_mod = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_increased_metal_production
+
+	state_production_speed_arms_factory_factor = 0.3
+	local_factories = 0.15
+	local_resources_factor = 0.25
+}
+
+USA_springfield_mod = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_increased_metal_production
+
+	state_production_speed_arms_factory_factor = 0.3
+	local_factories = 0.15
+}
+
+fortified_region = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_defense
+
+	pocket_penalty = -0.25
+	dig_in_speed_factor = 1.0
+	max_dig_in = 2.5
+	local_supplies = 1
+	army_speed_factor_for_controller = 0.1
+	local_org_regain = 0.25
+}
+coastal_battery = {
+	enable = { always = yes }
+
+	icon = GFX_modifiers_generic_defense
+
+	pocket_penalty = -0.35
+	dig_in_speed_factor = 2.0
+	max_dig_in = 5
+	local_supplies = 2
+	army_speed_factor_for_controller = 0.2
+	local_org_regain = 0.35
+}

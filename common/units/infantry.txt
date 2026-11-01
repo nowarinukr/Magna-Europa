@@ -1,0 +1,372 @@
+# options for map_icon_category:
+# For land units: infantry,armored,other
+# For sea units: ship,transport,uboat
+
+sub_units = {
+
+	infantry = {
+		sprite = infantry2
+		map_icon_category = infantry
+		
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 80
+		max_organisation = 80
+		default_morale = 0.2
+		manpower = 4000
+		
+		recon = 1
+
+		#Misc Abilities
+		training_time = 100
+		suppression = 15
+		weight = 0.5
+		
+		supply_consumption = 0.1
+	
+		need = {
+			infantry_equipment = 300
+			horse_equipment = 5
+		}
+	}
+
+	reserves = {
+		sprite = infantry
+		map_icon_category = infantry
+		
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 80
+		max_organisation = 75
+		default_morale = 0.2
+		manpower = 4000
+		
+		recon = 1
+
+		#Misc Abilities
+		training_time = 85
+		suppression = 15
+		weight = 0.5
+		
+		supply_consumption = 0.1
+	
+		need = {
+			infantry_equipment = 300
+			horse_equipment = 5
+		}
+	}
+
+	home_guard = {
+		sprite = infantry2
+		map_icon_category = infantry
+		
+		priority = 600
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 80
+		max_organisation = 75
+		default_morale = 0.2
+		manpower = 4000
+		
+		recon = 1
+
+		#Misc Abilities
+		training_time = 80
+		suppression = 15
+		weight = 100000
+		
+		supply_consumption = 0.1
+	
+		need = {
+			infantry_equipment = 300
+			horse_equipment = 5
+		}
+	}
+	
+	marine = {
+		sprite = infantry
+		map_icon_category = infantry
+		special_forces = yes
+		marines = yes
+		
+		priority = 601
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+			category_special_forces
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 80
+		max_organisation = 85
+		default_morale = 0.3
+		manpower = 4000
+
+		#Misc Abilities
+		training_time = 200
+		suppression = 15
+		weight = 0.5
+		supply_consumption = 0.1
+		breakthrough = 0.3
+		
+		recon = 2
+	
+		need = {
+			infantry_equipment = 400
+			horse_equipment = 10
+		}
+
+		marsh = {
+			attack = 0.1
+		}
+		river = {
+			attack = 0.05
+		}
+		amphibious = {
+			attack = 0.1
+		}
+	}
+	
+	mountaineers = {
+		sprite = infantry
+		map_icon_category = infantry
+		special_forces = yes
+		mountaineers = yes
+
+		priority = 601
+		active = no
+
+		type = {
+			infantry
+		}
+		
+		group = infantry
+		
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+            category_special_forces
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 80
+		max_organisation = 85
+		default_morale = 0.3
+		manpower = 4000
+		
+		recon = 2
+
+		#Misc Abilities
+		training_time = 200
+		suppression = 15
+		weight = 0.5
+		
+		supply_consumption = 0.1
+		breakthrough = 0.3
+	
+		need = {
+			infantry_equipment = 400
+			horse_equipment = 10
+		}
+
+		hills = {
+			attack = 0.05
+			defence = 0.05
+		}
+		mountain = {
+			attack = 0.1
+			defence = 0.05
+			movement = 0.1
+		}
+	}
+	
+	stormtrooper = {
+		sprite = infantry
+		map_icon_category = infantry
+		special_forces = yes
+
+		ai_priority = 50
+		priority = 3000
+		active = no
+
+		type = {
+			infantry
+		}
+
+		group = infantry
+
+		categories = {
+			category_front_line
+			category_light_infantry
+			category_all_infantry
+			category_army
+			category_special_forces
+		}
+
+		combat_width = 1
+
+		#Size Definitions
+		max_strength = 75
+		max_organisation = 85
+		default_morale = 0.4
+		manpower = 4000
+		
+		recon = 2
+
+		#Misc Abilities
+		training_time = 200
+		suppression = 15
+		weight = 0.4
+		supply_consumption = 0.125
+		soft_attack = 0.1
+		breakthrough = 2.0
+
+		need = {
+			infantry_equipment = 500
+			horse_equipment = 10
+		}
+
+		urban = {
+			attack = 0.1
+			movement = 0.1
+		}
+		fort = {
+			attack = 0.1
+			movement = 0.1
+		}
+	}
+	
+	motorized = {
+		sprite = motorized
+		map_icon_category = infantry
+
+		priority = 599
+		active = no
+
+		type = {
+			motorized
+		}
+		
+		group = mobile
+		
+		categories = {
+			category_front_line
+			category_all_infantry
+			category_army
+		}
+		
+		combat_width = 1
+		
+		#Size Definitions
+		max_strength = 80
+		max_organisation = 80
+		default_morale = 0.2
+		manpower = 4000
+
+		#Misc Abilities
+		training_time = 90
+		suppression = 15
+		weight = 0.75
+		supply_consumption = 0.04
+	
+		# this is what moves us and sets speed
+		transport = motorized_equipment
+	
+		need = {
+			infantry_equipment = 400
+			motorized_equipment = 200
+		}
+
+		forest = {
+			attack = -0.1
+			movement = -0.5
+		}
+		mountain = {
+			attack = -0.05
+		}
+		jungle = {
+			attack = -0.2
+			movement = -0.5
+		}
+		marsh = {
+			attack = -0.1
+			movement = -0.3
+		}
+		urban = {
+			attack = -0.1
+		}
+		river = {
+			attack = -0.1
+			movement = -0.1
+		}
+		amphibious = {
+			attack = -0.2
+		}
+	}
+}

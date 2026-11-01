@@ -1,0 +1,23 @@
+state={
+	id=2294
+	name="STATE_2294"
+	resources={
+		oil=100
+	}
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		
+		
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	provinces={
+		2472 5442 6545 7722 8322 15152 18741 
+	}
+	manpower=160416
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

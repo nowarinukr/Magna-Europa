@@ -1,0 +1,21 @@
+
+state={
+	id=2028
+	name="STATE_2028"
+	provinces={
+		4600 8754 13797 13798 
+	}
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		add_claim_by = UKR
+		
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	manpower=121234
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

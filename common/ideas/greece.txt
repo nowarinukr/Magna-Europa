@@ -1,0 +1,197 @@
+ideas={
+	country = {
+		GRE_mob_1 = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.055
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		
+		GRE_mob_2 = {
+			name = GRE_mob_1
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.055
+				industrial_capacity_factory = 0.2
+				industrial_capacity_dockyard = 0.2
+			}
+		}
+		
+		GRE_mob_3 = {
+			name = GRE_mob_1
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.055
+			}
+		}
+		
+		GRE_megali_idea = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = gre_martyrs_of_the_anatolian_catastrophe
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				conscription_factor = 0.1
+			}
+		}
+		
+		GRE_megali_idea_2 = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = gre_martyrs_of_the_anatolian_catastrophe
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				conscription_factor = 0.15
+				navy_org_factor = 0.1
+				war_support_factor = 0.1
+			}
+		}
+
+		GRE_poor_peasants = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = gre_agricultural_communes2
+			modifier = {
+				stability_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		GRE_labour_laws_idea = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_production_bonus
+			modifier = {
+				industrial_capacity_factory = 0.05
+				local_resources = 0.05
+				political_power_cost = 0.1
+			}
+		}
+		
+		GRE_french_mission = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = FRA_undividable
+			
+			cancel = {
+				FRA = {
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				experience_gain_army = 0.15
+				training_time_army_factor = -0.25
+				land_doctrine_cost_factor = -0.1
+				command_power_gain = -0.5
+				custom_modifier_tooltip = GRE_mission_tt
+			}
+		}
+		
+		GRE_french_elan = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = FRA_national_mobilization_focus
+			
+			modifier = {
+				breakthrough_factor = 0.1
+				org_loss_when_moving = -0.05
+				army_strength_factor = -0.05
+			}
+		}
+
+		GRE_french_no_elan = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = FRA_national_mobilization_focus
+			
+			modifier = {
+				breakthrough_factor = 0.05
+				org_loss_when_moving = 0.05
+				army_strength_factor = 0.05
+			}
+		}
+		
+		GRE_outdated_army = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = SPR_disbanded_army
+			modifier = {
+				planning_speed = -0.1
+				max_training = -0.1
+				army_org_factor = -0.1
+				army_morale_factor = -0.1
+			}
+		}
+		
+		GRE_british_mission = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = eng_guided_by_britain
+			
+			cancel = {
+				ENG = {
+					has_war = yes
+				}
+			}
+			
+			modifier = {
+				experience_gain_navy = 0.2
+				naval_doctrine_cost_factor = -0.1
+				experience_gain_navy_unit_factor = 0.5
+				command_power_gain = -0.5
+				custom_modifier_tooltip = GRE_mission_tt
+			}
+		}
+		
+		GRE_british_gunnery = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_sea_focused_navy
+			
+			modifier = {
+				naval_hit_chance = 0.2
+				naval_critical_score_chance_factor = 0.1
+				critical_receive_chance = 0.2
+			}
+		}
+
+		GRE_ionian_refugees = {
+			allowed = {original_tag = GRE }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = citizen_militia_2
+			
+			modifier = {
+				stability_factor = -0.1
+				weekly_manpower = 1000
+				monthly_population = 0.5
+			}
+		}
+		
+	}
+}

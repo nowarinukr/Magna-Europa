@@ -1,0 +1,542 @@
+focus_tree = {
+	id = greece_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = GRE
+		}
+	}
+
+	continuous_focus_position = { x = 0 y = 1300 }
+	
+	default = no
+
+	focus = {
+		id = GRE_venizelos_reforms
+		icon = GFX_goal_support_democracy
+		x = 3
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = GRE_venizelos
+		}
+	}
+
+
+	focus = {
+		id = GRE_revise_the_constitution
+		icon = GFX_focus_hol_the_foundations_of_defense
+		prerequisite = { focus = GRE_venizelos_reforms }
+		x = -5
+		y = 1
+		relative_position_id = GRE_venizelos_reforms
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+
+	focus = {
+		id = GRE_national_economy
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = GRE_revise_the_constitution }
+		x = -1
+		y = 1
+		relative_position_id = GRE_revise_the_constitution
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = GRE_benakis
+		}
+	}
+
+	focus = {
+		id = GRE_labour_laws
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = GRE_national_economy }
+		x = 0
+		y = 1
+		relative_position_id = GRE_national_economy
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = GRE_labour_laws_idea
+		}
+	}
+
+	focus = {
+		id = GRE_proportional_representation
+		icon = GFX_focus_generic_court
+		prerequisite = { focus = GRE_revise_the_constitution }
+		x = 1
+		y = 1
+		relative_position_id = GRE_revise_the_constitution
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = GRE_land_reform
+		icon = GFX_focus_generic_concessions
+		prerequisite = { focus = GRE_proportional_representation }
+		x = 0
+		y = 1
+		relative_position_id = GRE_proportional_representation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = GRE_poor_peasants
+		}
+	}
+
+	focus = {
+		id = GRE_embrace_megali
+		icon = GFX_focus_GRE_resurrecting_the_megali_idea
+		prerequisite = { focus = GRE_labour_laws }
+		prerequisite = { focus = GRE_land_reform }
+		x = 1
+		y = 1
+		relative_position_id = GRE_labour_laws
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = GRE_megali_idea_2
+				remove_idea = GRE_megali_idea
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_national_schism
+		icon = GFX_focus_generic_military_dictatorship
+		prerequisite = { focus = GRE_embrace_megali }
+		x = 0
+		y = 1
+		relative_position_id = GRE_embrace_megali
+		cost = 5
+		available = {
+			has_global_flag = great_war_started_flag
+			OR = {
+				date > 1916.1.1
+				FRA = {
+					surrender_progress > 0.5
+				}
+				SOV = {
+					surrender_progress > 0.5
+				}
+				ENG = {
+					surrender_progress > 0.5
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		
+		completion_reward = {
+			FRA = {
+				add_to_faction = GRE
+			}
+			remove_ideas = TUR_diplo_isolation
+			retire_character = GRE_constantine_i
+			promote_character = {
+				character = GRE_alexandros_i
+				ideology = liberalism
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_invite_entente_missions
+		icon = GFX_goal_generic_major_alliance
+		prerequisite = { focus = GRE_venizelos_reforms }
+		x = 6
+		y = 1
+		relative_position_id = GRE_venizelos_reforms
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 25
+			navy_experience = 25
+		}
+	}
+
+	focus = {
+		id = GRE_contact_france
+		icon = GFX_focus_chi_reach_out_to_france
+		prerequisite = { focus = GRE_invite_entente_missions }
+		x = -2
+		y = 1
+		relative_position_id = GRE_invite_entente_missions
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = GRE_french_mission
+		}
+	}
+
+	focus = {
+		id = GRE_retraining
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = GRE_contact_france }
+		x = -1
+		y = 1
+		relative_position_id = GRE_contact_france
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			remove_ideas = GRE_outdated_army
+		}
+	}
+
+	focus = {
+		id = GRE_new_officers
+		icon = GFX_focus_generic_military_academy
+		prerequisite = { focus = GRE_contact_france }
+		x = 1
+		y = 1
+		relative_position_id = GRE_contact_france
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			every_unit_leader = {
+				gain_xp = 200
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_expand_conscription
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = GRE_retraining }
+		x = -1
+		y = 1
+		relative_position_id = GRE_retraining
+		cost = 5
+		available = {
+			NOT = {
+				has_country_flag = mobilised_flag
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = service_by_requirement
+			swap_ideas = {
+				add_idea = GRE_mob_2
+				remove_idea = GRE_mob_1
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_field_commands
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = GRE_new_officers }
+		x = 1
+		y = 1
+		relative_position_id = GRE_new_officers
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			FRA = {
+				FRA_joseph_eydoux = {
+					set_nationality = GRE
+				}
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_war_games
+		icon = GFX_focus_GRE_reviving_the_spartan_warrior_spirit
+		prerequisite = { focus = GRE_retraining }
+		prerequisite = { focus = GRE_new_officers }
+		x = 1
+		y = 1
+		relative_position_id = GRE_retraining
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 50
+			add_command_power = 100
+		}
+	}
+
+	focus = {
+		id = GRE_adopt_french_practices
+		icon = GFX_focus_GRE_hellenic_armed_forces
+		prerequisite = { focus = GRE_war_games }
+		x = 0
+		y = 1
+		relative_position_id = GRE_war_games
+		cost = 10
+		available = {
+			FRA = {
+				OR = {
+					has_completed_focus = FRA_cult_of_offensive
+					has_completed_focus = FRA_defensive_focus
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			if = {
+				limit = {
+					FRA = {
+						has_completed_focus = FRA_defensive_focus
+					}
+				}
+				add_ideas = GRE_french_no_elan
+			}
+			else = {
+				add_ideas = GRE_french_elan
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_contact_britain
+		icon = GFX_focus_chi_british_cooperation
+		prerequisite = { focus = GRE_invite_entente_missions }
+		x = 3
+		y = 1
+		relative_position_id = GRE_invite_entente_missions
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = GRE_british_mission
+		}
+	}
+
+	focus = {
+		id = GRE_reorganise_ministry
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		prerequisite = { focus = GRE_contact_britain }
+		x = -1
+		y = 1
+		relative_position_id = GRE_contact_britain
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			navy_experience = 50
+			add_command_power = 50
+		}
+	}
+
+	focus = {
+		id = GRE_improve_gunnery
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = GRE_reorganise_ministry }
+		x = 0
+		y = 1
+		relative_position_id = GRE_reorganise_ministry
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = GRE_british_gunnery
+		}
+	}
+
+	focus = {
+		id = GRE_destroyer_purchases
+		icon = GFX_focus_generic_destroyer
+		prerequisite = { focus = GRE_contact_britain }
+		x = 1
+		y = 1
+		relative_position_id = GRE_contact_britain
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = GRE_destroyer_purchases
+		}
+	}
+
+	focus = {
+		id = GRE_aquire_battleships
+		icon = GFX_focus_GRE_a_long_and_proud_tradition
+		prerequisite = { focus = GRE_destroyer_purchases }
+		x = 0
+		y = 1
+		relative_position_id = GRE_destroyer_purchases
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = GRE_battleship_purchases
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = bb_tech
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = naval_equipment
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_aftermath_of_balkan_wars
+		icon = GFX_focus_GRE_bedrock_of_balkan_stability
+		prerequisite = { focus = GRE_venizelos_reforms }
+		x = 0
+		y = 1
+		relative_position_id = GRE_venizelos_reforms
+		cost = 5
+		available = {
+			OR = {
+				has_global_flag = balkan_league_victory_flag
+				has_global_flag = balkan_ottoman_victory
+				has_global_flag = balkan_stalemate_flag
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			army_experience = 25
+			navy_experience = 25
+		}
+	}
+
+	focus = {
+		id = GRE_impliment_lessons
+		icon = GFX_focus_GRE_following_in_the_footsteps_of_giants
+		prerequisite = { focus = GRE_aftermath_of_balkan_wars }
+		x = -1
+		y = 1
+		relative_position_id = GRE_aftermath_of_balkan_wars
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 2
+				category = cat_mass_assault
+				category = cat_superior_firepower
+			}
+			add_tech_bonus = {
+				bonus = 0.5
+				uses = 1
+				category = infantry_weapons
+				category = infantry_mg_weapons
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_integrate_refugees
+		icon = GFX_focus_generic_population_growth
+		prerequisite = { focus = GRE_aftermath_of_balkan_wars }
+		x = 0
+		y = 2
+		relative_position_id = GRE_aftermath_of_balkan_wars
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = GRE_ionian_refugees
+				days = 730
+			}
+		}
+	}
+
+	focus = {
+		id = GRE_naval_tactics
+		icon = GFX_goal_generic_amphibious_assault
+		prerequisite = { focus = GRE_aftermath_of_balkan_wars }
+		x = 1
+		y = 1
+		relative_position_id = GRE_aftermath_of_balkan_wars
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = naval_doctrine
+			}
+		}
+	}
+
+}

@@ -1,0 +1,31 @@
+﻿capital = 951
+
+set_research_slots = 3
+
+set_technology = {
+
+}
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1909.2.16"
+	election_frequency = 36
+	elections_allowed = yes
+}
+set_popularities = {
+    democratic = 80
+    fascism = 8
+    communism = 2
+    neutrality = 10
+}
+
+add_ideas = {
+	neutrality_idea
+}
+
+set_convoys = 150
+set_stability = 0.5
+
+recruit_character = SPR_alfonso_xiii
+
+

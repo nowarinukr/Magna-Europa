@@ -1,0 +1,28 @@
+
+state={
+	id=324
+	name="STATE_324"
+	provinces={
+		2710 5420 7742 8104 11252 11303 11328 11329 11350 11403 
+	}
+	resources={
+		steel=150
+	}
+	history={
+		owner = ENG
+		add_core_of = ENG
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			industrial_complex = 6
+		}
+	
+        victory_points = {
+            11252 40
+        }
+    }
+	manpower=647200
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = metropolis
+}

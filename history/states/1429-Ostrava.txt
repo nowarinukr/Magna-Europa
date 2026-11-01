@@ -1,0 +1,26 @@
+
+state={
+	id=1429
+	name="STATE_1429"
+	provinces={
+		7264 7998 12810 12877 12925 12980 
+	}
+	resources={
+		aluminium=25
+	}
+	history={
+		owner = AUS
+		add_core_of = CZE
+		
+		buildings = {
+			infrastructure = 4
+		}
+        victory_points = {
+            12810 20 #Ostrau
+        }
+    }
+	manpower=446750
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

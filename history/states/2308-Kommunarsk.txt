@@ -1,0 +1,21 @@
+
+state={
+	id=2308
+	name="STATE_2308"
+	provinces={
+		6189 6999 7093 13299 13361 13407 
+	}
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+		
+		buildings = {
+			infrastructure = 3
+		}
+	}
+	manpower=437513
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

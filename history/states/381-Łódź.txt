@@ -1,0 +1,27 @@
+
+state={
+	id=381
+	name="STATE_381"
+	provinces={
+		11922 12185 19908 
+	}
+	resources={
+		aluminium = 50
+	}
+	history={
+		owner = SOV
+		add_core_of = POL
+		buildings = {
+			infrastructure = 3
+			arms_factory = 3
+			industrial_complex = 3
+		}
+        victory_points = {
+            19908 80
+        }
+  	}
+	manpower=617200
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = metropolis
+}

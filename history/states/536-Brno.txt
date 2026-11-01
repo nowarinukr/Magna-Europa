@@ -1,0 +1,25 @@
+
+state={
+	id=536
+	name="STATE_536"
+	provinces={
+		713 5512 5679 6708 8980 12940 12978 12995 13040 13061 13062 
+	}
+	history={
+		owner = AUS
+		add_core_of = CZE
+		
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			industrial_complex = 3
+		}
+        victory_points = {
+            13040 20 #Brno
+        }
+    }
+	manpower=551400
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_city
+}

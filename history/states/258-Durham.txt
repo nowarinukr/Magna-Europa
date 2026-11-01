@@ -1,0 +1,34 @@
+state={
+	id=258
+	name="STATE_258"
+	provinces={
+		2980 4742 6783 8637 10812 10824 10829 10839 10851 10877 10878 
+	}
+	resources={
+		aluminium = 50
+		steel=50
+	}
+	history={
+		owner = ENG
+		add_core_of = ENG
+		
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 5
+			dockyard = 4
+			4742 = { naval_base = 3 }
+
+		}
+	
+        victory_points = {
+            10878 10
+        }
+		victory_points = {
+            4742 20
+        }
+    }
+	manpower=1140100
+	buildings_max_level_factor=1.000
+	state_category = metropolis
+}

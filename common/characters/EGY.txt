@@ -1,0 +1,15 @@
+characters={
+	EGY_kamel={
+		name="Hussein Kamel"
+		portraits={
+			civilian={
+				large="gfx/leaders/EGY/portrait_kemal.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+}

@@ -1,0 +1,26 @@
+
+state={
+	id=2656
+	name="STATE_2656"
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+		buildings = {
+			infrastructure = 3
+
+		}
+		victory_points = {
+			17856 2
+		}
+
+	}
+
+	provinces={
+		315 796 2198 3467 5561 7982 9331 9453 10079 10167 10177 10209 10213 10234 16230 17856 
+	}
+	manpower=175832
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

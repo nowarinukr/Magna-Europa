@@ -1,0 +1,27 @@
+state={
+	id=1675
+	name="STATE_1675"
+	provinces={
+		8041 12544 12612 20613 
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 3
+			industrial_complex = 1
+		}
+		
+		victory_points = {
+			8041 25 #Plauen
+		}
+		victory_points = {
+			20613 2 #Reichenbach
+		}
+    }
+	manpower=500335
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_city
+}

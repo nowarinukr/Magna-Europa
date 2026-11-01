@@ -1,0 +1,60 @@
+sub_units = {
+	engineer = {
+		sprite = infantry
+		map_icon_category = infantry
+		priority = 0
+		ai_priority = 0
+		active = no
+
+		type = {
+			infantry
+			support
+		}
+		
+		group = support
+		
+		categories = {
+			category_front_line
+			category_support_battalions
+			category_army
+		}
+
+	
+		combat_width = 0
+	
+		#Size Definitions
+		max_strength = 5
+		max_organisation = 50
+		default_morale = 0.2
+		manpower = 1000
+		training_time = 150
+
+		#Misc Abilities
+		weight = 0.1
+		supply_consumption = 0.02
+
+		# Support nerfs to combat abilities
+
+		essential = {
+			support_equipment
+		}
+
+		need = {
+			support_equipment = 100
+		}
+
+		can_be_parachuted = yes
+
+		fort = {
+			attack = 0.05
+		}
+
+		urban = {
+			attack = 0.05
+		}
+
+		river = {
+			attack = 0.05
+		}
+	}
+}

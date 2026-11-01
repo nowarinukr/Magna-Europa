@@ -1,0 +1,23 @@
+
+state={
+	id=549
+	name="STATE_549"
+	provinces={
+		5827 6691 7830 8503 9431 11367 
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		add_core_of = POL
+		buildings = {
+			infrastructure = 3
+		}
+        victory_points = {
+            11367 10
+        }
+  	}
+	manpower=123100
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = town
+}

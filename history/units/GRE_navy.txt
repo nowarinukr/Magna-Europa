@@ -1,0 +1,26 @@
+units = {
+	fleet = {
+		name = "Basilikos Stolos Ellenas Fleet"
+		naval_base = 20252
+		task_force = {
+			location = 20252
+			name = "Basilikos Stolos Ellenas"
+			ship = { name = "EBN Hydra" definition = battleship equipment = { ship_hull_ironclad = { amount = 1 owner = GRE version_name = "Hydra Class" } } }
+			ship = { name = "EBN Spetsai" definition = battleship equipment = { ship_hull_ironclad = { amount = 1 owner = GRE version_name = "Hydra Class" } } }
+			ship = { name = "EBN Psara" definition = battleship equipment = { ship_hull_ironclad = { amount = 1 owner = GRE version_name = "Hydra Class" } } }
+
+			ship = { name = "EBN Georgios Averof" definition = heavy_cruiser equipment = { ship_hull_cruiser_armoured = { amount = 1 owner = GRE version_name = "Pisa Class" } } }
+
+			ship = { name = "EBN Navarchos Miaoulis" definition = light_cruiser equipment = { ship_hull_cruiser_protected = { amount = 1 owner = GRE version_name = "Navarchos Miaoulis Class" } } }
+
+			ship = { name = "EBN Niki" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GRE version_name = "Pre-1905 Destroyer" } } }
+			ship = { name = "EBN Doxa" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GRE version_name = "Pre-1905 Destroyer" } } }
+			ship = { name = "EBN Aspis" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GRE version_name = "Pre-1905 Destroyer" } } }
+			ship = { name = "EBN Velos" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GRE version_name = "Pre-1905 Destroyer" } } }
+			ship = { name = "EBN Thyella" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GRE version_name = "Pre-1905 Destroyer" } } }
+			ship = { name = "EBN Nafkratousa" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GRE version_name = "Pre-1905 Destroyer" } } }
+			ship = { name = "EBN Lonchi" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GRE version_name = "Pre-1905 Destroyer" } } }
+			ship = { name = "EBN Sfendoni" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = GRE version_name = "Pre-1905 Destroyer" } } }
+		}
+	}
+}

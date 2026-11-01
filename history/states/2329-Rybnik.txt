@@ -1,0 +1,19 @@
+state={
+	id=2329
+	name="STATE_2329"
+	provinces={
+		6515 6534 12675 12690 12711 12718 
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 3
+		}
+		add_core_of = POL
+  	}
+	manpower=236818
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

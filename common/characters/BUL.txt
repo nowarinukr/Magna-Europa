@@ -1,0 +1,155 @@
+characters={
+	BUL_ferdinand_i={
+		name="Ferdinand I"
+		portraits={
+			civilian={
+				large="gfx/leaders/BUL/portrait_tsar_ferdinand.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	BUL_fichev={
+		name="Fichev"
+		portraits={
+			army={
+				large="gfx/leaders/BUL/portrait_fichev.dds"
+			}
+		}
+		field_marshal={
+			traits={ career_officer }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=12018
+		}
+	}
+	BUL_vladimir_vazov={
+		name="Vladimir Vazov"
+		portraits={
+			army={
+				large="gfx/leaders/BUL/portrait_vazov.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery trait_cautious }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=75049
+		}
+	}
+	BUL_zhekov={
+		name="Nikola Zhekov"
+		portraits={
+			army={
+				large="gfx/leaders/BUL/portrait_zhekov.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=12077
+		}
+	}
+	BUL_kolev={
+		name="Ivan Kolev"
+		portraits={
+			army={
+				large="gfx/leaders/BUL/portrait_kolev.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer trait_reckless }
+			skill=4
+			attack_skill=4
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=12028
+		}
+	}
+	BUL_boyadzhiev={
+		name="Kliment Boyadzhiev"
+		portraits={
+			army={
+				large="gfx/leaders/BUL/portrait_kliment.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer brilliant_strategist }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+	BUL_ivan_geshov={
+		name="Ivan Evstratiev Geshov"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_geshov.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_ivan_geshov
+			allowed = {
+				original_tag = BUL
+			}
+			visible = {
+				NOT = {
+					has_completed_focus = BUL_cut_russian_ties
+				}
+			}
+			available = {
+				has_completed_focus = BUL_nationalist_minister
+			}
+			traits = {
+				prime_minister_inonu
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	BUL_vasil_radoslav={
+		name="Vasil Radoslavov"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_radoslav.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = BUL_vasil_radoslav
+			allowed = {
+				original_tag = BUL
+			}
+			available = {
+				has_completed_focus = BUL_cut_russian_ties
+			}
+			traits = {
+				prime_minister_cakmak
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

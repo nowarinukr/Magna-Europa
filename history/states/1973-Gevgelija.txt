@@ -1,0 +1,25 @@
+
+state={
+	id=1973
+	name="STATE_1973"
+	provinces={
+		1945 6105 
+	}
+	history = {
+		owner = TUR
+		add_core_of = BUL
+		add_core_of = SER
+		
+		buildings = {
+			infrastructure = 1
+		}
+		victory_points = {
+			1945 2 #Gevgelija
+		}
+		 
+	}
+	manpower=15685
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

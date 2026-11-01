@@ -1,0 +1,28 @@
+
+state={
+	id=835
+	name="STATE_835"
+
+	history={
+		owner = AUS
+		add_core_of = SER
+		buildings = {
+			infrastructure = 2
+			14800 = {
+				bunker = 2
+			}
+		}
+		victory_points = {
+			14800 2 
+		}
+		set_compliance = 25
+	}
+
+	provinces={
+		1143 1580 14754 14778 14800 
+	}
+	manpower=75051
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

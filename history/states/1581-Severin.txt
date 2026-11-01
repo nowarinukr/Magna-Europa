@@ -1,0 +1,28 @@
+
+state={
+	id=1581
+	name="STATE_1581"
+	resources={
+		aluminium = 20
+	}
+	history={
+		owner = AUS
+		add_core_of = ROM
+		add_claim_by = HUN
+		add_claim_by = SER
+		buildings = {
+			infrastructure = 2
+
+		}
+		
+
+	}
+
+	provinces={
+		4180 6124 14177 14275 17994 
+	}
+	manpower=151641
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

@@ -1,0 +1,30 @@
+units = {
+	fleet = {
+		name = "Osmanlı Donanması"
+		naval_base = 15010
+		task_force = {
+			location = 15010
+			name = "Osmanlı Donanması"
+			ship = { name = "Turgut Reis" definition = battleship equipment = { ship_hull_heavy_0 = { amount = 1 owner = TUR version_name = "Brandenburg Class" } } }
+			ship = { name = "Barbaros Hayreddin" definition = battleship equipment = { ship_hull_heavy_0 = { amount = 1 owner = TUR version_name = "Brandenburg Class" } } }
+			ship = { name = "Mesûdiye" definition = battleship equipment = { ship_hull_ironclad = { amount = 1 owner = TUR version_name = "Mesudiye Class" } } }
+			ship = { name = "İclaliye" definition = battleship equipment = { ship_hull_ironclad = { amount = 1 owner = TUR version_name = "Iclaliye Class" } } }
+			ship = { name = "Feth-i Bülend" definition = battleship equipment = { ship_hull_ironclad = { amount = 1 owner = TUR version_name = "Iclaliye Class" } } }
+			ship = { name = "Avni Illah" definition = battleship equipment = { ship_hull_ironclad = { amount = 1 owner = TUR version_name = "Iclaliye Class" } } }
+
+			ship = { name = "Hamidiye" definition = light_cruiser equipment = { ship_hull_cruiser_protected = { amount = 1 owner = TUR version_name = "Hamidiye/Mecidiye Class" } } }
+			ship = { name = "Mecidiye" definition = light_cruiser equipment = { ship_hull_cruiser_protected = { amount = 1 owner = TUR version_name = "Hamidiye/Mecidiye Class" } } }
+
+			ship = { name = "Basra" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = TUR version_name = "1905 Destroyer" } } }
+			ship = { name = "Samsun" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = TUR version_name = "1905 Destroyer" } } }
+			ship = { name = "Taşoz" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = TUR version_name = "1905 Destroyer" } } }
+			ship = { name = "Yarhisar" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = TUR version_name = "1905 Destroyer" } } }
+			ship = { name = "Gayret-i Vatâniye" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = TUR version_name = "1905 Destroyer" } } }
+			ship = { name = "Yâdigâr-ı Millet" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = TUR version_name = "1905 Destroyer" } } }
+			ship = { name = "Muâvenet-i Millîye" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = TUR version_name = "1905 Destroyer" } } }
+			ship = { name = "Nümûne-i Hamiyet" definition = destroyer equipment = { ship_hull_light_2 = { amount = 1 owner = TUR version_name = "1905 Destroyer" } } }
+			ship = { name = "Berk-i Şevket" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TUR version_name = "Pre-1905 Destroyer" } } }
+			ship = { name = "Peyk-i Şevket" definition = destroyer equipment = { ship_hull_light_1 = { amount = 1 owner = TUR version_name = "Pre-1905 Destroyer" } } }
+		}
+	}
+}

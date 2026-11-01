@@ -1,0 +1,22 @@
+state={
+	id=288
+	name="STATE_288"
+	history={
+		owner = ENG
+		add_core_of = ENG
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+            8594 2
+        }
+	}
+	provinces={
+		43 3871 5021 5528 5556 5665 5791 8594 11042 11119 
+	}
+	manpower=72690
+	buildings_max_level_factor=1.000
+	state_category = town
+}

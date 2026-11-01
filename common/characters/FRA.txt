@@ -1,0 +1,362 @@
+characters={
+	FRA_armand_fallieres={
+		name="Armand Fallières"
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/portrait_armand_fall.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	FRA_raymond_poincare={
+		name="Raymond Poincare"
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/portrait_raymond_poincare.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	FRA_georges_clemenceau={
+		name="Georges Clemenceau"
+		portraits={
+			civilian={
+				large="gfx/leaders/FRA/portrait_clemenceau.dds"
+			}
+		}
+		country_leader={
+			ideology=liberalism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	FRA_joseph_gallieni={
+		name="Joseph Gallieni"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_joeseph_gallieni.dds"
+			}
+		}
+		field_marshal={
+			traits={ marine_officer old_guard harsh_leader }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=32019
+		}
+	}
+	FRA_joseph_joffre={
+		name="Joseph Joffre"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_joeseph_joffre.dds"
+			}
+		}
+		corps_commander={
+			traits={ engineer_officer old_guard inflexible_strategist career_officer }
+			skill=4
+			attack_skill=2
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=5
+			legacy_id=32007
+		}
+	}
+	FRA_ferdinand_foch={
+		name="Ferdinand Foch"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_ferdinand_foch.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery old_guard brilliant_strategist career_officer }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=32006
+		}
+	}
+	FRA_robert_nivelle={
+		name="Robert Nivelle"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_robert_nivelle.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery politically_connected harsh_leader}
+			skill=3
+			attack_skill=4
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=32031
+		}
+	}
+	FRA_philippe_petain={
+		name="Philippe Pétain"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_philipe_petain.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer inflexible_strategist trait_cautious }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=32009
+		}
+	}
+	FRA_henri_berthelot={
+		name="Henri Berthelot"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_henri_berthelor.dds"
+			}
+		}
+		corps_commander={
+			traits={ career_officer harsh_leader trait_reckless }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=78000
+		}
+	}
+	FRA_louis_franchet_desperey={
+		name="Louis Franchet d'Espèrey"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_franchet_desperet.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer brilliant_strategist }
+			skill=3
+			attack_skill=3
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=32003
+		}
+	}
+	FRA_Emile_fayolle={
+		name="Émile Fayolle"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_emile_fayolle.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery old_guard trait_cautious }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=32293
+		}
+	}
+	FRA_michel_maunoury={
+		name="Michel Maunoury"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_michel_maunoury.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery old_guard }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=32033
+		}
+	}
+	FRA_joseph_eydoux={
+		name="Joseph-Paul Eydoux"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_eydoux.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer career_officer war_hero old_guard }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=0
+		}
+	}
+	FRA_auguste_boue_de_lapeyrere={
+		name="Auguste Boué de Lapeyrère"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_lapeyrere.dds"
+			}
+		}
+		navy_leader={
+			traits={ gentlemanly old_guard_navy naval_lineage }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	FRA_lucien_lacaze={
+		name="Lucien Lacaze"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_lucien_lacaze.dds"
+			}
+		}
+		navy_leader={
+			traits={ gunnery_expert }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	FRA_pierrealexis_ronarch={
+		name="Pierre-Alexis Ronarc'h"
+		portraits={
+			army={
+				large="gfx/leaders/FRA/portrait_ronarch.dds"
+			}
+		}
+		navy_leader={
+			traits={ chief_engineer }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			maneuvering_skill=2
+			coordination_skill=4
+			legacy_id=0
+		}
+	}
+	FRA_pierre_roques={
+		name="Pierre Roques"
+		portraits={
+			army={
+				small="GFX_FRA_generic_land_8"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = FRA_pierre_roques
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_completed_focus = FRA_aeronautique_militare
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	FRA_charles_rose={
+		name="Charles de Tricornot de Rose"
+		portraits={
+			army={
+				small="GFX_FRA_generic_land_2"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = FRA_charles_rose
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_completed_focus = FRA_aeronautique_militare
+			}
+			traits = {
+				air_air_combat_training_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	FRA_adolphe_messimy={
+		name="Adolphe Messimy"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_messimy.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_adolphe_messimy
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_completed_focus = FRA_aeronautique_militare
+			}
+			traits = {
+				minister_of_war_messimy
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	FRA_alex_millerand={
+		name="Alexandre Millerand"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_millerand.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = FRA_alex_millerand
+			allowed = {
+				original_tag = FRA
+			}
+			available = {
+				has_completed_focus = FRA_aeronautique_militare
+			}
+			traits = {
+				minister_of_war
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

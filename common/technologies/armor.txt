@@ -1,0 +1,155 @@
+technologies = {
+	### GERMAN TANK NAMES IN COMMENTS SO YOU CAN FIND STUFF MORE EASILY
+	armoured_car_1 = { # First Armored Car
+
+		enable_equipments = { armoured_car_equipment_1 }
+        
+		enable_subunits = {
+			armored_car_recon
+		}
+	
+		path = {
+			leads_to_tech = armoured_car_2
+			research_cost_coeff = 1
+		}
+	
+		research_cost = 2.5
+		start_year = 1910
+		folder = {
+			name = armour_folder
+			position = { x = -8 y = 0 }
+		}
+		
+		ai_will_do = {
+			factor = 200
+		}
+		
+		categories = {
+			cat_armored_cars
+		}
+	}
+
+	armoured_car_2 = {
+
+		enable_equipments = { armoured_car_equipment_2 }
+
+		research_cost = 2.5
+		start_year = 1912
+		folder = {
+			name = armour_folder
+			position = { x = -8 y = 2 }
+		}
+		path = {
+			leads_to_tech = armoured_car_3
+			research_cost_coeff = 1
+		}
+		
+		categories = {
+			cat_armored_cars
+		}
+	}
+
+	armoured_car_3 = {
+		enable_equipments = { armoured_car_equipment_3 }
+
+		research_cost = 2.5
+		start_year = 1916
+		folder = {
+			name = armour_folder
+			position = { x = -8 y = 6 }
+		}
+		
+		categories = {
+			cat_armored_cars
+		}
+	}
+
+	light_tank_1 = {
+
+		enable_equipments = { light_tank_equipment_1 }
+
+		dependencies = {
+			tank_unlocker2 = 1
+		}
+
+		path = {
+			leads_to_tech = light_tank_2
+			research_cost_coeff = 1
+		}
+		start_year = 1916
+
+		research_cost = 3
+		folder =
+		{
+			name = armour_folder
+			position = { x = -4 y = 6 }
+		}
+		categories = {
+			armor
+			cat_light_armor
+		}
+	}
+
+	light_tank_2 = {
+	
+		enable_equipments = { light_tank_equipment_2 }
+		
+		start_year = 1918
+	
+		research_cost = 3
+		folder = {
+			name = armour_folder
+			position = { x = -4 y = 10 }
+		}
+		categories = {
+			armor
+			cat_light_armor
+		}
+	}
+
+	heavy_tank_1 = {
+	
+		enable_equipments = { heavy_tank_equipment_1 }
+
+		dependencies = {
+			tank_unlocker2 = 1
+		}
+		
+		start_year = 1916
+
+		path = {
+			leads_to_tech = heavy_tank_2
+			research_cost_coeff = 1
+		}
+		
+		research_cost = 3
+		folder = {
+			name = armour_folder
+			position = { x = 0 y = 6 }
+		}
+		categories = { 
+			armor
+			cat_heavy_armor
+		}
+	}
+
+	heavy_tank_2 = {
+	
+		enable_equipments = { heavy_tank_equipment_2 }
+
+		start_year = 1918
+
+		research_cost = 3
+		folder = {
+			name = armour_folder
+			position = { x = 0 y = 10 }
+		}
+		categories = { 
+			armor
+			cat_heavy_armor
+		}
+	}
+
+###################################################
+	
+}

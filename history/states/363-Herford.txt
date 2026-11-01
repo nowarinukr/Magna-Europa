@@ -1,0 +1,24 @@
+
+state={
+	id=363
+	name="STATE_363"
+	provinces={
+		6210 8069 11762 11764 11819 20662 
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+		}
+		
+		 
+		victory_points = { 11762 2 } #Minden
+		victory_points = { 11819 2 } #Herford
+    }
+	manpower=352100
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = town
+}

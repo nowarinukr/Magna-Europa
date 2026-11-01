@@ -1,0 +1,23 @@
+
+state={
+	id=923
+	name="STATE_923"
+	provinces={
+		9292 12960 13033 
+	}
+	history={
+		owner = AUS
+		add_core_of = POL
+		add_core_of = UKR
+		victory_points = {
+			12960 2 #Sanok
+		}
+		buildings = {
+			infrastructure = 2
+		}
+  	}
+	manpower=225770
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

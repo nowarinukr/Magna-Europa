@@ -1,0 +1,31 @@
+
+state={
+	id=1477
+	name="STATE_1477"
+
+	history={
+		owner = AUS
+		add_core_of = SER
+		add_claim_by = HUN
+		buildings = {
+			infrastructure = 2
+			20146 = {
+				naval_base = 1
+
+			}
+
+		}
+		victory_points = {
+			20146 2 
+		}
+		set_compliance = 25
+	}
+
+	provinces={
+		2438 14458 19059 20125 20146 
+	}
+	manpower=47301
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

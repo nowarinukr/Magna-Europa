@@ -1,0 +1,26 @@
+
+state={
+	id=1258
+	name="STATE_1258"
+	provinces={
+		6830 12865 12873 
+	}
+	history={
+		owner = AUS
+		add_core_of = POL
+		add_core_of = UKR
+		buildings = {
+			infrastructure = 3
+			6830 = {
+				bunker = 2
+			}
+		}
+        victory_points = {
+            6830 10
+        }
+  	}
+	manpower=113862
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

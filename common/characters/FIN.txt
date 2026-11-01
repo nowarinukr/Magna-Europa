@@ -1,0 +1,32 @@
+characters={
+	FIN_svinhufvud={
+		name="Pehr Evind Svinhufvud"
+		portraits={
+			civilian={
+				large="gfx/leaders/FIN/portrait_svinhufvud.dds"
+			}
+		}
+		country_leader={
+			ideology=centrism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	FIN_carl_gustaf_emil_mannerheim={
+		name="Carl Gustaf Emil Mannerheim"
+		portraits={
+			army={
+				large="gfx/leaders/FIN/portrait_mannerheim.dds"
+			}
+		}
+		field_marshal={
+			traits={ inflexible_strategist trait_cautious war_hero trickster winter_specialist defensive_doctrine }
+			skill=5
+			attack_skill=4
+			defense_skill=4
+			planning_skill=5
+			logistics_skill=3
+			legacy_id=58
+		}
+	}
+}

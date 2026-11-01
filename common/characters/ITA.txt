@@ -1,0 +1,192 @@
+characters={
+	ITA_vittorio_emanuele_iii={
+		name="Vittorio Emanuele III"
+		portraits={
+			civilian={
+				large="gfx/leaders/ITA/portrait_vitt_emanuele.dds"
+			}
+		}
+		country_leader={
+			desc="ITA_vittorio_emanuele_iii_DESC"
+			ideology=conservatism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	ITA_luigi_cadorna={
+		name="Luigi Cadorna"
+		portraits={
+			army={
+				large="gfx/leaders/ITA/portrait_cadorna.dds"
+			}
+		}
+		field_marshal={
+			traits={ bearer_of_artillery old_guard harsh_leader }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=46028
+		}
+	}
+	ITA_armando_diaz={
+		name="Armando Diaz"
+		portraits={
+			army={
+				large="gfx/leaders/ITA/portrait_diaz.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery inflexible_strategist trait_cautious }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=46025
+		}
+	}
+	ITA_pecori_giraldi={
+		name="Pecori Giraldi"
+		portraits={
+			army={
+				large="gfx/leaders/ITA/portrait_giraldi.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery infantry_officer career_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=46071
+		}
+	}
+	ITA_emanuele_filiberto={
+		name="Emanuele Filiberto"
+		portraits={
+			army={
+				large="gfx/leaders/ITA/portrait_filiberto.dds"
+			}
+		}
+		corps_commander={
+			traits={ politically_connected inflexible_strategist }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=46070
+		}
+	}
+	ITA_luigi_amedeo={
+		name="Luigi Amedeo"
+		portraits={
+			army={
+				large="gfx/leaders/ITA/portrait_amedeo.dds"
+			}
+		}
+		navy_leader={
+			traits={ politically_connected gentlemanly }
+			skill=2
+			attack_skill=1
+			defense_skill=2
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	ITA_thaon_di_revel={
+		name="Thaon di Revel"
+		portraits={
+			army={
+				large="gfx/leaders/ITA/portrait_di_revel.dds"
+			}
+		}
+		navy_leader={
+			traits={ naval_lineage navy_career_officer gentlemanly }
+			skill=3
+			attack_skill=1
+			defense_skill=1
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=0
+		}
+	}
+	ITA_maurizio_moris={
+		name="Maurizio Moris"
+		portraits={
+			army={
+				small="GFX_ITA_generic_land_3"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ITA_maurizio_moris
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+				has_completed_focus = ITA_establish_air_corp
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	ITA_giulio_douhet={
+		name="Giulio Douhet"
+		portraits={
+			army={
+				small="GFX_ITA_generic_land_1"
+			}
+		}
+		advisor={
+			slot = high_command
+			idea_token = ITA_giulio_douhet
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+				has_completed_focus = ITA_establish_air_corp
+			}
+			traits = {
+				air_air_combat_training_3
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	ITA_giolitti={
+		name="Giovanni Giolitti"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_giolitti.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ITA_giolitti
+			allowed = {
+				original_tag = ITA
+			}
+			available = {
+				has_completed_focus = ITA_expand_the_industrial_triangle
+			}
+			traits = {
+				prime_minister_inonu
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+}

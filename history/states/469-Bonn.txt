@@ -1,0 +1,28 @@
+
+state={
+	id=469
+	name="STATE_469"
+	history={
+		owner = GER
+		victory_points = {
+            12434 15 #Bonn
+        }
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 1
+			synthetic_refinery = 3
+		}
+		
+		
+
+    }
+	provinces={
+		12434 12461 20735 
+	}
+	manpower=283783
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_town
+}

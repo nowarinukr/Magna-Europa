@@ -1,0 +1,32 @@
+
+state={
+	id=606
+	name="STATE_606"
+
+	history={
+		owner = GER
+		add_core_of = FRA
+		buildings = {
+			infrastructure = 3
+			arms_factory = 4
+			industrial_complex = 1
+
+		}
+		add_core_of = GER
+		victory_points = {
+			19848 5 #Colmar
+		}
+		victory_points = {
+			19849 20 #Mülhausen		
+		}
+
+	}
+
+	provinces={
+		2276 7841 13484 13538 17071 17872 19848 19849 
+	}
+	manpower=507600
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

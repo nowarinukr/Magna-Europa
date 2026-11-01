@@ -1,0 +1,24 @@
+
+state={
+	id=821
+	name="STATE_821"
+	history = {
+		victory_points = { 16165 10 }
+		owner = SOV
+		add_core_of = SOV
+
+		buildings = {
+			infrastructure = 3
+		}
+		
+		
+		
+	}
+	provinces={
+		8417 8615 16165 16614 
+	}
+	manpower=260630
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

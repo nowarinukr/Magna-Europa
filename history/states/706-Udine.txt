@@ -1,0 +1,28 @@
+
+state={
+	id=706
+	name="STATE_706"
+
+	history={
+		owner = ITA
+		add_core_of = ITA
+		
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		victory_points = {
+			20015 10 
+		}
+
+	}
+
+	provinces={
+		2711 4688 14083 14184 20015 20480 
+	}
+	manpower=322510
+	buildings_max_level_factor=1.000
+	state_category=city
+	local_supplies=0.000
+}

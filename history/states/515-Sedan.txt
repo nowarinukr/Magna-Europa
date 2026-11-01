@@ -1,0 +1,23 @@
+
+state={
+	id=515
+	name="STATE_515"
+	history={
+		owner = FRA
+		add_core_of = FRA
+		
+        victory_points = {
+            20532 2 #Sedan
+        }
+		buildings = {
+			infrastructure = 4
+		}
+    }
+	provinces={
+		19864 20532 
+	}
+	manpower=28860
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = pastoral
+}

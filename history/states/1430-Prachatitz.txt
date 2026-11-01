@@ -1,0 +1,23 @@
+state={
+	id=1430
+	name="STATE_1430"
+	resources={
+		tungsten = 30
+	}
+	history={
+		owner = AUS
+		add_core_of = AUS
+		add_claim_by = CZE
+		
+		buildings = {
+			infrastructure = 2
+		}
+	}
+	provinces={
+		2428 2579 13014 13126 
+	}
+	manpower=89971
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = rural
+}

@@ -1,0 +1,22 @@
+
+state={
+	id=1070
+	name="STATE_1070"
+	provinces={
+		372 877 1316 3568 6797 8385 11901 11906 11972 
+	}
+	history={
+		owner = SOV
+		add_core_of = POL
+		buildings = {
+			infrastructure = 2
+			372 = {
+				bunker = 1
+			}
+		}
+  	}
+	manpower=246000
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

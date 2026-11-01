@@ -1,0 +1,25 @@
+
+state={
+	id=947
+	name="STATE_947"
+	provinces={
+		1660 5291 5941 7853 
+	}
+	resources={
+		tungsten = 100
+	}
+	history={
+		owner = POR
+		add_core_of = POR
+		buildings = {
+			infrastructure = 3
+		}
+        victory_points = {
+            5291 2 #Viseu
+        }
+    }
+	manpower=248550
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

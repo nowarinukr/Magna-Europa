@@ -1,0 +1,22 @@
+state={
+	id=2795
+	name="STATE_2795"
+	provinces={
+		20221 
+	}
+	history={
+		owner = SER
+		add_core_of = SER
+		add_core_of = ALB
+		buildings = {
+			infrastructure = 2
+
+		}
+		 
+
+	}
+	manpower=2840
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,28 @@
+
+state={
+	id=523
+	name="STATE_523"
+	provinces={
+		483 2925 12767 12784 12845 
+	}
+	resources = {
+		aluminium = 50
+	}
+	history={
+		owner = AUS
+		add_core_of = CZE
+		
+		buildings = {
+			infrastructure = 4
+			arms_factory = 4
+			industrial_complex = 1
+		}
+        victory_points = {
+            2925 15 #Pilsen
+        }
+    }
+	manpower=340100
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

@@ -1,0 +1,3944 @@
+prospect_for_resources = {
+	develop_arcadia_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1538
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1538 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1538 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 1538
+			controls_state = 1538
+		}
+
+		visible = {
+			owns_state = 1538
+			controls_state = 1538
+			1538 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1538 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				1538 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				1538 = { set_state_flag = coal_developed_2 }
+			}
+			1538 = {
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_arta_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1541
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1541 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1541 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 1541
+			controls_state = 1541
+		}
+
+		visible = {
+			owns_state = 1541
+			controls_state = 1541
+			1541 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1541 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				1541 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				1541 = { set_state_flag = coal_developed_2 }
+			}
+			1541 = {
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_zagora_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 877
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					877 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					877 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 877
+			controls_state = 877
+		}
+
+		visible = {
+			owns_state = 877
+			controls_state = 877
+			877 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					877 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				877 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				877 = { set_state_flag = coal_developed_2 }
+			}
+			877 = {
+				add_resource = {
+					type = aluminium
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_pristina_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 858
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					858 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					858 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 858
+			controls_state = 858
+		}
+
+		visible = {
+			owns_state = 858
+			controls_state = 858
+			858 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					858 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				858 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				858 = { set_state_flag = coal_developed_2 }
+			}
+			858 = {
+				add_resource = {
+					type = aluminium
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_cogealac_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2025
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					2025 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					2025 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 2025
+			controls_state = 2025
+		}
+
+		visible = {
+			owns_state = 2025
+			controls_state = 2025
+			2025 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					2025 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				2025 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				2025 = { set_state_flag = coal_developed_2 }
+			}
+			2025 = {
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_lipova_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2670
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					2670 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					2670 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 2670
+			controls_state = 2670
+		}
+
+		visible = {
+			owns_state = 2670
+			controls_state = 2670
+			2670 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					2670 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				2670 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				2670 = { set_state_flag = coal_developed_2 }
+			}
+			2670 = {
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_timis_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 736
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					736 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					736 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 736
+			controls_state = 736
+		}
+
+		visible = {
+			owns_state = 736
+			controls_state = 736
+			736 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					736 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				736 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				736 = { set_state_flag = coal_developed_2 }
+			}
+			736 = {
+				add_resource = {
+					type = aluminium
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_fejer_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 648
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					648 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					648 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 648
+			controls_state = 648
+		}
+
+		visible = {
+			owns_state = 648
+			controls_state = 648
+			648 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					648 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				648 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				648 = { set_state_flag = coal_developed_2 }
+			}
+			648 = {
+				add_resource = {
+					type = aluminium
+					amount = 25
+				}
+			}
+		}
+	}
+	develop_kladno_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 489
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					489 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					489 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 489
+			controls_state = 489
+		}
+
+		visible = {
+			owns_state = 489
+			controls_state = 489
+			489 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					489 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				489 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				489 = { set_state_flag = coal_developed_2 }
+			}
+			489 = {
+				add_resource = {
+					type = aluminium
+					amount = 100
+				}
+			}
+		}
+	}
+	develop_gard_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 807
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					807 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					807 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 807
+			controls_state = 807
+		}
+
+		visible = {
+			owns_state = 807
+			controls_state = 807
+			807 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					807 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				807 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				807 = { set_state_flag = coal_developed_2 }
+			}
+			807 = {
+				add_resource = {
+					type = aluminium
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_loire_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 729
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					729 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					729 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 729
+			controls_state = 729
+		}
+
+		visible = {
+			owns_state = 729
+			controls_state = 729
+			729 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					729 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				729 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				729 = { set_state_flag = coal_developed_2 }
+			}
+			729 = {
+				add_resource = {
+					type = aluminium
+					amount = 100
+				}
+			}
+		}
+	}
+	develop_beja_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1072
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1072 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1072 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1072
+			controls_state = 1072
+		}
+
+		visible = {
+			owns_state = 1072
+			controls_state = 1072
+			1072 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1072 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				1072 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				1072 = { set_state_flag = coal_developed_2 }
+			}
+			1072 = {
+				add_resource = {
+					type = aluminium
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_ufa_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2075
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					2075 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					2075 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 2075
+			controls_state = 2075
+		}
+
+		visible = {
+			owns_state = 2075
+			controls_state = 2075
+			2075 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					2075 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				2075 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				2075 = { set_state_flag = coal_developed_2 }
+			}
+			2075 = {
+				add_resource = {
+					type = aluminium
+					amount = 100
+				}
+			}
+		}
+	}
+	develop_molotov_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2473
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					2473 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					2473 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 2473
+			controls_state = 2473
+		}
+
+		visible = {
+			owns_state = 2473
+			controls_state = 2473
+			2473 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					2473 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				2473 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				2473 = { set_state_flag = coal_developed_2 }
+			}
+			2473 = {
+				add_resource = {
+					type = aluminium
+					amount = 100
+				}
+			}
+		}
+	}
+	develop_kayseri_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1036
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1036 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1036 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1036
+			controls_state = 1036
+		}
+
+		visible = {
+			owns_state = 1036
+			controls_state = 1036
+			1036 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1036 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				1036 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				1036 = { set_state_flag = coal_developed_2 }
+			}
+			1036 = {
+				add_resource = {
+					type = aluminium
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_balik_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 994
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					994 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					994 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 994
+			controls_state = 994
+		}
+
+		visible = {
+			owns_state = 994
+			controls_state = 994
+			994 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					994 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				994 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				994 = { set_state_flag = coal_developed_2 }
+			}
+			994 = {
+				add_resource = {
+					type = aluminium
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_bandir_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1931
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1931 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1931 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1931
+			controls_state = 1931
+		}
+
+		visible = {
+			owns_state = 1931
+			controls_state = 1931
+			1931 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1931 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				1931 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				1931 = { set_state_flag = coal_developed_2 }
+			}
+			1931 = {
+				add_resource = {
+					type = aluminium
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_bilecik_coal_deposits = {
+
+		icon = aluminium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 983
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					983 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					983 = {
+						has_state_flag = coal_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 983
+			controls_state = 983
+		}
+
+		visible = {
+			owns_state = 983
+			controls_state = 983
+			983 = {
+				NOT = {
+					has_state_flag = coal_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					983 = {
+						NOT = {
+							has_state_flag = coal_developed_1
+						}
+					}
+				}
+				983 = { set_state_flag = coal_developed_1 }
+			}
+			else = {
+				983 = { set_state_flag = coal_developed_2 }
+			}
+			983 = {
+				add_resource = {
+					type = aluminium
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_arcadia_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1538
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1538 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1538 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 1538
+			controls_state = 1538
+		}
+
+		visible = {
+			owns_state = 1538
+			controls_state = 1538
+			1538 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1538 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				1538 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				1538 = { set_state_flag = steel_developed_2 }
+			}
+			1538 = {
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_sofia_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1566
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1566 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1566 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1566
+			controls_state = 1566
+		}
+
+		visible = {
+			owns_state = 1566
+			controls_state = 1566
+			1566 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1566 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				1566 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				1566 = { set_state_flag = steel_developed_2 }
+			}
+			1566 = {
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_pernik_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1567
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1567 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1567 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 1567
+			controls_state = 1567
+		}
+
+		visible = {
+			owns_state = 1567
+			controls_state = 1567
+			1567 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1567 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				1567 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				1567 = { set_state_flag = steel_developed_2 }
+			}
+			1567 = {
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_kruse_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1511
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1511 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1511 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1511
+			controls_state = 1511
+		}
+
+		visible = {
+			owns_state = 1511
+			controls_state = 1511
+			1511 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1511 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				1511 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				1511 = { set_state_flag = steel_developed_2 }
+			}
+			1511 = {
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_caras_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 756
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					756 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					756 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 756
+			controls_state = 756
+		}
+
+		visible = {
+			owns_state = 756
+			controls_state = 756
+			756 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					756 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				756 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				756 = { set_state_flag = steel_developed_2 }
+			}
+			756 = {
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_hunedora_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 727
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					727 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					727 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 727
+			controls_state = 727
+		}
+
+		visible = {
+			owns_state = 727
+			controls_state = 727
+			727 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					727 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				727 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				727 = { set_state_flag = steel_developed_2 }
+			}
+			727 = {
+				add_resource = {
+					type = steel
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_kladno_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 489
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					489 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					489 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 489
+			controls_state = 489
+		}
+
+		visible = {
+			owns_state = 489
+			controls_state = 489
+			489 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					489 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				489 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				489 = { set_state_flag = steel_developed_2 }
+			}
+			489 = {
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_aveyron_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 787
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					787 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					787 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 787
+			controls_state = 787
+		}
+
+		visible = {
+			owns_state = 787
+			controls_state = 787
+			787 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					787 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				787 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				787 = { set_state_flag = steel_developed_2 }
+			}
+			787 = {
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_tarn_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 814
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					814 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					814 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 814
+			controls_state = 814
+		}
+
+		visible = {
+			owns_state = 814
+			controls_state = 814
+			814 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					814 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				814 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				814 = { set_state_flag = steel_developed_2 }
+			}
+			814 = {
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_mayenne_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 595
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					595 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					595 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 595
+			controls_state = 595
+		}
+
+		visible = {
+			owns_state = 595
+			controls_state = 595
+			595 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					595 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				595 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				595 = { set_state_flag = steel_developed_2 }
+			}
+			595 = {
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_kiev_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2027
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					2027 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					2027 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 2027
+			controls_state = 2027
+		}
+
+		visible = {
+			owns_state = 2027
+			controls_state = 2027
+			2027 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					2027 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				2027 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				2027 = { set_state_flag = steel_developed_2 }
+			}
+			2027 = {
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_vladimir_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 198
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					198 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					198 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 198
+			controls_state = 198
+		}
+
+		visible = {
+			owns_state = 198
+			controls_state = 198
+			198 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					198 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				198 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				198 = { set_state_flag = steel_developed_2 }
+			}
+			198 = {
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_orsk_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2390
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					2390 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					2390 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 2390
+			controls_state = 2390
+		}
+
+		visible = {
+			owns_state = 2390
+			controls_state = 2390
+			2390 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					2390 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				2390 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				2390 = { set_state_flag = steel_developed_2 }
+			}
+			2390 = {
+				add_resource = {
+					type = steel
+					amount = 100
+				}
+			}
+		}
+	}
+	develop_sverdlosk_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 175
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					175 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					175 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 175
+			controls_state = 175
+		}
+
+		visible = {
+			owns_state = 175
+			controls_state = 175
+			175 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					175 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				175 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				175 = { set_state_flag = steel_developed_2 }
+			}
+			175 = {
+				add_resource = {
+					type = steel
+					amount = 100
+				}
+			}
+		}
+	}
+	develop_ruhr_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 424
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					424 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					424 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 424
+			controls_state = 424
+		}
+
+		visible = {
+			owns_state = 424
+			controls_state = 424
+			424 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					424 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				424 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				424 = { set_state_flag = steel_developed_2 }
+			}
+			424 = {
+				add_resource = {
+					type = steel
+					amount = 100
+				}
+			}
+		}
+	}
+	develop_chemnitz_steel = {
+
+		icon = steel
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 476
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					476 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					476 = {
+						has_state_flag = steel_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 476
+			controls_state = 476
+		}
+
+		visible = {
+			owns_state = 476
+			controls_state = 476
+			476 = {
+				NOT = {
+					has_state_flag = steel_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					476 = {
+						NOT = {
+							has_state_flag = steel_developed_1
+						}
+					}
+				}
+				476 = { set_state_flag = steel_developed_1 }
+			}
+			else = {
+				476 = { set_state_flag = steel_developed_2 }
+			}
+			476 = {
+				add_resource = {
+					type = steel
+					amount = 100
+				}
+			}
+		}
+	}
+	develop_breslau_chromium = {
+
+		icon = chromium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1663
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1663 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1663 = {
+						has_state_flag = chrome_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1663
+			controls_state = 1663
+		}
+
+		visible = {
+			owns_state = 1663
+			controls_state = 1663
+			1663 = {
+				NOT = {
+					has_state_flag = chrome_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1663 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				1663 = { set_state_flag = chrome_developed_1 }
+			}
+			else = {
+				1663 = { set_state_flag = chrome_developed_2 }
+			}
+			1663 = {
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_molotov_chromium = {
+
+		icon = chromium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 97
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					97 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					97 = {
+						has_state_flag = chrome_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 97
+			controls_state = 97
+		}
+
+		visible = {
+			owns_state = 97
+			controls_state = 97
+			97 = {
+				NOT = {
+					has_state_flag = chrome_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					97 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				97 = { set_state_flag = chrome_developed_1 }
+			}
+			else = {
+				97 = { set_state_flag = chrome_developed_2 }
+			}
+			97 = {
+				add_resource = {
+					type = chromium
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_kainuu_chromium = {
+
+		icon = chromium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 50
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					50 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					50 = {
+						has_state_flag = chrome_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 50
+			controls_state = 50
+		}
+
+		visible = {
+			owns_state = 50
+			controls_state = 50
+			50 = {
+				NOT = {
+					has_state_flag = chrome_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					50 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				50 = { set_state_flag = chrome_developed_1 }
+			}
+			else = {
+				50 = { set_state_flag = chrome_developed_2 }
+			}
+			50 = {
+				add_resource = {
+					type = chromium
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_refahiye_chromium = {
+
+		icon = chromium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 996
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					996 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					996 = {
+						has_state_flag = chrome_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 996
+			controls_state = 996
+		}
+
+		visible = {
+			owns_state = 996
+			controls_state = 996
+			996 = {
+				NOT = {
+					has_state_flag = chrome_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					996 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				996 = { set_state_flag = chrome_developed_1 }
+			}
+			else = {
+				996 = { set_state_flag = chrome_developed_2 }
+			}
+			996 = {
+				add_resource = {
+					type = chromium
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_tunceli_chromium = {
+
+		icon = chromium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1012
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1012 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1012 = {
+						has_state_flag = chrome_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1012
+			controls_state = 1012
+		}
+
+		visible = {
+			owns_state = 1012
+			controls_state = 1012
+			1012 = {
+				NOT = {
+					has_state_flag = chrome_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1012 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				1012 = { set_state_flag = chrome_developed_1 }
+			}
+			else = {
+				1012 = { set_state_flag = chrome_developed_2 }
+			}
+			1012 = {
+				add_resource = {
+					type = chromium
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_bursa_chromium = {
+
+		icon = chromium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1932
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1932 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1932 = {
+						has_state_flag = chrome_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1932
+			controls_state = 1932
+		}
+
+		visible = {
+			owns_state = 1932
+			controls_state = 1932
+			1932 = {
+				NOT = {
+					has_state_flag = chrome_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1932 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				1932 = { set_state_flag = chrome_developed_1 }
+			}
+			else = {
+				1932 = { set_state_flag = chrome_developed_2 }
+			}
+			1932 = {
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_attiki_chromium = {
+
+		icon = chromium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 2019
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					2019 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					2019 = {
+						has_state_flag = chrome_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 2019
+			controls_state = 2019
+		}
+
+		visible = {
+			owns_state = 2019
+			controls_state = 2019
+			2019 = {
+				NOT = {
+					has_state_flag = chrome_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					2019 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				2019 = { set_state_flag = chrome_developed_1 }
+			}
+			else = {
+				2019 = { set_state_flag = chrome_developed_2 }
+			}
+			2019 = {
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_uzice_chromium = {
+
+		icon = chromium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1506
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1506 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1506 = {
+						has_state_flag = chrome_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 1506
+			controls_state = 1506
+		}
+
+		visible = {
+			owns_state = 1506
+			controls_state = 1506
+			1506 = {
+				NOT = {
+					has_state_flag = chrome_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1506 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				1506 = { set_state_flag = chrome_developed_1 }
+			}
+			else = {
+				1506 = { set_state_flag = chrome_developed_2 }
+			}
+			1506 = {
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_foca_chromium = {
+
+		icon = chromium
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 782
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					782 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					782 = {
+						has_state_flag = chrome_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 782
+			controls_state = 782
+		}
+
+		visible = {
+			owns_state = 782
+			controls_state = 782
+			782 = {
+				NOT = {
+					has_state_flag = chrome_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					782 = {
+						NOT = {
+							has_state_flag = chrome_developed_1
+						}
+					}
+				}
+				782 = { set_state_flag = chrome_developed_1 }
+			}
+			else = {
+				782 = { set_state_flag = chrome_developed_2 }
+			}
+			782 = {
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_cotes_tungsten = {
+
+		icon = tungsten
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 578
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					578 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					578 = {
+						has_state_flag = tungsten_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 578
+			controls_state = 578
+		}
+
+		visible = {
+			owns_state = 578
+			controls_state = 578
+			578 = {
+				NOT = {
+					has_state_flag = tungsten_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					578 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				578 = { set_state_flag = tungsten_developed_1 }
+			}
+			else = {
+				578 = { set_state_flag = tungsten_developed_2 }
+			}
+			578 = {
+				add_resource = {
+					type = tungsten
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_maine_tungsten = {
+
+		icon = tungsten
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 637
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					637 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					637 = {
+						has_state_flag = tungsten_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 637
+			controls_state = 637
+		}
+
+		visible = {
+			owns_state = 637
+			controls_state = 637
+			637 = {
+				NOT = {
+					has_state_flag = tungsten_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					637 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				637 = { set_state_flag = tungsten_developed_1 }
+			}
+			else = {
+				637 = { set_state_flag = tungsten_developed_2 }
+			}
+			637 = {
+				add_resource = {
+					type = tungsten
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_tarn_tungsten = {
+
+		icon = tungsten
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 814
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					814 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					814 = {
+						has_state_flag = tungsten_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 814
+			controls_state = 814
+		}
+
+		visible = {
+			owns_state = 814
+			controls_state = 814
+			814 = {
+				NOT = {
+					has_state_flag = tungsten_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					814 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				814 = { set_state_flag = tungsten_developed_1 }
+			}
+			else = {
+				814 = { set_state_flag = tungsten_developed_2 }
+			}
+			814 = {
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_correze_tungsten = {
+
+		icon = tungsten
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 751
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					751 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					751 = {
+						has_state_flag = tungsten_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 4
+			owns_state = 751
+			controls_state = 751
+		}
+
+		visible = {
+			owns_state = 751
+			controls_state = 751
+			751 = {
+				NOT = {
+					has_state_flag = tungsten_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 5
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					751 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				751 = { set_state_flag = tungsten_developed_1 }
+			}
+			else = {
+				751 = { set_state_flag = tungsten_developed_2 }
+			}
+			751 = {
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+			}
+		}
+	}
+	develop_bischof_tungsten = {
+
+		icon = tungsten
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 625
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					625 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					625 = {
+						has_state_flag = tungsten_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 625
+			controls_state = 625
+		}
+
+		visible = {
+			owns_state = 625
+			controls_state = 625
+			625 = {
+				NOT = {
+					has_state_flag = tungsten_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					625 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				625 = { set_state_flag = tungsten_developed_1 }
+			}
+			else = {
+				625 = { set_state_flag = tungsten_developed_2 }
+			}
+			625 = {
+				add_resource = {
+					type = tungsten
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_orsk_tungsten = {
+
+		icon = tungsten
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 826
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					826 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					826 = {
+						has_state_flag = tungsten_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 826
+			controls_state = 826
+		}
+
+		visible = {
+			owns_state = 826
+			controls_state = 826
+			826 = {
+				NOT = {
+					has_state_flag = tungsten_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					826 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				826 = { set_state_flag = tungsten_developed_1 }
+			}
+			else = {
+				826 = { set_state_flag = tungsten_developed_2 }
+			}
+			826 = {
+				add_resource = {
+					type = tungsten
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_devon_tungsten = {
+
+		icon = tungsten
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1535
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1535 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1535 = {
+						has_state_flag = tungsten_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 1535
+			controls_state = 1535
+		}
+
+		visible = {
+			owns_state = 1535
+			controls_state = 1535
+			1535 = {
+				NOT = {
+					has_state_flag = tungsten_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1535 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				1535 = { set_state_flag = tungsten_developed_1 }
+			}
+			else = {
+				1535 = { set_state_flag = tungsten_developed_2 }
+			}
+			1535 = {
+				add_resource = {
+					type = tungsten
+					amount = 100
+				}
+			}
+		}
+	}
+	develop_cornwall_tungsten = {
+
+		icon = tungsten
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 458
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					458 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					458 = {
+						has_state_flag = tungsten_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 19
+			owns_state = 458
+			controls_state = 458
+		}
+
+		visible = {
+			owns_state = 458
+			controls_state = 458
+			458 = {
+				NOT = {
+					has_state_flag = tungsten_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 20
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					458 = {
+						NOT = {
+							has_state_flag = tungsten_developed_1
+						}
+					}
+				}
+				458 = { set_state_flag = tungsten_developed_1 }
+			}
+			else = {
+				458 = { set_state_flag = tungsten_developed_2 }
+			}
+			458 = {
+				add_resource = {
+					type = tungsten
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_vlasca_oil = {
+
+		icon = oil
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 1589
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					1589 = {
+						NOT = {
+							has_state_flag = oil_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					1589 = {
+						has_state_flag = oil_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 1589
+			controls_state = 1589
+		}
+
+		visible = {
+			owns_state = 1589
+			controls_state = 1589
+			1589 = {
+				NOT = {
+					has_state_flag = oil_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 365
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					1589 = {
+						NOT = {
+							has_state_flag = oil_developed_1
+						}
+					}
+				}
+				1589 = { set_state_flag = oil_developed_1 }
+			}
+			else = {
+				1589 = { set_state_flag = oil_developed_2 }
+			}
+			1589 = {
+				add_resource = {
+					type = oil
+					amount = 50
+				}
+			}
+		}
+	}
+	develop_teleorman_oil = {
+
+		icon = oil
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 804
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					804 = {
+						NOT = {
+							has_state_flag = oil_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					804 = {
+						has_state_flag = oil_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 804
+			controls_state = 804
+		}
+
+		visible = {
+			owns_state = 804
+			controls_state = 804
+			804 = {
+				NOT = {
+					has_state_flag = oil_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					804 = {
+						NOT = {
+							has_state_flag = oil_developed_1
+						}
+					}
+				}
+				804 = { set_state_flag = oil_developed_1 }
+			}
+			else = {
+				804 = { set_state_flag = oil_developed_2 }
+			}
+			804 = {
+				add_resource = {
+					type = oil
+					amount = 20
+				}
+			}
+		}
+	}
+	develop_nadworna_oil = {
+
+		icon = oil
+
+		highlight_states = {
+			highlight_state_targets = {
+				state = 542
+			}
+		}
+
+		available = {
+			OR = {
+				AND = {
+					has_tech = excavation1
+					542 = {
+						NOT = {
+							has_state_flag = oil_developed_1
+						}
+					}
+				}
+				AND = {
+					has_tech = excavation2
+					542 = {
+						has_state_flag = oil_developed_1
+					}
+				}
+			}
+			num_of_civilian_factories_available_for_projects > 9
+			owns_state = 542
+			controls_state = 542
+		}
+
+		visible = {
+			owns_state = 542
+			controls_state = 542
+			542 = {
+				NOT = {
+					has_state_flag = oil_developed_2
+				}
+			}
+		}
+
+		fire_only_once = no
+
+		cost = 0
+		days_remove = 180
+
+		modifier = {
+			civilian_factory_use = 10
+		}
+
+		remove_effect = {
+			if = {
+				limit = {
+					542 = {
+						NOT = {
+							has_state_flag = oil_developed_1
+						}
+					}
+				}
+				542 = { set_state_flag = oil_developed_1 }
+			}
+			else = {
+				542 = { set_state_flag = oil_developed_2 }
+			}
+			542 = {
+				add_resource = {
+					type = oil
+					amount = 20
+				}
+			}
+		}
+	}
+}

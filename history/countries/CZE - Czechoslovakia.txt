@@ -1,0 +1,29 @@
+﻿capital = 2462
+
+set_technology = {
+	light_field_gun1 = 1
+	light_field_gun2 = 1
+}
+
+set_convoys = 10
+
+set_research_slots = 3
+
+set_politics = {
+	ruling_party = democratic
+	last_election = "1935.5.19"
+	election_frequency = 60
+	elections_allowed = yes
+}
+
+recruit_character = CZE_tomas_masaryk
+
+set_popularities = {
+	democratic = 65
+	neutrality = 20
+	fascism = 5
+	communism = 10
+}
+
+
+

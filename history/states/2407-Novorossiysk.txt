@@ -1,0 +1,24 @@
+
+state={
+	id=2407
+	name="STATE_2407"
+	provinces={
+		3286 9048 14457 14479 14484 14515 
+	}
+	history = {
+		victory_points = { 14484 10 }
+		victory_points = { 9048 2 }
+		owner = SOV
+		add_core_of = SOV
+		add_claim_by = UKR
+		buildings = {
+			infrastructure = 3
+			14484 = { naval_base = 1 }
+		}
+		
+	}
+	manpower=232116
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

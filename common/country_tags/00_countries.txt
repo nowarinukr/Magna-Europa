@@ -1,0 +1,85 @@
+###Base Tags - do not remove
+GER	= "countries/Germany.txt"
+ENG = "countries/England.txt"
+SOV = "countries/Soviet Union.txt"
+FRA	= "countries/France.txt"
+USA = "countries/USA.txt"
+ITA = "countries/Italy.txt"
+
+###Tags added to clean the error log
+JAP = "countries/Japan.txt"
+MEN = "countries/Mengkukuo.txt"
+MAN = "countries/Manchukou.txt"
+CHI = "countries/China.txt"
+PRC = "countries/ComChina.txt"
+
+###Central Europe
+AUS = "countries/Austria.txt"
+SWI = "countries/Switzerland.txt"
+
+###North America
+CAN = "countries/Canada.txt"
+
+###Western Europe
+POR = "countries/Portugal.txt"
+SPR = "countries/Spain.txt"
+HOL = "countries/Netherlands.txt"
+LUX = "countries/Luxembourg.txt"
+BEL = "countries/Belgium.txt"
+
+###Eastern Europe
+POL = "countries/Poland.txt"
+HUN = "countries/Hungary.txt"
+CZE = "countries/Czechoslovakia.txt"
+ROM = "countries/Romania.txt"
+BUL = "countries/Bulgaria.txt"
+ALB = "countries/Albania.txt"
+GRE = "countries/Greece.txt"
+
+###Northern Europe
+FIN = "countries/Finland.txt"
+
+###North Africa
+LBA = "countries/Libya.txt"
+EGY = "countries/Egypt.txt"
+ALG = "countries/Algeria.txt"
+TUN = "countries/Tunisia.txt"
+MOR = "countries/Morocco.txt"
+
+###Levant
+TUR = "countries/Turkey.txt"
+PAL = "countries/Palestine.txt"
+
+###Middle East
+KUW = "countries/Kuwait.txt"
+
+###Micronations
+
+###German Releasables
+
+###Thuringian States
+
+###Yugoslavia Releasables
+SER = "countries/Serbia.txt"
+
+###British Releasables
+MLT = "countries/Malta.txt"
+
+###Italian Releasables
+
+###French & Belgian Releasables
+
+###Polish Releasables
+UKR = "countries/Ukraine.txt"
+
+###Czech Releasables
+
+###Spanish Releasables
+
+###Soviet Releasables
+
+###Soviet Releasables - Central Asia
+
+###Soviet Releasables - Caucasus
+
+#Other

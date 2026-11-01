@@ -1,0 +1,568 @@
+focus_tree = {
+	id = britain_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = ENG
+		}
+	}
+
+	continuous_focus_position = { x = 0 y = 1300 }
+	
+	default = no
+
+	focus = {
+		id = ENG_preserve_hegemony
+		icon = GFX_focus_eng_the_sun_never_sets
+		x = 3
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			navy_experience = 50
+		}
+	}
+	
+	focus = {
+		id = ENG_naval_innovations
+		icon = GFX_goal_generic_navy_cruiser
+		prerequisite = { focus = ENG_preserve_hegemony }
+		x = -2
+		y = 1
+		relative_position_id = ENG_preserve_hegemony
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 3
+				category = naval_equipment
+			}
+		}
+	}
+	
+	focus = {
+		id = ENG_carrier_experiments
+		icon = GFX_goal_generic_navy_carrier
+		prerequisite = { focus = ENG_naval_innovations }
+		x = -1
+		y = 1
+		relative_position_id = ENG_naval_innovations
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = cv_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_naval_air_service
+		icon = GFX_goal_generic_air_naval_bomber
+		prerequisite = { focus = ENG_carrier_experiments }
+		x = 0
+		y = 1
+		relative_position_id = ENG_carrier_experiments
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				technology = cv_naval_bomber1
+			}
+			add_ideas = ENG_naval_air_service_idea
+		}
+	}
+	
+	focus = {
+		id = ENG_anti_sub_weapons
+		icon = GFX_goal_generic_navy_anti_submarine
+		prerequisite = { focus = ENG_naval_innovations }
+		x = 1
+		y = 1
+		relative_position_id = ENG_naval_innovations
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 2
+				category = asw_tech
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_fuel_oil_commission
+		icon = GFX_goal_generic_navy_battleship
+		prerequisite = { focus = ENG_preserve_hegemony }
+		x = 2
+		y = 1
+		relative_position_id = ENG_preserve_hegemony
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_timed_idea = {
+				idea = ENG_fuel_commission
+				days = 365
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_improve_oil_supply
+		icon = GFX_goal_generic_oil_refinery
+		prerequisite = { focus = ENG_fuel_oil_commission }
+		x = 0
+		y = 1
+		relative_position_id = ENG_fuel_oil_commission
+		cost = 5
+		available = {
+			NOT = {
+				has_idea = ENG_empire_idea_cap
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ENG_empire_idea_2
+				remove_idea = ENG_empire_idea
+			}
+		}
+	}
+	
+	focus = {
+		id = ENG_continue_reforms
+		icon = GFX_focus_generic_military_academy
+		x = 10
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			army_experience = 50
+		}
+	}
+	
+	focus = {
+		id = ENG_field_service_regulations
+		icon = GFX_focus_generic_manpower
+		prerequisite = { focus = ENG_continue_reforms }
+		x = -3
+		y = 1
+		relative_position_id = ENG_continue_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.5
+				uses = 3
+				category = land_doctrine
+			}
+			army_experience = 50
+			add_command_power = 100
+		}
+	}
+
+	focus = {
+		id = ENG_royal_flying_corps
+		icon = GFX_goal_generic_air_doctrine
+		prerequisite = { focus = ENG_continue_reforms }
+		x = -1
+		y = 1
+		relative_position_id = ENG_continue_reforms
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			air_experience = 50
+			custom_effect_tooltip = available_chief_of_airforce
+			show_ideas_tooltip = ENG_henderson
+			custom_effect_tooltip = available_military_high_command
+			show_ideas_tooltip = ENG_trenchard
+		}
+	}
+
+	focus = {
+		id = ENG_royal_arsenal
+		icon = GFX_focus_generic_industry_3
+		prerequisite = { focus = ENG_continue_reforms }
+		x = 1
+		y = 1
+		relative_position_id = ENG_continue_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			2475 = {
+				add_dynamic_modifier = { modifier = ENG_royal_arsenal_mod }
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_officer_training_corps
+		icon = GFX_focus_generic_military_mission
+		prerequisite = { focus = ENG_continue_reforms }
+		x = 3
+		y = 1
+		relative_position_id = ENG_continue_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = ENG_officer_training
+		}
+	}
+
+	focus = {
+		id = ENG_expand_the_bef
+		icon = GFX_focus_generic_little_entente
+		prerequisite = { focus = ENG_officer_training_corps focus = ENG_field_service_regulations }
+		x = 0
+		y = 2
+		relative_position_id = ENG_continue_reforms
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			swap_ideas = {
+				add_idea = ENG_bef_2
+				remove_idea = ENG_bef
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_the_shell_crisis
+		icon = GFX_goal_generic_army_artillery
+		prerequisite = { focus = ENG_expand_the_bef }
+		x = 0
+		y = 1
+		relative_position_id = ENG_expand_the_bef
+		cost = 5
+		available = {
+			has_country_flag = ENG_shell_crisis_flag
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_war_support = 0.1
+		}
+	}
+
+	focus = {
+		id = ENG_churchills_landships
+		icon = GFX_focus_eng_motion_of_no_confidence
+		prerequisite = { focus = ENG_the_shell_crisis }
+		x = -2
+		y = 1
+		relative_position_id = ENG_the_shell_crisis
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				ahead_reduction = 1
+				technology = tank_unlocker2
+			}
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 1
+				category = armor
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_mobilise_the_empire
+		icon = GFX_focus_generic_commonwealth_build_infantry
+		prerequisite = { focus = ENG_the_shell_crisis }
+		x = 0
+		y = 1
+		relative_position_id = ENG_the_shell_crisis
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			unlock_decision_tooltip = ENG_mobilise_empire_economy
+			unlock_decision_tooltip = ENG_encourage_empire_volunteers
+			unlock_decision_tooltip = ENG_mobilise_indian_army
+		}
+	}
+
+	focus = {
+		id = ENG_new_tactics
+		icon = GFX_goal_generic_army_doctrines
+		prerequisite = { focus = ENG_the_shell_crisis }
+		x = 2
+		y = 1
+		relative_position_id = ENG_the_shell_crisis
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.75
+				uses = 1
+				category = cat_mass_assault
+			}
+			add_doctrine_cost_reduction = {
+				name = bonus
+				cost_reduction = 0.75
+				uses = 1
+				category = cat_superior_firepower
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_election_aftermath
+		icon = GFX_focus_generic_improve_the_administration
+		x = 18
+		y = 0
+		cost = 5
+		
+		completion_reward = {
+			add_political_power = 50
+		}
+	}
+	
+	focus = {
+		id = ENG_liberal_victory
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		prerequisite = { focus = ENG_election_aftermath }
+		mutually_exclusive = { focus = ENG_tory_victory }
+		x = -2
+		y = 1
+		relative_position_id = ENG_election_aftermath
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ENG_asquith
+		}
+	}
+
+	focus = {
+		id = ENG_parliament_act
+		icon = GFX_focus_generic_court
+		prerequisite = { focus = ENG_liberal_victory }
+		x = -1
+		y = 1
+		relative_position_id = ENG_liberal_victory
+		cost = 5
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	focus = {
+		id = ENG_trade_union_act
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		prerequisite = { focus = ENG_parliament_act }
+		x = 0
+		y = 1
+		relative_position_id = ENG_parliament_act
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = ENG_trade_union_act
+		}
+	}
+
+	focus = {
+		id = ENG_tory_victory
+		icon = GFX_focus_generic_self_management
+		prerequisite = { focus = ENG_election_aftermath }
+		mutually_exclusive = { focus = ENG_liberal_victory }
+		x = 2
+		y = 1
+		relative_position_id = ENG_election_aftermath
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ENG_balfour
+		}
+	}
+
+	focus = {
+		id = ENG_education_act
+		icon = GFX_focus_generic_treaty
+		prerequisite = { focus = ENG_tory_victory }
+		x = 1
+		y = 1
+		relative_position_id = ENG_tory_victory
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = ENG_education_act_idea
+		}
+	}
+
+	focus = {
+		id = ENG_tariff_reform
+		icon = GFX_goal_generic_positive_trade_relations
+		prerequisite = { focus = ENG_education_act }
+		x = 0
+		y = 1
+		relative_position_id = ENG_education_act
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_ideas = ENG_imperial_tariffs
+		}
+	}
+
+	focus = {
+		id = ENG_kings_coronation
+		icon = GFX_focus_eng_god_save_the_king
+		prerequisite = { focus = ENG_tory_victory focus = ENG_liberal_victory }
+		x = 2
+		y = 1
+		relative_position_id = ENG_liberal_victory
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_trait = {
+				character = ENG_george_v
+				ideology = conservatism
+				trait = popular_figurehead2
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_imperial_conference
+		icon = GFX_focus_eng_imperial_federation
+		prerequisite = { focus = ENG_kings_coronation }
+		x = 0
+		y = 1
+		relative_position_id = ENG_kings_coronation
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_to_tech_sharing_group = commonwealth_research
+			CAN = {
+				add_to_tech_sharing_group = commonwealth_research
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_war_cabinet
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = ENG_tariff_reform focus = ENG_trade_union_act }
+		prerequisite = { focus = ENG_imperial_conference }
+		x = 0
+		y = 1
+		relative_position_id = ENG_imperial_conference
+		cost = 5
+		available = {
+			has_war = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_trait = {
+				character = ENG_george_v
+				ideology = conservatism
+				trait = war_cabinet
+			}
+		}
+	}
+
+	focus = {
+		id = ENG_ministry_of_munitions
+		icon = GFX_goal_generic_major_war
+		prerequisite = { focus = ENG_war_cabinet }
+		x = 0
+		y = 1
+		relative_position_id = ENG_war_cabinet
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = ENG_lloyd_george
+		}
+	}
+
+}

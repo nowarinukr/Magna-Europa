@@ -1,0 +1,29 @@
+
+state={
+	id=904
+	name="STATE_904"
+
+	history={
+		owner = TUR
+		add_core_of = BUL
+		add_core_of = SER
+		add_core_of = ALB
+		buildings = {
+			infrastructure = 1
+
+		}
+		 
+		victory_points = {
+			86 2 
+		}
+
+	}
+
+	provinces={
+		86 4288 9101 16237 16929 19158 20214 
+	}
+	manpower=76452
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

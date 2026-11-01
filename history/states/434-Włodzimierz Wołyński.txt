@@ -1,0 +1,24 @@
+
+state={
+	id=434
+	name="STATE_434"
+	provinces={
+		2165 3598 5578 12259 12425 12531 12563 
+	}
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+		add_claim_by = POL
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = {
+			12425 2 #Vladirmir
+		}
+  	}
+	manpower=242500
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

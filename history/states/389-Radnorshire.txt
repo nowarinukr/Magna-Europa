@@ -1,0 +1,22 @@
+state={
+	id=389
+	name="STATE_389"
+	resources={
+		chromium=10
+	}
+	history={
+		owner = ENG
+		add_core_of = ENG
+		buildings = {
+			infrastructure = 4
+		}
+		 
+	}
+	provinces={
+		11728 11769 11807 
+	}
+	manpower=19500
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+
+}

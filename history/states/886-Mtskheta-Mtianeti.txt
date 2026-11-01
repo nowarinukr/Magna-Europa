@@ -1,0 +1,24 @@
+
+state={
+	id=886
+	name="STATE_886"
+	resources={
+		tungsten = 50
+	}
+	history = {
+		owner = SOV
+		add_core_of = SOV
+		
+		buildings = {
+			infrastructure = 2
+		}
+		
+	}
+	provinces={
+		8023 8739 14813 14852 14923 16098 17598 
+	}
+	manpower=83151
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,70 @@
+equipments = {
+
+	support_equipment = {
+		year = 1900
+
+		is_archetype = yes
+		picture = archetype_support_equipment
+		is_buildable = no
+		type = {
+			infantry
+			motorized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		reliability = 0.8
+
+		#Space taken in convoy
+		lend_lease_cost = 0.1
+		
+		defense = 5
+		breakthrough = 10
+
+		build_cost_ic = 2.5
+		resources = {
+			steel = 1
+		}
+	}
+
+	support_equipment_1 = {
+		year = 1900
+
+		archetype = support_equipment
+		priority = 20	
+	}
+
+	horse_equipment = {
+		year = 1900
+
+		is_archetype = yes
+		picture = archetype_support_equipment
+		is_buildable = no
+		type = {
+			infantry
+			motorized
+		}
+		group_by = archetype
+		
+		interface_category = interface_category_land
+		
+		reliability = 0.8
+
+		#Space taken in convoy
+		lend_lease_cost = 0.1
+
+		build_cost_ic = 1.0
+		resources = {
+			steel = 1
+		}
+	}
+
+	horse_equipment_0 = {
+		year = 1900
+
+		archetype = horse_equipment
+		priority = 20	
+	}
+
+}

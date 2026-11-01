@@ -1,0 +1,21 @@
+
+state={
+	id=416
+	name="STATE_416"
+	history={
+		owner = ENG
+		add_core_of = ENG
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 2
+		}
+	}
+	provinces={
+		113 5813 11919 
+	}
+	manpower=485500
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = city
+}

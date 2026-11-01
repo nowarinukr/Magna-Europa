@@ -1,0 +1,31 @@
+
+state={
+	id=1153
+	name="STATE_1153"
+	resources={
+		aluminium = 20
+	}
+	provinces={
+		462 5974 6146 8616 9269 11946 12015 19923 
+	}
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+		add_claim_by = POL
+		
+		buildings = {
+			infrastructure = 3
+			19923 = {
+				bunker = 1
+			}
+		}
+        victory_points = {
+            19923 10
+        }
+  	}
+	manpower=216200
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_town
+}

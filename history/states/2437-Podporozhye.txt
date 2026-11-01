@@ -1,0 +1,23 @@
+
+state={
+	id=2437
+	name="STATE_2437"
+
+	history={
+		owner = SOV
+		add_core_of = SOV
+
+		buildings = {
+			infrastructure = 2
+		}
+        victory_points = { 1454 2 }
+	}
+
+	provinces={
+		789 1454 6641 7347 9918 9944 9950 16119 16161 16229 16365 16438 16916 17109 17298 17356 17445 17560 17642 17963 18078 
+	}
+	manpower=73367
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

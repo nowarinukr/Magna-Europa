@@ -1,0 +1,26 @@
+state={
+	id=2584
+	name="STATE_2584"
+	provinces={
+		12141 
+	}
+	history={
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 3
+		}
+		
+		 
+		owner = GER
+        victory_points = {
+            12141 20 #Barmen
+        }
+
+	}
+	manpower=74019
+	state_category=city
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

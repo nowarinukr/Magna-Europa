@@ -1,0 +1,28 @@
+
+state={
+	id=1638
+	name="STATE_1638"
+	resources={
+		steel=100
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		
+		
+		victory_points = { 11685 10 } #Brandenburg
+		victory_points = { 11638 2 } #Rathenow
+    }
+	provinces={
+		5314 6556 11525 11588 11638 11639 11685 11766 11830 11853 20585 
+	}
+	manpower=266056
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = town
+}

@@ -1,0 +1,24 @@
+
+state={
+	id=641
+	name="STATE_641"
+	history = {
+		owner = AUS
+		add_core_of = AUS
+		add_claim_by = HUN
+		buildings = {
+			infrastructure = 3
+		}
+		victory_points = {
+            13644 2 #Sopron
+        }
+		
+	}
+	provinces={
+		13644 
+	}
+	manpower=73294
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

@@ -1,0 +1,180 @@
+ideas={
+	country = {
+		
+		BEL_mob_1 = {
+			allowed = {original_tag = BEL }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.015
+				industrial_capacity_factory = 0.05
+				industrial_capacity_dockyard = 0.05
+			}
+		}
+
+		BEL_mob_2 = {
+			name = BEL_mob_1
+			allowed = {original_tag = BEL }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.015
+			}
+		}
+		
+		BEL_empire_idea = {
+			picture = generic_oppression
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				country_resource_rubber = 100
+				country_resource_steel = 50
+				country_resource_chromium = 25
+			}
+		}
+		
+		BEL_antiquated_army = {
+			picture = chi_army_corruption
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				command_power_gain_mult = -0.25
+				experience_gain_army_factor = -0.1
+				planning_speed = -0.1
+				max_training = -0.25
+				training_time_factor = 0.25
+			}
+		}
+		
+		BEL_antiquated_army_1 = {
+			picture = chi_army_corruption2
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				command_power_gain_mult = -0.15
+				experience_gain_army_factor = -0.05
+				planning_speed = -0.05
+				max_training = -0.1
+				training_time_factor = 0.1
+			}
+		}
+		
+		BEL_military_reforms = {
+			picture = chi_incompetent_officers
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				experience_gain_army = 0.15
+				command_power_gain_mult = -0.25
+			}
+		}
+		
+		BEL_military_admin = {
+			picture = generic_supply_depot
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				supply_factor = 0.1
+				supply_combat_penalties_on_core_factor = -0.2
+				grant_medal_cost_factor = -0.5
+			}
+		}
+		
+		
+		BEL_trade_capital = {
+			picture = generic_flexible_foreign_policy
+			allowed = {
+				TAG = BEL
+			}
+			
+			cancel = { 
+				has_war = yes
+			}
+			
+			modifier = {
+				consumer_goods_factor = -0.1
+				min_export = 0.1
+				economy_cost_factor = 0.5
+				custom_modifier_tooltip = AUS_golden_age_tt
+			}
+		}
+		
+		BEL_export_industry = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				industrial_capacity_factory = -0.25
+				license_production_speed = -0.2
+				production_speed_arms_factory_factor = 0.1
+			}
+			research_bonus = { infantry_weapons = 0.15 }
+		}
+
+		BEL_export_industry_2 = {
+			picture = man_five_year_plan_industry
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				industrial_capacity_factory = -0.1
+				license_production_speed = -0.1
+				production_speed_arms_factory_factor = 0.15
+			}
+			research_bonus = { infantry_weapons = 0.1 }
+		}
+		
+		BEL_ethnic_tension = {
+			picture = FRA_political_violence
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				stability_factor = -0.15
+				political_power_factor = -0.25
+			}
+		}
+		
+		BEL_ethnic_tension_2 = {
+			picture = FRA_political_violence
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				stability_factor = -0.05
+				political_power_factor = -0.1
+			}
+		}
+		
+		BEL_schools_act = {
+			picture = MEX_church_power_5
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				research_speed_factor = 0.05
+				party_popularity_stability_factor = 0.1
+				monthly_population = 0.25
+			}
+		}
+
+		BEL_widespread_strikes = {
+			picture = FRA_factory_strikes
+			allowed = {
+				TAG = BEL
+			}
+			modifier = {
+				industrial_capacity_factory = -0.9
+			}
+		}
+		
+	}
+}

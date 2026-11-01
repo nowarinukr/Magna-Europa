@@ -1,0 +1,26 @@
+
+state={
+	id=2083
+	name="STATE_2083"
+
+	history={
+		victory_points = { 7168 5 }
+		owner = SOV
+
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+		}
+		add_core_of = SOV
+		add_claim_by = UKR	
+
+	}
+
+	provinces={
+		4196 5545 7168 13560 13566 13661 
+	}
+	manpower=264676
+	buildings_max_level_factor=1.000
+	state_category=rural
+	local_supplies=0.000
+}

@@ -1,0 +1,24 @@
+state={
+	id=1761
+	name="STATE_1761"
+	provinces={
+		20746 
+	}
+	history={
+		owner = AUS
+		add_core_of = AUS
+		add_core_of = CZE
+		add_core_of = POL
+        victory_points = {
+            20746 2 #Oderberg
+        }
+		buildings = {
+			infrastructure = 3
+		}
+		
+	}
+	manpower=31750
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = rural
+}

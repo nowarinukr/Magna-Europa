@@ -1,0 +1,28 @@
+
+state={
+	id=2075
+	name="STATE_2075"
+	provinces={
+		1245 1971 3478 4991 9447 9631 13504 13581 13628 13709 15854 
+	}
+	resources={
+		aluminium = 100
+	}
+	history = {
+		victory_points = { 13581 5 }
+		victory_points = { 9631 1 }
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+		 
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+	}
+	manpower=755667
+	state_category=rural
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

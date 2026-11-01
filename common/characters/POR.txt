@@ -1,0 +1,101 @@
+characters={
+	POR_teofilo_braga={
+		name="Teófilo Braga"
+		portraits={
+			civilian={
+				large="gfx/leaders/POR/portrait_teofilo_braga.dds"
+			}
+		}
+		country_leader={
+			desc="POR_teofilo_braga_DESC"
+			ideology=liberalism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	POR_fernando_e_silva={
+		name="Fernando Tamagnini de Abreu e Silvas"
+		portraits={
+			army={
+				large="gfx/leaders/POR/portrait_e_silva.dds"
+			}
+		}
+		field_marshal={
+			traits={ cavalry_officer old_guard }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=70014
+		}
+	}
+	POR_gomes_da_costa={
+		name="Gomes da Costa"
+		portraits={
+			army={
+				large="gfx/leaders/POR/portrait_de_costa.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer harsh_leader }
+			skill=3
+			attack_skill=2
+			defense_skill=2
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=70006
+		}
+	}
+	POR_tomas_rosado={
+		name="Tomás António Garcia Rosado"
+		portraits={
+			army={
+				large="gfx/leaders/POR/portrait_rosado.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer politically_connected }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=70002
+		}
+	}
+	POR_de_simas={
+		name="José Augusto de Simas Machado"
+		portraits={
+			army={
+				large="gfx/leaders/POR/portrait_simas.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=70003
+		}
+	}
+	POR_leote_do_rego={
+		name="Leote do Rego"
+		portraits={
+			army={
+				large="gfx/leaders/POR/portrait_de_rego.dds"
+			}
+		}
+		navy_leader={
+			traits={ gentlemanly navy_career_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			maneuvering_skill=1
+			coordination_skill=1
+			legacy_id=0
+		}
+	}
+}

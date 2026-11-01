@@ -1,0 +1,31 @@
+characters={
+	ALB_qemali={
+		name="Ismail Qemali"
+		portraits={
+			civilian={
+				large="gfx/leaders/ALB/portrait_qemali.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1965.1.1.1"
+			id=-1
+		}
+	}
+	ALB_skanderbeg={
+		name="Skanderbeg"
+		portraits={
+			army={
+				large="gfx/leaders/ALB/portrait_skanderbeg.dds"
+			}
+		}
+		field_marshal={
+			skill=5
+			attack_skill=10
+			defense_skill=10
+			planning_skill=10
+			logistics_skill=10
+			legacy_id=-1
+		}
+	}
+}

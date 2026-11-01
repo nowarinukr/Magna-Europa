@@ -1,0 +1,27 @@
+
+state={
+	id=441
+	name="STATE_441"
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 2
+			industrial_complex = 1
+		}
+		
+		
+		
+		victory_points = {
+			12220 15 #Görlitz
+		}
+    }
+	provinces={
+		3304 6493 7811 9212 12118 12167 12184 12220 
+	}
+	manpower=150774
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_town
+}

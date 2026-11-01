@@ -1,0 +1,31 @@
+
+state={
+	id=1765
+	name="STATE_1765"
+
+	history={
+		owner = GER
+		victory_points = {
+			20767 20 #Mannheim
+		}
+		victory_points = {
+			18879 10 #Heidelberg
+		}
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 4
+			industrial_complex = 2
+		}
+		
+
+	}
+
+	provinces={
+		3496 4709 6381 12968 18879 20724 20767 
+	}
+	manpower=610358
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

@@ -1,0 +1,204 @@
+ideas={
+	country = {
+		
+		ROM_mob_1 = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.04
+				industrial_capacity_factory = 0.1
+				industrial_capacity_dockyard = 0.1
+			}
+		}
+		
+		ROM_mob_2 = {
+			name = ROM_mob_1
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = generic_manpower_bonus
+			modifier = {
+				conscription = -0.04
+			}
+		}
+
+		ROM_poor_peasants = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = POL_looming_peasants_strike
+			modifier = {
+				stability_factor = -0.1
+				production_speed_buildings_factor = -0.1
+				consumer_goods_factor = 0.05
+			}
+		}
+		
+		ROM_poor_peasants_2 = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = POL_looming_peasants_strike
+			modifier = {
+				stability_factor = -0.05
+				production_speed_buildings_factor = -0.05
+				consumer_goods_factor = 0.1
+			}
+		}
+		
+		ROM_poor_peasants_con = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = POL_looming_peasants_strike
+			modifier = {
+				stability_factor = -0.1
+				production_speed_buildings_factor = -0.05
+				min_export = 0.1
+			}
+		}
+		
+		ROM_outdated_army = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = chi_army_corruption
+			modifier = {
+				planning_speed = -0.2
+				max_training = -0.2
+				training_time_army_factor = 0.25
+				supply_consumption_factor = 0.2
+				army_org_factor = -0.1
+				army_morale_factor = -0.1
+			}
+		}
+		
+		ROM_outdated_army_2 = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = chi_army_corruption2
+			modifier = {
+				planning_speed = -0.1
+				max_training = -0.2
+				training_time_army_factor = 0.25
+				army_org_factor = -0.1
+				army_morale_factor = -0.1
+			}
+		}
+	
+		ROM_outdated_army_3 = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = chi_army_corruption3
+			modifier = {
+				planning_speed = -0.1
+				training_time_army_factor = 0.1
+				army_org_factor = -0.05
+				army_morale_factor = -0.1
+			}
+		}
+
+		ROM_french_mission = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = FRA_undividable
+			
+			modifier = {
+				experience_gain_army = 0.25
+				training_time_army_factor = -0.25
+				land_doctrine_cost_factor = -0.1
+				command_power_gain = -0.5
+			}
+		}
+		
+		ROM_romanian_culture = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = ROM_preserve_greater_romania
+			
+			modifier = {
+				army_core_attack_factor = 0.025
+				army_core_defence_factor = 0.025
+				conscription_factor = 0.05
+			}
+		}
+
+		ROM_romanian_culture_2 = {
+			allowed = {original_tag = ROM }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = ROM_preserve_greater_romania
+			
+			modifier = {
+				army_core_attack_factor = 0.05
+				army_core_defence_factor = 0.05
+				conscription_factor = 0.1
+			}
+		}
+		
+		ROM_foreign_investments = {
+			allowed = {
+				always = yes
+			}
+
+			removal_cost = -1
+			picture = FRA_market_dynamism
+
+			modifier = {
+				production_speed_buildings_factor = 0.1
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		ROM_war_preparation = {
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = SOV_third_five_year_plan_military
+			modifier = {
+				industrial_capacity_factory = 0.05
+				production_speed_arms_factory_factor = 0.05
+			}
+		}
+		
+		ROM_foreign_loans = {
+			allowed = {original_tag = SER }
+			allowed_civil_war = {always = yes}
+			removal_cost = -1
+			picture = tur_balkan_central_bank_wealthy_greece
+			
+			cancel = {
+				OR = {
+					has_war_with = FRA
+					has_war_with = ENG
+					has_war_with = GER
+				}
+			}
+			
+			targeted_modifier = {
+				tag = FRA
+				trade_cost_for_target_factor = -0.5
+			}
+			targeted_modifier = {
+				tag = ENG
+				trade_cost_for_target_factor = -0.5
+			}
+			targeted_modifier = {
+				tag = GER
+				trade_cost_for_target_factor = -0.5
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_arms_factory_factor = 0.1
+				custom_modifier_tooltip = ROM_foreign_loans_tt
+			}
+		}
+
+	}
+}

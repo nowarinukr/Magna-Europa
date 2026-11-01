@@ -1,0 +1,26 @@
+
+state={
+	id=2799
+	name="STATE_2799"
+	provinces={
+		6800 20181 
+	}
+	resources={
+		chromium=5
+		aluminium = 5
+	}
+	history={
+		owner = SER
+		add_core_of = SER
+		buildings = {
+			infrastructure = 2
+
+		}
+		 
+
+	}
+	manpower=11482
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

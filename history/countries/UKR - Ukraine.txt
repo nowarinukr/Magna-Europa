@@ -1,0 +1,61 @@
+﻿capital = 2081
+
+set_politics = {
+    ruling_party = neutrality
+    last_election = "1912.9.1"
+    election_frequency = 48
+    elections_allowed = yes
+}
+set_popularities = {
+    democratic = 21
+    fascism = 2
+    communism = 33
+    neutrality = 44
+}
+
+recruit_character = UKR_skoropadsky
+
+set_research_slots = 3
+set_stability = 1.0
+set_war_support = 1.0
+set_research_slots = 3
+
+# Starting tech
+set_technology = {
+	infantry_weapon_1 = 1
+	infantry_weapon_2 = 1
+	machine_gun = 1
+	horse_equipment = 1
+	light_field_gun1 = 1
+	light_field_gun2 = 1
+	heavy_field_gun1 = 1
+	heavy_field_gun2 = 1
+
+	tech_support = 1
+	tech_engineers = 1
+
+	basic_industry = 1
+
+	# Navy
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_submarine = 1
+	early_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+	improved_ship_hull_heavy = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	basic_heavy_battery = 1
+	basic_secondary_battery = 1
+	improved_secondary_battery = 1
+	basic_torpedo = 1
+	armor_scheme_1 = 1
+	armor_scheme_2 = 1
+	armor_scheme_3 = 1
+	damage_control_1 = 1
+	basic_engines = 1
+	engines_2 = 1
+	engines_3 = 1
+	mtg_transport = 1
+}

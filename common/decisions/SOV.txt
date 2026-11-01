@@ -1,0 +1,2796 @@
+unit_upgrades = {
+	SOV_uu_engineer = {
+		icon = generic_military
+
+		allowed = {
+			tag = SOV
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = SOV_uu_upgraded
+			}
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			add_units_to_division_template = {
+				template_name = "Kazak Kavaleriyskaya"
+				support = {
+					engineer = 0
+				}
+			}
+			set_temp_variable = { temp = 100 }
+			set_temp_variable = { total_unit = num_battalions_with_type@cossack_bat }
+			multiply_temp_variable = { total_unit = temp }
+			custom_effect_tooltip = engineer_upgrade_tt
+			set_country_flag = SOV_uu_upgraded
+		}
+	}
+
+	SOV_uu_expand = {
+		icon = generic_military
+
+		allowed = {
+			tag = SOV
+		}
+
+		visible = {
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			add_to_variable = { SOV_unique_cap = 6 }
+			set_division_template_cap = { 
+				division_template = "Kazak Kavaleriyskaya"
+				division_cap = 12
+			}
+		}
+	}
+}
+economy_decisions = {
+	RUS_siberian_development = {
+
+		icon = chromium
+		allowed = {
+			tag = SOV
+		}
+		available = {
+			has_completed_focus = RUS_develop_siberia
+			num_of_civilian_factories_available_for_projects > 20
+		}
+	
+		visible = {
+			has_completed_focus = RUS_embrace_second_rev
+		}
+	
+		days_remove = 180
+		
+		fire_only_once = yes
+		
+		modifier = {
+			civilian_factory_use = 20
+			political_power_cost = 0.25
+			weekly_manpower = -500
+		}
+		
+		remove_effect = {
+			2380 = {
+				add_resource = {
+					type = chromium
+					amount = 25
+				}
+				add_resource = {
+					type = tungsten
+					amount = 50
+				}
+				add_resource = {
+					type = steel
+					amount = 50
+				}
+			}
+		}
+	}
+
+	RUS_siberian_colonisation = {
+
+		icon = hol_inundate_water_lines
+		allowed = {
+			tag = SOV
+		}
+		available = {
+			has_completed_focus = RUS_develop_siberia
+		}
+	
+		visible = {
+			has_completed_focus = RUS_embrace_second_rev
+		}
+		
+		cost = 25
+	
+		days_remove = 365
+		
+		modifier = {
+			monthly_population = 0.5
+			resistance_activity = -0.5
+		}
+
+	}
+}
+operations = {
+
+	RUS_hold_warsaw = {
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		#Fail trigger
+		available = {
+			has_full_control_of_state = 508
+		}
+
+		days_mission_timeout = 60
+
+		fire_only_once = no
+
+		is_good = no
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			508 = {
+				CONTROLLER = {
+					has_war_with = ROOT
+				}
+				OWNER = { tag = ROOT }
+			}
+			NOT = {
+				has_country_flag = RUS_war_lost
+			}
+			NOT = {
+				has_global_flag = RUS_revolution_occurred_flag
+			}
+		}
+
+		#Fail
+		timeout_effect = {
+			if = {
+				limit = {
+					has_completed_focus = RUS_interior_strategy
+				}
+				RUS_revolutionary_anger_increase_effect = yes
+			}
+			else = {
+				RUS_revolutionary_anger_big_increase_effect = yes
+			}
+			set_country_flag = RUS_war_lost
+		}
+		#Success
+		complete_effect = {
+			508 = {
+				random_state_division = {
+					add_history_entry = {
+						key = city_medal
+						subject = "Defence of Warsaw"
+						allow = yes
+					}
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	RUS_hold_riga = {
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		#Fail trigger
+		available = {
+			has_full_control_of_state = 172
+		}
+
+		days_mission_timeout = 60
+
+		fire_only_once = no
+
+		is_good = no
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			172 = {
+				CONTROLLER = {
+					has_war_with = ROOT
+				}
+				OWNER = { tag = ROOT }
+			}
+			NOT = {
+				has_country_flag = RUS_riga_lost
+			}
+			NOT = {
+				has_global_flag = RUS_revolution_occurred_flag
+			}
+		}
+
+		#Fail
+		timeout_effect = {
+			if = {
+				limit = {
+					has_completed_focus = RUS_interior_strategy
+				}
+				RUS_revolutionary_anger_increase_effect = yes
+			}
+			else = {
+				RUS_revolutionary_anger_big_increase_effect = yes
+			}
+			set_country_flag = RUS_riga_lost
+		}
+		#Success
+		complete_effect = {
+			172 = {
+				random_state_division = {
+					add_history_entry = {
+						key = city_medal
+						subject = "Defence of Riga"
+						allow = yes
+					}
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	RUS_hold_minsk = {
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		#Fail trigger
+		available = {
+			has_full_control_of_state = 2135
+		}
+
+		days_mission_timeout = 60
+
+		fire_only_once = no
+
+		is_good = no
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			2135 = {
+				CONTROLLER = {
+					has_war_with = ROOT
+				}
+				OWNER = { tag = ROOT }
+			}
+			NOT = {
+				has_country_flag = RUS_minsk_lost
+			}
+			NOT = {
+				has_global_flag = RUS_revolution_occurred_flag
+			}
+		}
+
+		#Fail
+		timeout_effect = {
+			if = {
+				limit = {
+					has_completed_focus = RUS_border_defence
+				}
+				RUS_revolutionary_anger_increase_effect = yes
+			}
+			else = {
+				RUS_revolutionary_anger_big_increase_effect = yes
+			}
+			set_country_flag = RUS_minsk_lost
+		}
+		#Success
+		complete_effect = {
+			2135 = {
+				random_state_division = {
+					add_history_entry = {
+						key = city_medal
+						subject = "Defence of Minsk"
+						allow = yes
+					}
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	RUS_hold_kiev = {
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		#Fail trigger
+		available = {
+			has_full_control_of_state = 2081
+		}
+
+		days_mission_timeout = 60
+
+		fire_only_once = no
+
+		is_good = no
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			2081 = {
+				CONTROLLER = {
+					has_war_with = ROOT
+				}
+				OWNER = { tag = ROOT }
+			}
+			NOT = {
+				has_country_flag = RUS_kiev_lost
+			}
+			NOT = {
+				has_global_flag = RUS_revolution_occurred_flag
+			}
+		}
+
+		#Fail
+		timeout_effect = {
+			if = {
+				limit = {
+					has_completed_focus = RUS_border_defence
+				}
+				RUS_revolutionary_anger_increase_effect = yes
+			}
+			else = {
+				RUS_revolutionary_anger_big_increase_effect = yes
+			}
+			set_country_flag = RUS_kiev_lost
+		}
+		#Success
+		complete_effect = {
+			2081 = {
+				random_state_division = {
+					add_history_entry = {
+						key = city_medal
+						subject = "Defence of Kiev"
+						allow = yes
+					}
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	RUS_hold_odessa = {
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		#Fail trigger
+		available = {
+			has_full_control_of_state = 2045
+		}
+
+		days_mission_timeout = 60
+
+		fire_only_once = no
+
+		is_good = no
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			2045 = {
+				CONTROLLER = {
+					has_war_with = ROOT
+				}
+				OWNER = { tag = ROOT }
+			}
+			NOT = {
+				has_country_flag = RUS_odes_lost
+			}
+			NOT = {
+				has_global_flag = RUS_revolution_occurred_flag
+			}
+		}
+
+		#Fail
+		timeout_effect = {
+			if = {
+				limit = {
+					has_completed_focus = RUS_interior_strategy
+				}
+				RUS_revolutionary_anger_increase_effect = yes
+			}
+			else = {
+				RUS_revolutionary_anger_big_increase_effect = yes
+			}
+			set_country_flag = RUS_odes_lost
+		}
+		#Success
+		complete_effect = {
+			2045 = {
+				random_state_division = {
+					add_history_entry = {
+						key = city_medal
+						subject = "Defence of Kiev"
+						allow = yes
+					}
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	RUS_hold_petrograd = {
+
+		icon = generic_nationalism
+
+		allowed = {
+			original_tag = SOV
+		}
+
+		#Fail trigger
+		available = {
+			has_full_control_of_state = 119
+		}
+
+		days_mission_timeout = 60
+
+		fire_only_once = no
+
+		is_good = no
+
+		activation = {
+			has_war = yes
+			has_civil_war = no
+			119 = {
+				CONTROLLER = {
+					has_war_with = ROOT
+				}
+				OWNER = { tag = ROOT }
+			}
+			NOT = {
+				has_country_flag = RUS_pet_lost
+			}
+			NOT = {
+				has_global_flag = RUS_revolution_occurred_flag
+			}
+		}
+
+		#Fail
+		timeout_effect = {
+			RUS_revolutionary_anger_big_increase_effect = yes
+			set_country_flag = RUS_pet_lost
+		}
+		#Success
+		complete_effect = {
+			119 = {
+				random_state_division = {
+					add_history_entry = {
+						key = city_medal
+						subject = "Defence of Petrograd"
+						allow = yes
+					}
+				}
+			}
+			add_stability = 0.05
+		}
+	}
+
+	RUS_warsaw_modernisation = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = SOV
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 20
+			NOT = {
+				has_country_flag = RUS_fort_flag
+			}
+			has_completed_focus = RUS_fort_modernisation
+		}
+	
+		visible = {
+			has_completed_focus = RUS_suk_reforms
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 550
+		
+		modifier = {
+			civilian_factory_use = 20
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = RUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = RUS_fort_flag
+			508 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 508
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 11774
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 7307
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+			1981 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 11747
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 2388
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+			311 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 8111
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+
+	RUS_polish_modernisation = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = SOV
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 10
+			NOT = {
+				has_country_flag = RUS_fort_flag
+			}
+			has_completed_focus = RUS_fort_modernisation
+		}
+	
+		visible = {
+			has_completed_focus = RUS_suk_reforms
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			civilian_factory_use = 10
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = RUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = RUS_fort_flag
+			1070 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 372
+					instant_build = yes
+				}
+			}
+			1153 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 19923
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+			351 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 4076
+					instant_build = yes
+				}
+			}
+			312 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 7700
+					instant_build = yes
+				}
+			}
+		}
+	}
+
+	RUS_bial_modernisation = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = SOV
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 15
+			NOT = {
+				has_country_flag = RUS_fort_flag
+			}
+			has_completed_focus = RUS_fort_modernisation
+		}
+	
+		visible = {
+			has_completed_focus = RUS_suk_reforms
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			civilian_factory_use = 15
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = RUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = RUS_fort_flag
+			1287 = {
+				set_building_level = {
+					type = bunker
+					level = 3
+					province = 5838
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 20468
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 8940
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+
+	RUS_north_modernisation = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = SOV
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 15
+			NOT = {
+				has_country_flag = RUS_fort_flag
+			}
+			has_completed_focus = RUS_border_defence
+		}
+	
+		visible = {
+			has_completed_focus = RUS_suk_reforms
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 550
+		
+		modifier = {
+			civilian_factory_use = 15
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = RUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = RUS_fort_flag
+			242 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 9044
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+			206 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 9185
+					instant_build = yes
+				}
+			}
+			196 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 9660
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 1960
+					instant_build = yes
+				}
+			}
+			172 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 19998
+					instant_build = yes
+				}
+			}
+			1352 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 19961
+					instant_build = yes
+				}
+			}
+			1348 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 3868
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+		}
+	}
+
+	RUS_south_modernisation = {
+
+		icon = generic_mountain_fortification
+		allowed = {
+			tag = SOV
+		}
+		available = {
+			num_of_civilian_factories_available_for_projects > 15
+			NOT = {
+				has_country_flag = RUS_fort_flag
+			}
+			has_completed_focus = RUS_border_defence
+		}
+	
+		visible = {
+			has_completed_focus = RUS_suk_reforms
+		}
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			civilian_factory_use = 15
+			production_speed_bunker_factor = -0.25
+		}
+		
+		complete_effect = {
+			set_country_flag = RUS_fort_flag
+		}
+		
+		remove_effect = {
+			clr_country_flag = RUS_fort_flag
+			493 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 478
+					instant_build = yes
+				}
+			}
+			671 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 19915
+					instant_build = yes
+				}
+			}
+			992 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 12211
+					instant_build = yes
+				}
+			}
+			420 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 6917
+					instant_build = yes
+				}
+			}
+			2687 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 8342
+					instant_build = yes
+				}
+			}
+			2081 = {
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 2025
+					instant_build = yes
+				}
+				set_building_level = {
+					type = bunker
+					level = 2
+					province = 13272
+					instant_build = yes
+				}
+				add_dynamic_modifier = {
+					modifier = fortified_region
+				}
+			}
+			2045 = {
+				set_building_level = {
+					type = bunker
+					level = 1
+					province = 14022
+					instant_build = yes
+				}
+			}
+		}
+	}
+}
+RUS_revolution = {
+	RUS_legacy_of_1905 = {
+
+		icon = eng_ally_imperialist_coup
+
+		available = {
+			has_global_flag = RUS_revolution_occurred_flag
+		}
+
+		days_mission_timeout = RUS_1905_timer
+		fire_only_once = no
+		
+		is_good = no
+
+		activation = {
+			tag = SOV
+			NOT = {
+				has_global_flag = RUS_revolution_occurred_flag
+			}
+		}
+
+		timeout_effect = {
+			RUS_revolutionary_anger_increase_effect = yes
+			add_stability = -0.05
+		}
+	}
+
+	RUS_bolshevik_uprising = {
+
+		icon = generic_ignite_civil_war
+
+		available = {
+			surrender_progress < 0
+		}
+
+		days_mission_timeout = 360
+		fire_only_once = yes
+		
+		is_good = no
+
+		activation = {
+			tag = SOV
+			has_global_flag = RUS_revolution_occurred_flag
+			surrender_progress > 0
+		}
+
+		timeout_effect = {
+			country_event = ww1_russia_revolution.12
+			set_global_flag = RUS_october_revolution_flag
+		}
+	}
+
+	RUS_turn_the_tide = {
+
+		icon = generic_ignite_civil_war
+
+		available = {
+			custom_trigger_tooltip = {
+				tooltip = RUS_turn_the_tide_tt
+				check_variable = {
+					var = surrender_progress
+					value = RUS_surrender_marker
+					compare = less_than
+				}
+			}
+		}
+
+		days_mission_timeout = 30
+
+		fire_only_once = no
+		
+		is_good = no
+
+		activation = {
+			tag = SOV
+			has_global_flag = RUS_revolution_occurred_flag
+			NOT = {
+				has_global_flag = RUS_october_revolution_flag
+			}
+			surrender_progress > 0
+		}
+		
+		complete_effect = {
+			add_days_mission_timeout = {
+				mission = RUS_bolshevik_uprising
+				days = 10
+			}
+			subtract_from_variable = {
+				var = RUS_surrender_marker
+				value = 0.025
+			}
+		}
+
+		timeout_effect = {
+			add_days_mission_timeout = {
+				mission = RUS_bolshevik_uprising
+				days = -30
+			}
+		}
+	}
+}
+mobilization = {
+	SOV_mobilisation = {
+		icon = generic_operation
+
+		allowed = {
+			tag = SOV
+		}
+
+		available = {
+			OR  = {
+				has_country_flag = mob_allowed_flag
+				has_global_flag = great_war_started_flag
+			}
+		}
+			
+		fire_only_once = yes
+
+		cost = 0
+		
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			activate_mission = SOV_mobilise_west
+			activate_mission = SOV_mobilise_north
+			activate_mission = SOV_mobilise_east
+			activate_mission = SOV_mobilise_south
+			activate_mission = SOV_mobilise_unlock
+			set_country_flag = mobilised_flag
+			RUS_revolutionary_anger_decrease_effect = yes
+		}
+	}
+	
+	SOV_mobilise_unlock = {
+
+		icon = generic_tank
+
+		available = {
+			hidden_trigger = { always = no }
+		}
+
+		days_mission_timeout = 90
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			set_division_template_lock = {
+				division_template = "Reservists"
+				is_locked = no
+			}
+			hidden_effect = {
+				set_technology = {
+					reservist_tech = 1 
+				}
+			}
+		}
+	}
+	
+	SOV_mobilise_north = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = SOV_mob_timer
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			119 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			1169 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			138 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			108 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			35 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			41 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			114 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			68 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			133 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			151 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			172 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			154 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			229 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			218 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2452 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			142 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			173 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2794 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2458 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			215 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+		}
+	}
+	
+	SOV_mobilise_east = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = SOV_mob_timer
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			464 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2629 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			201 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			97 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			270 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			632 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			366 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			457 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2721 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			171 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+		}
+	}
+	
+	SOV_mobilise_west = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = SOV_mob_timer
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			242 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			206 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			300 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			1287 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			508 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			867 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			381 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			1153 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			1030 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			493 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			1604 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2073 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2081 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			436 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2153 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2135 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			241 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2168 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2101 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2045 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2070 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			982 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+		}
+	}
+
+	SOV_mobilise_south = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = SOV_mob_timer
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			2044 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2127 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2407 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			696 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			732 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2400 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			1028 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			826 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2290 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2265 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2281 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			968 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2291 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			632 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2518 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2410 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2493 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2872 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			630 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			832 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+			2281 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.05 force_equipment_variants = { infantry_equipment_2 = { owner = \"SOV\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"SOV\" } } start_equipment_factor = 0.8"
+					owner = SOV
+				}
+			}
+		}
+	}
+}

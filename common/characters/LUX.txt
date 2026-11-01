@@ -1,0 +1,29 @@
+characters={
+	LUX_marieaddlaide={
+		name="Marie-Adélaïde"
+		portraits={
+			civilian={
+				large="gfx/leaders/LUX/portrait_marie_adelaide.dds"
+			}
+		}
+		country_leader={
+			desc="LUX_marie_adelaide_DESC"
+			ideology=liberalism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	LUX_william_iv={
+		name="William IV"
+		portraits={
+			civilian={
+				large="gfx/leaders/LUX/portrait_willliam_iv.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1912.2.24.1"
+			id=-1
+		}
+	}
+}

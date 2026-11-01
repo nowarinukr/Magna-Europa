@@ -1,0 +1,21 @@
+state={
+	id=2602
+	name="STATE_2602"
+	history={
+		owner = ITA
+		add_core_of = ITA
+		
+		#victory_points = { 14916 5 }
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 1
+		}
+	}
+	provinces={
+		14916 
+	}
+	manpower=108655
+	state_category=large_town
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

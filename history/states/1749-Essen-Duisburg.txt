@@ -1,0 +1,45 @@
+state={
+	id=1749
+	name="STATE_1749"
+	provinces={
+		1327 5650 6448 12020 18720 20738 
+	}
+	resources={
+		steel=400
+		aluminium = 300
+	}
+	history={
+		owner = GER
+        	victory_points = {
+        	    5650 40 #Essen
+       	 	}
+        	victory_points = {
+           	 20738 40 #Duisburg
+      		}
+        	victory_points = {
+           	 12020 20 #Hamborn
+      		}
+        	victory_points = {
+           	 6448 15 #Mülheim
+      		}
+			victory_points = {
+            1327 5 #Bottrop
+			}
+			victory_points = {
+            18720 15 #Oberhausen
+			}
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 4
+			industrial_complex = 1
+		}
+		
+		
+
+    }
+	manpower=792025
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = metropolis
+}

@@ -1,0 +1,504 @@
+on_actions = {
+	on_startup = {
+		effect = {
+			AUS = {
+				every_owned_state = {
+					limit = {
+						is_core_of = SER
+					}
+					set_compliance = 25
+					set_resistance = 10
+				}
+			}
+		}
+	}
+	on_monthly_ENG = {
+		effect = {
+			if = {
+				limit = {
+					ENG = {
+						has_war_with = GER
+					}
+				}
+				set_variable = { global.blockade_var_count = 0 }
+				set_variable = { ENG.block_frame_count_1 = 0 }
+				set_variable = { ENG.block_frame_count_2 = 0 }
+				set_variable = { ENG.block_frame_count_3 = 0 }
+				set_variable = { ENG.block_frame_count_4 = 0 }
+				set_variable = { ENG.block_frame_count_5 = 0 }
+				set_variable = { GER.block_frame_count_1 = 0 }
+				set_variable = { GER.block_frame_count_2 = 0 }
+				set_variable = { GER.block_frame_count_3 = 0 }
+				set_variable = { GER.block_frame_count_4 = 0 }
+				set_variable = { GER.block_frame_count_5 = 0 }
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 236 size > 4 }
+						ships_in_area = { type = screen_ship area = 236 size > 19 }
+					}
+					add_to_variable = { global.blockade_var_count = 1 }
+					set_variable = { ENG.block_frame_count_1 = 3 }
+					set_variable = { GER.block_frame_count_1 = 2 }
+				}
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 240 size > 4 }
+						ships_in_area = { type = screen_ship area = 240 size > 19 }
+					}
+					add_to_variable = { global.blockade_var_count = 1 }
+					set_variable = { ENG.block_frame_count_2 = 3 }
+					set_variable = { GER.block_frame_count_2 = 2 }
+				}
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 209 size > 4 }
+						ships_in_area = { type = screen_ship area = 209 size > 19 }
+					}
+					add_to_variable = { global.blockade_var_count = 1 }
+					set_variable = { ENG.block_frame_count_3 = 3 }
+					set_variable = { GER.block_frame_count_3 = 2 }
+				}
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 238 size > 4 }
+						ships_in_area = { type = screen_ship area = 238 size > 19 }
+					}
+					add_to_variable = { global.blockade_var_count = 2 }
+					set_variable = { ENG.block_frame_count_4 = 3 }
+					set_variable = { GER.block_frame_count_4 = 2 }
+				}
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 239 size > 4 }
+						ships_in_area = { type = screen_ship area = 239 size > 19 }
+					}
+					add_to_variable = { global.blockade_var_count = 2 }
+					set_variable = { ENG.block_frame_count_5 = 3 }
+					set_variable = { GER.block_frame_count_5 = 2 }
+				}
+			}
+		}
+	}
+	on_monthly_GER = {
+		effect = {
+			if = {
+				set_variable = { global.blockade_var = global.blockade_var_count }
+				set_variable = { ENG.block_frame_1 = ENG.block_frame_count_1 }
+				set_variable = { ENG.block_frame_2 = ENG.block_frame_count_2 }
+				set_variable = { ENG.block_frame_3 = ENG.block_frame_count_3 }
+				set_variable = { ENG.block_frame_4 = ENG.block_frame_count_4 }
+				set_variable = { ENG.block_frame_5 = ENG.block_frame_count_5 }
+				set_variable = { GER.block_frame_1 = GER.block_frame_count_1 }
+				set_variable = { GER.block_frame_2 = GER.block_frame_count_2 }
+				set_variable = { GER.block_frame_3 = GER.block_frame_count_3 }
+				set_variable = { GER.block_frame_4 = GER.block_frame_count_4 }
+				set_variable = { GER.block_frame_5 = GER.block_frame_count_5 }
+				limit = {
+					GER = {
+						has_war_with = ENG
+					}
+				}
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 236 size > 4 }
+						ships_in_area = { type = screen_ship area = 236 size > 19 }
+					}
+					add_to_variable = { global.blockade_var = -1 }
+					if = {
+						limit = {
+							check_variable = { ENG.block_frame_1 > 1 }
+						}
+						set_variable = { ENG.block_frame_1 = 1 }
+						set_variable = { GER.block_frame_1 = 1 }
+					}
+					else = {
+						set_variable = { ENG.block_frame_1 = 2 }
+						set_variable = { GER.block_frame_1 = 3 }
+					}
+				}
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 240 size > 4 }
+						ships_in_area = { type = screen_ship area = 240 size > 19 }
+					}
+					add_to_variable = { global.blockade_var = -1 }
+					if = {
+						limit = {
+							check_variable = { ENG.block_frame_2 > 1 }
+						}
+						set_variable = { ENG.block_frame_2 = 1 }
+						set_variable = { GER.block_frame_2 = 1 }
+					}
+					else = {
+						set_variable = { ENG.block_frame_2 = 2 }
+						set_variable = { GER.block_frame_2 = 3 }
+					}
+				}
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 209 size > 4 }
+						ships_in_area = { type = screen_ship area = 209 size > 19 }
+					}
+					add_to_variable = { global.blockade_var = -1 }
+					if = {
+						limit = {
+							check_variable = { ENG.block_frame_3 > 1 }
+						}
+						set_variable = { ENG.block_frame_3 = 1 }
+						set_variable = { GER.block_frame_3 = 1 }
+					}
+					else = {
+						set_variable = { ENG.block_frame_3 = 2 }
+						set_variable = { GER.block_frame_3 = 3 }
+					}
+				}
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 238 size > 4 }
+						ships_in_area = { type = screen_ship area = 238 size > 19 }
+					}
+					add_to_variable = { global.blockade_var = -2 }
+					if = {
+						limit = {
+							check_variable = { ENG.block_frame_4 > 1 }
+						}
+						set_variable = { ENG.block_frame_4 = 1 }
+						set_variable = { GER.block_frame_4 = 1 }
+					}
+					else = {
+						set_variable = { ENG.block_frame_4 = 2 }
+						set_variable = { GER.block_frame_4 = 3 }
+					}
+				}
+				if = {
+					limit = {
+						ships_in_area = { type = capital_ship area = 239 size > 4 }
+						ships_in_area = { type = screen_ship area = 239 size > 19 }
+					}
+					add_to_variable = { global.blockade_var = -2 }
+					if = {
+						limit = {
+							check_variable = { ENG.block_frame_5 > 1 }
+						}
+						set_variable = { ENG.block_frame_5 = 1 }
+						set_variable = { GER.block_frame_5 = 1 }
+					}
+					else = {
+						set_variable = { ENG.block_frame_5 = 2 }
+						set_variable = { GER.block_frame_5 = 3 }
+					}
+				}
+				add_to_variable = {
+					var = global.blockade_total
+					value = global.blockade_var
+				}
+				if = {
+					limit = {
+						check_variable = { global.blockade_total > 100 }
+					}
+					set_variable = { global.blockade_total = 0 }
+					if = {
+						limit = {
+							NOT = {
+								has_idea = GER_blockade_10
+							}
+						}
+						blockade_increase_effect = yes
+					}
+				}
+				if = {
+					limit = {
+						check_variable = { global.blockade_total < 0 }
+					}
+					set_variable = { global.blockade_total = 100 }
+					blockade_decrease_effect = yes
+				}
+			}
+		}
+	}
+
+	on_weekly = {
+		effect = {
+			if = {
+				limit = {
+					is_ai = no
+				}
+				if = {
+					limit = {
+						check_variable = {  ROOT.resource@aluminium > -10 }
+					}
+					remove_ideas = coal_shortage_1
+					remove_ideas = coal_shortage_2
+					remove_ideas = coal_shortage_3
+					remove_ideas = coal_shortage_4
+				}
+				else_if = {
+					limit = {
+						check_variable = {  ROOT.resource@aluminium < -9 }
+						check_variable = {
+							var = ROOT.resource@aluminium 
+							value = -40
+							compare = greater_than_or_equals
+						}
+					}
+					add_ideas = coal_shortage_1
+					remove_ideas = coal_shortage_2
+					remove_ideas = coal_shortage_3
+					remove_ideas = coal_shortage_4
+				}
+				else_if = {
+					limit = {
+						check_variable = {  ROOT.resource@aluminium < -40 }
+						check_variable = {
+							var = ROOT.resource@aluminium 
+							value = -100
+							compare = greater_than_or_equals
+						}
+					}
+					add_ideas = coal_shortage_2
+					remove_ideas = coal_shortage_1
+					remove_ideas = coal_shortage_3
+					remove_ideas = coal_shortage_4
+				}
+				else_if = {
+					limit = {
+						check_variable = {  ROOT.resource@aluminium < -100 }
+						check_variable = {
+							var = ROOT.resource@aluminium 
+							value = -200
+							compare = greater_than_or_equals
+						}
+					}
+					add_ideas = coal_shortage_3
+					remove_ideas = coal_shortage_1
+					remove_ideas = coal_shortage_2
+					remove_ideas = coal_shortage_4
+				}
+				else_if = {
+					limit = {
+						check_variable = {  ROOT.resource@aluminium < -200 }
+					}
+					add_ideas = coal_shortage_4
+					remove_ideas = coal_shortage_1
+					remove_ideas = coal_shortage_2
+					remove_ideas = coal_shortage_3
+				}
+				if = {
+					limit = {
+						has_tech = advanced_machine_tools
+					}
+					if = {
+						limit = {
+							check_variable = {  ROOT.resource@tungsten > -5 }
+							check_variable = {
+								var = ROOT.resource@tungsten 
+								value = -20
+								compare = greater_than_or_equals
+							}
+						}
+						remove_ideas = tungsten_shortage_1
+						remove_ideas = tungsten_shortage_2
+						remove_ideas = tungsten_shortage_3
+						remove_ideas = tungsten_shortage_4
+					}
+					else_if = {
+						limit = {
+							check_variable = {  ROOT.resource@tungsten < -4 }
+							check_variable = {
+								var = ROOT.resource@tungsten 
+								value = -20
+								compare = greater_than_or_equals
+							}
+						}
+						add_ideas = tungsten_shortage_1
+						remove_ideas = tungsten_shortage_2
+						remove_ideas = tungsten_shortage_3
+						remove_ideas = tungsten_shortage_4
+					}
+					else_if = {
+						limit = {
+							check_variable = {  ROOT.resource@tungsten < -20 }
+							check_variable = {
+								var = ROOT.resource@tungsten 
+								value = -50
+								compare = greater_than_or_equals
+							}
+						}
+						add_ideas = tungsten_shortage_2
+						remove_ideas = tungsten_shortage_1
+						remove_ideas = tungsten_shortage_3
+						remove_ideas = tungsten_shortage_4
+					}
+					else_if = {
+						limit = {
+							check_variable = {  ROOT.resource@tungsten < -50 }
+							check_variable = {
+								var = ROOT.resource@tungsten 
+								value = -100
+								compare = greater_than_or_equals
+							}
+						}
+						add_ideas = tungsten_shortage_3
+						remove_ideas = tungsten_shortage_1
+						remove_ideas = tungsten_shortage_2
+						remove_ideas = tungsten_shortage_4
+					}
+					else_if = {
+						limit = {
+							check_variable = {  ROOT.resource@tungsten < -100 }
+						}
+						add_ideas = tungsten_shortage_4
+						remove_ideas = tungsten_shortage_1
+						remove_ideas = tungsten_shortage_2
+						remove_ideas = tungsten_shortage_3
+					}
+				}
+			}
+		}
+	}
+
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM = { tag = TUR }
+					ROOT = { 
+						OR = {
+							is_in_faction_with = ENG 
+							tag = ENG
+						}
+					}
+					FROM.FROM = {
+						has_state_flag = TUR_arab_state
+					}
+				}
+				FROM.FROM = {  
+				 	set_state_flag = ENG_arab_state
+				 	clr_state_flag = TUR_arab_state
+				}
+		 		TUR = {
+		 			TUR_arab_nat_increase = yes 
+		 		}
+			}
+		}
+	}
+	
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							is_in_faction_with = ENG
+							tag = ENG
+						}
+					}
+					ROOT = { 
+						OR = {
+							is_in_faction_with = TUR
+							tag = TUR
+						}
+					}
+					FROM.FROM = {
+						has_state_flag = ENG_arab_state
+					}
+				}
+				FROM.FROM = {  
+				 	set_state_flag = TUR_arab_state
+				 	clr_state_flag = ENG_arab_state
+				}
+		 		TUR = {
+		 			TUR_arab_nat_decrease = yes 
+		 		}
+			}
+		}
+	}
+	
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							is_in_faction_with = ENG
+							tag = ENG
+						}
+					}
+					ROOT = { 
+						OR = {
+							is_in_faction_with = TUR
+							tag = TUR
+						}
+					}
+					FROM.FROM = {
+						has_state_flag = ENG_suez_canal
+					}
+				}
+				FROM.FROM = {  
+				 	set_state_flag = TUR_suez_canal
+				 	clr_state_flag = ENG_suez_canal
+				}
+		 		ENG = {
+		 			if = {
+						limit = { has_idea = ENG_empire_idea }
+						swap_ideas = {
+							remove_idea = ENG_empire_idea
+							add_idea = ENG_empire_idea_cap
+						}
+					}
+					else_if = {
+						limit = { has_idea = ENG_empire_idea_2 }
+						swap_ideas = {
+							remove_idea = ENG_empire_idea_2
+							add_idea = ENG_empire_idea_2_cap
+						}
+					}
+		 		}
+			}
+		}
+	}
+
+	on_state_control_changed = {
+		effect = {
+			if = {
+				limit = {
+					FROM = {
+						OR = {
+							is_in_faction_with = TUR
+							tag = TUR
+						}
+					}
+					ROOT = { 
+						OR = {
+							is_in_faction_with = ENG
+							tag = ENG
+						}
+					}
+					FROM.FROM = {
+						has_state_flag = TUR_suez_canal
+					}
+				}
+				FROM.FROM = {  
+				 	set_state_flag = ENG_suez_canal
+				 	clr_state_flag = TUR_suez_canal
+				}
+		 		ENG = {
+		 			if = {
+						limit = { has_idea = ENG_empire_idea_cap }
+						swap_ideas = {
+							remove_idea = ENG_empire_idea_cap
+							add_idea = ENG_empire_idea
+						}
+					}
+					else_if = {
+						limit = { has_idea = ENG_empire_idea_2_cap }
+						swap_ideas = {
+							remove_idea = ENG_empire_idea_2_cap
+							add_idea = ENG_empire_idea_2
+						}
+					}
+		 		}
+			}
+		}
+	}
+}

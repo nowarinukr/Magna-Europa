@@ -1,0 +1,126 @@
+characters={
+	SER_peter_i={
+		name="Peter I"
+		portraits={
+			civilian={
+				large="gfx/leaders/SER/portrait_peter_i.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits = { POL_soldier_king }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	SER_radomir_putnik={
+		name="Radomir Putnik"
+		portraits={
+			army={
+				large="gfx/leaders/SER/portrait_putnik.dds"
+			}
+		}
+		field_marshal={
+			traits={ bearer_of_artillery old_guard war_hero inflexible_strategist }
+			skill=4
+			attack_skill=3
+			defense_skill=5
+			planning_skill=3
+			logistics_skill=2
+			legacy_id=82002
+		}
+	}
+	SER_stepa_stepanovic={
+		name="Stepa Stepanović"
+		portraits={
+			army={
+				large="gfx/leaders/SER/portrait_stepanovic.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer harsh_leader }
+			skill=4
+			attack_skill=4
+			defense_skill=3
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=82003
+		}
+	}
+	SER_zivojin_misic={
+		name="Živojin Mišić"
+		portraits={
+			army={
+				large="gfx/leaders/SER/portrait_misic.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer inflexible_strategist }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=82004
+		}
+	}
+	SER_pavle_jurisic_sturm={
+		name="Pavle Jurišić Šturm"
+		portraits={
+			army={
+				large="gfx/leaders/SER/portrait_sturm.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer old_guard }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=82005
+		}
+	}
+	SER_petar_bojovic={
+		name="Petar Bojović"
+		portraits={
+			army={
+				large="gfx/leaders/SER/portrait_petar_bojovic.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery harsh_leader inflexible_strategist }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=82006
+		}
+	}
+	SER_pasic={
+		name="Nikola Pašić"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_pasic.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SER_pasic
+			allowed = {
+				original_tag = SER
+			}
+			available = {
+				has_completed_focus = SER_appoint_pasic
+			}
+			traits = {
+				prime_minister_cakmak
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

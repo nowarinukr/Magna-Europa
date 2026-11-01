@@ -1,0 +1,26 @@
+state={
+	id=1930
+	name="STATE_1930"
+			
+	history = {
+		owner = TUR
+		add_core_of = PAL
+		buildings = {
+			infrastructure = 2
+			arms_factory = 1
+			industrial_complex = 1
+		}
+		set_state_flag = TUR_arab_state
+	    victory_points = {
+		    15692 40 #Damascus
+		}
+	}
+	
+	provinces={
+		15692 
+	}
+	manpower=287435
+	state_category=city
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

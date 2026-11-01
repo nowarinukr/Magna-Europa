@@ -1,0 +1,20 @@
+state={
+	id=2316
+	name="STATE_2316"
+	provinces={
+		3314 5111 8812 
+	}
+	history={
+		owner = SOV
+		add_core_of = UKR
+		add_claim_by = POL
+		buildings = {
+			infrastructure = 2
+		}
+		add_core_of = SOV
+  	}
+	manpower=52000
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

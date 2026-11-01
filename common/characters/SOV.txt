@@ -1,0 +1,434 @@
+characters={
+	SOV_nikolas_ii={
+		name="Nikolay II"
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/portrait_tsar_nick.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={ unpopular_monarch }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	SOV_kerensky={
+		name="Alexander Kerensky"
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/portrait_kerensky.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			traits={  }
+			expire="1935.1.1.1"
+			id=-1
+		}
+		
+	}
+	SOV_lenin={
+		name="Vladimir Lenin"
+		portraits={
+			civilian={
+				large="gfx/leaders/SOV/portrait_lenin.dds"
+			}
+		}
+		country_leader={
+			ideology=marxism
+			traits={ revolutionary_council }
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	SOV_mikhail_alexeyev={
+		name="Mikhail Alexeyev"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_alexeyev.dds"
+			}
+		}
+		field_marshal={
+			traits={ infantry_officer career_officer war_hero }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=76321
+		}
+	}
+	SOV_nikolaevich={
+		name="Grand Duke Nicholas Nikolaevich"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_nikolaevich.dds"
+				small="gfx/interface/ideas/idea_nikolae.dds"
+			}
+		}
+		field_marshal={
+			traits={ cavalry_officer career_officer politically_connected old_guard }
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=76860
+		}
+		advisor={
+			slot = army_chief
+			idea_token = SOV_nikolaevich
+			can_be_fired = no
+			ledger = army
+			allowed = {
+				original_tag = SOV
+			}
+			visible = {
+				NOT = {
+					has_completed_focus = RUS_lessons_of_war
+				}
+			}
+			traits = {
+				army_chief_admin_1
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 1.500
+			}
+		}
+	}
+	SOV_nikolay_rouzski={
+		name="Nikolay Rouzski"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_ruzky.dds"
+			}
+		}
+		corps_commander={
+			traits={ career_officer harsh_leader politically_connected trait_cautious }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=76837
+		}
+	}
+	SOV_nikolay_baratov={
+		name="Nikolay Baratov"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_baratov.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer war_hero }
+			skill=3
+			attack_skill=4
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=77711
+		}
+	}
+	SOV_aleksei_brusilov={
+		name="Aleksei Brusilov"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_brusilov.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer war_hero career_officer trait_reckless brilliant_strategist }
+			skill=4
+			attack_skill=3
+			defense_skill=3
+			planning_skill=4
+			logistics_skill=3
+			legacy_id=76187
+		}
+	}
+	SOV_anton_denikin={
+		name="Anton Denikin"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_denikin.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery infantry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=76428
+		}
+	}
+	SOV_alexei_evert={
+		name="Alexei Evert"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_evert.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer }
+			skill=2
+			attack_skill=3
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=2
+			legacy_id=76431
+		}
+	}
+	SOV_nikolay_iudovich_ivanov={
+		name="Nikolay Iudovich Ivanov"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_ivanovich.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery war_hero old_guard }
+			skill=2
+			attack_skill=2
+			defense_skill=3
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=76696
+		}
+	}
+	SOV_alexey_kaledin={
+		name="Alexey Kaledin"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_kaledin.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=76546
+		}
+	}
+	SOV_aleksey_kuropatkin={
+		name="Aleksey Kuropatkin"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_kuropatkin.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer career_officer harsh_leader old_guard politically_connected }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=77712
+		}
+	}
+	SOV_platon_lechitsky={
+		name="Platon Lechitsky"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_lechitsky.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer war_hero harsh_leader trait_cautious inflexible_strategist }
+			skill=4
+			attack_skill=3
+			defense_skill=4
+			planning_skill=3
+			logistics_skill=3
+			legacy_id=77713
+		}
+	}
+	SOV_aleksandr_samsonov={
+		name="Aleksandr Samsonov"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_samsonov.dds"
+			}
+		}
+		corps_commander={
+			traits={ cavalry_officer career_officer politically_connected }
+			skill=1
+			attack_skill=1
+			defense_skill=1
+			planning_skill=1
+			logistics_skill=1
+			legacy_id=77166
+		}
+	}
+	SOV_vladimir_sakharov={
+		name="Vladimir Sakharov"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_samsonov.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer cavalry_officer }
+			skill=2
+			attack_skill=2
+			defense_skill=2
+			planning_skill=2
+			logistics_skill=1
+			legacy_id=77532
+		}
+	}
+	SOV_aleksandr_kolchak={
+		name="Aleksandr Kolchak"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_kolchak.dds"
+			}
+		}
+		country_leader={
+			ideology=despotism
+			traits={ veteran_anti_bolshevik }
+			expire="1935.1.1.1"
+			id=-1
+		}
+		navy_leader={
+			traits={ naval_lineage war_hero bold }
+			skill=3
+			attack_skill=3
+			defense_skill=3
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=80000
+		}
+	}
+	SOV_andrei_eberhardt={
+		name="Andrei Eberhardt"
+		portraits={
+			army={
+				large="gfx/leaders/SOV/portrait_eberhardt.dds"
+			}
+		}
+		navy_leader={
+			traits={ navy_career_officer gunnery_expert craven }
+			skill=2
+			attack_skill=2
+			defense_skill=1
+			maneuvering_skill=2
+			coordination_skill=2
+			legacy_id=0
+		}
+	}
+	SOV_rasputin={
+		name="Grigori Rasputin"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_rasputin.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOV_rasputin
+			can_be_fired = no
+			allowed = {
+				original_tag = SOV
+			}
+			visible = {
+				NOT = {
+					has_completed_focus = RUS_attack_dark_forces
+				}
+				NOT = {
+					has_country_flag = RUS_rasputin_dead
+				}
+			}
+			traits = {
+				mystic 
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+	SOV_stolypin={
+		name="Pyotr Stolypin"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_stolypin.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOV_stolypin
+			can_be_fired = no
+			allowed = {
+				original_tag = SOV
+			}
+			visible = {
+				NOT = {
+					has_country_flag = RUS_stolypin_dead
+				}
+			}
+			traits = {
+				industry_reformer 
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+	SOV_kokovtsov={
+		name="Vladimir Kokovtsov"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_SOV_generic_3.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = SOV_kokovtsov
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+				has_completed_focus = RUS_balance_budget
+			}
+			traits = {
+				financial_expert 
+			}
+			ai_will_do = {
+				factor = 0.500
+			}
+		}
+	}
+	SOV_ulyanin={
+		name="Sergey Ulyanin"
+		portraits={
+			army={
+				small="GFX_GER_generic_land_9"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = SOV_ulyanin
+			allowed = {
+				original_tag = SOV
+			}
+			available = {
+				has_completed_focus = RUS_found_air_service
+			}
+			traits = {
+				air_chief_reform_2
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

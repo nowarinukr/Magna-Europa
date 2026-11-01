@@ -1,0 +1,497 @@
+﻿capital = 119
+
+starting_train_buffer = 2.0
+set_convoys = 100
+
+set_politics = {
+    ruling_party = neutrality
+    last_election = "1912.9.1"
+    election_frequency = 60
+    elections_allowed = yes
+}
+set_popularities = {
+    democratic = 10
+    fascism = 0
+    communism = 15
+    neutrality = 75
+}
+
+set_research_slots = 3
+set_stability = 1.0
+set_war_support = 1.0
+set_variable = { RUS_1905_timer = 365 }
+set_variable = { RUS_revolution_anger = 0 }
+set_variable = { SOV_mob_timer = 30 }
+
+# Starting tech
+set_technology = {
+	infantry_weapon_1 = 1
+	infantry_weapon_2 = 1
+	machine_gun = 1
+	horse_equipment = 1
+	light_field_gun1 = 1
+	light_field_gun2 = 1
+	heavy_field_gun1 = 1
+	heavy_field_gun2 = 1
+
+	tech_support = 1
+	tech_engineers = 1
+
+	basic_industry = 1
+
+	# Navy
+	early_ship_hull_light = 1
+	basic_ship_hull_light = 1
+	early_ship_hull_submarine = 1
+	early_ship_hull_cruiser = 1
+	early_ship_hull_heavy = 1
+	basic_ship_hull_heavy = 1
+	improved_ship_hull_heavy = 1
+	basic_battery = 1
+	basic_light_battery = 1
+	basic_heavy_battery = 1
+	basic_secondary_battery = 1
+	improved_secondary_battery = 1
+	basic_torpedo = 1
+	armor_scheme_1 = 1
+	armor_scheme_2 = 1
+	armor_scheme_3 = 1
+	damage_control_1 = 1
+	basic_engines = 1
+	engines_2 = 1
+	engines_3 = 1
+	mtg_transport = 1
+}
+
+set_naval_oob = "SOV_navy"
+oob = "SOV_1910"
+
+recruit_character = SOV_nikolas_ii
+recruit_character = SOV_mikhail_alexeyev
+recruit_character = SOV_nikolaevich
+recruit_character = SOV_nikolay_rouzski
+recruit_character = SOV_nikolay_baratov
+recruit_character = SOV_aleksei_brusilov
+recruit_character = SOV_anton_denikin
+recruit_character = SOV_alexei_evert
+recruit_character = SOV_nikolay_iudovich_ivanov
+recruit_character = SOV_alexey_kaledin
+recruit_character = SOV_aleksey_kuropatkin
+recruit_character = SOV_platon_lechitsky
+recruit_character = SOV_aleksandr_samsonov
+recruit_character = SOV_vladimir_sakharov
+recruit_character = SOV_aleksandr_kolchak
+recruit_character = SOV_andrei_eberhardt
+recruit_character = SOV_rasputin
+recruit_character = SOV_stolypin
+recruit_character = SOV_kokovtsov
+recruit_character = SOV_kerensky
+recruit_character = SOV_lenin
+recruit_character = SOV_ulyanin
+
+set_variable = { SOV_unique_cap = 6 }
+
+add_ideas = {
+	limited_conscription
+	low_economic_mobilisation
+	RUS_mob_1
+	RUS_ghost_of_tsushima
+	RUS_forts_maintenance
+	RUS_oversized_reserves
+	RUS_army_factionalism
+	RUS_political_instability
+	SOV_rasputin
+	SOV_stolypin
+	SOV_nikolaevich
+}
+
+#### SUBS ####
+create_equipment_variant = {
+	name = "Osetr/Karp/Kaiman Class"
+	type = ship_hull_submarine_1
+	name_group = SOV_SS_SHCHUKA
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_torpedo_slot = ship_torpedo_sub_1
+		fixed_ship_engine_slot = sub_ship_engine_1
+	}
+}
+
+#### DESTROYERS ####
+create_equipment_variant = {
+	name = "Pre-1905 Destroyer"
+	type = ship_hull_light_1
+	name_group = SOV_DD_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = light_ship_engine_coal_1
+		fixed_ship_torpedo_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "1905 Destroyer"
+	type = ship_hull_light_2
+	name_group = SOV_DD_HISTORICAL
+	parent_version = 0
+	modules = {
+		fixed_ship_battery_slot = ship_light_secondaries_1
+		fixed_ship_anti_air_slot = empty
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = light_ship_engine_coal_1
+		fixed_ship_torpedo_slot = ship_torpedo_1
+		mid_1_custom_slot = ship_light_secondaries_1
+	}
+}
+
+#### PROTECTED CRUISERS ####
+create_equipment_variant = {
+	name = "Pallada Class"
+	type = ship_hull_cruiser_protected
+	name_group = SOV_CL_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_armor_slot = ship_armor_cruiser_1
+		fixed_ship_secondaries_slot = ship_light_battery_1
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Askold Class"
+	type = ship_hull_cruiser_protected
+	name_group = SOV_CL_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_1
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Bogatyr Class"
+	type = ship_hull_cruiser_protected
+	name_group = SOV_CL_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_3
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_armor_slot = ship_armor_cruiser_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Zemchang Class"
+	type = ship_hull_cruiser_protected
+	name_group = SOV_CL_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_light_battery_2
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_armor_slot = ship_armor_cruiser_2
+		fixed_ship_secondaries_slot = empty
+		fixed_ship_anti_air_slot = ship_light_secondaries_1
+		front_1_custom_slot = ship_torpedo_1
+	}
+}
+
+#### ARMOURED CRUISERS ####
+create_equipment_variant = {
+	name = "Gromoboi Class"
+	type = ship_hull_cruiser_armoured
+	name_group = SOV_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_2
+		fixed_ship_armor_slot = ship_armor_cruiser_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		mid_1_custom_slot = ship_light_secondaries_2
+		rear_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Bayan Class"
+	type = ship_hull_cruiser_armoured
+	name_group = SOV_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_1
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_armor_slot = ship_armor_cruiser_4
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = empty
+		mid_1_custom_slot = ship_light_secondaries_2
+		rear_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Rurik Class"
+	type = ship_hull_cruiser_armoured
+	name_group = SOV_CA_HISTORICAL
+	parent_version = 0
+	obsolete = yes
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_2
+		fixed_ship_fire_control_system_slot = empty
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = cruiser_ship_engine_coal_3
+		fixed_ship_armor_slot = ship_armor_cruiser_3
+		fixed_ship_secondaries_slot = ship_light_battery_3
+		fixed_ship_anti_air_slot = ship_light_battery_3
+		mid_1_custom_slot = ship_light_secondaries_1
+		rear_1_custom_slot = ship_torpedo_1
+	}
+}
+
+#### BATTLESHIPS ####
+create_equipment_variant = {
+	name = "Petr Veliky Class"
+	type= ship_hull_ironclad 
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_medium_battery_2
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty 
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Ekaterina II Class"
+	type= ship_hull_ironclad
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_1
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_1
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Imperator Aleksandr II Class"
+	type= ship_hull_heavy_0
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_1
+		front_1_custom_slot = ship_secondaries_1 
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Dvenadsat Apostolov Class"
+	type= ship_hull_heavy_0
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_1
+		front_1_custom_slot = ship_secondaries_1 
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Tri Sviatitelia Class"
+	type= ship_hull_heavy_0
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_2
+		front_1_custom_slot = ship_secondaries_1 
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Rostislav Class"
+	type= ship_hull_heavy_0
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_1
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_2
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Potemkin Class"
+	type= ship_hull_heavy_0
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		front_1_custom_slot = ship_secondaries_1 
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Tsesarevich Class"
+	type= ship_hull_heavy_0
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = heavy_ship_applique_1
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_2
+		front_1_custom_slot = ship_secondaries_1 
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Borodino Class"
+	type= ship_hull_heavy_0
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_2
+		front_1_custom_slot = ship_secondaries_1 
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Evstafi Class"
+	type= ship_hull_heavy_0
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_1
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_2
+		fixed_ship_armor_slot = ship_armor_bb_3
+		front_1_custom_slot = ship_secondaries_1
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Andrei Pervozvanny Class"
+	type= ship_hull_heavy_0
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_heavy_battery_3
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_2
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+create_equipment_variant = {
+	name = "Gangut Class"
+	type= ship_hull_heavy_1
+	name_group = SOV_BB_HISTORICAL
+	parent_version = 0  
+	modules = {
+		fixed_ship_battery_slot = ship_super_heavy_battery_2
+		fixed_ship_fire_control_system_slot = empty 
+		fixed_ship_radar_slot = empty
+		fixed_ship_engine_slot = heavy_ship_engine_coal_5
+		fixed_ship_secondaries_slot = ship_secondaries_2
+		fixed_ship_anti_air_slot = ship_secondaries_1
+		fixed_ship_armor_slot = ship_armor_bb_3
+		mid_1_custom_slot = ship_torpedo_1
+	}
+}
+
+
+

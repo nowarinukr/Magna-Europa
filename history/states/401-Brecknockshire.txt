@@ -1,0 +1,21 @@
+state={
+	id=401
+	name="STATE_401"
+	resources={
+		aluminium = 150
+	}
+	history={
+		owner = ENG
+		add_core_of = ENG
+		buildings = {
+			infrastructure = 4
+		}
+		 
+	}
+	provinces={
+		5253 5780 
+	}
+	manpower=53100
+	buildings_max_level_factor=1.000
+	state_category = pastoral
+}

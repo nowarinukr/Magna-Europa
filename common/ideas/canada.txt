@@ -1,0 +1,175 @@
+ideas={
+	country={
+		CAN_militia = {
+			ledger = army
+			picture = chi_army_corruption
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				army_org_factor = -0.1
+				experience_gain_army_unit_factor = -0.25
+				minimum_training_level = -0.1
+				training_time_factor = -0.1
+				conscription_factor = 0.2
+			}
+		}
+		
+		CAN_frontier = {
+			picture = generic_exploit_mines
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				country_resource_steel = 200
+				country_resource_chromium = 50
+				country_resource_tungsten = 50
+			}
+		}
+
+		CAN_us_trade = {
+			picture = generic_flexible_foreign_policy
+			allowed = {
+				TAG = CAN
+			}
+			targeted_modifier = {
+				tag = USA
+				trade_cost_for_target_factor = -0.5
+			}
+			modifier = {
+				min_export = 0.1
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		CAN_national_policy_idea = {
+			picture = can_defence_of_canada_regulations_democratic
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				global_building_slots_factor = 0.2
+			}
+		}
+
+		CAN_national_policy_idea_2 = {
+			picture = can_defence_of_canada_regulations_democratic
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				local_resources_factor = 0.05
+				global_building_slots_factor = 0.2
+				monthly_population = 0.5
+			}
+		}
+		
+		CAN_national_policy_idea_3 = {
+			picture = can_defence_of_canada_regulations_democratic
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				production_speed_buildings_factor = 0.05
+				local_resources_factor = 0.05
+				global_building_slots_factor = 0.2
+				monthly_population = 0.5
+				consumer_goods_factor = -0.05
+			}
+		}
+		
+		CAN_british_loans_idea = {
+			picture = generic_economic_increase
+			allowed = {
+				TAG = CAN
+			}
+			targeted_modifier = {
+				tag = ENG
+				trade_cost_for_target_factor = -0.25
+			}
+			modifier = {
+				consumer_goods_factor = -0.1
+				political_power_cost = 0.5
+			}
+		}
+
+		CAN_national_research_idea = {
+			picture = generic_research_bonus
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				research_speed_factor = 0.15
+				political_power_cost = 0.1
+			}
+		}
+		
+		CAN_officer_training = {
+			picture = brittish_stoicism
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				experience_gain_factor = 0.25
+				promote_cost_factor = -0.5
+				field_officer_promotion_penalty = -0.25
+				command_power_gain_mult = -0.25
+			}
+		}
+
+		CAN_expeditionary_force = {
+			picture = eng_imperial_conscription
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				experience_gain_army_factor = 0.1
+				land_doctrine_cost_factor = -0.05
+				army_org_factor = 0.1
+				experience_loss_factor = -0.2
+				minimum_training_level = 0.1
+				training_time_factor = 0.2
+				army_strength_factor = 0.2
+			}
+		}
+		
+		CAN_expeditionary_force_2 = {
+			picture = eng_imperial_conscription
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				experience_gain_army_factor = 0.25
+				land_doctrine_cost_factor = -0.2
+				army_org_factor = 0.1
+				experience_loss_factor = -0.35
+				minimum_training_level = 0.1
+				training_time_factor = 0.2
+				army_strength_factor = 0.2
+			}
+		}
+		
+		CAN_expeditionary_force_3 = {
+			picture = eng_imperial_conscription
+			allowed = {
+				TAG = CAN
+			}
+			modifier = {
+				experience_gain_army_factor = 0.25
+				land_doctrine_cost_factor = -0.2
+				army_org_factor = 0.1
+				experience_loss_factor = -0.35
+				minimum_training_level = 0.1
+				training_time_factor = 0.2
+				army_strength_factor = 0.2
+			}
+			targeted_modifier = {
+				tag = ENG
+				license_production_speed = 0.1
+				license_tech_difference_speed = 0.1
+			}
+		}
+	}
+}

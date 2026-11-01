@@ -1,0 +1,27 @@
+
+state={
+	id=1756
+	name="STATE_1756"
+	provinces={
+		4903 8499 9016 12902 12915 12953 20741 
+	}
+	history={
+	    owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 4
+			arms_factory = 1
+			industrial_complex = 2
+		}
+		
+		
+		victory_points = {
+			12953 5 #Kaiserslautern
+		}
+
+    }
+	manpower=167928
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = large_town
+}

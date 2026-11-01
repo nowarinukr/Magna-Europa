@@ -1,0 +1,106 @@
+﻿
+###################################################################
+
+division_template = {
+	name = "Permanent Force"
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		cavalry = { x = 0 y = 1 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }
+	}
+}
+
+division_template = {
+	name = "ANZAC Corps"
+	template_counter = 3
+	is_locked = yes
+	force_allow_recruiting = yes
+	division_cap = 0
+
+	regiments = { 
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = { 
+		anzac_bat = { x = 0 y = 0 }
+		artillery_big = { x = 0 y = 1 }
+	}
+}
+
+division_template = {
+	name = "Militia Force"
+	is_locked = yes
+	priority = 0
+	is_locked = yes
+	
+	regiments = {
+		reserves = { x = 0 y = 0 }
+		reserves = { x = 0 y = 1 }
+		reserves = { x = 0 y = 2 }
+	}
+}
+
+###################################################################
+
+units = {
+	
+	division= {
+		location = 19366
+		division_template="Permanent Force"
+		start_experience_factor=0.2
+	}
+	
+	division= {
+		location = 19366
+		division_template="Militia Force"
+		start_experience_factor=0.1
+	}
+
+	division= {
+		location = 19366
+		division_template="Militia Force"
+		start_experience_factor=0.1
+	}
+
+	division= {
+		location = 19366
+		division_template="Militia Force"
+		start_experience_factor=0.1
+	}
+
+	division= {
+		location = 19366
+		division_template="Militia Force"
+		start_experience_factor=0.1
+	}
+
+	division= {
+		location = 19366
+		division_template="Militia Force"
+		start_experience_factor=0.1
+	}
+
+	division= {
+		location = 19366
+		division_template="Militia Force"
+		start_experience_factor=0.1
+	}
+}
+
+instant_effect = {
+    add_equipment_production = { equipment = { type = infantry_equipment_2 creator = "CAN" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = support_equipment_1 creator = "CAN"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = horse_equipment_0 creator = "CAN"  } requested_factories = 1 progress = 0.1 efficiency = 50 }
+    add_equipment_production = { equipment = { type = light_field_gun_equipment_2 creator = "CAN" } requested_factories = 1 progress = 0.1 efficiency = 50 }
+}

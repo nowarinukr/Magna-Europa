@@ -1,0 +1,26 @@
+
+state={
+	id=671
+	name="STATE_671"
+	provinces={
+		2569 2788 19915 
+	}
+	history={
+		owner = SOV
+		add_core_of = SOV
+		add_core_of = UKR
+		add_claim_by = POL
+		buildings = {
+			infrastructure = 3
+			arms_factory = 1
+			industrial_complex = 1
+		}
+        victory_points = {
+            19915 10
+        }
+  	}
+	manpower=268060
+	buildings_max_level_factor=1.000
+	state_category=town
+	local_supplies=0.000
+}

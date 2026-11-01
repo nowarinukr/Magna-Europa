@@ -1,0 +1,21 @@
+
+state={
+	id=2213
+	name="STATE_2213"
+	history = {
+		owner = TUR
+		add_core_of = PAL
+		buildings = {
+			infrastructure = 3
+		}
+		
+		
+	}
+	provinces={
+		9665 18586 19077 
+	}
+	manpower=33022
+	buildings_max_level_factor=1.000
+	state_category=pastoral
+	local_supplies=0.000
+}

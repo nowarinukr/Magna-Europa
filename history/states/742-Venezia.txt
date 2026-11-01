@@ -1,0 +1,26 @@
+
+state={
+	id=742
+	name="STATE_742"
+	history = {
+		owner = ITA
+		add_core_of = ITA
+		
+		buildings = {
+			infrastructure = 4
+			industrial_complex = 2
+			dockyard = 1
+			20051 = { naval_base = 6 }
+			547 = { naval_base = 5 }
+		}
+		victory_points = { 20051 20 }
+		#victory_points = { 20005 5 }
+	}
+	provinces={
+		547 9040 14252 14271 20005 20051 20052 
+	}
+	manpower=329100
+	buildings_max_level_factor=1.000
+	state_category=large_city
+	local_supplies=0.000
+}

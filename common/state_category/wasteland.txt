@@ -1,0 +1,11 @@
+state_categories={
+	wasteland = {
+		local_building_slots = 0
+		state_production_speed_buildings_factor = -10
+		local_manpower = -10
+		resistance_target = -1
+		required_garrison_factor = 0
+		color = { 40 40 40 }
+
+	}
+}

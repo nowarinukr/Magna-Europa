@@ -1,0 +1,20 @@
+state={
+	id=2462
+	name="STATE_2462"
+	provinces={
+		16081 17988 18114 18188 
+	}
+	history = {
+		owner = CZE
+		add_core_of = CZE
+
+		buildings = {
+			infrastructure = 3
+		}
+		
+	}
+	manpower=5000000
+	state_category = wasteland
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

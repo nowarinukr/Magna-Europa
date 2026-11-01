@@ -1,0 +1,17 @@
+################
+#### BULGARIA ####
+################
+
+MIL_command_category = {
+	priority = 100
+
+	icon = SOV_propaganda
+
+	scripted_gui = MIL_command_ui
+
+	allowed = {
+		is_ai = no
+	}
+
+	visible_when_empty = no
+}

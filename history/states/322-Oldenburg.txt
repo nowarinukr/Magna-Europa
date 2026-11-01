@@ -1,0 +1,27 @@
+
+state={
+	id=322
+	name="STATE_322"
+	provinces={
+		1716 8727 11324 11372 11405 11463 
+	}
+	history={
+		owner = GER
+		add_core_of = GER
+		buildings = {
+			infrastructure = 3
+			dockyard = 2
+		}
+		
+        victory_points = {
+            11372 2 #Oldenburg
+        }
+        victory_points = {
+            8727 2 #Delmenhorst
+        }
+    }
+	manpower=226224
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+	state_category = rural
+}

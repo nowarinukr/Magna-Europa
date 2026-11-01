@@ -1,0 +1,22 @@
+state={
+	id=2801
+	name="STATE_2801"
+	provinces={
+		9055 
+	}
+	history={
+		owner = SER
+		
+		add_core_of = SER
+		buildings = {
+			infrastructure = 2
+
+		}
+		 
+
+	}
+	manpower=804
+	state_category=enclave
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

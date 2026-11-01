@@ -1,0 +1,189 @@
+characters={
+	ROM_ferdinand_i={
+		name="Ferdinand I"
+		portraits={
+			civilian={
+				large="gfx/leaders/ROM/portrait_ferdinand_i.dds"
+			}
+		}
+		country_leader={
+			ideology=conservatism
+			expire="1935.1.1.1"
+			id=-1
+		}
+	}
+	ROM_carol_i={
+		name="Carol I"
+		portraits={
+			civilian={
+				large="gfx/leaders/ROM/portrait_carol_i.dds"
+			}
+		}
+		country_leader={
+			traits = { popular_figurehead2 }
+			ideology=conservatism
+			expire="1914.10.10.1"
+			id=-1
+		}
+	}
+	ROM_alexandru_averescu={
+		name="Alexandru Averescu"
+		portraits={
+			army={
+				large="gfx/leaders/ROM/portrait_averescu.dds"
+			}
+		}
+		field_marshal={
+			traits={ cavalry_officer harsh_leader old_guard }
+			skill=3
+			attack_skill=1
+			defense_skill=4
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=92102
+		}
+	}
+	ROM_ioan_culcer={
+		name="Ioan Culcer"
+		portraits={
+			army={
+				large="gfx/leaders/ROM/portrait_culcer.dds"
+			}
+		}
+		corps_commander={
+			traits={ engineer_officer old_guard career_officer }
+			skill=3
+			attack_skill=2
+			defense_skill=4
+			planning_skill=1
+			logistics_skill=3
+			legacy_id=92104
+		}
+	}
+	ROM_constantin_prezan={
+		name="Constantin Prezan"
+		portraits={
+			army={
+				large="gfx/leaders/ROM/portrait_prezan.dds"
+			}
+		}
+		corps_commander={
+			traits={ engineer_officer inflexible_strategist }
+			skill=4
+			attack_skill=3
+			defense_skill=5
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=92101
+		}
+	}
+	ROM_artur_vaitoianu={
+		name="Artur Vaitoianu"
+		portraits={
+			army={
+				large="gfx/leaders/ROM/portrait_vaitoianu.dds"
+			}
+		}
+		corps_commander={
+			traits={ infantry_officer inflexible_strategist }
+			skill=3
+			attack_skill=2
+			defense_skill=3
+			planning_skill=2
+			logistics_skill=3
+			legacy_id=92105
+		}
+	}
+	ROM_eremia_grigorescu={
+		name="Eremia Grigorescu"
+		portraits={
+			army={
+				large="gfx/leaders/ROM/portrait_grigorescu.dds"
+			}
+		}
+		corps_commander={
+			traits={ bearer_of_artillery career_officer }
+			skill=4
+			attack_skill=4
+			defense_skill=5
+			planning_skill=2
+			logistics_skill=2
+			legacy_id=92106
+		}
+	}
+	ROM_gavanescu={
+		name="Constantin Găvănescu"
+		portraits={
+			army={
+				small="GFX_generic_air_arab_1"
+			}
+		}
+		advisor={
+			slot = air_chief
+			idea_token = ROM_gavanescu
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+				has_completed_focus = ROM_found_air_corps
+			}
+			traits = {
+				air_chief_reform_1
+			}
+			cost = 50
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	ROM_peter_carp={
+		name="Petre P. Carp"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_carp.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ROM_peter_carp
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+				has_completed_focus = ROM_appoint_conservatives
+			}
+			traits = {
+				prime_minister_menderes
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+	ROM_ion_bratianu={
+		name="Ion I. C. Brătianu"
+		portraits={
+			army={
+				small="gfx/interface/ideas/idea_bratianu.dds"
+			}
+		}
+		advisor={
+			slot = political_advisor
+			idea_token = ROM_ion_bratianu
+			allowed = {
+				original_tag = ROM
+			}
+			available = {
+				has_completed_focus = ROM_appoint_liberals
+			}
+			traits = {
+				prime_minister_cakmak
+			}
+			cost = 100
+			ai_will_do = {
+				factor = 2.000
+			}
+		}
+	}
+}

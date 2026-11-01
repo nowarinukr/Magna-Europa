@@ -1,0 +1,26 @@
+
+state={
+	id=2813
+	name="STATE_2813"
+	provinces={
+		2924 14523 16109 
+	}
+	history={
+		owner = AUS
+		add_core_of = SER
+		buildings = {
+			infrastructure = 3
+
+		}
+		set_compliance = 25
+		
+		victory_points = {
+			2924 5 
+		}
+
+	}
+	manpower=68390
+	state_category=pastoral
+	buildings_max_level_factor=1.000
+	local_supplies=0.000
+}

@@ -1,0 +1,2193 @@
+unit_upgrades = {
+	TUR_uu_engineer = {
+		icon = generic_military
+
+		allowed = {
+			tag = TUR
+		}
+
+		visible = {
+			NOT = {
+				has_country_flag = TUR_uu_upgraded
+			}
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			add_units_to_division_template = {
+				template_name = "Al-Tirabin Tugayı"
+				support = {
+					engineer = 0
+				}
+			}
+			set_temp_variable = { temp = 100 }
+			set_temp_variable = { total_unit = num_battalions_with_type@camel_bat }
+			multiply_temp_variable = { total_unit = temp }
+			custom_effect_tooltip = engineer_upgrade_tt
+			set_country_flag = TUR_uu_upgraded
+		}
+	}
+
+	TUR_uu_expand = {
+		icon = generic_military
+
+		allowed = {
+			tag = TUR
+		}
+
+		visible = {
+		}
+
+		fire_only_once = yes
+
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+		
+		complete_effect = {
+			add_to_variable = { TUR_unique_cap = 4 }
+			set_division_template_cap = { 
+				division_template = "Al-Tirabin Tugayı"
+				division_cap = 6
+			}
+		}
+	}
+}
+operations = {
+	TUR_update_training = {
+
+		icon = generic_reorganize_irregulars
+		allowed = {
+			tag = TUR
+		}
+		available = {
+			NOT = {
+				has_country_flag = mobilised_flag
+			}
+			has_completed_focus = TUR_reform_reserve_army
+		}
+	
+		visible = {
+			has_completed_focus = TUR_domestic_focus
+		}
+		
+		custom_cost_trigger = {
+			command_power > 99
+		}
+		custom_cost_text = decision_cost_CP_100
+	
+		fire_only_once = yes
+	
+		days_remove = 365
+		
+		modifier = {
+			training_time_factor = 1.0
+			command_power_gain_mult = -0.5
+			industrial_capacity_factory = -0.15
+		}
+		
+		complete_effect = {
+			set_country_flag = TUR_mob_updating
+		}
+		
+		remove_effect = {
+			set_country_flag = TUR_mob_updated
+			clr_country_flag = TUR_mob_updating
+			custom_effect_tooltip = TUR_update_training_tt
+		}
+	}
+}
+economy_decisions = {
+	TUR_bav_dockyards = {
+
+		icon = generic_construction
+		allowed = {
+			tag = TUR
+		}
+		available = {
+			has_completed_focus = TUR_naval_purchases
+			num_of_civilian_factories_available_for_projects > 5
+		}
+	
+		visible = {
+			has_completed_focus = TUR_foreign_support
+		}
+		
+		cost = 10
+	
+		days_remove = -1
+
+		cancel_trigger = {
+			num_of_civilian_factories_available_for_projects < 1
+		}
+		
+		modifier = {
+			civilian_factory_use = 5
+			political_power_cost = 0.1
+		}
+		
+		complete_effect = {
+			add_offsite_building = { type = dockyard level = 5 }
+		}
+		
+		cancel_effect = {
+			add_offsite_building = { type = dockyard level = -5 }
+		}
+	}
+
+	TUR_vulcan_dockyards = {
+
+		icon = generic_construction
+		allowed = {
+			tag = TUR
+		}
+		available = {
+			has_completed_focus = TUR_naval_purchases
+			num_of_civilian_factories_available_for_projects > 5
+		}
+	
+		visible = {
+			has_completed_focus = TUR_foreign_support
+		}
+		
+		cost = 10
+	
+		days_remove = -1
+
+		cancel_trigger = {
+			num_of_civilian_factories_available_for_projects < 1
+		}
+		
+		modifier = {
+			civilian_factory_use = 5
+			political_power_cost = 0.1
+		}
+		
+		complete_effect = {
+			add_offsite_building = { type = dockyard level = 5 }
+		}
+		
+		cancel_effect = {
+			add_offsite_building = { type = dockyard level = -5 }
+		}
+	}
+
+	TUR_skoda_purchases = {
+
+		icon = ger_military_buildup
+		allowed = {
+			tag = TUR
+		}
+		available = {
+			has_completed_focus = TUR_skoda_deals
+			num_of_civilian_factories_available_for_projects > 10
+		}
+	
+		visible = {
+			has_completed_focus = TUR_foreign_support
+		}
+		
+		cost = 50
+	
+		days_remove = 180
+
+		days_re_enable = 90
+		
+		modifier = {
+			civilian_factory_use = 10
+			political_power_cost = 0.25
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = light_field_gun_equipment_2
+				amount = 200
+				producer = CZE
+			}
+		}
+	}
+
+	TUR_krupp_purchases = {
+
+		icon = ger_military_buildup
+		allowed = {
+			tag = TUR
+		}
+		available = {
+			has_completed_focus = TUR_skoda_deals
+			num_of_civilian_factories_available_for_projects > 10
+		}
+	
+		visible = {
+			has_completed_focus = TUR_foreign_support
+		}
+		
+		cost = 50
+	
+		days_remove = 180
+
+		days_re_enable = 90
+		
+		modifier = {
+			civilian_factory_use = 10
+			political_power_cost = 0.25
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = heavy_field_gun_equipment_2
+				amount = 50
+				producer = GER
+			}
+		}
+	}
+
+	TUR_mauser_purchases = {
+
+		icon = ger_military_buildup
+		allowed = {
+			tag = TUR
+		}
+		available = {
+			has_completed_focus = TUR_skoda_deals
+			num_of_civilian_factories_available_for_projects > 10
+		}
+	
+		visible = {
+			has_completed_focus = TUR_foreign_support
+		}
+		
+		cost = 50
+	
+		days_remove = 180
+
+		days_re_enable = 90
+		
+		modifier = {
+			civilian_factory_use = 10
+			political_power_cost = 0.25
+		}
+		
+		remove_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_2
+				amount = 10000
+				producer = AUS
+			}
+			add_equipment_to_stockpile = {
+				type = machine_gun_equipment_0
+				amount = 150
+				producer = AUS
+			}
+		}
+	}
+
+	TUR_foreign_investors_1 = {
+
+		icon = eng_ally_imperialist_coup
+
+		available = {
+			has_completed_focus = TUR_seize_assets
+		}
+
+		days_mission_timeout = TUR_investor_days
+		fire_only_once = no
+		
+		is_good = yes
+
+		activation = {
+			tag = TUR
+			NOT = {
+				has_completed_focus = TUR_seize_assets
+			}
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					has_completed_focus = TUR_encourage_military_investments
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = no
+						}
+						is_core_of = TUR
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+						is_core_of = TUR
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	TUR_foreign_investors_2 = {
+
+		icon = eng_ally_imperialist_coup
+
+		available = {
+			has_completed_focus = TUR_seize_assets
+		}
+
+		days_mission_timeout = TUR_investor_days
+		fire_only_once = no
+		
+		is_good = yes
+
+		activation = {
+			tag = TUR
+			NOT = {
+				has_completed_focus = TUR_seize_assets
+			}
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					has_completed_focus = TUR_encourage_military_investments
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = no
+						}
+						is_core_of = TUR
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+						is_core_of = TUR
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+
+	TUR_foreign_investors_3 = {
+
+		icon = eng_ally_imperialist_coup
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = TUR_investor_days
+		fire_only_once = no
+		
+		is_good = yes
+
+		activation = {
+			tag = TUR
+			has_completed_focus = TUR_increased_monopolies
+		}
+
+		timeout_effect = {
+			if = {
+				limit = {
+					has_completed_focus = TUR_encourage_military_investments
+				}
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = arms_factory
+							size > 0
+							include_locked = no
+						}
+						is_core_of = TUR
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			else = {
+				random_owned_controlled_state = {
+					limit = {
+						free_building_slots = {
+							building = industrial_complex
+							size > 0
+							include_locked = no
+						}
+						is_core_of = TUR
+					}
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+		}
+	}
+}
+balkan_wars = {
+	TUR_intervene_second_balkan = {
+		icon = generic_operation
+
+		allowed = {
+			tag = TUR
+		}
+
+		available = {
+			OR = {
+				SER = {
+					has_war_with = BUL
+				}
+				GRE = {
+					has_war_with = BUL
+				}
+			}
+		}
+		
+		visible = {
+			NOT = {
+				has_global_flag = balkan_ottoman_victory
+				has_global_flag = balkan_stalemate_flag
+			}
+		}
+		
+		ai_will_do = {
+			base = 100
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			add_war_support = 0.2
+			declare_war_on = {
+				target = BUL
+				type = annex_everything
+			}
+		}
+	}
+
+	TUR_first_balkan_war = {
+
+		icon = generic_tank
+		
+		allowed = {
+			tag = TUR
+		}
+
+		available = {
+			OR = {
+				surrender_progress > 0.2
+				932 = {
+					NOT = {
+						is_controlled_by = TUR
+					}
+				}
+				AND = {
+					928 = {
+						NOT = {
+							is_controlled_by = TUR
+						}
+					}
+					941 = {
+						NOT = {
+							is_controlled_by = TUR
+						}
+					}
+					995 = {
+						NOT = {
+							is_controlled_by = TUR
+						}
+					}
+					1529 = {
+						NOT = {
+							is_controlled_by = TUR
+						}
+					}
+					858 = {
+						NOT = {
+							is_controlled_by = TUR
+						}
+					}
+					1549 = {
+						NOT = {
+							is_controlled_by = TUR
+						}
+					}
+					1548 = {
+						NOT = {
+							is_controlled_by = TUR
+						}
+					}
+					910 = {
+						NOT = {
+							is_controlled_by = TUR
+						}
+					}
+				}
+				casualties > 400000
+			}
+		}
+
+		days_mission_timeout = 365
+		fire_only_once = yes
+		is_good = yes
+
+		activation = {
+			OR = {
+				has_war_with = SER
+				has_war_with = GRE
+				has_war_with = BUL
+			}
+			NOT = {
+				has_global_flag = great_war_started_flag
+			}
+		}
+
+		complete_effect = {
+			white_peace = SER
+			white_peace = GRE
+			white_peace = BUL
+			SER = {
+				transfer_state = 1527
+				transfer_state = 844
+				transfer_state = 2804
+				transfer_state = 1987
+				transfer_state = 1986
+				transfer_state = 1978
+				transfer_state = 1517
+				transfer_state = 1997
+				transfer_state = 1996
+				transfer_state = 2013
+				transfer_state = 858
+				transfer_state = 1994
+				transfer_state = 873
+				transfer_state = 904
+				transfer_state = 1528
+				transfer_state = 959
+				transfer_state = 1529
+				transfer_state = 2805
+				transfer_state = 1530
+				transfer_state = 2755
+				transfer_state = 894
+				transfer_state = 1973
+				transfer_state = 2802
+				transfer_state = 2007
+				transfer_state = 888
+				transfer_state = 2796
+				remove_mission = SER_first_balkan_war
+				random_unit_leader = {
+					limit = {
+						is_leading_army = yes
+					}
+					add_unit_leader_trait = war_hero
+				}
+			}
+			GRE = {
+				transfer_state = 1542
+				transfer_state = 2000
+				transfer_state = 1543
+				transfer_state = 995
+				transfer_state = 2001
+				transfer_state = 2014
+				transfer_state = 1544
+				transfer_state = 2020
+				transfer_state = 2748
+				transfer_state = 941
+				transfer_state = 1547
+				transfer_state = 1545
+				transfer_state = 969
+				transfer_state = 2002
+				transfer_state = 1552
+				transfer_state = 2564
+				transfer_state = 1556
+				transfer_state = 1553
+				transfer_state = 1557
+				transfer_state = 2756
+				remove_mission = GRE_first_balkan_war
+				random_unit_leader = {
+					limit = {
+						is_leading_army = yes
+					}
+					add_unit_leader_trait = war_hero
+				}
+			}
+			BUL = {
+				transfer_state = 2525
+				transfer_state = 906
+				transfer_state = 2753
+				transfer_state = 2754
+				transfer_state = 928
+				transfer_state = 2835
+				transfer_state = 1969
+				transfer_state = 2005
+				transfer_state = 910
+				transfer_state = 2833
+				transfer_state = 2752
+				transfer_state = 913
+				transfer_state = 937
+				transfer_state = 1569
+				transfer_state = 2751
+				transfer_state = 2834
+				transfer_state = 2524
+				transfer_state = 2840
+				transfer_state = 1548
+				transfer_state = 929
+				transfer_state = 1549
+				transfer_state = 905
+				transfer_state = 1531
+				transfer_state = 1532
+				transfer_state = 1546
+				transfer_state = 2016
+				transfer_state = 2006
+				remove_mission = BUL_first_balkan_war
+				random_unit_leader = {
+					limit = {
+						is_leading_army = yes
+					}
+					add_unit_leader_trait = war_hero
+				}
+			}
+			random_unit_leader = {
+				limit = {
+					is_leading_army = yes
+				}
+				add_unit_leader_trait = war_hero
+			}
+			add_stability = -0.2
+			add_war_support = -0.2
+			set_global_flag = balkan_league_victory_flag
+			release = ALB
+			delete_unit = {
+				disband = no
+				division_template = "Reservists"
+			}
+		}
+
+		timeout_effect = {
+			white_peace = SER
+			white_peace = GRE
+			white_peace = BUL
+			set_global_flag = balkan_stalemate_flag
+			delete_unit = {
+				disband = no
+				division_template = "Reservists"
+			}
+			GRE = {
+				delete_unit = {
+					disband = no
+					division_template = "Reservists"
+				}
+				add_ideas = TUR_diplo_isolation
+				dismantle_faction = yes
+			}
+			BUL = {
+				delete_unit = {
+					disband = no
+					division_template = "Reservists"
+				}
+				add_ideas = BUL_idea_first_national_catastrophe
+				add_ideas = TUR_diplo_isolation
+				leave_faction = yes
+			}
+			SER = {
+				delete_unit = {
+					disband = no
+					division_template = "Reservists"
+				}
+				leave_faction = yes
+			}
+		}
+	}
+}
+
+libyan_war = {
+	TUR_libyan_war = {
+
+		icon = generic_tank
+		
+		allowed = {
+			tag = TUR
+		}
+
+		available = {
+			OR = {
+				surrender_progress > 0.1
+				AND = {
+					1251 = {
+						is_controlled_by = ITA
+					}
+					1241 = {
+						is_controlled_by = ITA
+					}
+				}
+				casualties > 10000
+			}
+		}
+
+		days_mission_timeout = 365
+		fire_only_once = yes
+		is_good = yes 
+
+		activation = {
+			has_war_with = ITA
+			NOT = {
+				has_global_flag = great_war_started_flag
+			}
+		}
+		
+		complete_effect = {
+			white_peace = ITA
+			ITA = {
+				transfer_state = 1236
+				transfer_state = 1877
+				transfer_state = 1245
+				transfer_state = 1242
+				transfer_state = 1241
+				transfer_state = 1247
+				transfer_state = 1878
+				transfer_state = 1879
+				transfer_state = 1880
+				transfer_state = 1282
+				transfer_state = 1289
+				transfer_state = 1251
+				transfer_state = 1249
+				transfer_state = 1239
+				transfer_state = 1240
+				transfer_state = 1264
+				transfer_state = 1318
+				transfer_state = 1882
+				transfer_state = 1255
+				transfer_state = 1261
+				transfer_state = 1257
+				transfer_state = 2397
+				transfer_state = 1321
+				transfer_state = 1307
+				transfer_state = 1328
+				transfer_state = 1332
+				transfer_state = 1881
+				transfer_state = 2871
+				transfer_state = 1322
+				transfer_state = 1308
+				transfer_state = 1333
+				transfer_state = 2396
+				transfer_state = 2777
+				transfer_state = 1876
+				transfer_state = 1875
+				transfer_state = 1874
+				transfer_state = 1554
+			}
+			add_stability = -0.1
+			set_global_flag = libya_war_over
+			delete_unit_template_and_units = {
+				division_template = "Tripolitanian Militia"
+				disband = yes
+			}
+		}
+
+		timeout_effect = {
+			white_peace = ITA
+			set_global_flag = libya_war_over
+			delete_unit_template_and_units = {
+				division_template = "Tripolitanian Militia"
+				disband = yes
+			}
+		}
+	}
+}
+mobilization = {
+	TUR_mobilisation = {
+		icon = generic_operation
+
+		allowed = {
+			tag = TUR
+		}
+
+		available = {
+			OR  = {
+				has_country_flag = mob_allowed_flag
+				has_global_flag = great_war_started_flag
+			}
+			NOT = {
+				has_country_flag = TUR_mob_updating
+			}
+		}
+			
+		fire_only_once = yes
+
+		cost = 0
+		
+		ai_will_do = {
+			base = 100
+		}
+
+		complete_effect = {
+			if = {
+				limit = {
+					has_country_flag = TUR_mob_updated
+				}
+				activate_mission = TUR_mobilise_west_2
+				activate_mission = TUR_mobilise_east_2
+				activate_mission = TUR_mobilise_south_2
+			}
+			else = {
+				activate_mission = TUR_mobilise_west
+				activate_mission = TUR_mobilise_east
+				activate_mission = TUR_mobilise_south
+			}
+			activate_mission = TUR_mobilise_west
+			activate_mission = TUR_mobilise_east
+			activate_mission = TUR_mobilise_south
+			activate_mission = TUR_mobilise_unlock
+			set_country_flag = mobilised_flag
+			swap_ideas = {
+				add_idea = TUR_mob_2
+				remove_idea = TUR_mob_1
+			}
+		}
+	}
+	
+	TUR_mobilise_unlock = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 90
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			set_division_template_lock = {
+				division_template = "Reservists"
+				is_locked = no
+			}
+			hidden_effect = {
+				set_technology = {
+					reservist_tech = 1 
+				}
+			}
+		}
+	}
+	
+	TUR_mobilise_south = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			1956 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1902 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1114 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1059 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1928 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1920 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1327 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+		}
+	}
+	
+	TUR_mobilise_east = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			1036 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1066 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1098 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1046 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			979 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			955 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+		}
+	}
+	
+	TUR_mobilise_west = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			932 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			945 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1032 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1094 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1008 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1932 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1097 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1067 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+		}
+	}
+
+	TUR_mobilise_south_2 = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			1956 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1902 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1114 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1059 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1928 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1920 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1327 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+		}
+	}
+	
+	TUR_mobilise_east_2 = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			1036 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1066 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1098 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1046 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			979 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			955 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+		}
+	}
+	
+	TUR_mobilise_west_2 = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 10
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			932 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			945 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1032 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1094 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1008 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1932 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1097 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1067 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0.2 force_equipment_variants = { infantry_equipment_2 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_2 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+		}
+	}
+	
+	TUR_mobilisation_balkan = {
+		icon = generic_operation
+
+		allowed = {
+			tag = TUR
+		}
+
+		available = {
+			NOT = {
+				has_global_flag = balkan_league_victory_flag
+				has_global_flag = balkan_stalemate_flag
+				has_global_flag = balkan_ottoman_victory
+			}
+			OR = {
+				SER = {
+					has_active_mission = SER_ottoman_ultimatum
+				}
+				has_war_with = GRE
+				has_war_with = BUL
+				has_war_with = SER
+			}
+		}
+
+		fire_only_once = yes
+
+		cost = 0
+
+		complete_effect = {
+			activate_mission = TUR_mobilise_balkan_west
+			activate_mission = TUR_mobilise_balkan_east
+			set_country_flag = mobilised_balkan_flag
+		}
+	}
+	
+	TUR_mobilise_balkan_west = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 5
+		fire_only_once = yes
+		
+		is_good = yes 
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			1528 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1529 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1521 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			941 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			928 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			906 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			858 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1978 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			885 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+		}
+	}
+	
+	TUR_mobilise_balkan_east = {
+
+		icon = generic_tank
+
+		available = {
+			always = no
+		}
+
+		days_mission_timeout = 15
+		fire_only_once = yes
+
+		activation = {
+			always = no
+		}
+
+		timeout_effect = {
+			945 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1932 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1008 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			979 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1046 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1036 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+			1956 = {
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+				create_unit = {
+					division = "name = \"Reservists\" division_template = \"Reservists\" start_experience_factor = 0 force_equipment_variants = { infantry_equipment_1 = { owner = \"TUR\" } } force_equipment_variants = { light_field_gun_equipment_1 = { owner = \"TUR\" } }"
+					owner = TUR
+				}
+			}
+		}
+	}
+}

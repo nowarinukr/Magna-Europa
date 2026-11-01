@@ -1,0 +1,83 @@
+guiTypes = {
+
+	containerWindowType = {
+		name = "ENG_blockade_ui_window"
+		position = { x = 0 y = 00 }
+		size = { width = 100% height= 450 }
+
+		#BACKGROUND
+		iconType = {
+			name ="blockade_bg"
+			spriteType = "GFX_blockade_bg"
+			position = { x=26 y=00 }
+		}
+
+		#STATES
+		iconType = {
+			name ="ENG_region_1_slot"
+			spriteType = "GFX_region1_strip"
+			position = { x=228	 y=4 }
+		}
+		iconType = {
+			name ="ENG_region_2_slot"
+			spriteType = "GFX_region2_strip"
+			position = { x=133	 y=85 }
+		}
+		iconType = {
+			name ="ENG_region_3_slot"
+			spriteType = "GFX_region3_strip"
+			position = { x=68	 y=294 }
+		}
+		iconType = {
+			name ="ENG_region_4_slot"
+			spriteType = "GFX_region4_strip"
+			position = { x=253	 y=102 }
+		}
+		iconType = {
+			name ="ENG_region_5_slot"
+			spriteType = "GFX_region5_strip"
+			position = { x=258	 y=186 }
+		}
+	}
+
+	containerWindowType = {
+		name = "GER_blockade_ui_window"
+		position = { x = 0 y = 00 }
+		size = { width = 100% height= 450 }
+
+		#BACKGROUND
+		iconType = {
+			name ="blockade_bg"
+			spriteType = "GFX_blockade_bg"
+			position = { x=26 y=00 }
+		}
+
+		#STATES
+		iconType = {
+			name ="GER_region_1_slot"
+			spriteType = "GFX_region1_strip"
+			position = { x=228	 y=4 }
+		}
+		iconType = {
+			name ="GER_region_2_slot"
+			spriteType = "GFX_region2_strip"
+			position = { x=133	 y=85 }
+		}
+		iconType = {
+			name ="GER_region_3_slot"
+			spriteType = "GFX_region3_strip"
+			position = { x=68	 y=294 }
+		}
+		iconType = {
+			name ="GER_region_4_slot"
+			spriteType = "GFX_region4_strip"
+			position = { x=253	 y=102 }
+		}
+		iconType = {
+			name ="GER_region_5_slot"
+			spriteType = "GFX_region5_strip"
+			position = { x=258	 y=186 }
+		}
+	}
+
+}

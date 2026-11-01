@@ -1,0 +1,5 @@
+﻿capital = 508
+
+set_research_slots = 3
+
+
